@@ -1,5 +1,7 @@
 # 54GUC — 5G/4G Ultimate Controller
 
+Shared under the [GPL-3.0-only licence](https://www.gnu.org/licenses/gpl-3.0.html).
+
 Explore your mobile-broadband connection: signal, traffic, connection history and the choices your router offers. 54GUC brings those readings together in a Windows app, with router profiles, an advisory engine and a Site Report you can use to understand your setup.
 
 **54GUC is open source, and we'd love your help expanding it.** Our biggest opportunity is testing the current software on more 4G/5G routers and building new profiles together. A router on your desk, an unfamiliar reading or a useful idea can be the beginning of a contribution.
