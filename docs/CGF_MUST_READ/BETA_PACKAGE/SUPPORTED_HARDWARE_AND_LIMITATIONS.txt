@@ -1,0 +1,120 @@
+54GUC R25.7 — HARDWARE AND LIMITS
+=================================
+
+Release: 54GUC_R25.7
+
+Prepared for: 54GUC R25.7
+
+Use the matching published release record for download availability and
+completed checks. Follow the instructions for the actual app you have.
+Existing activation and code formats are unchanged.
+
+Choose the exact model and firmware. A similar-looking router, a different
+firmware version or a provider-branded variant is not automatically covered.
+"Manual Control Verified" and "Detected and Monitored" are physical-router
+evidence levels. "Simulator only" means the application flow was checked
+against a software model; it does not certify a physical router.
+
+This short list records the evidence levels below; it is not the whole
+profile catalogue. An entry in the model selector does not mean every feature
+was tried on physical hardware. The Site Report's What this router supports
+section helps explain the selected profile's available fields and controls.
+It does not turn missing readings into values or certify an untested router.
+
+PHYSICALLY CHECKED PROFILES
+
+1. Huawei B818-263
+   Firmware: 11.0.1.1(H220SP1C11)
+   Level: Manual Control Verified
+   Available: CA pool, PBAND, band lock, restart and Wi-Fi.
+   Limits: cell lock and exact active CA-member details are unsupported.
+
+2. Huawei B535-232
+   Firmware: 10.0.1.1(H191SP64C983)
+   Level: Manual Control Verified
+   Available: CA pool, PBAND, band lock, restart and Wi-Fi.
+   Limits: cell lock is unsupported. Neighbor and modulation readings
+   depend on what this firmware reports.
+
+3. Huawei B535-333
+   Firmware: 11.0.5.51(H470SP6C9831)
+   Level: Manual Control Verified
+   Available: CA pool, PBAND, band lock, restart and Wi-Fi.
+   Limits: cell lock and scheduler detail are unsupported.
+
+4. ZTE MF296R
+   Firmware: BD_A1SRBMF296RMODV1.0.0B04
+   Level: Detected and Monitored
+   Available: monitoring, restart and coupled Wi-Fi control.
+   Limits: LTE band control is unavailable. This firmware turns its
+   2.4 GHz and 5 GHz Wi-Fi together. Its displayed CA Pool is the allowed
+   provider list, not a readout of all active carriers.
+
+5. MikroTik Chateau LTE12 with EG120K-EA modem
+   Firmware: EG120KEAAAR01A10M2G; RouterOS v7
+   Level: Detected and Monitored
+   Available: monitoring and restart. Some radio controls may be offered,
+   but RouterOS can reject or reverse a request.
+   Limits: SIM, network and APN information is read-only in 54GUC; use
+   RouterOS to change it. Do not rely on remote radio changes as the only
+   way to recover a remote site. SMS control is unavailable.
+
+6. TP-Link NX520
+   Firmware: 1.0.0 3.0.0 v611b.0 Build 250902 Rel.10406n
+   Level: Manual Control Verified
+   Available: monitoring, qualified LTE/NR band controls and restart.
+   Limits: PBAND is a preference; the router may settle on another allowed
+   band. NR cell ID and cell lock are unsupported on this exact profile.
+
+PREPARED PROFILES — SIMULATOR EVIDENCE ONLY
+
+7. ZTE G5TC, firmware BD_G5TCV1.0.0B17, hardware G5TCHW1.0
+   Level: Simulator only
+   Login, monitoring and limited-service/roaming flows were exercised in
+   the application simulator. A physical B17 router has been used by a
+   tester, but operator selection, APN persistence and roaming writes are
+   not physically confirmed as reliable. Check the serving network and
+   router's own result. Unsupported or unconfirmed writes are not success.
+
+8. ZTE MC888, firmware BD_H3GUKMC888V1.0.0B09
+   Level: Simulator only
+   The application flow was checked, including monitoring and supported
+   controls. Physical timing, radio behavior and network acceptance have
+   not been certified.
+
+9. TP-Link NX520v, firmware
+   1.1.03.0.0v60ff.0Build260408Rel.47784n, hardware NX520vv1.000000001
+   Level: Simulator only
+   The application flow was checked. A physical unit and this exact
+   firmware have not been certified.
+
+ACTIVATION DOES NOT ADD ROUTER FEATURES
+
+A valid activation code permits only controls already supported for that
+modem. It cannot add a missing router command or upgrade a simulator result
+into physical proof. Activation is unchanged: use the existing modem-bound
+NONCE-KEY or complete Nonce/Key block described in START_HERE.txt. Publishing
+the source does not require replacing an existing valid code.
+
+LIMITS THAT APPLY ACROSS PROFILES
+
+- Control availability is determined by the exact profile and current
+  router response, not just the model name.
+- A CA Pool lists allowed LTE bands. It is neither all hardware-capable
+  bands nor proof that every band is active.
+- 5G NSA data may be displayed. Mode switching and NR band control are
+  separate capabilities. A profile can support temporary 4G-only recovery
+  and saved 5G-mode restoration without permitting manual NR band writes.
+  Manual NR requires a qualified exact profile, such as NX520 Build250902.
+  Standalone 5G optimization is not supported. The physical evidence levels
+  listed above remain specific to those profiles and operations.
+- Cell lock accepts PCI 0..503 with a valid positive EARFCN only when the
+  exact firmware supports that control. NX520 Build250902 does not.
+- Congestion, capacity and quality are app estimates, not official
+  provider values or guaranteed speeds.
+- UNSUP. means this device cannot provide that information. ---- means a
+  supported reading is currently missing or unconfirmed. A 5G-capable device
+  temporarily using LTE keeps its NR fields supported and shows ----. An
+  unsupported NR section is labelled once rather than repeating each value.
+- Mobile-network and APN changes may briefly interrupt service. Confirm
+  the final router state rather than assuming a sent request was accepted.

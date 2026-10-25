@@ -1,0 +1,317 @@
+[
+  {
+    "component": "RouterOS-api",
+    "version": "0.21.0",
+    "path": "RouterOS-api-0.21.0/LICENSE",
+    "sha256": "adc2b1567d5f183443db3c98481d7ba0aaaae42e5f51e46f5398fb909635fe75",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "requests",
+    "version": "2.34.2",
+    "path": "requests-2.34.2/licenses/LICENSE",
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "requests",
+    "version": "2.34.2",
+    "path": "requests-2.34.2/licenses/NOTICE",
+    "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "PySide6",
+    "version": "6.11.1",
+    "path": "PySide6-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+    "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "PySide6_Addons",
+    "version": "6.11.1",
+    "path": "PySide6_Addons-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+    "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "PySide6_Essentials",
+    "version": "6.11.1",
+    "path": "PySide6_Essentials-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+    "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "shiboken6",
+    "version": "6.11.1",
+    "path": "shiboken6-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+    "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "pyqtgraph",
+    "version": "0.14.0",
+    "path": "pyqtgraph-0.14.0/licenses/LICENSE.txt",
+    "sha256": "b4ed24d468da61df9028a52abe9283a592e63f315943a1c86cd96a9ea5b62079",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/LICENSE.txt",
+    "sha256": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+    "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+    "sha256": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/src/highway/LICENSE",
+    "sha256": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+    "sha256": "b0fd592d4ead563148e3977e7b589169d46a5ef2ff133c755a81af880a3fc919",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+    "sha256": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/_core/src/umath/svml/LICENSE",
+    "sha256": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/fft/pocketfft/LICENSE.md",
+    "sha256": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+    "sha256": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/ma/LICENSE",
+    "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/LICENSE.md",
+    "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/distributions/LICENSE.md",
+    "sha256": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/mt19937/LICENSE.md",
+    "sha256": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/pcg64/LICENSE.md",
+    "sha256": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/philox/LICENSE.md",
+    "sha256": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/sfc64/LICENSE.md",
+    "sha256": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/licenses/numpy/random/src/splitmix64/LICENSE.md",
+    "sha256": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/LICENSE.txt",
+    "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/LICENSE",
+    "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "numpy",
+    "version": "2.5.1",
+    "path": "numpy-2.5.1/LICENSE.md",
+    "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "urllib3",
+    "version": "2.7.0",
+    "path": "urllib3-2.7.0/licenses/LICENSE.txt",
+    "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "certifi",
+    "version": "2026.7.22",
+    "path": "certifi-2026.7.22/licenses/LICENSE",
+    "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "charset-normalizer",
+    "version": "3.4.9",
+    "path": "charset-normalizer-3.4.9/licenses/LICENSE",
+    "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "idna",
+    "version": "3.18",
+    "path": "idna-3.18/licenses/LICENSE.md",
+    "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "colorama",
+    "version": "0.4.6",
+    "path": "colorama-0.4.6/licenses/LICENSE.txt",
+    "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "cryptography",
+    "version": "50.0.1",
+    "path": "cryptography-50.0.1/licenses/LICENSE",
+    "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "cryptography",
+    "version": "50.0.1",
+    "path": "cryptography-50.0.1/licenses/LICENSE.APACHE",
+    "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "cryptography",
+    "version": "50.0.1",
+    "path": "cryptography-50.0.1/licenses/LICENSE.BSD",
+    "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "cffi",
+    "version": "2.1.1",
+    "path": "cffi-2.1.1/licenses/LICENSE",
+    "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "pycparser",
+    "version": "3.0",
+    "path": "pycparser-3.0/licenses/LICENSE",
+    "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "Python-3.13.14",
+    "version": "not_declared",
+    "path": "Python-3.13.14/LICENSE.txt",
+    "sha256": "62bec384df47b0328307db41455ff6ea2559e5546b394ac69148561b21703120",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "Liberation-Mono",
+    "version": "not_declared",
+    "path": "Liberation-Mono/LICENSE-SIL-OFL.txt",
+    "sha256": "b856c99b7a9eb6f9466f7ed54be17be608adab2abba116c28f62e1f9bd84bd02",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  },
+  {
+    "component": "PyInstaller",
+    "version": "6.22.3",
+    "path": "PyInstaller-6.22.3/licenses/COPYING.txt",
+    "sha256": "0598064c7d2718e38d7914a7d08343b2fa008e3bea9ebba2aa7a6ffa5900dd64",
+    "source": "Pinned packaging distribution"
+  },
+  {
+    "component": "Qt",
+    "version": "6.11.1",
+    "path": "Qt-6.11.1/LGPL-3.0-only.txt",
+    "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+    "source": "https://raw.githubusercontent.com/qt/qtbase/v6.11.1/LICENSES/LGPL-3.0-only.txt"
+  },
+  {
+    "component": "Qt",
+    "version": "6.11.1",
+    "path": "Qt-6.11.1/GPL-3.0-only.txt",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "source": "https://raw.githubusercontent.com/qt/qtbase/v6.11.1/LICENSES/GPL-3.0-only.txt"
+  },
+  {
+    "component": "Qt",
+    "version": "6.11.1",
+    "path": "Qt-6.11.1/GPL-2.0-only.txt",
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "source": "https://raw.githubusercontent.com/qt/qtbase/v6.11.1/LICENSES/GPL-2.0-only.txt"
+  },
+  {
+    "component": "regex",
+    "version": "2026.9.29",
+    "path": "regex-2026.9.29/licenses/LICENSE.txt",
+    "sha256": "3d220c06594b826bbabf110312f60f385f99e57e529fa4b9e536f79091f8b4c7",
+    "source": "Pinned installed distribution; original notice retained verbatim"
+  }
+]

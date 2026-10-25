@@ -1,0 +1,82 @@
+name: Router test report
+description: Help check the current software on an exact router and firmware.
+title: "[Router test]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Our main need is careful router testing and gradual profile improvement.
+        Read CONTRIBUTING.md and docs/PROJECT_GOALS.md in the source tree first.
+        Use Observe only when an exact profile exists. If it is absent, report
+        the gap; do not select a similar model or send unknown commands.
+        No control test is required to submit a useful report.
+
+        Do not attach raw support ZIPs, router backups, passwords, session or
+        activation codes, device/SIM identifiers, personal addresses or History.
+        A plain description without an attachment is welcome.
+  - type: input
+    id: app-version
+    attributes:
+      label: Actual 54GUC version
+      description: Copy the version shown by the app. For source testing, add the commit or candidate revision.
+      placeholder: Exact version, not just "latest"
+    validations:
+      required: true
+  - type: textarea
+    id: router
+    attributes:
+      label: Router model and firmware
+      description: Give the make, exact model, hardware revision and full firmware version. Do not give serial, IMEI or SIM details.
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile selected in 54GUC
+      description: Use the exact displayed profile name or filename, or say "No exact profile listed".
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: What did you test?
+      options:
+        - No app connection because the exact profile is missing
+        - Observe only
+        - Live mode; describe any controls already tried below
+    validations:
+      required: true
+  - type: textarea
+    id: readings
+    attributes:
+      label: What could you read, and what was missing or different?
+      description: Compare the app and router page at roughly the same time. Give units and say what is unknown. Sanitize any excerpt yourself.
+      placeholder: |
+        Reading and unit:
+        App value:
+        Router page value:
+        Approximate time and any limitation:
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Controls already tried, if any
+      description: "Start with None. For an action already taken safely, separate what was requested, the router's response and a later reading of its actual settings. Say Not confirmed when evidence is missing. Do not repeat an unsafe action for this report."
+      value: None
+    validations:
+      required: true
+  - type: textarea
+    id: unknowns
+    attributes:
+      label: What remains unknown?
+      description: Include untried features, missing readings, or a check that could not be completed. A successful login does not verify every feature.
+  - type: checkboxes
+    id: safe-sharing
+    attributes:
+      label: Before submitting
+      options:
+        - label: I own this equipment or have permission to test it, and I have not bypassed an unsupported-profile or control warning.
+          required: true
+        - label: I reviewed the text and attachments and removed private credentials, codes, identifiers, location and History.
+          required: true

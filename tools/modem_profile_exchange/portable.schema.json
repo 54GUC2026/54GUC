@@ -1,0 +1,41 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:54guc:portable-modem-profile:1:catalogue:2",
+  "title":"54GUC independent portable read definition, catalogue revision 2",
+  "description":"Each file contains the complete 155-field catalogue and its own operation closure. Native actions/runtime activation are separate future work. Vocabulary and cross-field validation are mandatory in addition to this shape.",
+  "type":"object","additionalProperties":false,
+  "required":["schema","definition_version","profile_id","family","metadata","access","fields","functions","algorithms","preprocessing","acquisition","standalone","external_profile_dependencies","runtime_integration","declared_driver_gaps","conformance","privacy","content_sha256"],
+  "properties":{
+    "schema":{"const":"54GUC.PortableModemProfile.v1"},
+    "definition_version":{"const":2},
+    "profile_id":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},
+    "family":{"enum":["huawei","mikrotik","dev2","xiaomi","goform","zwrt"]},
+    "metadata":{"type":"object"},"access":{"type":"object"},
+    "fields":{"type":"array","minItems":155,"items":{"$ref":"#/$defs/slot"}},
+    "functions":{"type":"object","additionalProperties":{"type":"object","additionalProperties":false,"required":["parameters","expression"],"properties":{"parameters":{"type":"array","items":{"type":"string"},"uniqueItems":true},"expression":{}}}},
+    "algorithms":{"type":"object","additionalProperties":false,"required":["vocabulary","functions","constants","initializers"],"properties":{"vocabulary":{"const":"54GUC.BoundedParserAlgorithms.v1"},"functions":{"type":"object"},"constants":{"type":"object"},"initializers":{"type":"array"}}},
+    "preprocessing":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["output","expression"],"properties":{"output":{"type":"string"},"expression":{"type":"object"}}}},
+    "acquisition":{"type":"object"},
+    "source_baseline":{"type":"object"},
+    "standalone":{"const":true},"external_profile_dependencies":{"type":"array","items":{"type":"string"}},
+    "runtime_integration":{"const":false},"declared_driver_gaps":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "conformance":{"type":"object"},
+    "privacy":{"type":"object","additionalProperties":false,"required":["scope","observations_included","credentials_included"],"properties":{"scope":{"const":"owned_static_definitions_only"},"observations_included":{"const":false},"credentials_included":{"const":false}}},
+    "content_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "$defs":{
+    "definition":{"type":"object","additionalProperties":false,"required":["id","address","value_type","unit","meaning","missing","privacy","aliases"],"properties":{
+      "id":{"type":"integer","minimum":1},"address":{"type":"string","pattern":"^[a-z]+[.][a-z0-9_]+$"},
+      "value_type":{"enum":["boolean","integer","number","string","array_integer","array_object","object","integer_or_string","number_or_string","number_or_string_or_object"]},
+      "unit":{"type":["string","null"]},"meaning":{"type":"string","minLength":1},"missing":{"type":"string","minLength":1},
+      "privacy":{"const":"definition_only_no_observed_values"},"aliases":{"type":"array","uniqueItems":true,"items":{"type":"string"}},"structure":{"type":"object"}
+    }},
+    "slot":{"type":"object","additionalProperties":false,"required":["definition","trust","read"],"properties":{
+      "definition":{"$ref":"#/$defs/definition"},"trust":{"enum":["confirmed","expected","synthetic","untested","unsupported","non_useful","unclassified"]},
+      "read":{"oneOf":[{"type":"null"},{"type":"object","additionalProperties":false,"required":["expression","availability","gap_reason","result_plane"],"properties":{
+        "expression":{},"native_expression":{},"normalization":{"type":"string"},"selection_scope":{"enum":["provider_limited_effective_selection","profile_provider_pool","native_selection"]},
+        "availability":{"enum":["defined","declared_without_native_producer"]},"gap_reason":{"type":["string","null"]},"result_plane":{"const":"decoded_native_or_qualified_metadata_before_Matrix_admission"}
+      }}]}
+    }}
+  }
+}

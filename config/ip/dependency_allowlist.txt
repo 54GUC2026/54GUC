@@ -1,0 +1,5 @@
+# package|license
+routeros_api|MIT
+requests|Apache-2.0
+PySide6|LGPL-3.0
+pyqtgraph|MIT

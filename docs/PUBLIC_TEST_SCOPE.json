@@ -1,0 +1,4079 @@
+{
+  "schema": "54GUC.PublicOfflineTestScope.v1",
+  "release": "R25.7",
+  "selection_file": "docs/PUBLIC_TEST_SELECTION.txt",
+  "selection_shape": {
+    "whole_files": 18,
+    "exact_nodes": 10
+  },
+  "checked_result": {
+    "passed": 731,
+    "skipped": 1,
+    "failed": 0,
+    "skip_details": [
+      {
+        "node": "arch4.tests.test_offline_log_checker::test_dst_repeated_pc_hour_keeps_both_distinct_intervals",
+        "reason": "Windows clock tested natively; explicit TZ available on POSIX"
+      }
+    ]
+  },
+  "scope_limit": "Required helper modules may contain additional test functions. Use the exact selection; bare pytest is not this qualified scope. This is separate from the complete private native release gate.",
+  "private_input_policy": "No operational runbooks, personal router captures, real saved codes, History or optional private model data are required by this selection. Original private tests remain unchanged.",
+  "test_file_dispositions": [
+    {
+      "path": "arch4/tests/ngui/test_5g_chart_panes.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_antenna_guide_presentation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_apn_profile_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_application_autoconnect.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_application_utilities.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_architecture_contract_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_cgf_gui_control_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_chart_model.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_cleanroom_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_connection_cancel.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_control_availability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_dashboard_heavy_work.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_dashboard_layout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_debug_surface.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_developer_page_layouts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_developer_workflow_readbacks.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_device_wifi_behavior.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_diagnostic_user_summary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_edit_register.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_external_actions.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_fault_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_graphs_layout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_heavy_work.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_input_registers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_interactions.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_login_to_live_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_manual_action_lifecycle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_manual_click_sample_race.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_manual_intent_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_measurement_page_concept.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_n31_matrix_capability_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_native_appearance.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_confirmation_result.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_input_feedback.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_prefill_window.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_preset_store.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_read_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_settings_editor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_network_settings_session.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_no_raw_matrix_reader_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_operator_event_feed.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_page_truth.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_presentation_owner_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_presentation_processor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_profile_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r233_compact_device_tools.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r234_brain_count_navigation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r234_requested_layout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r236_support_and_me.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r238_selection_sms.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r23_display_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_r257_device_check_feedback.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_referee_compact_layout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_referee_nr_display_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_registry_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_remembered_network_restart.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_renderer_behavior.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_renderer_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_frame_transport.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_frame_wake_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_lifecycle_transport.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_owner_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_participant_candidates.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_reset_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_reset_owner_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_scalar_exactness.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_service.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_runtime_termination_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_safe_start_advisory.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_selected_device_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_test_architecture_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_utility_admission_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_utility_lifecycle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_v02_s5_core_field_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_visual_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_visual_manifest_tool.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/ngui/test_voice_lifecycle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_voice_review.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_wave3_command_ingress.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/ngui/test_windows_debug_autoconnect_launcher.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/r25/test_modem_neutral_platform_unchanged.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_access.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_bundle_cli.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_bundle_diagnosis.py",
+      "decision": "selected_nodes_only",
+      "reason": "Run only the exact listed nodes; other functions require separate input review"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_bundle_roundtrip.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_conformance_values.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_connection.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_context_dependencies.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_dev2_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_dev2_network_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_dev2_write.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_diagnostic_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_expression_defaults.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_external_shelf.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_family_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_generated_codecs.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_goform_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_goform_request_layout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_goform_wire_fragments.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_huawei_antenna_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_huawei_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_huawei_nr_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_huawei_requests.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_huawei_wifi_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_import_error_locations.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_learning_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_limits.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_driver_parity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_field_keys.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_oracle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_privacy_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_read_requests.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_native_write_fields.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_new_firmware.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_new_ids.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_operator_tools.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_packaging.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_private_sources.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_process_binding.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_producer_gaps.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_readable.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_regex_budget.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_registry.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_routeros_at_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_routeros_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_routeros_state_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_routeros_wifi_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_runtime.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_support_privacy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_windows_tool.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_wire_diagnosis.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_xiaomi_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_zte_state_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_zwrt_controls_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_zwrt_nr_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_zwrt_temperature_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_profile_partial_xml_replay_r255.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_profile_private_input_replay_r252.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_r251_mc888_pci.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/r25/test_xiaomi_bundle_r252.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_5g_class_readiness_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_5g_quality_reweight.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_a1_b818_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_accepted_generation_commit_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_accepted_generation_commit_store.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_accepted_generation_delivery_store.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_accepted_modem_generation_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_access_type_display_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_applicability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_grade_jsonl.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_internet_pause_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_lockout_modem_health.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_opportunity_set.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_opportunity_sources.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_selection_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_shape_legality.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_action_suppression_truth.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_active_rtt_jitter_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_adviser_temporal_refresh.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_all_profile_mode_unavailable_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_all_profile_native_mode_roundtrip.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_apn_profile_library.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_application_lease_r34_r35.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_application_lifecycle_exact_constructor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_application_lifecycle_g01.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_auth_error_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_auto_band_release.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_auto_update.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_b535232_hilink_profile.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_b535333_hilink_profile.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_b535_h191_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_b818_log_regression.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_backend_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_backend_field_audit.py",
+      "decision": "not_selected",
+      "reason": "Optional private operator audit tool not selected"
+    },
+    {
+      "path": "arch4/tests/test_band_action_learning_guard.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_band_action_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_band_auto_command_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_band_resolver.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_behavior_disposition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_best_effort_actuation_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_beta_identity_evidence_boundaries.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_beta_package_document_contract.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_blocking_io_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_bouncer.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_bouncer_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_cellular_input_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_decision_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_evaluation_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_event_inbox.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_mutation_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_posture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_brain_saved_nr_presentation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_c3_typed_shutdown_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_ca_pool_definition_regression.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_calibration_context.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_calibration_learning_runtime.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_calibration_publication.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_candidate_action_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_capability_export_completion.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_capability_profile_integration_gate.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_capability_semantics_contract.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_capability_truth_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_100_percent_active_runtime_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_action_provenance_simplification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_action_schedule_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_active_runtime_validator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_architecture_assessor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_canonical_representation_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_core_contract_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_current_documentation_contract.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_cgf_deleted_owner_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_evidence_writer_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_foundation_contract_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_g00_denominator_registry.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_large_code_review_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_modem_identity_lineage.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_cgf_modem_live_contract_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_modem_matrix_core_g00_denominator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_modem_neutral_core_foundation_scout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_must_read_boundary.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_cgf_ngui_application_bootstrap.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_old_vocabulary_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_operator_runbook_authority.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_cgf_p0_architecture_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_product_root_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_production_file_disposition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_rsrq_signal_integration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_runtime_register_writer_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_session_identity_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_settings_handoff.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_signal_checkpoint_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_state_namespace_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_v50_active_defect_replacement.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_cgf_verification_manifest.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_windows_source_soak.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cgf_worker_lifecycle_exclusivity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_clock_fabric_rtt_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_combined_5g_quality.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_command_lifecycle_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_command_transactions.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_config_persistence_honesty.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_config_views.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_config_views_migration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_congestion_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_congestion_no_traffic_gate.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_connect_device_radio_class.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_connect_network_draft.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_conservative_capability_defaults.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_context_learning.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_contextual_bandit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_controller_posture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cooldown_registry.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_accepted_root_outbox_exact_scalar_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_action_reachability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_action_runtime_ownership.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_action_status_service.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_clock_wake_stream.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_gateway.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_lifecycle_service.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_outcome_stream.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_persistence_epoch.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_safety.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_command_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_contract_exactness.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_contract_package_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_correctness_persistence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_downstream_diagnostics_clock.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_emergency_reachability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_extension_hooks.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_hook_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_mutation_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_observation_adapter.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_owner_trust_simplification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_runtime_snapshot_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_schedule_command_route.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_core_snapshot_corruption_boundaries.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_cq_cqi_fallback.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_crystal_ball.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_customer_ngui_extension_ownership.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_customer_release_context.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_decision_action_format.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_decision_context_capture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_decision_context_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_decision_night_training_n1.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_degradation_window.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_delivered_capacity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_dev2_pool_count_receipt.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_device_confirmation_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_device_page_matrix_guarantee.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_device_probe.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_device_replacement_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_diagnostic_journal_storage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_disconnect_state_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_emergency_backend_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_event_journal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_evidence_scope.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_external_memory_activation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_external_memory_identity_recoder.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_external_memory_library.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_external_memory_promotion.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_extra_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_fault_supervisor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_active_job_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_antenna_guide.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_band_auto_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_connectivity_transition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_core_current_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_data_budget.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_data_budget_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_evidence_validation.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_foundation_light_runtime_artifacts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_modem_diagnostic.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_modem_watchdog.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_ngui_extension_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_owner_trust_cross_layer.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_owner_trust_simplification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_service_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_service_job_fabric.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_site_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_support_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_wave4a_evidence_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_foundation_wave4b_coherence_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_action_identity_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_command_outcome_worker_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_command_root_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_domain_reconciliation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_operational_delivery_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g02_c5_product_operational_transaction.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g5tc_all_consumed_fields_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g5tc_connection_transaction.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g5tc_missing_network_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g5tc_nr_cell_id_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_g5tc_optional_ri_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_goform_auto_mode_core_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_goform_mode_live_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_goform_mode_public_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_goform_native_data_session_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_guide08_artifacts_report_support_license.py",
+      "decision": "selected_nodes_only",
+      "reason": "Run only the exact listed nodes; other functions require separate input review"
+    },
+    {
+      "path": "arch4/tests/test_h173_c983_selected_integration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_h173_simulator_traffic.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_hardware_evidence_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_health_rtt_semantics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_hilink_cell_capability_probe.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_historical_artifact_reader.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_historical_chart_nr_projection.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_historical_continuity_store.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_historical_evidence_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_host_ping_utils.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_hourly_aq_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_hourly_aq_router_imports.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_hourly_cell_trend_experiment.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_consumed_fields_bundles.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_hilink_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_maintenance_pacing.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_mikrotik_writer_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_native_failure_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_packet_session_time.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_parsers.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_huawei_r256_optional_nr_quantities.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_radio_mode_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_serving_channel_units.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_typed_physical_stage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_wifi_status.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_zte_firmware_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_huawei_zte_overlay_gap_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_incident_rca.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_intelligence_completion_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_intelligence_evidence_adapter.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_intelligence_formula_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_intelligence_impact_reporting_reset.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_internal_profile_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_internet_reachability_owner_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_late_positive_net_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_latency_traffic_qualification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_launcher_canonical_path.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_layer3_action_trust.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_layer3_schema_overlays.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_learning_loop_proof_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_legacy_migration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_license_credential_store.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_license_nonce_tiers.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_live_acquisition_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_live_lane_sanity_check.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_lock_confirmation_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_log_checker_goform_two_stage_terminal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_log_checker_plain_english.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_log_checker_retained_window.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_long_horizon_learning_experiment.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_maintenance_sibling_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_manual_action_recovery_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_manual_nr_mode.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_manual_nr_profiles.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mc801a_b14_selected_integration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mc888_lab_ownership.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mc888_radio_topology.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mc888_script_login_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mc888_simulator_fault_bounds.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_memory_action_store.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_memory_first_log_processor_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_memory_path_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mf296r_catalog_cleanup.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mf296r_synthetic_e2e.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_consumed_fields_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_dashboard_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_network_read_budget.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_parsers.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_read_write_sequence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_rtt_source_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_runtime_boundary_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_subscription_receipts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_tx_power.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_wifi.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_zwrt_radio_mode_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mixed_identity_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_mobile_data_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_model_backend_contract.py",
+      "decision": "not_selected",
+      "reason": "Optional private model/replay input not distributed"
+    },
+    {
+      "path": "arch4/tests/test_model_hardening_matrix.py",
+      "decision": "not_selected",
+      "reason": "Optional private model/replay input not distributed"
+    },
+    {
+      "path": "arch4/tests/test_model_profile_builder.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_model_public_defaults.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_model_runtime_isolation.py",
+      "decision": "not_selected",
+      "reason": "Optional private model/replay input not distributed"
+    },
+    {
+      "path": "arch4/tests/test_modem_catalog.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_input_defaults.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_access_runtime.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_backend_acquisition_receipts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_canonical_aliases.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_capability_publication_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_compatibility_identity.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_emergency_probe.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_explicit_capability_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_identity_owner_restore.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_maintenance_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_mutable_profile_catalog_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_partial_health_ownership.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_physical_request_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_profile_catalog.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_profile_matrix_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_provider_name_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_publication_typed_receipts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_rtt_probe_deadline_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_scout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_startup_deadline.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_termination_exact_receipt.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_test_cleanup_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_translator_single_owner_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_live_typed_command_execution.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_neutral_signal_processing_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_profile_completeness_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_profile_validator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_resolution.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_sample_publication_service_lifecycle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_startup_trace.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_modem_target_guard.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_net_classification_end_to_end.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_network_command_progress.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_network_discovery_scan.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_network_inspection_demand.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_network_interruption_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_network_target_reconciliation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_accelerated_learning.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_aged_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_all_retained_startup.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_aq_only_cutover.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_balanced_grading.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_canonical_learning_population.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_cell_first_decision.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_compound_context.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_contextual_learning.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_control_and_grading.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_decision_consistency.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_decision_history_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_explore.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_final_decision_frame.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_historical_pool_rescue.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_history_continuity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_hourly_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_hourly_prediction.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_intelligence_impact.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_learning_context_migration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_lifecycle_retention_end_to_end.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_no_fixed_band_grade.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_observed_ca.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_phase1.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_phase2.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_phase3.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_phase4.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_phase5.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_proposal_visits.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_recurring_context.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_stable_transition_proof.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_supported_upside.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_new_horizon_v41_hardening.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_ngui_cycle_simulator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_ngui_live_probe_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_ngui_live_ui_probe_behavior.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_ngui_owner_trust_cross_layer.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_normal_behavior_opportunities.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_band_lock.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_brain_proposal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_forecast_condition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_lte_emergency_overlap.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_mode_lease.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_radio_mode_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_recovery_events.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_recovery_messages.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_recovery_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_referee_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_rescue_reconcile_guards.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nr_service_recovery.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nsa_observation_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nx520_exact_read_pacing.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_nx520_read_block_recovery.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_observation_diagnostic_coverage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_offline_log_checker.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_offline_observation_coverage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_openwrt_boundary_replacement_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_openwrt_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_openwrt_dual_http_simulator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_openwrt_wifi.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_operational_service_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_operator_review_followon.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_operator_surface_october5.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_optimization_action_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_other_transports_typed_physical_stage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_persistence_completion_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_persistence_health_surfacing.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_persistence_watch.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_physical_command_evidence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_physical_request_boundary_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_physical_response_outcome_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_ping_outcome_classification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_policy_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_policy_overlay.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_pool_only_intelligence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_artifact_pack.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_bundle_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_crash_restart.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_diagnostic_dump.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_launch_validator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_launcher_helpers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_runtime_paths.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_runtime_smoke.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_runtime_telemetry.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_state_import.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_validation_fallback_visibility.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_portable_validation_integration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_power_loss_timer_publication.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_pre_beta_artifact_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_preflight_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_prepare_beta_distribution.py",
+      "decision": "not_selected",
+      "reason": "Unused private release cleaner is outside the public build route"
+    },
+    {
+      "path": "arch4/tests/test_prepared_support_history.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_primary_context_history_experiment.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_probe_5g_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_probe_exhaustion.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_probe_log_privacy_scrub.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_probe_runtime_truth_surfaces.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_product_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_product_intelligence.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_product_intelligence_emergency_publication.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_product_language_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_product_ready_opener_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_product_startup_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_profile_hardening_batch2.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_profile_leakage_regression.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_profile_tuning_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_protected_operator_context.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_publication_pending_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_qualifier_gap_config.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_quality_formula_epoch_migration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r146_g5tc_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r146_subscription_consumers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_g5tc_network_http.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_history_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_mutable_network_acquisition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_network_intention.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_network_settings.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r14_zte_network_discovery.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r152_mc888_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r15_shared_path_regressions.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r202_seven_correction_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r203_manual_admission_feedback.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r203_pci_zero_consumers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r203_pci_zero_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r204_adapter_control_completeness.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r204_nr_service_grade.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r205_grading_history_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_diagnostic_device_continuity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_g5b_reference.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_goform_read_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_goform_single_field_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_goform_stock_observe.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_r20_hilink_dev2_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_hilink_stock_observe.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_r20_nx520_stock_observe.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_r20_protected_mc888.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_simulator_cli_shutdown.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_six_router_scope.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_xiaomi_capture.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_r20_xiaomi_stock.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r20_zte_appliance_dialects.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r211_forecast_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r211_forecast_comparison.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r22_recovery_system_scan.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r233_review_owner_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r233_review_regressions.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r236_settlement_usage_history.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r240_diagnostic_and_learning_repetition.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r240_shared_native_privacy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r241_escaped_account_path_privacy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r241_zte_https_startup.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r250_routeros_radio_name_privacy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r255_radio_mode_catalog_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_checker_failed_dependencies.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_r256_conformance_publication.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_goform_simulator_native_http.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_huawei_tplink_xiaomi_simulator_http.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_openwrt_zwrt_simulator_refresh.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_profile_export.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_read_diagnostic_formats.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_report_field_mapping.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_routeros_nr_at_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_routeros_nr_context_boundary_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_routeros_nr_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_routeros_nr_qcainfo_ul_native.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_simulator_refresh.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_status_only_nr_receipt.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_tplink_optional_native_refusal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_tplink_resources.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_unused_codec_compatibility.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r256_zte_goform_read_compatibility.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_r257_g5tc_diagnostic_matrix_coverage.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_identity_retention.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_mode_coordination.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_mode_data_session_proof.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_mode_preference_policy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_mode_preferences.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_target_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_transition_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_transition_learning_consumers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_radio_transition_physical_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rat_model.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_read_diagnostic_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_readonly_lane_no_config_mutation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_referee_feedback_quality.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_referee_journal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_report_maintenance.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rf_quality_gate.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_router_check_text_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_router_read_diagnostics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rsrq_calibration.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rsrq_delta_calibration_script.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rsrq_derived_fallback.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rsrq_persistence_survivability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rsrq_processor_refactor.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rtt_ngui_recovery_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rtt_observation_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_rtt_processor_congestion_lane.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runner_runtime_health.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_band_scope.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_capability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_clock.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_clock_worker_fabric.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_identity.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_runtime_modem_sample_publication.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_onboarding.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_operator_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_profile_expansion.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_reconnect_loop.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_register_ownership_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_script_path_defaults.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_service_scheduler.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_state_memory.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_runtime_support_tier.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_s9_persistence_artifact_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_secondary_learning_receipt.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_selected_action_owner_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_selected_device_admission.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_service_activity_and_recovery_flow.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_serving_identity_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_session_band_capability.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_session_repair_owner_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_settings_owner_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_shipping_defaults_neutrality.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_short_outage_recovery_cap.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_signal_owner_replacement.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_signals.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sim_network_identity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sim_network_learning_scope.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sim_runner_retirement.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_simulator_traffic_clock.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_site_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_site_report_history_projection.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_site_report_user_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_smart_loop_normal_behavior_progress.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sms_consumption_scenarios.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sms_identity_coordination.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_sms_receiver.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_start_script_runtime_overrides.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_startup_checklist.py",
+      "decision": "not_selected",
+      "reason": "Optional private model/replay input not distributed"
+    },
+    {
+      "path": "arch4/tests/test_startup_resolution_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_status_payload_detachment.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_supervisor_process_lifecycle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_bundle_context.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_export_roundtrip.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_history_export.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_history_streaming.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_live_tail.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_missing_identity_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_preparation_process_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_recovery.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_referee_targets.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_support_session_scope.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_synthetic_authority_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_synthetic_scheduler_consumer.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_system_watchdog_user_control_removal.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_target_guard_propagation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_authority_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_docs_alignment.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_event_contract.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_field_usage_audit.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_raw_log_minimization.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_retention_pass.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_schema_reduction.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_telemetry_trace_matrix.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_terminal_reward_observation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_test_suite_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_test_suite_contract_registry.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tick_and_event_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_decoded_startup_trace.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_dev2_owner.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_global_auto_lte_rescue.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_nx520_native_250902.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_nx520_srba1.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_nx520v_phase_i.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_saved_radio_preferences.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_session_activity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tplink_xiaomi_mode_review.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_traffic_gate.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_truth_roadmap_docs.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_tsar_action_shaping.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_tsar_autopilot.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_two_hour_recency_replay.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_two_hour_watch_report.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_typed_operational_request_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_typed_operational_services.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v02_s10_config_restart_activation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v02_s7_evidence_contract.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_v02_s8_evidence_privacy.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v104_startup_read_order.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v10_evidence_semantics.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v113_outage_learning_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v114_physical_history_continuity.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v117_contract_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v118_decision_attribution.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v162_robustness_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v64_defect_batch_architecture.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v77_truthful_presentation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_v94_runtime_truth_replacement.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_version_resolution.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_wifi_boundary.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_windows_bundle_validation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_windows_distribution_licenses.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_windows_mc888_packaging.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_windows_native_bundle.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_windows_portable_dryrun.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_windows_portable_history_launch.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_worker_health_authority.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_worker_health_semantics_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_worker_supervision_static_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_workspace_environment.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_workspace_hardening_rules.py",
+      "decision": "not_selected",
+      "reason": "Private or unreviewed document/capture inputs not distributed"
+    },
+    {
+      "path": "arch4/tests/test_worldwide_provider_verification.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_writable_root_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_wsl_fast_mirror_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_xiaomi_https_login_bundle.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_xiaomi_manual_nr_mode.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_xiaomi_readable_field_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_xiaomi_saved_radio_preferences.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_bootstrap_timeout_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_g5tc_captured_fields.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_actuation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_connection_hardening.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_fresh_acquisition_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_radio_mode.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_goform_wifi.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_huawei_carrier_overlays.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_mc888_http_simulator.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_mc888_public_virtual_fixtures.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_mc888_simulator_boundary_audit.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_mc888_simulator_operator_tools.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_parsers.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "arch4/tests/test_zte_session_validity_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_authenticated_continuation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_contract.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_native_carriers.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_native_session.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_read_timeout.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zte_zwrt_wifi.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zwrt_cpu_temperature.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "arch4/tests/test_zwrt_subsystem_boundaries.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "tools/modem_profile_exchange/test_definition_contracts.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "tools/modem_profile_exchange/test_export_profiles.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "tools/modem_profile_exchange/test_portable_validation.py",
+      "decision": "not_selected",
+      "reason": "Outside the bounded initial public offline selection; additional input and behavior review required"
+    },
+    {
+      "path": "tools/test_guc_license_gen.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "tools/test_guc_license_gen_tiers.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "tools/test_license_generator_2.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    },
+    {
+      "path": "tools/test_prepare_public_source.py",
+      "decision": "selected_whole_file",
+      "reason": "Reviewed offline synthetic/public input tests"
+    }
+  ]
+}

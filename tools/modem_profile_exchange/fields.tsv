@@ -1,0 +1,157 @@
+# Stable IDs are owned by field_ids.v1.json; append IDs there, never renumber or reuse an ID.
+# address|type|unit|meaning
+capability.dl_256qam|boolean||Whether the qualified device supports LTE downlink 256-QAM; not current modulation.
+capability.traffic_volume|boolean||Whether volume counters are supported; not a traffic measurement.
+capability.ue_category|integer||Qualified LTE UE category; not a measured link speed.
+capability.ul_64qam|boolean||Whether LTE uplink 64-QAM is supported; not current modulation.
+health.radio_connected|boolean||Radio registration/connection evidence; does not establish working Internet access.
+health.radio_state_text|string||Native radio connection state description; not Core Internet status.
+identity.firmware|string||Router firmware version used for exact profile qualification.
+identity.hardware_version|string||Router hardware revision; not its serial number.
+identity.imei|string||Modem equipment identifier; preserve digits as text. Sensitive actual values must not be exported.
+identity.imsi|string||SIM subscription identifier; never use as a physical router identity. Sensitive actual values must not be exported.
+identity.lan_mac|string||LAN interface MAC address. Sensitive actual values must not be exported.
+identity.model|string||Qualified native model designation.
+identity.provider_name|string||Reported serving provider name; does not prove a permitted band pool.
+identity.provider_plmn|string||Serving PLMN as a five or six digit string; preserve leading zeroes.
+identity.router_model|string||Router product model designation; distinct from modem chipset model.
+identity.serial|string||Permanent physical router serial; never substitute a SIM identifier. Sensitive actual values must not be exported.
+identity.software|string||Native software identifier where distinct from firmware.
+identity.software_version|string||Native software version text; do not interpret as a decimal number.
+identity.webui|string||Native WebUI version text.
+profile.bridge_mode|boolean||Profile support for bridge-mode control; not current bridge state.
+profile.config_version|string||Native configuration version metadata.
+profile.nr5g_band_set|array_integer|NR band number|Native NR band-set diagnostic outside the canonical Matrix; GoForm derives it from reported NR cell rows. Not LTE CA Pool or proof of a configured NR restriction.
+profile.nr5g_rx0_rsrp_dbm|number|dBm|NR receive-chain zero reference-signal received power.
+profile.nr5g_rx1_rsrp_dbm|number|dBm|NR receive-chain one reference-signal received power.
+profile.nr_band_lock|boolean||Profile support for NR band restriction; not proof of a successful write.
+profile.temperature_ambient_c|number|degC|Ambient sensor temperature, distinct from CPU and radio sensors.
+profile.temperature_modem_4g_c|number|degC|Dedicated LTE modem sensor temperature; do not substitute CPU temperature.
+profile.temperature_pa1_c|number|degC|Power-amplifier sensor one temperature.
+profile.temperature_wifi_c|number|degC|Wi-Fi radio sensor temperature.
+profile.traffic_presence|boolean||Profile ability to detect packet traffic; not current data rate.
+profile.tx_pprach|number|dBm|LTE PRACH transmit-power component when separately reported.
+profile.tx_ppusch|number|dBm|LTE PUSCH transmit-power component when separately reported.
+profile.tx_psrs|number|dBm|LTE SRS transmit-power component when separately reported.
+radio.active_band_set|array_integer|LTE band number|Unique LTE bands observed active; does not establish configured CA Pool.
+radio.active_band_set_signature|string||Stable signature of observed active LTE band set.
+radio.band_set|array_integer|LTE band number|Legacy published LTE band-set observation; its exact native source must remain profile-qualified.
+radio.band_set_signature|string||Stable signature of the corresponding legacy band-set observation.
+radio.ca_active|boolean||Independent observed carrier-aggregation activity; configured pool size cannot establish it.
+radio.ca_band_signature|string||Signature of configured provider/device-limited LTE CA Pool, not active carriers.
+radio.ca_component_band_set|array_integer|LTE band number|Unique bands represented by observed component carriers.
+radio.ca_component_band_signature|string||Signature of unique bands represented by observed component carriers.
+radio.ca_component_count|integer|carrier|Count of actual observed component carriers, including repeated bands.
+radio.ca_composition_signature|string||Signature of actual component carrier identities; same-band carriers remain distinct.
+radio.ca_signature|string||Signature of configured provider/device-limited LTE CA Pool.
+radio.ca_source|string||Provenance of the observed CA state or composition; not a measurement.
+radio.ca_state_text|string||Native CA state description, separate from configured band pool.
+radio.carrier_count|integer|band|Count of unique configured CA Pool bands; NOT count of active component carriers.
+radio.carrier_rows|array_object||Observed PCell/SCell records with separate band/cell/PCI/channel identities; no missing identity may be invented.
+radio.configured_band_pool|array_integer|LTE band number|Provider-permitted bands intersect device capability and qualified native selection; never replace with all hardware bands or active carriers.
+radio.configured_band_pool_age_s|number|s|Elapsed age of the configured-pool observation; not router uptime.
+radio.configured_band_pool_last_sample_ts|number|unix_s|Timestamp of the actual pool observation; retained values retain their original timestamp.
+radio.configured_band_pool_signature|string||Stable signature of the configured provider/device-limited LTE pool.
+radio.configured_band_pool_source|string||Evidence source for configured LTE pool, including an explicitly approved profile assumption where applicable.
+radio.configured_band_pool_status|string||Availability/provenance state of configured LTE pool; unknown must not imply an unrestricted pool.
+radio.configured_ca_pool_display|string||Display representation of the canonical configured LTE pool; not another pool owner.
+radio.lte_num_rbs|integer|RB|Reported LTE scheduled resource-block quantity with the native time scope; not bandwidth or traffic rate.
+radio.network_type|string||Native radio access technology, preserving LTE/NSA/SA/no-service distinction; not Internet reachability.
+radio.nr5g_active|boolean||Observed NR activity; NR capability alone is insufficient.
+radio.nr_arfcn|integer|NR-ARFCN|Observed NR carrier channel; never infer a missing channel from band or LTE identity.
+radio.nr_band|integer|NR band number|Observed serving NR band; separate from configured NR selection.
+radio.nr_cell_id|integer||Observed NR cell identity; never substitute LTE cell ID.
+radio.nr_cqi|number||Reported or explicitly profile-derived NR channel-quality indicator; preserve provenance.
+radio.nr_mcs_dl|integer||NR downlink modulation/coding index; meaning depends on the qualified native table.
+radio.nr_mcs_ul|integer||NR uplink modulation/coding index; meaning depends on the qualified native table.
+radio.nr_mode|string||NR operating mode (NSA/SA/absent) as supported by native evidence.
+radio.nr_num_rbs|integer|RB|Reported NR scheduled resource-block quantity with native time scope; not nominal channel bandwidth.
+radio.nr_pci|integer||Observed NR physical cell identity; separate from LTE PCI.
+radio.nr_qam_dl|string||NR downlink modulation label derived from a qualified native report/table.
+radio.nr_qam_ul|string||NR uplink modulation label derived from a qualified native report/table.
+radio.nr_ri|number|layer|NR rank indicator when supplied; absence does not mean rank zero or one.
+radio.nr_rsrp_dbm|number|dBm|NR reference-signal received power.
+radio.nr_rsrq_db|number|dB|NR reference-signal received quality; preserve the qualified native scale conversion.
+radio.nr_sinr_db|number|dB|NR signal-to-interference-plus-noise ratio.
+radio.nr_state_text|string||Native NR state description; separate from Internet reachability.
+radio.nr_tx_power_dbm|number|dBm|Reported NR transmit power; do not substitute LTE power.
+radio.nsa_active|boolean||Observed non-standalone NR activity with LTE anchor.
+radio.sa_active|boolean||Observed standalone NR activity; not a declaration that application control supports SA.
+radio.selected_band_set|array_integer|LTE band number|Native configured LTE selection; provider-limited CA Pool is a separate derived fact.
+radio.selected_band_set_signature|string||Stable signature of native configured LTE selection.
+radio.serving_band|integer|LTE band number|Observed LTE serving/anchor band; not requested PBAND preference.
+radio.serving_band_signature|string||Signature of actual LTE serving/anchor band.
+radio.tx_power|number_or_string||Legacy LTE transmit-power report: numeric dBm on some drivers, native labelled component text on others. Do not invent an aggregate or discard component labels.
+rf.cell_id|integer||LTE E-UTRAN cell identity; distinct from eNodeB ID and PCI.
+rf.cqi|number||LTE channel-quality indicator; native versus estimated provenance must be preserved.
+rf.cqi0|number||LTE downlink codeword/stream zero CQI.
+rf.cqi1|number||LTE downlink codeword/stream one CQI; unsupported is not zero.
+rf.earfcn_dl|integer|EARFCN|LTE downlink channel number, not frequency in MHz.
+rf.earfcn_ul|integer|EARFCN|LTE uplink channel number, not frequency in MHz.
+rf.enb_id|integer||LTE eNodeB identity reported or derived by the qualified LTE cell-ID rule.
+rf.mcs_dl0|integer||LTE downlink codeword zero modulation/coding index.
+rf.mcs_dl1|integer||LTE downlink codeword one modulation/coding index; absent stream is not zero.
+rf.mcs_ul|integer||LTE uplink modulation/coding index.
+rf.pci|integer||LTE physical cell identity; not NR PCI or global cell ID.
+rf.qam_dl0|string||LTE downlink codeword zero modulation label.
+rf.qam_dl1|string||LTE downlink codeword one modulation label; unavailable stream remains unavailable.
+rf.qam_ul|string||LTE uplink modulation label.
+rf.ri|number|layer|LTE rank indicator, native or explicitly derived; missing rank must not become zero or one.
+rf.rsrp_dbm|number|dBm|LTE reference-signal received power.
+rf.rsrq_db|number|dB|LTE reference-signal received quality; native scaling is profile-specific.
+rf.rssi_dbm|number|dBm|LTE received signal strength, not reference-signal power.
+rf.sinr_db|number|dB|LTE signal-to-interference-plus-noise ratio.
+slow.antenna|string||Qualified reported antenna mode/status; not an antenna-position quality score.
+slow.dl_bandwidth_mhz|number|MHz|LTE downlink channel bandwidth, not throughput or resource-block activity.
+slow.dl_freq_mhz|number|MHz|LTE downlink carrier frequency.
+slow.mobile_data_enabled|boolean||Qualified mobile-data service state; native enable flag alone may be insufficient. Distinct from verified Internet reachability.
+slow.network_settings|object||Validated selected subscription/APN/roaming observation; actual APNs, credentials and subscription identifiers must not enter a shared profile.
+slow.nr_bandwidth_mhz|number|MHz|NR downlink channel bandwidth.
+slow.nr_cells|array_object||Native NR cell observations; partial identities remain partial and never borrow LTE PCI/channel.
+slow.nr_dl_freq_mhz|number|MHz|NR downlink carrier frequency.
+slow.nr_ul_bandwidth_mhz|number|MHz|NR uplink channel bandwidth.
+slow.nr_ul_freq_mhz|number|MHz|NR uplink carrier frequency.
+slow.router_cpu_load_pct|number|percent|Router CPU utilization; not host PC utilization.
+slow.router_memory_used_pct|number|percent|Router used-memory percentage; not host memory or free-memory percentage.
+slow.router_system_uptime_s|number|s|Router system uptime; not mobile packet-session uptime.
+slow.rrc|string||Reported or explicitly profile-derived radio resource-control state.
+slow.tac|integer_or_string||Tracking area code; preserve qualified native radix/representation and do not substitute cell identity.
+slow.temperature_cpu_c|number|degC|Router CPU sensor temperature; not LTE/NR modem temperature.
+slow.temperature_modem_5g_c|number|degC|Dedicated NR modem sensor temperature; unsupported when no distinct sensor is provided.
+slow.trans_mode|string||Qualified native LTE transmission-mode designation.
+slow.ul_bandwidth_mhz|number|MHz|LTE uplink channel bandwidth.
+slow.ul_freq_mhz|number|MHz|LTE uplink carrier frequency.
+slow.wan_ip|string||Assigned WAN IP observation; does not by itself establish Internet access. Actual addresses must not enter a shared profile.
+slow.wifi_24ghz_enabled|boolean||Native 2.4-GHz Wi-Fi enable state; not client traffic or Internet access.
+slow.wifi_5ghz_enabled|boolean||Native 5-GHz Wi-Fi enable state; not 5G cellular service.
+slow.wifi_6ghz_enabled|boolean||Native 6-GHz Wi-Fi enable state; unsupported is distinct from OFF.
+slow.wifi_enabled|boolean||Aggregate Wi-Fi state: any confirmed enabled radio proves ON; OFF needs complete relevant-radio evidence.
+traffic.connection_status_code|string||Native packet-connection status code retained as text with an explicit profile mapping.
+traffic.packet_session_connected|boolean||Native mobile packet-session connection evidence; not proof of Internet reachability.
+traffic.rx_bytes_per_sec|number|byte/s|Cellular downlink receive rate toward the user; not bits/s or Mbps.
+traffic.session_uptime_s|number|s|Packet-session duration with explicit source; not whole-router uptime.
+traffic.session_uptime_source|string||Native/derived provenance and availability of packet-session duration.
+traffic.traffic_accounting_source|string||Origin and scope of the volume-accounting counters.
+traffic.traffic_accounting_status|string||Availability/validity state of volume accounting.
+traffic.traffic_counter_interface_started_at|number|unix_s|Interface-counter epoch; used to distinguish reset from positive traffic delta.
+traffic.traffic_counter_period_started_at|number|unix_s|Accounting-period counter epoch; not sample time.
+traffic.traffic_day_used_bytes|number|byte|Qualified current-day combined usage in bytes.
+traffic.traffic_device_download_counter_bytes|number|byte|Cumulative native device downlink counter within its declared epoch.
+traffic.traffic_device_upload_counter_bytes|number|byte|Cumulative native device uplink counter within its declared epoch.
+traffic.traffic_invalid_reason|string||Reason a traffic measurement was rejected or unavailable; never a replacement measurement.
+traffic.traffic_month_download_bytes|number|byte|Downlink usage in the native monthly/accounting period.
+traffic.traffic_month_upload_bytes|number|byte|Uplink usage in the native monthly/accounting period.
+traffic.traffic_quota_start_day|integer|day of month|Configured quota/accounting-cycle start day, not current calendar day.
+traffic.traffic_rate_source|string||Native-rate or counter-delta provenance including the qualified interface.
+traffic.traffic_session_download_bytes|number|byte|Downlink byte total for the current packet session.
+traffic.traffic_session_duration_s|number|s|Duration of the traffic-accounting session.
+traffic.traffic_session_upload_bytes|number|byte|Uplink byte total for the current packet session.
+traffic.traffic_state_detail|string||Qualified traffic state/availability description.
+traffic.traffic_total_download_bytes|number|byte|Native cumulative downlink byte total with its actual reset/accounting scope.
+traffic.traffic_total_upload_bytes|number|byte|Native cumulative uplink byte total with its actual reset/accounting scope.
+traffic.traffic_valid|boolean||Whether the traffic observation meets its acquisition contract; zero valid traffic remains zero.
+traffic.traffic_volume_age_s|number|s|Age of the last actual volume observation.
+traffic.traffic_volume_last_sample_ts|number|unix_s|Time of last actual volume acquisition; retained values keep their timestamp.
+traffic.traffic_volume_next_sample_ts|number|unix_s|Scheduled next volume read; not evidence that it occurred.
+traffic.traffic_volume_poll_interval_s|number|s|Selected volume-acquisition interval, distinct from fast radio polling.
+traffic.tx_bytes_per_sec|number|byte/s|Cellular uplink transmit rate away from the user; not bits/s or Mbps.

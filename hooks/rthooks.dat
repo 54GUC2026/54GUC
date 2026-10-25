@@ -1,0 +1,6 @@
+{
+    # Override contrib runtime hooks for pyqtgraph.
+    # The Windows LUC build does not use pyqtgraph.multiprocess, and keeping
+    # that runtime hook can re-enter the frozen EXE as a second GUI process.
+    'pyqtgraph': [],
+}

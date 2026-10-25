@@ -1,0 +1,115 @@
+"""Sole field-set contract for active configuration proposals."""
+
+from __future__ import annotations
+
+
+CALIBRATION_PROFILE_KEYS: tuple[str, ...] = (
+    "signal_sinr_scale",
+    "signal_rsrp_scale",
+    "signal_rsrq_scale",
+    "signal_rssi_scale",
+    "rtt_warning_ms",
+    "rtt_cliff_ms",
+    "rtt_warning_clear_ms",
+    "rtt_cliff_clear_ms",
+    "sinr_feasibility_gate_db",
+    "v5_cq_bad_threshold",
+    "v5_cq_good_threshold",
+    "v5_cq_confidence_min_for_state",
+    "v5_low_rf_sinr_gate_db",
+    "congestion_qualifier_gap_high",
+    "congestion_qualifier_gap_mod",
+    "congestion_qualifier_rtt_high_ms",
+    "congestion_qualifier_rtt_mod_ms",
+    "congestion_qualifier_window_ticks",
+    "congestion_qualifier_persist_hits",
+    "congestion_qualifier_clear_ticks",
+    "congestion_qualifier_rsrq_gap_db",
+    "v5_rtt_congestion_window",
+    "v5_rtt_recent_window",
+    "calibration_min_samples",
+    "calibration_gap_threshold",
+    "actionable_modem_read_timeout_s",
+    "actionable_rtt_max_age_s",
+    "modem_reconnect_interval_s",
+)
+
+CALIBRATION_PROFILE_BLOCKED_KEYS: tuple[str, ...] = (
+    "emergency_sinr_floor",
+)
+
+PROFILE_TUNING_PROPOSAL_KEYS: tuple[str, ...] = (
+    "live_maintenance_interval_s",
+    "modem_live_register_interval_s",
+    "modem_live_register_stale_s",
+)
+
+OVERRIDABLE_POLICY_FIELDS = frozenset(
+    {
+        "rtt_warning_ms",
+        "rtt_cliff_ms",
+        "sinr_feasibility_gate_db",
+        "emergency_sinr_floor",
+        "emergency_reentry_guard_s",
+        "emergency_recovery_stable_s",
+        "soft_congestion_enabled",
+        "soft_congestion_lq_threshold",
+        "soft_congestion_rtt_min_ms",
+        "soft_congestion_entry_ticks",
+        "soft_congestion_clear_ticks",
+        "soft_congestion_min_dl_mbps",
+        "v5_congestion_enabled",
+        "v5_cq_window_samples",
+        "v5_cq_min_samples",
+        "v5_cq_coherence_min",
+        "v5_cq_mcs_positive_ratio_min",
+        "v5_cq_bad_threshold",
+        "v5_cq_good_threshold",
+        "congestion_qualifier_gap_high",
+        "congestion_qualifier_gap_mod",
+        "congestion_qualifier_rtt_high_ms",
+        "congestion_qualifier_rtt_mod_ms",
+        "congestion_qualifier_window_ticks",
+        "congestion_qualifier_persist_hits",
+        "congestion_qualifier_clear_ticks",
+        "congestion_qualifier_rsrq_gap_db",
+        "v5_rtt_congestion_window",
+        "v5_rtt_recent_window",
+        "v5_low_rf_sinr_gate_db",
+        "v5_good_dl_hold_enabled",
+        "v5_good_dl_hold_mbps",
+        "min_action_interval_s",
+        "autonomous_connect_settle_s",
+        "radio_change_settle_s",
+        "band_action_fail_limit",
+        "band_action_cooldown_s",
+        "restore_ca_retry_after_s",
+        "ca_lost_window_s",
+        "ca_lost_on_threshold",
+        "ca_lost_off_threshold",
+        "learning_enabled",
+        "learning_stm_min_attempts",
+        "learning_stm_bad_rate_threshold",
+        "learning_ltm_min_attempts",
+        "learning_ltm_bad_rate_threshold",
+        "learning_retry_min_elapsed_s",
+        "learning_retry_sinr_improvement_db",
+        "a1_night_antithrash_max_band_actions",
+        "a1_night_antithrash_hold_s",
+        "mikrotik_priority_rotate_max_in_window",
+        "mikrotik_priority_rotate_window_s",
+        "health_multi_target_enabled",
+        "health_ping_fail_threshold",
+        "health_ping_recover_threshold",
+        "health_hold_down_s",
+        "telemetry_rollup_enabled",
+    }
+)
+
+
+__all__ = (
+    "CALIBRATION_PROFILE_BLOCKED_KEYS",
+    "CALIBRATION_PROFILE_KEYS",
+    "OVERRIDABLE_POLICY_FIELDS",
+    "PROFILE_TUNING_PROPOSAL_KEYS",
+)

@@ -1,0 +1,258 @@
+{
+  "catalog_sha256": "88b3bae985b59bfcfd1a684f48896f5566728ec5614185b5cc21626df7d32b9e",
+  "components": [
+    {
+      "category": "runtime",
+      "evidence": "requirement:regex",
+      "license": "Apache-2.0 AND CNRI-Python",
+      "name": "regex",
+      "use": "time-bounded editable profile patterns"
+    },
+    {
+      "category": "runtime",
+      "evidence": "runtime",
+      "license": "PSF License 2.0",
+      "name": "Python",
+      "use": "application runtime"
+    },
+    {
+      "category": "runtime",
+      "evidence": "requirement:PySide6",
+      "license": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only",
+      "name": "PySide6",
+      "use": "Qt Python bindings"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:PySide6",
+      "license": "LGPL-3.0/GPL/commercial",
+      "name": "Qt",
+      "use": "GUI framework"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:PySide6",
+      "license": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only",
+      "name": "Shiboken6",
+      "use": "Qt binding runtime"
+    },
+    {
+      "category": "runtime",
+      "evidence": "requirement:pyqtgraph",
+      "license": "MIT",
+      "name": "pyqtgraph",
+      "use": "live charts"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:pyqtgraph",
+      "license": "BSD-3-Clause and bundled component licenses",
+      "name": "NumPy",
+      "use": "numeric and chart processing"
+    },
+    {
+      "category": "runtime",
+      "evidence": "requirement:requests",
+      "license": "Apache-2.0",
+      "name": "requests",
+      "use": "HTTP client"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:requests",
+      "license": "MIT",
+      "name": "urllib3",
+      "use": "HTTP transport"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:requests",
+      "license": "MPL-2.0",
+      "name": "certifi",
+      "use": "CA certificate bundle"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:requests",
+      "license": "MIT",
+      "name": "charset-normalizer",
+      "use": "HTTP text decoding"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:requests",
+      "license": "BSD-3-Clause",
+      "name": "idna",
+      "use": "internationalized host names"
+    },
+    {
+      "category": "runtime",
+      "evidence": "requirement:cryptography",
+      "license": "Apache-2.0 OR BSD-3-Clause",
+      "name": "cryptography",
+      "use": "Huawei APN request encryption"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:cryptography",
+      "license": "MIT-0",
+      "name": "cffi",
+      "use": "cryptography native bindings"
+    },
+    {
+      "category": "runtime",
+      "evidence": "dependency:cffi",
+      "license": "BSD-3-Clause",
+      "name": "pycparser",
+      "use": "CFFI parser dependency"
+    },
+    {
+      "category": "runtime",
+      "evidence": "requirement:routeros_api",
+      "license": "MIT",
+      "name": "RouterOS-api",
+      "use": "MikroTik RouterOS API client"
+    },
+    {
+      "category": "runtime_asset",
+      "evidence": "path:arch4/ngui/fonts/LICENSE-SIL-OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "name": "Liberation Mono",
+      "use": "bundled UI font"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "Apache-2.0",
+      "name": "OpenSSL",
+      "use": "TLS in the Python runtime"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "Public Domain",
+      "name": "SQLite",
+      "use": "runtime database support"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "Zlib",
+      "name": "zlib",
+      "use": "compressed runtime resources"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "BSD-like bzip2 license",
+      "name": "bzip2",
+      "use": "Python compression support"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "Public Domain and LGPL components",
+      "name": "XZ Utils / liblzma",
+      "use": "Python compression support"
+    },
+    {
+      "category": "runtime_component",
+      "evidence": "python_runtime",
+      "license": "MIT",
+      "name": "libffi",
+      "use": "Python foreign-function support"
+    },
+    {
+      "category": "build",
+      "evidence": "path:LUC-Windows-Native.spec",
+      "license": "GPL-2.0-or-later with bootloader exception",
+      "name": "PyInstaller",
+      "use": "Windows packaging"
+    },
+    {
+      "category": "development",
+      "evidence": "source_import",
+      "license": "PSF",
+      "name": "pywin32",
+      "use": "Windows integration and inspection"
+    },
+    {
+      "category": "development",
+      "evidence": "source_import",
+      "license": "MIT",
+      "name": "comtypes",
+      "use": "Windows COM inspection"
+    },
+    {
+      "category": "development",
+      "evidence": "source_import",
+      "license": "BSD-3-Clause",
+      "name": "pywinauto",
+      "use": "Windows UI verification"
+    },
+    {
+      "category": "development",
+      "evidence": "source_import",
+      "license": "BSD-3-Clause",
+      "name": "PyAutoGUI",
+      "use": "Windows UI verification"
+    },
+    {
+      "category": "development",
+      "evidence": "tooling",
+      "license": "MIT",
+      "name": "py-spy",
+      "use": "runtime diagnostics"
+    },
+    {
+      "category": "development",
+      "evidence": "requirement_file:requirements-ngui-visual.txt",
+      "license": "MIT-CMU",
+      "name": "Pillow",
+      "use": "visual comparison tooling"
+    },
+    {
+      "category": "development",
+      "evidence": "requirement_file:requirements-ngui-visual.txt",
+      "license": "Apache-2.0",
+      "name": "OpenCV Python",
+      "use": "visual comparison tooling"
+    },
+    {
+      "category": "development",
+      "evidence": "requirement_file:requirements-ngui-visual.txt",
+      "license": "Apache-2.0",
+      "name": "pytesseract",
+      "use": "visual OCR tooling"
+    },
+    {
+      "category": "development",
+      "evidence": "external_tool",
+      "license": "Apache-2.0",
+      "name": "Tesseract OCR",
+      "use": "visual OCR engine"
+    },
+    {
+      "category": "development",
+      "evidence": "source_import",
+      "license": "MIT",
+      "name": "pytest",
+      "use": "test suite"
+    },
+    {
+      "category": "development",
+      "evidence": "tooling",
+      "license": "MIT",
+      "name": "Ruff",
+      "use": "source linting"
+    }
+  ],
+  "generated_from": [
+    "requirements.txt",
+    "requirements-ngui-visual.txt",
+    "LUC-Windows-Native.spec",
+    "source and tooling imports"
+  ],
+  "owner": "tools.generate_open_source_manifest",
+  "schema": "OpenSourceDependencyManifest.v1"
+}

@@ -1,0 +1,452 @@
+# 54GUC User Manual
+
+Release: 54GUC_R25.7
+
+Prepared for: 54GUC R25.7
+
+Use the matching published release record for download availability and
+completed checks. Follow the instructions for the actual app you have.
+Existing activation and code formats are unchanged.
+
+This guide helps you connect, use the six pages and solve common problems.
+Start in Observe mode. It lets you look without changing the router.
+The hardware list says which controls work with each exact firmware.
+
+For pictures, use the Visual Tour on the project website. It may show an
+older build. The pictures are simplified maps, not live readings; follow
+this guide and the labels in your actual app.
+
+## Quick start
+
+1. Extract the complete 54GUC ZIP into a new folder on your Windows computer.
+   Do not run the app from inside the ZIP or mix files from different releases.
+2. Connect the computer to your router by Wi-Fi or Ethernet.
+3. Open `54GUC.exe`. Choose your router's make and exact model.
+4. Enter the router's local address, user name and login password. The router
+   password is needed each time you start the app; 54GUC does not save it.
+5. Choose **Observe only** for your first connection. Press **CONNECT** once.
+6. Wait for **Device: Connected**. The first readings appear as they arrive.
+   You do not need to connect twice.
+7. Check **Mobile network** separately. If it says Disconnected, 54GUC can
+   still be connected to the router. Read the explanation on Device and give
+   the router time to recover.
+
+A license is not needed to monitor. Changing router settings requires a valid
+license for that modem and **Live** mode. Radio changes can interrupt your
+Internet connection. Try them only when you can recover the router locally.
+
+## 1. Connect to the router
+
+On the **Device** page, the **Sign In** box asks for:
+
+- **Mfg** and **Model:** choose the router you actually have. A similar model
+  may use different controls.
+- **Address:** the router's local address, such as `192.168.8.1`. This is not
+  a website address. For a G5TC, include `http://` or `https://` if your router
+  uses it.
+- **User name** and **Password:** the same login you use for the router's own
+  settings page.
+- **Start mode:** **Observe only** reads information. **Live** also permits
+  supported changes when you have a valid license.
+
+**CONNECT** starts one login attempt. While it says Connecting, wait for the
+result. **CANCEL** stops an attempt that is still connecting. **DISCONNECT**
+ends 54GUC's session with the router; it does not turn off the router's mobile
+connection. Your entries remain in the form, so you can edit them and connect
+again.
+
+54GUC remembers the selected router, address, user name and supported
+SIM/network/APN choices. Review them on the next start. It does not save
+the router login password. A saved APN profile can keep its own APN
+password for the same SIM and network.
+
+The two connection lines mean different things:
+
+- **Device: Connected** means 54GUC can talk to the router.
+- **Mobile network: Connected** means the router reports mobile service.
+
+If mobile service disappears later, leave the app open. It continues to monitor
+the router and shows what it knows. A short outage does not need another click.
+
+If the G5TC cannot report its serial or IMEI during login, 54GUC may ask for
+the serial printed on the router. Enter it in the popup and press **Submit**.
+The same connection continues; do not press Connect again.
+
+## 2. SIM, network and APN
+
+For an ordinary first connection, leave **SIM & Network** alone. 54GUC reads
+the active SIM and the router's current settings as information arrives.
+An unchanged form does not ask the router to change its network.
+
+To change an editable setting, press **DISCONNECT**, make your choices, then
+press **CONNECT**. CONNECT submits the choices displayed in the form. While
+connected, these fields are read-only. 54GUC follows the SIM that is active
+in the router; it does not switch a physical SIM slot.
+
+**At home:** check the SIM country. If **Roaming** is Disabled, the network
+country follows the SIM country. Choose the network only if you need a specific
+provider. **AUTO** lets the router choose; **Specified** asks for the chosen
+provider.
+
+**While roaming:** set the SIM's home country, enable Roaming, choose the
+country you are visiting, then choose the network there. Choose **Specified**
+if you want that exact network. Use the APN settings required by your SIM or
+roaming plan. 54GUC does not guess an APN from the visited network.
+
+**APN profile:** choose a saved profile or **NEW**. NEW clears the APN fields;
+give the profile any name, then enter the APN, user name, password,
+authentication and IP protocol supplied for your plan. Profiles are kept
+separately for each SIM and network. Selecting an existing profile restores
+its fields. Saving a profile does not prove the router applied it.
+
+If you enter an incomplete or conflicting country, provider or network code,
+54GUC names the field to correct. It can still connect to the router using the
+router's existing mobile settings; it will not send the invalid change.
+Disconnect, correct the named field and Connect again if you want the change.
+Do not keep clicking Connect while a check is pending.
+
+A request is **Confirmed** only after the router reports the resulting
+settings. **Not confirmed** means you should read the explanation before
+retrying; a timed-out request may still have changed the router. If the router
+cannot read or edit an APN, the app tells you that the named profile was saved
+but not applied.
+
+On **MikroTik**, the SIM, network and APN fields are read-only in 54GUC.
+Change them in RouterOS, then let 54GUC read the result. A blank field means
+the router has not supplied that information; it does not mean the APN is blank.
+
+## 3. Reading the screen
+
+The six buttons across the top open **Device**, **Graphs**, **Dashboard**,
+**Developer Control**, **Referee** and **Brain**. Opening a page does not change
+the router. The header shows the current radio summary; the footer shows a
+short live summary.
+
+### The shared header
+
+The website's Visual Tour has a numbered map of these header fields.
+These explanations also work without opening that older picture:
+
+1. **4G / 5G badge:** the reported radio connection type.
+2. **Five lights:** a quick view of the same connection-quality estimate
+   shown under Conn Qual. More lit lights mean a higher estimate.
+3. **PBAND:** the current main 4G band, such as B3.
+4. **NR:** the reported 5G band, such as n78, when available.
+5. **CA Pool:** the allowed 4G bands. They are not all necessarily active.
+6. **Freq Set:** the nominal frequencies, in MHz, corresponding to the
+   CA Pool. These are band labels, not measured channel frequencies.
+7. **OK:** 54GUC is successfully reading the modem. This field can change
+   to Reconnecting or Degraded when modem reads fail. OK does not confirm
+   Internet availability, good signal or a successful radio change.
+8. **Conn Qual:** 54GUC's estimated connection quality as a percentage.
+   It is not a speed-test result or a percentage of time online.
+9. **Cycle / Uptime:** the modem-data update counter and the time this
+   54GUC runtime has been running. Uptime here is not the router's uptime.
+
+A dash, **N/A** or **Unknown** means there is no confirmed reading. It does
+not mean zero. **UNSUP.** means this router profile does not provide that
+field or action. A button may also be unavailable while another action is
+running, the reading is too old, the profile does not support it, or a license
+is required. Move the pointer over a disabled control for its reason.
+
+A **band** is a radio frequency group, shown as B3 or B20 for 4G and n78
+for 5G. **PBAND** is the main 4G band in use. **CA Pool** is the set of 4G
+bands the router may use; it does not mean all of them are active. The
+router can change its active bands on its own.
+
+## 4. Device page
+
+This is where you connect and check the router. The Sign In box is on the
+left. SIM & Network is next to it. Router identity, current readings and
+available controls appear as the router supplies them.
+
+- Check **Model**, **Firmware** and **Serial/IMEI** if you are unsure which
+  router is connected. Keep serial and IMEI private.
+- **Wi-Fi ON/OFF** changes a supported radio. Do not turn off the Wi-Fi that
+  your computer is using unless you have another way back into the router.
+  Wait for the router's reported state after a click.
+- **SCAN NETWORK** looks for a reachable router on the local network. It
+  does not log in or change the mobile network.
+- **Check router** checks what your router can report, without
+  changing its settings. The same button becomes **Cancel**, which
+  stops later checks after the current read finishes. When finished, a text
+  report opens with the findings and any missing information. The latest report
+  is saved as router_check.txt in the run's output folder and is included in
+  support bundles. A successful read does not prove every router feature works.
+- **SUPPORT BUNDLE** saves a ZIP for troubleshooting. Wait for the completed
+  message and review the ZIP before sending it privately to your beta contact.
+  It covers the selected run, up to its latest 24 hours. Private data is
+  removed at the final export stage; the original saved history is unchanged.
+- **BUY LICENSE** shows how to request a license; it does not take payment.
+  **LICENSE** activates one you received. **VERSION** shows the app version.
+  **UPDATES** checks availability but does not replace the running app.
+- **SHUTDOWN** closes 54GUC cleanly. Confirm the request and wait until it
+  has fully stopped before starting another copy. It does not reboot the router.
+
+The Router Checks list says which readings and controls the router profile
+supports. It is not a list of changes that 54GUC has made.
+
+### Activate the connected modem
+
+Monitoring does not need activation. For supported controls, connect the
+intended modem and wait until its serial or IMEI is shown. Choose **LICENSE**,
+paste its **NONCE-KEY** text or the complete **Nonce/Key** generator block, then
+choose **Validate & Activate**. Both parts are needed. Wait for **Licensed**;
+a copied code is not proof that it has been accepted.
+
+Activation is unchanged in this candidate. Keep an existing valid code for the
+same modem; there is no new signed-code format or required code replacement.
+Keep saved settings and History. A code for another modem does not activate
+this one, and a valid code does not add unsupported router controls.
+
+Licences are free and donations are optional. The existing **BUY LICENSE**
+button explains how to request a code; it does not require payment. The public
+source retains the generator and checking logic, so anyone with it can generate
+valid codes. That is intentional for this free open-source release.
+
+The software licence is separate: the planned public source uses GPL version
+3 only, as explained in its LICENSE and LICENSING.md. Source preparation does
+not announce a public download or a newly qualified Windows build.
+
+## 5. Graphs page
+
+The upper chart shows download, upload, estimated congestion, jitter and
+Internet status over time. The lower chart shows signal readings. The legend
+names each line. **NET** means the app's measured Internet state; it can be
+different from the Device connection to the router.
+
+Choose **5m**, **15m**, **1h**, **2h**, **6h**, **12h** or **24h** to change only
+the time shown on the charts. It does not erase history or change how often
+the router is read.
+
+- **SPEED TEST** opens a test in your browser and uses your data allowance.
+- **SINR VOICE** reads the signal-quality value aloud; press it again to stop.
+- **BAND SET** requests a new allowed 4G band pool on supported routers.
+  Enter bands such as `1,3,20`, press **APPLY**, check the request and confirm.
+  Wait for the final result. This does not force one main band.
+- **Traffic plan:** enter your monthly data allowance in GB and the day the
+  billing cycle starts, then press **APPLY**. DAY, MONTH, TOTAL and LEFT are
+  readings from the app and router. This does not buy data or change your
+  provider's plan. Where supported, MONTH can use the router's own counter.
+  Entering or editing a plan does not reset that confirmed monthly use.
+  The provider's own balance remains authoritative.
+
+A flat or missing line can mean the router did not supply a valid reading.
+Good signal does not guarantee good speed.
+
+## 6. Dashboard page
+
+Use Dashboard for the current connection at a glance. It groups band and
+cell details, signal, provider, quality estimates and **Recent Events**.
+A missing value is not a fault by itself.
+
+A contradictory band, cell or channel reading is not shown as a confirmed
+cell. A fresh, consistent reading restores the identity. Signal and traffic
+readings continue independently.
+
+**Recent Events** can tell you whether a change came from you, Brain or the
+router. A request and its final result may differ. If something changed
+unexpectedly, note its time before making another change.
+
+**Antenna Guide** helps compare two positions for a router or antenna. Press
+**START GUIDE**, keep the first position still until it has a reference, then
+move and hold the next position as directed. Compare the guidance and press
+**STOP GUIDE** on the same button when done. The app cannot move the antenna for you.
+
+LTE and 5G have separate numbers and bar columns. Each reference needs at least
+60 seconds and eight usable readings. After that, the bars compare each fresh
+reading with that reference as you turn the antenna; each number smooths its
+latest ten comparisons. Hold each new position for about 20-30 seconds.
+
+- **RF:** that radio's SINR, RSRP and RSRQ together. This is a relative position score,
+  not a direct dB meter; a small SINR change may make only a small bar movement.
+- **RI:** that radio's transmission rank, where provided. Scoring distinguishes rank 1
+  from rank 2 or higher; it does not distinguish rank 2 from rank 4.
+- **CA (info):** stays in the LTE column but is excluded from both numbers.
+  It shows whether the load-qualified LTE aggregation statistic is positive,
+  not a count of carriers or a continuous percentage meter. No test traffic is generated.
+- **LAT:** round-trip delay and download jitter. Network load and the Internet
+  path also affect it, so it cannot prove an antenna improvement by itself.
+  This is the router connection's shared latency measurement, not separate LTE/NR probes.
+
+Both columns use the same rules and scoring weights. Each uses its own RF and
+rank readings. If a router does not provide rank or latency, that input is left
+out and the remaining weights are normalized. A lane needs a usable reference
+as well as a current reading; an unavailable lane shows ----, not invented data.
+If a missing input becomes available later, restart the Guide at a steady
+position to include it in a new reference.
+
+An LTE band/PCI/EARFCN change resets LTE; an NR band/PCI/ARFCN or observed cell ID
+change resets 5G. NR loss clears the 5G reference. The other column can continue.
+Missing, invalid or stale RF readings are not used; either comparison stops being
+live after 10 seconds without a usable sample. 5G comparisons need observed NSA
+signal and serving-cell information; standalone 5G tuning is not supported.
+Stopping the Guide discards
+its reference. "Saved setup" here means the current in-memory comparison, not
+a stored antenna position or a router setting.
+
+**SITE REPORT** explains the connection from saved readings. Choose a time
+range, press **SITE REPORT**, wait for completion and open the report from its
+folder. It separates the latest saved readings from the selected period's
+history. Read the time shown beside the current readings.
+
+**What this router supports** lists the readings and controls available from
+the selected profile, including where **Check router** is unavailable. It is
+not proof that every listed action was tested on your physical router. Missing,
+unsupported and unconfirmed readings have different explanations; none means
+zero. A new installation may have little history to show. For detailed saved
+evidence and troubleshooting, use the Log Checker recommended for that release.
+
+## 7. Developer Control page
+
+This page has detailed readings and advanced controls. Reading it is safe.
+Sending a radio command can briefly remove Internet service. Use these
+controls only when you can reach the router if service does not return.
+
+For a supported manual change, fill in the target, press its action button,
+check the red **CONFIRM?** prompt, then confirm within five seconds. The
+first click is only a request to confirm. Wait for **Manual Action Result**
+and the router's actual band or cell before trying another command. A sent
+command is not proof that the router accepted or kept the change.
+
+- **APPLY LTE** can request a 4G band pool and, if entered, a main band.
+  **LTE AUTO** and **NR AUTO** restore the respective provider band pool after
+  returning that selection to router AUTO. The other radio selection is retained.
+  These operations require a qualified native AUTO command for the profile.
+- **LOCK/UNLOCK BAND** and **LOCK/UNLOCK CELL** are available only on
+  profiles that support them. A cell lock needs the correct cell details.
+- **REBOOT** restarts the router, so Internet stops while it starts again.
+- **Brain ON/OFF** allows or stops new automatic radio requests. Monitoring
+  and learning continue with Brain OFF. **Explore ON** allows extra supported
+  experiments and can cause more pauses; use it only while you can watch.
+- **PING** is a separate check you can start or stop. It does not control the
+  app's NET status. **SMS** controls appear only where supported.
+- **BAND SEQUENCE** adds bands in steps. **BAND SCHEDULE** adds or removes
+  allowed bands at saved times. Neither forces the router to stay on one main
+  band. **Cancel seq** stops a pending sequence; **Clear all** removes saved
+  schedule rules. Read each rule before enabling it; the router may still
+  choose among allowed bands.
+
+**APPLY NR** requests a supported 5G band on qualified profiles, including
+NX520 Build 250902. Enter only the **NR** band, such as **78** or **n78**,
+then press **APPLY NR**. **PBAND** and **CA POOL** are not needed for this
+action; the existing LTE band selection is preserved. Use **APPLY LTE**
+for LTE PBAND/CA POOL changes. Some routers show 5G readings but do not
+provide a qualified 5G band command; those controls remain unavailable.
+If the detected mode is 4G-only and the exact profile supports enabling 5G,
+APPLY NR enables it first, checks the result, then applies your band request.
+Otherwise it sends only the existing supported NR request. Use the router
+WebUI to change its mode when that control is unavailable.
+Startup itself preserves the router's detected mode and bands.
+
+On qualified profiles, **Mobile connect/Mobile disconnect** on Device changes
+the cellular connection while retaining the local router session. Disconnect
+removes Internet access. The button follows the router's observed setting;
+wait for confirmation before another request.
+
+## 8. Referee page
+
+Referee compares what actually happened on different bands, cells and times.
+**Absolute Quality (AQ)** is an overall service grade from -3 to +3.
+Positive grades are green, negative grades are red. It is a grade for that
+connection, not proof that Brain improved it.
+
+A complete measured period can have a grade. A short or incomplete period
+may show readings with no grade; missing is not zero. **Internet %** is the
+share of measured time the connection was up, not a count of successful
+pings.
+
+**Current Forecasts** are estimates based on earlier results. Confidence
+tells you how much suitable evidence exists; it is not a guarantee. Another
+cell or an earlier hour may behave differently. Use Referee to compare,
+not to assume the next band change will improve your connection.
+
+## 9. Brain page
+
+Brain shows its current choice and why. **Keep the current connection**
+is a real decision: it means Brain has no better proven, allowed choice now.
+Learning continues even when it does not change anything.
+
+**Learning Cycle & Proof** lists completed changes with before/after results.
+It includes changes made by you, the router and Brain. **Brain Impact**
+judges whether a Brain action helped; it is separate from the Absolute Quality
+grade on Referee. A connection can be good overall even if a particular
+Brain action made it worse.
+
+**History** and **Learning Events** show saved results and recent decisions.
+**VERIFY CURRENT HISTORY** checks whether this router's saved learning is
+available. Keep each router's results separate. If they are unavailable,
+monitoring can still start.
+
+Brain needs a valid modem-bound license before it can change the router.
+Use **Brain OFF** if you want to watch without new automatic changes.
+An action already in progress may finish first.
+
+## 10. If something goes wrong
+
+**Cannot connect to the router:** check that Windows is on the router's
+Wi-Fi or Ethernet, open the router's local address in a browser, then check
+the selected model, user name and password. Read the exact message in 54GUC.
+A failed login may stop early rather than waiting for repeated attempts.
+Do not choose a different model just to get past a rejection.
+
+**Device connected, Mobile network disconnected:** leave 54GUC open and
+read its progress. The router may still be working on mobile service. If
+you deliberately chose roaming or a specific network, read whether the
+router confirmed the request. For a new choice, Disconnect first, correct
+the form, then Connect. A failed request is not proof that the modem did
+nothing.
+
+**One value is missing:** wait for another reading. If it remains missing,
+check whether the router supports it. **UNSUP.** is different from a
+temporary unavailable reading.
+
+**An action did not work:** read Manual Action Result and the current router
+state. The router may reject a request or later choose another band. Do not
+repeat a radio command until you know the outcome.
+
+**The app needs to stop:** use **SHUTDOWN** or `54GUC_Control.cmd stop`.
+An action may need time to finish. Do not force-close or start a second copy
+while it is still stopping.
+
+If the problem continues, make a **SUPPORT BUNDLE** (or use
+`54GUC_Control.cmd bundle`). Review the newest ZIP in `support_bundles`.
+Send it privately to your beta contact with the app version, router model,
+firmware, time of the problem, what you did and what happened. Do not send
+router passwords, license files or SMS secrets.
+
+The first 10 seconds after connection let readings settle. New learning waits
+for that existing settling period; monitoring starts immediately.
+
+## 11. Upgrade or remove
+
+For an upgrade, stop the app cleanly. Extract the ZIP into a new folder
+beside the current one. Keep the shared `_new_horizon_history` folder;
+it holds your saved router results. Connect to the same router and check
+**VERIFY CURRENT HISTORY**. Learning loads after monitoring starts.
+Do not mix results from two different routers.
+
+Activation is unchanged. Keep an existing valid code and saved settings for
+the same modem. A failed code check is not a reason to delete settings or
+History, and this candidate does not require a replacement-code migration.
+
+To remove the app, stop it and delete its release folder. Saved login hints,
+plans and settings are under `%LOCALAPPDATA%\54GUC`; delete that folder only
+if you want to remove them. The shared history folder is separate; keep it
+for an upgrade.
+
+## Words used in the app
+
+- **APN:** the mobile-data settings for your SIM or roaming plan.
+- **CA Pool:** 4G bands the router is allowed to use; not all are active.
+- **CQ:** the app's current connection-quality estimate.
+- **NET:** the app's measured Internet up/down state.
+- **PBAND:** the main 4G band in use.
+- **SIM:** the card or active profile that supplies mobile service.
+- **Unknown / N/A / ---:** not confirmed or not available; not zero.
+- **UNSUP.:** this router profile does not support the field or action.
+
+The website's Functional Specification is a separate reference and may
+describe an older build. This guide describes the R25.7 candidate. Read
+SUPPORTED_HARDWARE_AND_LIMITATIONS.txt beside this file for the exact firmware
+and evidence levels. No new source or application URL is announced here.

@@ -1,0 +1,1954 @@
+[
+  {
+    "id": 1,
+    "address": "capability.dl_256qam",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Whether the qualified device supports LTE downlink 256-QAM; not current modulation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "dl_256qam"
+    ]
+  },
+  {
+    "id": 2,
+    "address": "capability.traffic_volume",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Whether volume counters are supported; not a traffic measurement.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_volume"
+    ]
+  },
+  {
+    "id": 3,
+    "address": "capability.ue_category",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "Qualified LTE UE category; not a measured link speed.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ue_category"
+    ]
+  },
+  {
+    "id": 4,
+    "address": "capability.ul_64qam",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Whether LTE uplink 64-QAM is supported; not current modulation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ul_64qam"
+    ]
+  },
+  {
+    "id": 5,
+    "address": "health.radio_connected",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Radio registration/connection evidence; does not establish working Internet access.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "radio_connected"
+    ]
+  },
+  {
+    "id": 6,
+    "address": "health.radio_state_text",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native radio connection state description; not Core Internet status.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "radio_state_text"
+    ]
+  },
+  {
+    "id": 7,
+    "address": "identity.firmware",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Router firmware version used for exact profile qualification.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "firmware"
+    ]
+  },
+  {
+    "id": 8,
+    "address": "identity.hardware_version",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Router hardware revision; not its serial number.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "hardware_version"
+    ]
+  },
+  {
+    "id": 9,
+    "address": "identity.imei",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Modem equipment identifier; preserve digits as text. Sensitive actual values must not be exported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "imei"
+    ]
+  },
+  {
+    "id": 10,
+    "address": "identity.imsi",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "SIM subscription identifier; never use as a physical router identity. Sensitive actual values must not be exported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "imsi"
+    ]
+  },
+  {
+    "id": 11,
+    "address": "identity.lan_mac",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "LAN interface MAC address. Sensitive actual values must not be exported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "lan_mac"
+    ]
+  },
+  {
+    "id": 12,
+    "address": "identity.model",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Qualified native model designation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "model"
+    ]
+  },
+  {
+    "id": 13,
+    "address": "identity.provider_name",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Reported serving provider name; does not prove a permitted band pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "provider_name"
+    ]
+  },
+  {
+    "id": 14,
+    "address": "identity.provider_plmn",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Serving PLMN as a five or six digit string; preserve leading zeroes.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "plmn",
+      "provider_plmn"
+    ]
+  },
+  {
+    "id": 15,
+    "address": "identity.router_model",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Router product model designation; distinct from modem chipset model.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "router_model"
+    ]
+  },
+  {
+    "id": 16,
+    "address": "identity.serial",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Permanent physical router serial; never substitute a SIM identifier. Sensitive actual values must not be exported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "serial"
+    ]
+  },
+  {
+    "id": 17,
+    "address": "identity.software",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native software identifier where distinct from firmware.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "software"
+    ]
+  },
+  {
+    "id": 18,
+    "address": "identity.software_version",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native software version text; do not interpret as a decimal number.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "software_version"
+    ]
+  },
+  {
+    "id": 19,
+    "address": "identity.webui",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native WebUI version text.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "webui"
+    ]
+  },
+  {
+    "id": 20,
+    "address": "profile.bridge_mode",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Profile support for bridge-mode control; not current bridge state.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "bridge_mode"
+    ]
+  },
+  {
+    "id": 21,
+    "address": "profile.config_version",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native configuration version metadata.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "config_version"
+    ]
+  },
+  {
+    "id": 22,
+    "address": "profile.nr5g_band_set",
+    "value_type": "array_integer",
+    "unit": "NR band number",
+    "meaning": "Native NR band-set diagnostic outside the canonical Matrix; GoForm derives it from reported NR cell rows. Not LTE CA Pool or proof of a configured NR restriction.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_band_set"
+    ]
+  },
+  {
+    "id": 23,
+    "address": "profile.nr5g_rx0_rsrp_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "NR receive-chain zero reference-signal received power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_rx0_rsrp_dbm"
+    ]
+  },
+  {
+    "id": 24,
+    "address": "profile.nr5g_rx1_rsrp_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "NR receive-chain one reference-signal received power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_rx1_rsrp_dbm"
+    ]
+  },
+  {
+    "id": 25,
+    "address": "profile.nr_band_lock",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Profile support for NR band restriction; not proof of a successful write.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_band_lock"
+    ]
+  },
+  {
+    "id": 26,
+    "address": "profile.temperature_ambient_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Ambient sensor temperature, distinct from CPU and radio sensors.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_ambient_c"
+    ]
+  },
+  {
+    "id": 27,
+    "address": "profile.temperature_modem_4g_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Dedicated LTE modem sensor temperature; do not substitute CPU temperature.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_modem_4g_c"
+    ]
+  },
+  {
+    "id": 28,
+    "address": "profile.temperature_pa1_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Power-amplifier sensor one temperature.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_pa1_c"
+    ]
+  },
+  {
+    "id": 29,
+    "address": "profile.temperature_wifi_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Wi-Fi radio sensor temperature.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_wifi_c"
+    ]
+  },
+  {
+    "id": 30,
+    "address": "profile.traffic_presence",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Profile ability to detect packet traffic; not current data rate.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_presence"
+    ]
+  },
+  {
+    "id": 31,
+    "address": "profile.tx_pprach",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "LTE PRACH transmit-power component when separately reported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tx_pprach"
+    ]
+  },
+  {
+    "id": 32,
+    "address": "profile.tx_ppusch",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "LTE PUSCH transmit-power component when separately reported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tx_ppusch"
+    ]
+  },
+  {
+    "id": 33,
+    "address": "profile.tx_psrs",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "LTE SRS transmit-power component when separately reported.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tx_psrs"
+    ]
+  },
+  {
+    "id": 34,
+    "address": "radio.active_band_set",
+    "value_type": "array_integer",
+    "unit": "LTE band number",
+    "meaning": "Unique LTE bands observed active; does not establish configured CA Pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "active_band_set"
+    ]
+  },
+  {
+    "id": 35,
+    "address": "radio.active_band_set_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Stable signature of observed active LTE band set.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "active_band_set_signature"
+    ]
+  },
+  {
+    "id": 36,
+    "address": "radio.band_set",
+    "value_type": "array_integer",
+    "unit": "LTE band number",
+    "meaning": "Legacy published LTE band-set observation; its exact native source must remain profile-qualified.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "band_set"
+    ]
+  },
+  {
+    "id": 37,
+    "address": "radio.band_set_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Stable signature of the corresponding legacy band-set observation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "band_set_signature"
+    ]
+  },
+  {
+    "id": 38,
+    "address": "radio.ca_active",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Independent observed carrier-aggregation activity; configured pool size cannot establish it.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_active"
+    ]
+  },
+  {
+    "id": 39,
+    "address": "radio.ca_band_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Signature of configured provider/device-limited LTE CA Pool, not active carriers.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_band_signature"
+    ]
+  },
+  {
+    "id": 40,
+    "address": "radio.ca_component_band_set",
+    "value_type": "array_integer",
+    "unit": "LTE band number",
+    "meaning": "Unique bands represented by observed component carriers.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_component_band_set"
+    ]
+  },
+  {
+    "id": 41,
+    "address": "radio.ca_component_band_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Signature of unique bands represented by observed component carriers.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_component_band_signature"
+    ]
+  },
+  {
+    "id": 42,
+    "address": "radio.ca_component_count",
+    "value_type": "integer",
+    "unit": "carrier",
+    "meaning": "Count of actual observed component carriers, including repeated bands.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_component_count"
+    ]
+  },
+  {
+    "id": 43,
+    "address": "radio.ca_composition_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Signature of actual component carrier identities; same-band carriers remain distinct.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_composition_signature"
+    ]
+  },
+  {
+    "id": 44,
+    "address": "radio.ca_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Signature of configured provider/device-limited LTE CA Pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_signature"
+    ]
+  },
+  {
+    "id": 45,
+    "address": "radio.ca_source",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Provenance of the observed CA state or composition; not a measurement.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_source"
+    ]
+  },
+  {
+    "id": 46,
+    "address": "radio.ca_state_text",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native CA state description, separate from configured band pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ca_state_text"
+    ]
+  },
+  {
+    "id": 47,
+    "address": "radio.carrier_count",
+    "value_type": "integer",
+    "unit": "band",
+    "meaning": "Count of unique configured CA Pool bands; NOT count of active component carriers.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "carrier_count"
+    ]
+  },
+  {
+    "id": 48,
+    "address": "radio.carrier_rows",
+    "value_type": "array_object",
+    "unit": null,
+    "meaning": "Observed PCell/SCell records with separate band/cell/PCI/channel identities; no missing identity may be invented.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "carrier_rows"
+    ],
+    "structure": {
+      "array": "native component carrier objects",
+      "members": {
+        "band": "integer LTE band",
+        "dl_mhz": "finite MHz or null",
+        "pcell": "boolean",
+        "pci": "integer PCI when reported",
+        "earfcn": "integer DL EARFCN when reported"
+      },
+      "identity": "keep separate same-band component rows; do not invent absent members"
+    }
+  },
+  {
+    "id": 49,
+    "address": "radio.configured_band_pool",
+    "value_type": "array_integer",
+    "unit": "LTE band number",
+    "meaning": "Provider-permitted bands intersect device capability and qualified native selection; never replace with all hardware bands or active carriers.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool"
+    ]
+  },
+  {
+    "id": 50,
+    "address": "radio.configured_band_pool_age_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Elapsed age of the configured-pool observation; not router uptime.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool_age_s"
+    ]
+  },
+  {
+    "id": 51,
+    "address": "radio.configured_band_pool_last_sample_ts",
+    "value_type": "number",
+    "unit": "unix_s",
+    "meaning": "Timestamp of the actual pool observation; retained values retain their original timestamp.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool_last_sample_ts"
+    ]
+  },
+  {
+    "id": 52,
+    "address": "radio.configured_band_pool_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Stable signature of the configured provider/device-limited LTE pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool_signature"
+    ]
+  },
+  {
+    "id": 53,
+    "address": "radio.configured_band_pool_source",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Evidence source for configured LTE pool, including an explicitly approved profile assumption where applicable.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool_source"
+    ]
+  },
+  {
+    "id": 54,
+    "address": "radio.configured_band_pool_status",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Availability/provenance state of configured LTE pool; unknown must not imply an unrestricted pool.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_band_pool_status"
+    ]
+  },
+  {
+    "id": 55,
+    "address": "radio.configured_ca_pool_display",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Display representation of the canonical configured LTE pool; not another pool owner.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "configured_ca_pool_display"
+    ]
+  },
+  {
+    "id": 56,
+    "address": "radio.lte_num_rbs",
+    "value_type": "integer",
+    "unit": "RB",
+    "meaning": "Reported LTE scheduled resource-block quantity with the native time scope; not bandwidth or traffic rate.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "lte_num_rbs"
+    ]
+  },
+  {
+    "id": 57,
+    "address": "radio.network_type",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native radio access technology, preserving LTE/NSA/SA/no-service distinction; not Internet reachability.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "network_type"
+    ]
+  },
+  {
+    "id": 58,
+    "address": "radio.nr5g_active",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Observed NR activity; NR capability alone is insufficient.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_active"
+    ]
+  },
+  {
+    "id": 59,
+    "address": "radio.nr_arfcn",
+    "value_type": "integer",
+    "unit": "NR-ARFCN",
+    "meaning": "Observed NR carrier channel; never infer a missing channel from band or LTE identity.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_arfcn",
+      "nr_arfcn"
+    ]
+  },
+  {
+    "id": 60,
+    "address": "radio.nr_band",
+    "value_type": "integer",
+    "unit": "NR band number",
+    "meaning": "Observed serving NR band; separate from configured NR selection.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_band",
+      "nr_band"
+    ]
+  },
+  {
+    "id": 61,
+    "address": "radio.nr_cell_id",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "Observed NR cell identity; never substitute LTE cell ID.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_cell_id",
+      "nr_cell_id"
+    ]
+  },
+  {
+    "id": 62,
+    "address": "radio.nr_cqi",
+    "value_type": "number",
+    "unit": null,
+    "meaning": "Reported or explicitly profile-derived NR channel-quality indicator; preserve provenance.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_cqi"
+    ]
+  },
+  {
+    "id": 63,
+    "address": "radio.nr_mcs_dl",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "NR downlink modulation/coding index; meaning depends on the qualified native table.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_mcs_dl"
+    ]
+  },
+  {
+    "id": 64,
+    "address": "radio.nr_mcs_ul",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "NR uplink modulation/coding index; meaning depends on the qualified native table.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_mcs_ul"
+    ]
+  },
+  {
+    "id": 65,
+    "address": "radio.nr_mode",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "NR operating mode (NSA/SA/absent) as supported by native evidence.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_mode",
+      "nr_mode"
+    ]
+  },
+  {
+    "id": 66,
+    "address": "radio.nr_num_rbs",
+    "value_type": "integer",
+    "unit": "RB",
+    "meaning": "Reported NR scheduled resource-block quantity with native time scope; not nominal channel bandwidth.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_num_rbs"
+    ]
+  },
+  {
+    "id": 67,
+    "address": "radio.nr_pci",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "Observed NR physical cell identity; separate from LTE PCI.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_pci",
+      "nr_pci"
+    ]
+  },
+  {
+    "id": 68,
+    "address": "radio.nr_qam_dl",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "NR downlink modulation label derived from a qualified native report/table.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_qam_dl"
+    ]
+  },
+  {
+    "id": 69,
+    "address": "radio.nr_qam_ul",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "NR uplink modulation label derived from a qualified native report/table.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_qam_ul"
+    ]
+  },
+  {
+    "id": 70,
+    "address": "radio.nr_ri",
+    "value_type": "number",
+    "unit": "layer",
+    "meaning": "NR rank indicator when supplied; absence does not mean rank zero or one.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_ri"
+    ]
+  },
+  {
+    "id": 71,
+    "address": "radio.nr_rsrp_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "NR reference-signal received power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_rsrp_dbm",
+      "nr_rsrp_dbm"
+    ]
+  },
+  {
+    "id": 72,
+    "address": "radio.nr_rsrq_db",
+    "value_type": "number",
+    "unit": "dB",
+    "meaning": "NR reference-signal received quality; preserve the qualified native scale conversion.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_rsrq_db",
+      "nr_rsrq_db"
+    ]
+  },
+  {
+    "id": 73,
+    "address": "radio.nr_sinr_db",
+    "value_type": "number",
+    "unit": "dB",
+    "meaning": "NR signal-to-interference-plus-noise ratio.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_sinr_db",
+      "nr_sinr_db"
+    ]
+  },
+  {
+    "id": 74,
+    "address": "radio.nr_state_text",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native NR state description; separate from Internet reachability.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_state_text"
+    ]
+  },
+  {
+    "id": 75,
+    "address": "radio.nr_tx_power_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "Reported NR transmit power; do not substitute LTE power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_tx_power_dbm"
+    ]
+  },
+  {
+    "id": 76,
+    "address": "radio.nsa_active",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Observed non-standalone NR activity with LTE anchor.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nsa_active"
+    ]
+  },
+  {
+    "id": 77,
+    "address": "radio.sa_active",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Observed standalone NR activity; not a declaration that application control supports SA.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "sa_active"
+    ]
+  },
+  {
+    "id": 78,
+    "address": "radio.selected_band_set",
+    "value_type": "array_integer",
+    "unit": "LTE band number",
+    "meaning": "Published effective LTE selection, with native-mask versus provider-limited scope declared by this profile rule; never active carriers or complete hardware capability.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "selected_band_set"
+    ]
+  },
+  {
+    "id": 79,
+    "address": "radio.selected_band_set_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Canonical band signature of the published effective LTE selection; retain the profile-declared selection scope.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "selected_band_set_signature"
+    ]
+  },
+  {
+    "id": 80,
+    "address": "radio.serving_band",
+    "value_type": "integer",
+    "unit": "LTE band number",
+    "meaning": "Observed LTE serving/anchor band; not requested PBAND preference.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "serving_band"
+    ]
+  },
+  {
+    "id": 81,
+    "address": "radio.serving_band_signature",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Signature of actual LTE serving/anchor band.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "serving_band_signature"
+    ]
+  },
+  {
+    "id": 82,
+    "address": "radio.tx_power",
+    "value_type": "number_or_string_or_object",
+    "unit": null,
+    "meaning": "LTE transmit power or labelled channel components. Preserve native component labels; never invent an aggregate.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tx_power"
+    ],
+    "structure": {
+      "object": "native channel label to finite dBm number",
+      "null_member": "unavailable component"
+    }
+  },
+  {
+    "id": 83,
+    "address": "rf.cell_id",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE E-UTRAN cell identity; distinct from eNodeB ID and PCI.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "cell_id"
+    ]
+  },
+  {
+    "id": 84,
+    "address": "rf.cqi",
+    "value_type": "number",
+    "unit": null,
+    "meaning": "LTE channel-quality indicator; native versus estimated provenance must be preserved.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "cqi"
+    ]
+  },
+  {
+    "id": 85,
+    "address": "rf.cqi0",
+    "value_type": "number",
+    "unit": null,
+    "meaning": "LTE downlink codeword/stream zero CQI.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "cqi0"
+    ]
+  },
+  {
+    "id": 86,
+    "address": "rf.cqi1",
+    "value_type": "number",
+    "unit": null,
+    "meaning": "LTE downlink codeword/stream one CQI; unsupported is not zero.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "cqi1"
+    ]
+  },
+  {
+    "id": 87,
+    "address": "rf.earfcn_dl",
+    "value_type": "integer",
+    "unit": "EARFCN",
+    "meaning": "LTE downlink channel number, not frequency in MHz.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "earfcn_dl"
+    ]
+  },
+  {
+    "id": 88,
+    "address": "rf.earfcn_ul",
+    "value_type": "integer",
+    "unit": "EARFCN",
+    "meaning": "LTE uplink channel number, not frequency in MHz.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "earfcn_ul"
+    ]
+  },
+  {
+    "id": 89,
+    "address": "rf.enb_id",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE eNodeB identity reported or derived by the qualified LTE cell-ID rule.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "enb_id"
+    ]
+  },
+  {
+    "id": 90,
+    "address": "rf.mcs_dl0",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE downlink codeword zero modulation/coding index.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "mcs_dl0"
+    ]
+  },
+  {
+    "id": 91,
+    "address": "rf.mcs_dl1",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE downlink codeword one modulation/coding index; absent stream is not zero.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "mcs_dl1"
+    ]
+  },
+  {
+    "id": 92,
+    "address": "rf.mcs_ul",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE uplink modulation/coding index.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "mcs_ul"
+    ]
+  },
+  {
+    "id": 93,
+    "address": "rf.pci",
+    "value_type": "integer",
+    "unit": null,
+    "meaning": "LTE physical cell identity; not NR PCI or global cell ID.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "pci"
+    ]
+  },
+  {
+    "id": 94,
+    "address": "rf.qam_dl0",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "LTE downlink codeword zero modulation label.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "qam_dl0"
+    ]
+  },
+  {
+    "id": 95,
+    "address": "rf.qam_dl1",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "LTE downlink codeword one modulation label; unavailable stream remains unavailable.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "qam_dl1"
+    ]
+  },
+  {
+    "id": 96,
+    "address": "rf.qam_ul",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "LTE uplink modulation label.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "qam_ul"
+    ]
+  },
+  {
+    "id": 97,
+    "address": "rf.ri",
+    "value_type": "number",
+    "unit": "layer",
+    "meaning": "LTE rank indicator, native or explicitly derived; missing rank must not become zero or one.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ri"
+    ]
+  },
+  {
+    "id": 98,
+    "address": "rf.rsrp_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "LTE reference-signal received power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "rsrp_dbm"
+    ]
+  },
+  {
+    "id": 99,
+    "address": "rf.rsrq_db",
+    "value_type": "number",
+    "unit": "dB",
+    "meaning": "LTE reference-signal received quality; native scaling is profile-specific.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "rsrq_db"
+    ]
+  },
+  {
+    "id": 100,
+    "address": "rf.rssi_dbm",
+    "value_type": "number",
+    "unit": "dBm",
+    "meaning": "LTE received signal strength, not reference-signal power.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "rssi_dbm"
+    ]
+  },
+  {
+    "id": 101,
+    "address": "rf.sinr_db",
+    "value_type": "number",
+    "unit": "dB",
+    "meaning": "LTE signal-to-interference-plus-noise ratio.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "sinr_db"
+    ]
+  },
+  {
+    "id": 102,
+    "address": "slow.antenna",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Qualified reported antenna mode/status; not an antenna-position quality score.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "antenna"
+    ]
+  },
+  {
+    "id": 103,
+    "address": "slow.dl_bandwidth_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "LTE downlink channel bandwidth, not throughput or resource-block activity.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "dl_bandwidth",
+      "dl_bandwidth_mhz"
+    ]
+  },
+  {
+    "id": 104,
+    "address": "slow.dl_freq_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "LTE downlink carrier frequency.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "dl_freq_mhz"
+    ]
+  },
+  {
+    "id": 105,
+    "address": "slow.mobile_data_enabled",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Qualified mobile-data service state; native enable flag alone may be insufficient. Distinct from verified Internet reachability.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "mobile_data_enabled"
+    ]
+  },
+  {
+    "id": 106,
+    "address": "slow.network_settings",
+    "value_type": "object",
+    "unit": null,
+    "meaning": "Validated selected subscription/APN/roaming observation; actual APNs, credentials and subscription identifiers must not enter a shared profile.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "network_settings"
+    ],
+    "structure": {
+      "schema": "NetworkSettingsObservation.v1",
+      "members": {
+        "subscription_key": "opaque subscription-scoped hash; never a physical router identity",
+        "selection": "auto/manual or null",
+        "target_plmn": "five/six digits or empty",
+        "roaming_enabled": "boolean or null",
+        "apn": "object or null"
+      },
+      "apn_members": {
+        "profile_id": "string",
+        "name": "string",
+        "apn": "string",
+        "username": "string",
+        "authentication": "none/pap/chap/auto or null",
+        "ip_protocol": "ipv4/ipv6/ipv4v6 or null",
+        "editable": "boolean"
+      },
+      "privacy": "definitions contain no actual subscription/APN/credential values"
+    }
+  },
+  {
+    "id": 107,
+    "address": "slow.nr_bandwidth_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "NR downlink channel bandwidth.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_bandwidth_mhz"
+    ]
+  },
+  {
+    "id": 108,
+    "address": "slow.nr_cells",
+    "value_type": "array_object",
+    "unit": null,
+    "meaning": "Native NR cell observations; partial identities remain partial and never borrow LTE PCI/channel.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr5g_cells",
+      "nr_cells"
+    ],
+    "structure": {
+      "array": "native NR component objects",
+      "members": {
+        "role": "reported PCell/SCell role when known",
+        "band": "integer NR band or null",
+        "pci": "integer NR PCI or null",
+        "arfcn": "integer NR channel or null",
+        "cell_id": "integer NR NCI or null",
+        "bandwidth_mhz": "finite MHz or null",
+        "rsrp_dbm": "finite dBm or null",
+        "rsrq_db": "finite dB or null",
+        "sinr_db": "finite dB or null"
+      },
+      "identity": "partial identities stay partial; no LTE borrowing"
+    }
+  },
+  {
+    "id": 109,
+    "address": "slow.nr_dl_freq_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "NR downlink carrier frequency.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_dl_freq_mhz"
+    ]
+  },
+  {
+    "id": 110,
+    "address": "slow.nr_ul_bandwidth_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "NR uplink channel bandwidth.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_ul_bandwidth_mhz"
+    ]
+  },
+  {
+    "id": 111,
+    "address": "slow.nr_ul_freq_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "NR uplink carrier frequency.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "nr_ul_freq_mhz"
+    ]
+  },
+  {
+    "id": 112,
+    "address": "slow.router_cpu_load_pct",
+    "value_type": "number",
+    "unit": "percent",
+    "meaning": "Router CPU utilization; not host PC utilization.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "router_cpu_load_pct"
+    ]
+  },
+  {
+    "id": 113,
+    "address": "slow.router_memory_used_pct",
+    "value_type": "number",
+    "unit": "percent",
+    "meaning": "Router used-memory percentage; not host memory or free-memory percentage.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "router_memory_used_pct"
+    ]
+  },
+  {
+    "id": 114,
+    "address": "slow.router_system_uptime_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Router system uptime; not mobile packet-session uptime.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "router_system_uptime_s"
+    ]
+  },
+  {
+    "id": 115,
+    "address": "slow.rrc",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Reported or explicitly profile-derived radio resource-control state.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "rrc"
+    ]
+  },
+  {
+    "id": 116,
+    "address": "slow.tac",
+    "value_type": "integer_or_string",
+    "unit": null,
+    "meaning": "Tracking area code; preserve qualified native radix/representation and do not substitute cell identity.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tac"
+    ]
+  },
+  {
+    "id": 117,
+    "address": "slow.temperature_cpu_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Router CPU sensor temperature; not LTE/NR modem temperature.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_cpu_c"
+    ]
+  },
+  {
+    "id": 118,
+    "address": "slow.temperature_modem_5g_c",
+    "value_type": "number",
+    "unit": "degC",
+    "meaning": "Dedicated NR modem sensor temperature; unsupported when no distinct sensor is provided.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "temperature_modem_5g_c"
+    ]
+  },
+  {
+    "id": 119,
+    "address": "slow.trans_mode",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Qualified native LTE transmission-mode designation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "trans_mode"
+    ]
+  },
+  {
+    "id": 120,
+    "address": "slow.ul_bandwidth_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "LTE uplink channel bandwidth.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ul_bandwidth",
+      "ul_bandwidth_mhz"
+    ]
+  },
+  {
+    "id": 121,
+    "address": "slow.ul_freq_mhz",
+    "value_type": "number",
+    "unit": "MHz",
+    "meaning": "LTE uplink carrier frequency.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "ul_freq_mhz"
+    ]
+  },
+  {
+    "id": 122,
+    "address": "slow.wan_ip",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Assigned WAN IP observation; does not by itself establish Internet access. Actual addresses must not enter a shared profile.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "wan_ip"
+    ]
+  },
+  {
+    "id": 123,
+    "address": "slow.wifi_24ghz_enabled",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Native 2.4-GHz Wi-Fi enable state; not client traffic or Internet access.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "wifi_24ghz_enabled"
+    ]
+  },
+  {
+    "id": 124,
+    "address": "slow.wifi_5ghz_enabled",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Native 5-GHz Wi-Fi enable state; not 5G cellular service.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "wifi_5ghz_enabled"
+    ]
+  },
+  {
+    "id": 125,
+    "address": "slow.wifi_6ghz_enabled",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Native 6-GHz Wi-Fi enable state; unsupported is distinct from OFF.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "wifi_6ghz_enabled"
+    ]
+  },
+  {
+    "id": 126,
+    "address": "slow.wifi_enabled",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Aggregate Wi-Fi state: any confirmed enabled radio proves ON; OFF needs complete relevant-radio evidence.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "wifi_enabled"
+    ]
+  },
+  {
+    "id": 127,
+    "address": "traffic.connection_status_code",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native packet-connection status code retained as text with an explicit profile mapping.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "connection_status_code"
+    ]
+  },
+  {
+    "id": 128,
+    "address": "traffic.packet_session_connected",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Native mobile packet-session connection evidence; not proof of Internet reachability.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "packet_session_connected"
+    ]
+  },
+  {
+    "id": 129,
+    "address": "traffic.rx_bytes_per_sec",
+    "value_type": "number",
+    "unit": "byte/s",
+    "meaning": "Cellular downlink receive rate toward the user; not bits/s or Mbps.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "rx_bytes_per_sec"
+    ]
+  },
+  {
+    "id": 130,
+    "address": "traffic.session_uptime_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Packet-session duration with explicit source; not whole-router uptime.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "session_uptime_s"
+    ]
+  },
+  {
+    "id": 131,
+    "address": "traffic.session_uptime_source",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native/derived provenance and availability of packet-session duration.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "session_uptime_source"
+    ]
+  },
+  {
+    "id": 132,
+    "address": "traffic.traffic_accounting_source",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Origin and scope of the volume-accounting counters.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_accounting_source"
+    ]
+  },
+  {
+    "id": 133,
+    "address": "traffic.traffic_accounting_status",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Availability/validity state of volume accounting.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_accounting_status"
+    ]
+  },
+  {
+    "id": 134,
+    "address": "traffic.traffic_counter_interface_started_at",
+    "value_type": "number",
+    "unit": "unix_s",
+    "meaning": "Interface-counter epoch; used to distinguish reset from positive traffic delta.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_counter_interface_started_at"
+    ]
+  },
+  {
+    "id": 135,
+    "address": "traffic.traffic_counter_period_started_at",
+    "value_type": "number",
+    "unit": "unix_s",
+    "meaning": "Accounting-period counter epoch; not sample time.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_counter_period_started_at"
+    ]
+  },
+  {
+    "id": 136,
+    "address": "traffic.traffic_day_used_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Qualified current-day combined usage in bytes.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_day_used_bytes"
+    ]
+  },
+  {
+    "id": 137,
+    "address": "traffic.traffic_device_download_counter_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Cumulative native device downlink counter within its declared epoch.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_device_download_counter_bytes"
+    ]
+  },
+  {
+    "id": 138,
+    "address": "traffic.traffic_device_upload_counter_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Cumulative native device uplink counter within its declared epoch.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_device_upload_counter_bytes"
+    ]
+  },
+  {
+    "id": 139,
+    "address": "traffic.traffic_invalid_reason",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Reason a traffic measurement was rejected or unavailable; never a replacement measurement.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_invalid_reason"
+    ]
+  },
+  {
+    "id": 140,
+    "address": "traffic.traffic_month_download_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Downlink usage in the native monthly/accounting period.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "monthly_rx_bytes",
+      "traffic_month_download_bytes"
+    ]
+  },
+  {
+    "id": 141,
+    "address": "traffic.traffic_month_upload_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Uplink usage in the native monthly/accounting period.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "monthly_tx_bytes",
+      "traffic_month_upload_bytes"
+    ]
+  },
+  {
+    "id": 142,
+    "address": "traffic.traffic_quota_start_day",
+    "value_type": "integer",
+    "unit": "day of month",
+    "meaning": "Configured quota/accounting-cycle start day, not current calendar day.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_quota_start_day"
+    ]
+  },
+  {
+    "id": 143,
+    "address": "traffic.traffic_rate_source",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Native-rate or counter-delta provenance including the qualified interface.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_rate_source"
+    ]
+  },
+  {
+    "id": 144,
+    "address": "traffic.traffic_session_download_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Downlink byte total for the current packet session.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_session_download_bytes"
+    ]
+  },
+  {
+    "id": 145,
+    "address": "traffic.traffic_session_duration_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Duration of the traffic-accounting session.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_session_duration_s"
+    ]
+  },
+  {
+    "id": 146,
+    "address": "traffic.traffic_session_upload_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Uplink byte total for the current packet session.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_session_upload_bytes"
+    ]
+  },
+  {
+    "id": 147,
+    "address": "traffic.traffic_state_detail",
+    "value_type": "string",
+    "unit": null,
+    "meaning": "Qualified traffic state/availability description.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_state_detail"
+    ]
+  },
+  {
+    "id": 148,
+    "address": "traffic.traffic_total_download_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Native cumulative downlink byte total with its actual reset/accounting scope.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_total_download_bytes"
+    ]
+  },
+  {
+    "id": 149,
+    "address": "traffic.traffic_total_upload_bytes",
+    "value_type": "number",
+    "unit": "byte",
+    "meaning": "Native cumulative uplink byte total with its actual reset/accounting scope.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_total_upload_bytes"
+    ]
+  },
+  {
+    "id": 150,
+    "address": "traffic.traffic_valid",
+    "value_type": "boolean",
+    "unit": null,
+    "meaning": "Whether the traffic observation meets its acquisition contract; zero valid traffic remains zero.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_valid"
+    ]
+  },
+  {
+    "id": 151,
+    "address": "traffic.traffic_volume_age_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Age of the last actual volume observation.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_volume_age_s"
+    ]
+  },
+  {
+    "id": 152,
+    "address": "traffic.traffic_volume_last_sample_ts",
+    "value_type": "number",
+    "unit": "unix_s",
+    "meaning": "Time of last actual volume acquisition; retained values keep their timestamp.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_volume_last_sample_ts"
+    ]
+  },
+  {
+    "id": 153,
+    "address": "traffic.traffic_volume_next_sample_ts",
+    "value_type": "number",
+    "unit": "unix_s",
+    "meaning": "Scheduled next volume read; not evidence that it occurred.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_volume_next_sample_ts"
+    ]
+  },
+  {
+    "id": 154,
+    "address": "traffic.traffic_volume_poll_interval_s",
+    "value_type": "number",
+    "unit": "s",
+    "meaning": "Selected volume-acquisition interval, distinct from fast radio polling.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "traffic_volume_poll_interval_s"
+    ]
+  },
+  {
+    "id": 155,
+    "address": "traffic.tx_bytes_per_sec",
+    "value_type": "number",
+    "unit": "byte/s",
+    "meaning": "Cellular uplink transmit rate away from the user; not bits/s or Mbps.",
+    "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+    "privacy": "definition_only_no_observed_values",
+    "aliases": [
+      "tx_bytes_per_sec"
+    ]
+  },
+  {
+    "id": 156,
+    "address": "identity.vendor",
+    "value_type": "string",
+    "unit": "text",
+    "meaning": "Native device manufacturer used with the existing identity guard."
+  },
+  {
+    "id": 157,
+    "address": "capability.supported_lte_bands",
+    "value_type": "array_integer",
+    "unit": "band numbers",
+    "meaning": "Complete device-supported LTE bands; never CA Pool or active carriers."
+  },
+  {
+    "id": 158,
+    "address": "capability.supported_nr_bands",
+    "value_type": "array_integer",
+    "unit": "band numbers",
+    "meaning": "Complete device-supported NR bands; never the selected NR subset."
+  },
+  {
+    "id": 159,
+    "address": "identity.profile_definition",
+    "value_type": "object",
+    "unit": null,
+    "meaning": "Application-owned provenance of the admitted portable profile snapshot, not a native device identity or editable computed hash."
+  }
+]

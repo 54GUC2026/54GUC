@@ -1,0 +1,19 @@
+# Keep source files stable when editing from WSL and building on Windows.
+* text=auto eol=lf
+
+# Preserve original upstream notice bytes and their recorded hashes.
+third_party/licenses/** -text
+
+# Binary/artifact files must never be line-ending normalized.
+*.7z binary
+*.db binary
+*.dll binary
+*.exe binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pyc binary
+*.pyd binary
+*.sqlite binary
+*.zip binary

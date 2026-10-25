@@ -1,0 +1,271 @@
+{
+  "title": "Portable modem profile metadata serialization contract",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "backend",
+    "vendor",
+    "family",
+    "model_contains",
+    "firmware_contains",
+    "display_name",
+    "capabilities",
+    "supported_fields",
+    "unsupported_fields",
+    "synthetic_fields",
+    "lte_band_capability_status",
+    "nr_band_capability_status",
+    "device_radio_class",
+    "band_capability_reference",
+    "notes",
+    "provenance",
+    "field_trust",
+    "action_trust",
+    "static_config",
+    "ue_capability",
+    "scheduler_signal_mode",
+    "provider_name_contains",
+    "provider_plmn_contains",
+    "os_name",
+    "os_version_contains",
+    "vendor_aliases",
+    "target_guard_model",
+    "supported_lte_bands",
+    "supported_nr_bands",
+    "provider_band_pool",
+    "network_settings",
+    "network_settings_writable",
+    "apn_profile_creation",
+    "network_settings_firmware",
+    "apn_write_requires_explicit_password",
+    "firmware_exact",
+    "hardware_exact",
+    "firmware_pattern",
+    "authentication_contract",
+    "login_wire_username",
+    "nr_cell_id_in_nsa",
+    "traffic_rate_mode",
+    "read_diagnostic_extra_oids"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "backend": {
+      "type": "string"
+    },
+    "driver": {
+      "type": "string"
+    },
+    "vendor": {
+      "type": "string"
+    },
+    "family": {
+      "type": "string"
+    },
+    "model_contains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "firmware_contains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "properties": {
+        "neighbor_detail_quality": {
+          "type": "string",
+          "enum": [
+            "advisory"
+          ]
+        }
+      }
+    },
+    "supported_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unsupported_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "synthetic_fields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "lte_band_capability_status": {
+      "type": "string",
+      "enum": [
+        "declared",
+        "unsupported",
+        "live_required"
+      ]
+    },
+    "nr_band_capability_status": {
+      "type": "string",
+      "enum": [
+        "declared",
+        "unsupported",
+        "live_required"
+      ]
+    },
+    "device_radio_class": {
+      "type": "string",
+      "enum": [
+        "4g_only",
+        "5g",
+        "unclassified"
+      ]
+    },
+    "band_capability_reference": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "string"
+    },
+    "field_trust": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "action_trust": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "static_config": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "enum": [
+          true,
+          false,
+          "unsupported"
+        ]
+      }
+    },
+    "ue_capability": {
+      "type": "object"
+    },
+    "scheduler_signal_mode": {
+      "type": "string"
+    },
+    "provider_name_contains": {
+      "type": "array"
+    },
+    "provider_plmn_contains": {
+      "type": "array"
+    },
+    "os_name": {
+      "type": "string"
+    },
+    "os_version_contains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vendor_aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_guard_model": {
+      "type": "string"
+    },
+    "supported_lte_bands": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "supported_nr_bands": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "provider_band_pool": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "network_settings": {
+      "type": "string"
+    },
+    "network_settings_writable": {
+      "type": "boolean"
+    },
+    "apn_profile_creation": {
+      "type": "boolean"
+    },
+    "network_settings_firmware": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "apn_write_requires_explicit_password": {
+      "type": "boolean"
+    },
+    "firmware_exact": {
+      "type": "string"
+    },
+    "hardware_exact": {
+      "type": "string"
+    },
+    "firmware_pattern": {
+      "type": "string"
+    },
+    "authentication_contract": {
+      "type": "string"
+    },
+    "login_wire_username": {
+      "type": "string"
+    },
+    "nr_cell_id_in_nsa": {
+      "type": "boolean"
+    },
+    "traffic_rate_mode": {
+      "type": "string",
+      "enum": [
+        "reported",
+        "cellular_interface_counter_delta"
+      ]
+    },
+    "read_diagnostic_extra_oids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,5098 @@
+{
+  "vocabulary": "54GUC.BoundedParserAlgorithms.v1",
+  "functions": {
+    "goform_source_observed": {
+      "body": [
+        {
+          "condition": {
+            "kind": "compare",
+            "operations": [
+              "not_in"
+            ],
+            "values": [
+              {
+                "kind": "name",
+                "name": "field"
+              },
+              {
+                "kind": "name",
+                "name": "raw"
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "value"
+            }
+          ],
+          "value": {
+            "key": {
+              "kind": "name",
+              "name": "field"
+            },
+            "kind": "index",
+            "object": {
+              "kind": "name",
+              "name": "raw"
+            }
+          }
+        },
+        {
+          "condition": {
+            "kind": "compare",
+            "operations": [
+              "is"
+            ],
+            "values": [
+              {
+                "kind": "name",
+                "name": "value"
+              },
+              {
+                "kind": "constant",
+                "value": null
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "arguments": [
+              {
+                "kind": "name",
+                "name": "value"
+              },
+              {
+                "kind": "name",
+                "name": "str"
+              }
+            ],
+            "function": {
+              "kind": "name",
+              "name": "isinstance"
+            },
+            "keywords": [],
+            "kind": "invoke"
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "compare",
+                "operations": [
+                  "not_in"
+                ],
+                "values": [
+                  {
+                    "arguments": [],
+                    "function": {
+                      "kind": "member",
+                      "name": "lower",
+                      "object": {
+                        "arguments": [],
+                        "function": {
+                          "kind": "member",
+                          "name": "strip",
+                          "object": {
+                            "kind": "name",
+                            "name": "value"
+                          }
+                        },
+                        "keywords": [],
+                        "kind": "invoke"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  },
+                  {
+                    "items": [
+                      {
+                        "kind": "constant",
+                        "value": ""
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "null"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "undefined"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "n/a"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "na"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "--"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "nan"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "inf"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "-inf"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "-999"
+                      }
+                    ],
+                    "kind": "set"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "arguments": [
+              {
+                "kind": "name",
+                "name": "value"
+              },
+              {
+                "items": [
+                  {
+                    "kind": "name",
+                    "name": "list"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "tuple"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "set"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "frozenset"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "dict"
+                  }
+                ],
+                "kind": "tuple"
+              }
+            ],
+            "function": {
+              "kind": "name",
+              "name": "isinstance"
+            },
+            "keywords": [],
+            "kind": "invoke"
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "arguments": [
+                  {
+                    "kind": "name",
+                    "name": "value"
+                  }
+                ],
+                "function": {
+                  "kind": "name",
+                  "name": "bool"
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "return",
+          "value": {
+            "kind": "constant",
+            "value": true
+          }
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "goform_source_observed",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "raw",
+          "field"
+        ],
+        "varargs": null
+      }
+    },
+    "is_limited_service": {
+      "body": [
+        {
+          "kind": "return",
+          "value": {
+            "arguments": [
+              {
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "limited[\\s_-]+service(?:[\\s_-]+[a-z0-9]+)*"
+                  },
+                  {
+                    "arguments": [],
+                    "function": {
+                      "kind": "member",
+                      "name": "strip",
+                      "object": {
+                        "arguments": [
+                          {
+                            "kind": "boolean",
+                            "operation": "or",
+                            "values": [
+                              {
+                                "kind": "name",
+                                "name": "value"
+                              },
+                              {
+                                "kind": "constant",
+                                "value": ""
+                              }
+                            ]
+                          }
+                        ],
+                        "function": {
+                          "kind": "name",
+                          "name": "str"
+                        },
+                        "keywords": [],
+                        "kind": "invoke"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  },
+                  {
+                    "kind": "member",
+                    "name": "IGNORECASE",
+                    "object": {
+                      "kind": "name",
+                      "name": "re"
+                    }
+                  }
+                ],
+                "function": {
+                  "kind": "member",
+                  "name": "fullmatch",
+                  "object": {
+                    "kind": "name",
+                    "name": "re"
+                  }
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            ],
+            "function": {
+              "kind": "name",
+              "name": "bool"
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "is_limited_service",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "value"
+        ],
+        "varargs": null
+      }
+    },
+    "normalize_band_list": {
+      "body": [
+        {
+          "condition": {
+            "kind": "unary",
+            "operation": "not",
+            "value": {
+              "arguments": [
+                {
+                  "kind": "name",
+                  "name": "values"
+                },
+                {
+                  "kind": "name",
+                  "name": "list"
+                }
+              ],
+              "function": {
+                "kind": "name",
+                "name": "isinstance"
+              },
+              "keywords": [],
+              "kind": "invoke"
+            }
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "items": [],
+                "kind": "list"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "out"
+            }
+          ],
+          "value": {
+            "items": [],
+            "kind": "list"
+          }
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "kind": "assign",
+                  "targets": [
+                    {
+                      "kind": "name",
+                      "name": "band"
+                    }
+                  ],
+                  "value": {
+                    "arguments": [
+                      {
+                        "kind": "boolean",
+                        "operation": "or",
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "raw"
+                          },
+                          {
+                            "kind": "constant",
+                            "value": 0
+                          }
+                        ]
+                      }
+                    ],
+                    "function": {
+                      "kind": "name",
+                      "name": "int"
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                }
+              ],
+              "else": [],
+              "finally": [],
+              "handlers": [
+                {
+                  "body": [
+                    {
+                      "kind": "assign",
+                      "targets": [
+                        {
+                          "kind": "name",
+                          "name": "band"
+                        }
+                      ],
+                      "value": {
+                        "kind": "constant",
+                        "value": 0
+                      }
+                    }
+                  ],
+                  "errors": [
+                    "Exception"
+                  ],
+                  "name": null
+                }
+              ],
+              "kind": "try"
+            },
+            {
+              "condition": {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "greater"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "band"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "not_in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "band"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "out"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "expression",
+                  "value": {
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "band"
+                      }
+                    ],
+                    "function": {
+                      "kind": "member",
+                      "name": "append",
+                      "object": {
+                        "kind": "name",
+                        "name": "out"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                }
+              ]
+            }
+          ],
+          "else": [],
+          "items": {
+            "kind": "name",
+            "name": "values"
+          },
+          "kind": "for",
+          "target": {
+            "kind": "name",
+            "name": "raw"
+          }
+        },
+        {
+          "kind": "expression",
+          "value": {
+            "arguments": [],
+            "function": {
+              "kind": "member",
+              "name": "sort",
+              "object": {
+                "kind": "name",
+                "name": "out"
+              }
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        },
+        {
+          "kind": "return",
+          "value": {
+            "kind": "name",
+            "name": "out"
+          }
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "normalize_band_list",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "values"
+        ],
+        "varargs": null
+      }
+    },
+    "normalize_network_type": {
+      "body": [
+        {
+          "condition": {
+            "arguments": [
+              {
+                "kind": "name",
+                "name": "value"
+              }
+            ],
+            "function": {
+              "kind": "name",
+              "name": "is_limited_service"
+            },
+            "keywords": [],
+            "kind": "invoke"
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": ""
+              }
+            }
+          ]
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "text"
+            }
+          ],
+          "value": {
+            "arguments": [],
+            "function": {
+              "kind": "member",
+              "name": "strip",
+              "object": {
+                "arguments": [
+                  {
+                    "kind": "boolean",
+                    "operation": "or",
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "function": {
+                  "kind": "name",
+                  "name": "str"
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "upper"
+            }
+          ],
+          "value": {
+            "arguments": [],
+            "function": {
+              "kind": "member",
+              "name": "upper",
+              "object": {
+                "kind": "name",
+                "name": "text"
+              }
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        },
+        {
+          "condition": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "in"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  },
+                  {
+                    "items": [
+                      {
+                        "kind": "constant",
+                        "value": "ENDC"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "EN-DC"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "LTE-NSA"
+                      }
+                    ],
+                    "kind": "set"
+                  }
+                ]
+              },
+              {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "constant",
+                        "value": "NSA"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "upper"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "boolean",
+                    "operation": "or",
+                    "values": [
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "constant",
+                            "value": "5G"
+                          },
+                          {
+                            "kind": "name",
+                            "name": "upper"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "constant",
+                            "value": "NR"
+                          },
+                          {
+                            "kind": "name",
+                            "name": "upper"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": "NR NSA (5G)"
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "equal"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "SA"
+                  }
+                ]
+              },
+              {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "constant",
+                        "value": "5G"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "upper"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "constant",
+                        "value": "SA"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "upper"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": "NR SA (5G)"
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "kind": "compare",
+            "operations": [
+              "in"
+            ],
+            "values": [
+              {
+                "kind": "name",
+                "name": "upper"
+              },
+              {
+                "items": [
+                  {
+                    "kind": "constant",
+                    "value": "LTE_A"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "LTE-A"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "LTEA"
+                  }
+                ],
+                "kind": "set"
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": "LTE (4G)"
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "kind": "boolean",
+            "operation": "and",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "in"
+                ],
+                "values": [
+                  {
+                    "kind": "constant",
+                    "value": "LTE"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  }
+                ]
+              },
+              {
+                "kind": "compare",
+                "operations": [
+                  "in"
+                ],
+                "values": [
+                  {
+                    "kind": "constant",
+                    "value": "CA"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  }
+                ]
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": "LTE (4G)"
+              }
+            }
+          ]
+        },
+        {
+          "condition": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "in"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  },
+                  {
+                    "items": [
+                      {
+                        "kind": "constant",
+                        "value": "4G"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "LTE"
+                      }
+                    ],
+                    "kind": "set"
+                  }
+                ]
+              },
+              {
+                "kind": "compare",
+                "operations": [
+                  "in"
+                ],
+                "values": [
+                  {
+                    "kind": "constant",
+                    "value": "LTE"
+                  },
+                  {
+                    "kind": "name",
+                    "name": "upper"
+                  }
+                ]
+              }
+            ]
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": "LTE (4G)"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "return",
+          "value": {
+            "kind": "constant",
+            "value": ""
+          }
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "normalize_network_type",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "value"
+        ],
+        "varargs": null
+      }
+    },
+    "nr_status": {
+      "kind": "function",
+      "name": "nr_status",
+      "parameters": {
+        "positional": [
+          "raw",
+          "network_type"
+        ],
+        "defaults": {},
+        "keywords": {
+          "profile_values": {
+            "kind": "constant",
+            "value": null
+          }
+        },
+        "varargs": null,
+        "kwargs": null
+      },
+      "body": [
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "raw_type"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "member",
+                  "object": {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "str"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "boolean",
+                        "operation": "or",
+                        "values": [
+                          {
+                            "kind": "invoke",
+                            "function": {
+                              "kind": "member",
+                              "object": {
+                                "kind": "name",
+                                "name": "raw"
+                              },
+                              "name": "get"
+                            },
+                            "arguments": [
+                              {
+                                "kind": "constant",
+                                "value": "network_type"
+                              }
+                            ],
+                            "keywords": []
+                          },
+                          {
+                            "kind": "invoke",
+                            "function": {
+                              "kind": "member",
+                              "object": {
+                                "kind": "name",
+                                "name": "raw"
+                              },
+                              "name": "get"
+                            },
+                            "arguments": [
+                              {
+                                "kind": "constant",
+                                "value": "current_network_mode"
+                              }
+                            ],
+                            "keywords": []
+                          },
+                          {
+                            "kind": "constant",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  "name": "strip"
+                },
+                "arguments": [],
+                "keywords": []
+              },
+              "name": "upper"
+            },
+            "arguments": [],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "is_nsa"
+            }
+          ],
+          "value": {
+            "kind": "compare",
+            "operations": [
+              "in"
+            ],
+            "values": [
+              {
+                "kind": "name",
+                "name": "raw_type"
+              },
+              {
+                "kind": "set",
+                "items": [
+                  {
+                    "kind": "constant",
+                    "value": "ENDC"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "EN-DC"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "LTE-NSA"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "is_sa"
+            }
+          ],
+          "value": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "equal"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "raw_type"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "SA"
+                  }
+                ]
+              },
+              {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "constant",
+                        "value": "5G"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "raw_type"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "constant",
+                        "value": "SA"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "raw_type"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "active"
+            }
+          ],
+          "value": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "name",
+                "name": "is_sa"
+              },
+              {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "is_nsa"
+                  },
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "not_equal"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "raw_type"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "LTE-NSA"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "mode"
+            }
+          ],
+          "value": {
+            "kind": "conditional",
+            "condition": {
+              "kind": "name",
+              "name": "is_nsa"
+            },
+            "yes": {
+              "kind": "constant",
+              "value": "NSA"
+            },
+            "no": {
+              "kind": "conditional",
+              "condition": {
+                "kind": "name",
+                "name": "is_sa"
+              },
+              "yes": {
+                "kind": "constant",
+                "value": "SA"
+              },
+              "no": {
+                "kind": "constant",
+                "value": ""
+              }
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "first_present",
+          "parameters": {
+            "positional": [],
+            "defaults": {},
+            "keywords": {},
+            "varargs": "keys",
+            "kwargs": null
+          },
+          "body": [
+            {
+              "kind": "for",
+              "target": {
+                "kind": "name",
+                "name": "key"
+              },
+              "items": {
+                "kind": "name",
+                "name": "keys"
+              },
+              "body": [
+                {
+                  "kind": "if",
+                  "condition": {
+                    "kind": "boolean",
+                    "operation": "and",
+                    "values": [
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "key"
+                          },
+                          {
+                            "kind": "name",
+                            "name": "raw"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "not_in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "index",
+                            "object": {
+                              "kind": "name",
+                              "name": "raw"
+                            },
+                            "key": {
+                              "kind": "name",
+                              "name": "key"
+                            }
+                          },
+                          {
+                            "kind": "tuple",
+                            "items": [
+                              {
+                                "kind": "constant",
+                                "value": null
+                              },
+                              {
+                                "kind": "constant",
+                                "value": ""
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "yes": [
+                    {
+                      "kind": "return",
+                      "value": {
+                        "kind": "index",
+                        "object": {
+                          "kind": "name",
+                          "name": "raw"
+                        },
+                        "key": {
+                          "kind": "name",
+                          "name": "key"
+                        }
+                      }
+                    }
+                  ],
+                  "no": []
+                }
+              ],
+              "else": []
+            },
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": null
+              }
+            }
+          ],
+          "emits": false
+        },
+        {
+          "kind": "function",
+          "name": "optional_int",
+          "parameters": {
+            "positional": [
+              "value"
+            ],
+            "defaults": {},
+            "keywords": {
+              "maximum": {
+                "kind": "constant",
+                "value": null
+              }
+            },
+            "varargs": null,
+            "kwargs": null
+          },
+          "body": [
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      },
+                      {
+                        "kind": "tuple",
+                        "items": [
+                          {
+                            "kind": "constant",
+                            "value": null
+                          },
+                          {
+                            "kind": "constant",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "isinstance"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "bool"
+                      }
+                    ],
+                    "keywords": []
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": null
+                  }
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "text"
+                }
+              ],
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "member",
+                  "object": {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "str"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  "name": "strip"
+                },
+                "arguments": [],
+                "keywords": []
+              }
+            },
+            {
+              "kind": "try",
+              "body": [
+                {
+                  "kind": "assign",
+                  "targets": [
+                    {
+                      "kind": "name",
+                      "name": "parsed"
+                    }
+                  ],
+                  "value": {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "int"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "text"
+                      },
+                      {
+                        "kind": "conditional",
+                        "condition": {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "member",
+                            "object": {
+                              "kind": "invoke",
+                              "function": {
+                                "kind": "member",
+                                "object": {
+                                  "kind": "name",
+                                  "name": "text"
+                                },
+                                "name": "lower"
+                              },
+                              "arguments": [],
+                              "keywords": []
+                            },
+                            "name": "startswith"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "constant",
+                              "value": "0x"
+                            }
+                          ],
+                          "keywords": []
+                        },
+                        "yes": {
+                          "kind": "constant",
+                          "value": 16
+                        },
+                        "no": {
+                          "kind": "constant",
+                          "value": 10
+                        }
+                      }
+                    ],
+                    "keywords": []
+                  }
+                }
+              ],
+              "handlers": [
+                {
+                  "errors": [
+                    "ValueError"
+                  ],
+                  "name": null,
+                  "body": [
+                    {
+                      "kind": "return",
+                      "value": {
+                        "kind": "constant",
+                        "value": null
+                      }
+                    }
+                  ]
+                }
+              ],
+              "else": [],
+              "finally": []
+            },
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "less"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "parsed"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "boolean",
+                    "operation": "and",
+                    "values": [
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "is_not"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "maximum"
+                          },
+                          {
+                            "kind": "constant",
+                            "value": null
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "greater"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "parsed"
+                          },
+                          {
+                            "kind": "name",
+                            "name": "maximum"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": null
+                  }
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "return",
+              "value": {
+                "kind": "name",
+                "name": "parsed"
+              }
+            }
+          ],
+          "emits": false
+        },
+        {
+          "kind": "function",
+          "name": "optional_metric",
+          "parameters": {
+            "positional": [
+              "value"
+            ],
+            "defaults": {},
+            "keywords": {
+              "minimum": null,
+              "maximum": null
+            },
+            "varargs": null,
+            "kwargs": null
+          },
+          "body": [
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      },
+                      {
+                        "kind": "tuple",
+                        "items": [
+                          {
+                            "kind": "constant",
+                            "value": null
+                          },
+                          {
+                            "kind": "constant",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "isinstance"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "value"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "bool"
+                      }
+                    ],
+                    "keywords": []
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": null
+                  }
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "text"
+                }
+              ],
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "member",
+                  "object": {
+                    "kind": "name",
+                    "name": "re"
+                  },
+                  "name": "sub"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "\\s*(?:MHz|dBm|dB)$"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": ""
+                  },
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "member",
+                      "object": {
+                        "kind": "invoke",
+                        "function": {
+                          "kind": "name",
+                          "name": "str"
+                        },
+                        "arguments": [
+                          {
+                            "kind": "name",
+                            "name": "value"
+                          }
+                        ],
+                        "keywords": []
+                      },
+                      "name": "strip"
+                    },
+                    "arguments": [],
+                    "keywords": []
+                  }
+                ],
+                "keywords": [
+                  [
+                    "flags",
+                    {
+                      "kind": "member",
+                      "object": {
+                        "kind": "name",
+                        "name": "re"
+                      },
+                      "name": "I"
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "kind": "try",
+              "body": [
+                {
+                  "kind": "assign",
+                  "targets": [
+                    {
+                      "kind": "name",
+                      "name": "parsed"
+                    }
+                  ],
+                  "value": {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "float"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "text"
+                      }
+                    ],
+                    "keywords": []
+                  }
+                }
+              ],
+              "handlers": [
+                {
+                  "errors": [
+                    "ValueError"
+                  ],
+                  "name": null,
+                  "body": [
+                    {
+                      "kind": "return",
+                      "value": {
+                        "kind": "constant",
+                        "value": null
+                      }
+                    }
+                  ]
+                }
+              ],
+              "else": [],
+              "finally": []
+            },
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "unary",
+                "operation": "not",
+                "value": {
+                  "kind": "compare",
+                  "operations": [
+                    "less_equal",
+                    "less_equal"
+                  ],
+                  "values": [
+                    {
+                      "kind": "name",
+                      "name": "minimum"
+                    },
+                    {
+                      "kind": "name",
+                      "name": "parsed"
+                    },
+                    {
+                      "kind": "name",
+                      "name": "maximum"
+                    }
+                  ]
+                }
+              },
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": null
+                  }
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "return",
+              "value": {
+                "kind": "name",
+                "name": "parsed"
+              }
+            }
+          ],
+          "emits": false
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "cell_id"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_int"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "nr5g_cell_id"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_CELL_ID"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "pci"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_int"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "nr5g_pci"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "network_Z5g_PCI"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_PCI"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "maximum",
+                {
+                  "kind": "constant",
+                  "value": 1007
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "arfcn"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_int"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "nr_ca_pcell_freq"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "nr5g_action_channel"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_dlEarfcn"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "maximum",
+                {
+                  "kind": "constant",
+                  "value": 3279165
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "band_value"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "first_present"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "nr_ca_pcell_band"
+              },
+              {
+                "kind": "conditional",
+                "condition": {
+                  "kind": "name",
+                  "name": "is_nsa"
+                },
+                "yes": {
+                  "kind": "constant",
+                  "value": "nr5g_action_nsa_band"
+                },
+                "no": {
+                  "kind": "constant",
+                  "value": "nr5g_action_band"
+                }
+              },
+              {
+                "kind": "constant",
+                "value": "nr5g_action_band"
+              },
+              {
+                "kind": "constant",
+                "value": "network_Z5g_CELLINFO_band"
+              },
+              {
+                "kind": "constant",
+                "value": "Z5g_CELLINFO_band"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "parsed_band"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "parse_nr_band"
+            },
+            "arguments": [
+              {
+                "kind": "name",
+                "name": "band_value"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "band"
+            }
+          ],
+          "value": {
+            "kind": "conditional",
+            "condition": {
+              "kind": "compare",
+              "operations": [
+                "greater"
+              ],
+              "values": [
+                {
+                  "kind": "name",
+                  "name": "parsed_band"
+                },
+                {
+                  "kind": "constant",
+                  "value": 0
+                }
+              ]
+            },
+            "yes": {
+              "kind": "name",
+              "name": "parsed_band"
+            },
+            "no": {
+              "kind": "constant",
+              "value": null
+            }
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rx0"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "5g_rx0_rsrp"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_rsrp"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 160.0
+                  }
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 20.0
+                  }
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rx1"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "5g_rx1_rsrp"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 160.0
+                  }
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 20.0
+                  }
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rsrp"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_rsrp"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "5g_rx0_rsrp"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "5g_rx1_rsrp"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 160.0
+                  }
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 20.0
+                  }
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rsrq"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_rsrq"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 50.0
+                  }
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "constant",
+                  "value": 10.0
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "sinr"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_SINR"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "Z5g_snr"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "unary",
+                  "operation": "negative",
+                  "value": {
+                    "kind": "constant",
+                    "value": 50.0
+                  }
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "constant",
+                  "value": 100.0
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "bandwidth_mhz"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "optional_metric"
+            },
+            "arguments": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "first_present"
+                },
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "nr5g_nsa_bandwidth"
+                  }
+                ],
+                "keywords": []
+              }
+            ],
+            "keywords": [
+              [
+                "minimum",
+                {
+                  "kind": "constant",
+                  "value": 0.01
+                }
+              ],
+              [
+                "maximum",
+                {
+                  "kind": "constant",
+                  "value": 400.0
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "values"
+            }
+          ],
+          "value": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "name",
+                "name": "profile_values"
+              },
+              {
+                "kind": "dictionary",
+                "items": []
+              }
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "cell_id"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_cell_id"
+              },
+              {
+                "kind": "name",
+                "name": "cell_id"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "pci"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_pci"
+              },
+              {
+                "kind": "name",
+                "name": "pci"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "arfcn"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_arfcn"
+              },
+              {
+                "kind": "name",
+                "name": "arfcn"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "band"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_band"
+              },
+              {
+                "kind": "name",
+                "name": "band"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rsrp"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_rsrp_dbm"
+              },
+              {
+                "kind": "name",
+                "name": "rsrp"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rsrq"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_rsrq_db"
+              },
+              {
+                "kind": "name",
+                "name": "rsrq"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "sinr"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "radio.nr_sinr_db"
+              },
+              {
+                "kind": "name",
+                "name": "sinr"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "bandwidth_mhz"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "slow.nr_bandwidth_mhz"
+              },
+              {
+                "kind": "name",
+                "name": "bandwidth_mhz"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rx0"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "profile.nr5g_rx0_rsrp_dbm"
+              },
+              {
+                "kind": "name",
+                "name": "rx0"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "rx1"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "member",
+              "object": {
+                "kind": "name",
+                "name": "values"
+              },
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "profile.nr5g_rx1_rsrp_dbm"
+              },
+              {
+                "kind": "name",
+                "name": "rx1"
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "cells"
+            }
+          ],
+          "value": {
+            "kind": "list",
+            "items": []
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "identity"
+            }
+          ],
+          "value": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "name",
+                "name": "band"
+              },
+              {
+                "kind": "name",
+                "name": "arfcn"
+              },
+              {
+                "kind": "name",
+                "name": "pci"
+              },
+              {
+                "kind": "name",
+                "name": "cell_id"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "has_cell_evidence"
+            }
+          ],
+          "value": {
+            "kind": "boolean",
+            "operation": "or",
+            "values": [
+              {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "any"
+                },
+                "arguments": [
+                  {
+                    "kind": "comprehension",
+                    "collection": "list",
+                    "loops": [
+                      {
+                        "target": {
+                          "kind": "name",
+                          "name": "value"
+                        },
+                        "items": {
+                          "kind": "name",
+                          "name": "identity"
+                        },
+                        "conditions": []
+                      }
+                    ],
+                    "value": {
+                      "kind": "compare",
+                      "operations": [
+                        "not_in"
+                      ],
+                      "values": [
+                        {
+                          "kind": "name",
+                          "name": "value"
+                        },
+                        {
+                          "kind": "tuple",
+                          "items": [
+                            {
+                              "kind": "constant",
+                              "value": null
+                            },
+                            {
+                              "kind": "constant",
+                              "value": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "key": null
+                  }
+                ],
+                "keywords": []
+              },
+              {
+                "kind": "boolean",
+                "operation": "and",
+                "values": [
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "bool"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "mode"
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "any"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "comprehension",
+                        "collection": "list",
+                        "loops": [
+                          {
+                            "target": {
+                              "kind": "name",
+                              "name": "value"
+                            },
+                            "items": {
+                              "kind": "name",
+                              "name": "identity"
+                            },
+                            "conditions": []
+                          }
+                        ],
+                        "value": {
+                          "kind": "compare",
+                          "operations": [
+                            "is_not"
+                          ],
+                          "values": [
+                            {
+                              "kind": "name",
+                              "name": "value"
+                            },
+                            {
+                              "kind": "constant",
+                              "value": null
+                            }
+                          ]
+                        },
+                        "key": null
+                      }
+                    ],
+                    "keywords": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "kind": "if",
+          "condition": {
+            "kind": "name",
+            "name": "has_cell_evidence"
+          },
+          "yes": [
+            {
+              "kind": "expression",
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "member",
+                  "object": {
+                    "kind": "name",
+                    "name": "cells"
+                  },
+                  "name": "append"
+                },
+                "arguments": [
+                  {
+                    "kind": "dictionary",
+                    "items": [
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "role"
+                        },
+                        {
+                          "kind": "constant",
+                          "value": "PCell"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "band"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "band"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "arfcn"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "arfcn"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "pci"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "pci"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "bandwidth_mhz"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "bandwidth_mhz"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rsrp_dbm"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "rsrp"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rsrq_db"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "rsrq"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "sinr_db"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "sinr"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rx0_rsrp_dbm"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "rx0"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rx1_rsrp_dbm"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "rx1"
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                "keywords": []
+              }
+            }
+          ],
+          "no": []
+        },
+        {
+          "kind": "for",
+          "target": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "name",
+                "name": "idx"
+              },
+              {
+                "kind": "name",
+                "name": "cell"
+              }
+            ]
+          },
+          "items": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "enumerate"
+            },
+            "arguments": [
+              {
+                "kind": "comprehension",
+                "collection": "list",
+                "loops": [
+                  {
+                    "target": {
+                      "kind": "name",
+                      "name": "part"
+                    },
+                    "items": {
+                      "kind": "invoke",
+                      "function": {
+                        "kind": "member",
+                        "object": {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "str"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "boolean",
+                              "operation": "or",
+                              "values": [
+                                {
+                                  "kind": "invoke",
+                                  "function": {
+                                    "kind": "member",
+                                    "object": {
+                                      "kind": "name",
+                                      "name": "raw"
+                                    },
+                                    "name": "get"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "kind": "constant",
+                                      "value": "nr_multi_ca_scell_info"
+                                    }
+                                  ],
+                                  "keywords": []
+                                },
+                                {
+                                  "kind": "constant",
+                                  "value": ""
+                                }
+                              ]
+                            }
+                          ],
+                          "keywords": []
+                        },
+                        "name": "split"
+                      },
+                      "arguments": [
+                        {
+                          "kind": "constant",
+                          "value": ";"
+                        }
+                      ],
+                      "keywords": []
+                    },
+                    "conditions": [
+                      {
+                        "kind": "invoke",
+                        "function": {
+                          "kind": "member",
+                          "object": {
+                            "kind": "name",
+                            "name": "part"
+                          },
+                          "name": "strip"
+                        },
+                        "arguments": [],
+                        "keywords": []
+                      }
+                    ]
+                  }
+                ],
+                "value": {
+                  "kind": "name",
+                  "name": "part"
+                },
+                "key": null
+              }
+            ],
+            "keywords": []
+          },
+          "body": [
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "parts"
+                }
+              ],
+              "value": {
+                "kind": "comprehension",
+                "collection": "list",
+                "loops": [
+                  {
+                    "target": {
+                      "kind": "name",
+                      "name": "part"
+                    },
+                    "items": {
+                      "kind": "invoke",
+                      "function": {
+                        "kind": "member",
+                        "object": {
+                          "kind": "name",
+                          "name": "cell"
+                        },
+                        "name": "split"
+                      },
+                      "arguments": [
+                        {
+                          "kind": "constant",
+                          "value": ","
+                        }
+                      ],
+                      "keywords": []
+                    },
+                    "conditions": []
+                  }
+                ],
+                "value": {
+                  "kind": "invoke",
+                  "function": {
+                    "kind": "member",
+                    "object": {
+                      "kind": "name",
+                      "name": "part"
+                    },
+                    "name": "strip"
+                  },
+                  "arguments": [],
+                  "keywords": []
+                },
+                "key": null
+              }
+            },
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "compare",
+                "operations": [
+                  "less"
+                ],
+                "values": [
+                  {
+                    "kind": "invoke",
+                    "function": {
+                      "kind": "name",
+                      "name": "len"
+                    },
+                    "arguments": [
+                      {
+                        "kind": "name",
+                        "name": "parts"
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  {
+                    "kind": "constant",
+                    "value": 10
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "continue"
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "cell_band"
+                }
+              ],
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "parse_nr_band"
+                },
+                "arguments": [
+                  {
+                    "kind": "index",
+                    "object": {
+                      "kind": "name",
+                      "name": "parts"
+                    },
+                    "key": {
+                      "kind": "constant",
+                      "value": 3
+                    }
+                  }
+                ],
+                "keywords": []
+              }
+            },
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "compare",
+                "operations": [
+                  "less_equal"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "cell_band"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": 0
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "continue"
+                }
+              ],
+              "no": []
+            },
+            {
+              "kind": "expression",
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "member",
+                  "object": {
+                    "kind": "name",
+                    "name": "cells"
+                  },
+                  "name": "append"
+                },
+                "arguments": [
+                  {
+                    "kind": "dictionary",
+                    "items": [
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "role"
+                        },
+                        {
+                          "kind": "format_join",
+                          "parts": [
+                            {
+                              "kind": "constant",
+                              "value": "SCell"
+                            },
+                            {
+                              "kind": "format_value",
+                              "value": {
+                                "kind": "binary",
+                                "operation": "add",
+                                "left": {
+                                  "kind": "name",
+                                  "name": "idx"
+                                },
+                                "right": {
+                                  "kind": "constant",
+                                  "value": 1
+                                }
+                              },
+                              "format": null,
+                              "conversion": -1
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "band"
+                        },
+                        {
+                          "kind": "name",
+                          "name": "cell_band"
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "arfcn"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_int"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 4
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "maximum",
+                              {
+                                "kind": "constant",
+                                "value": 3279165
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "pci"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_int"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 1
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "maximum",
+                              {
+                                "kind": "constant",
+                                "value": 1007
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "bandwidth_mhz"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_metric"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 5
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "minimum",
+                              {
+                                "kind": "constant",
+                                "value": 0.01
+                              }
+                            ],
+                            [
+                              "maximum",
+                              {
+                                "kind": "constant",
+                                "value": 400.0
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rsrp_dbm"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_metric"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 7
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "minimum",
+                              {
+                                "kind": "unary",
+                                "operation": "negative",
+                                "value": {
+                                  "kind": "constant",
+                                  "value": 160.0
+                                }
+                              }
+                            ],
+                            [
+                              "maximum",
+                              {
+                                "kind": "unary",
+                                "operation": "negative",
+                                "value": {
+                                  "kind": "constant",
+                                  "value": 20.0
+                                }
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "rsrq_db"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_metric"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 8
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "minimum",
+                              {
+                                "kind": "unary",
+                                "operation": "negative",
+                                "value": {
+                                  "kind": "constant",
+                                  "value": 50.0
+                                }
+                              }
+                            ],
+                            [
+                              "maximum",
+                              {
+                                "kind": "constant",
+                                "value": 10.0
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "kind": "constant",
+                          "value": "sinr_db"
+                        },
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "name",
+                            "name": "optional_metric"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "index",
+                              "object": {
+                                "kind": "name",
+                                "name": "parts"
+                              },
+                              "key": {
+                                "kind": "constant",
+                                "value": 9
+                              }
+                            }
+                          ],
+                          "keywords": [
+                            [
+                              "minimum",
+                              {
+                                "kind": "unary",
+                                "operation": "negative",
+                                "value": {
+                                  "kind": "constant",
+                                  "value": 50.0
+                                }
+                              }
+                            ],
+                            [
+                              "maximum",
+                              {
+                                "kind": "constant",
+                                "value": 100.0
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                "keywords": []
+              }
+            }
+          ],
+          "else": []
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "band_set"
+            }
+          ],
+          "value": {
+            "kind": "invoke",
+            "function": {
+              "kind": "name",
+              "name": "normalize_band_list"
+            },
+            "arguments": [
+              {
+                "kind": "comprehension",
+                "collection": "list",
+                "loops": [
+                  {
+                    "target": {
+                      "kind": "name",
+                      "name": "cell"
+                    },
+                    "items": {
+                      "kind": "name",
+                      "name": "cells"
+                    },
+                    "conditions": []
+                  }
+                ],
+                "value": {
+                  "kind": "invoke",
+                  "function": {
+                    "kind": "name",
+                    "name": "int"
+                  },
+                  "arguments": [
+                    {
+                      "kind": "boolean",
+                      "operation": "or",
+                      "values": [
+                        {
+                          "kind": "invoke",
+                          "function": {
+                            "kind": "member",
+                            "object": {
+                              "kind": "name",
+                              "name": "cell"
+                            },
+                            "name": "get"
+                          },
+                          "arguments": [
+                            {
+                              "kind": "constant",
+                              "value": "band"
+                            }
+                          ],
+                          "keywords": []
+                        },
+                        {
+                          "kind": "constant",
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "keywords": []
+                },
+                "key": null
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "kind": "if",
+          "condition": {
+            "kind": "boolean",
+            "operation": "and",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "is"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "band"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": null
+                  }
+                ]
+              },
+              {
+                "kind": "name",
+                "name": "band_set"
+              }
+            ]
+          },
+          "yes": [
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "band"
+                }
+              ],
+              "value": {
+                "kind": "invoke",
+                "function": {
+                  "kind": "name",
+                  "name": "int"
+                },
+                "arguments": [
+                  {
+                    "kind": "index",
+                    "object": {
+                      "kind": "name",
+                      "name": "band_set"
+                    },
+                    "key": {
+                      "kind": "constant",
+                      "value": 0
+                    }
+                  }
+                ],
+                "keywords": []
+              }
+            }
+          ],
+          "no": []
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "state_text"
+            }
+          ],
+          "value": {
+            "kind": "constant",
+            "value": ""
+          }
+        },
+        {
+          "kind": "if",
+          "condition": {
+            "kind": "boolean",
+            "operation": "and",
+            "values": [
+              {
+                "kind": "compare",
+                "operations": [
+                  "equal"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "mode"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "NSA"
+                  }
+                ]
+              },
+              {
+                "kind": "name",
+                "name": "active"
+              }
+            ]
+          },
+          "yes": [
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "state_text"
+                }
+              ],
+              "value": {
+                "kind": "constant",
+                "value": "ACTIVE"
+              }
+            }
+          ],
+          "no": [
+            {
+              "kind": "if",
+              "condition": {
+                "kind": "compare",
+                "operations": [
+                  "equal"
+                ],
+                "values": [
+                  {
+                    "kind": "name",
+                    "name": "mode"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": "NSA"
+                  }
+                ]
+              },
+              "yes": [
+                {
+                  "kind": "assign",
+                  "targets": [
+                    {
+                      "kind": "name",
+                      "name": "state_text"
+                    }
+                  ],
+                  "value": {
+                    "kind": "constant",
+                    "value": "AVAILABLE"
+                  }
+                }
+              ],
+              "no": [
+                {
+                  "kind": "if",
+                  "condition": {
+                    "kind": "compare",
+                    "operations": [
+                      "equal"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "mode"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": "SA"
+                      }
+                    ]
+                  },
+                  "yes": [
+                    {
+                      "kind": "assign",
+                      "targets": [
+                        {
+                          "kind": "name",
+                          "name": "state_text"
+                        }
+                      ],
+                      "value": {
+                        "kind": "constant",
+                        "value": "ACTIVE"
+                      }
+                    }
+                  ],
+                  "no": [
+                    {
+                      "kind": "if",
+                      "condition": {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "constant",
+                            "value": "5G"
+                          },
+                          {
+                            "kind": "invoke",
+                            "function": {
+                              "kind": "member",
+                              "object": {
+                                "kind": "name",
+                                "name": "network_type"
+                              },
+                              "name": "upper"
+                            },
+                            "arguments": [],
+                            "keywords": []
+                          }
+                        ]
+                      },
+                      "yes": [
+                        {
+                          "kind": "assign",
+                          "targets": [
+                            {
+                              "kind": "name",
+                              "name": "state_text"
+                            }
+                          ],
+                          "value": {
+                            "kind": "constant",
+                            "value": "AVAILABLE"
+                          }
+                        }
+                      ],
+                      "no": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "return",
+          "value": {
+            "kind": "dictionary",
+            "items": [
+              [
+                {
+                  "kind": "constant",
+                  "value": "active"
+                },
+                {
+                  "kind": "invoke",
+                  "function": {
+                    "kind": "name",
+                    "name": "bool"
+                  },
+                  "arguments": [
+                    {
+                      "kind": "name",
+                      "name": "active"
+                    }
+                  ],
+                  "keywords": []
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "mode"
+                },
+                {
+                  "kind": "name",
+                  "name": "mode"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "state_text"
+                },
+                {
+                  "kind": "name",
+                  "name": "state_text"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "cell_id"
+                },
+                {
+                  "kind": "name",
+                  "name": "cell_id"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "pci"
+                },
+                {
+                  "kind": "name",
+                  "name": "pci"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "arfcn"
+                },
+                {
+                  "kind": "name",
+                  "name": "arfcn"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "band"
+                },
+                {
+                  "kind": "name",
+                  "name": "band"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "band_set"
+                },
+                {
+                  "kind": "name",
+                  "name": "band_set"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "rsrp_dbm"
+                },
+                {
+                  "kind": "name",
+                  "name": "rsrp"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "rsrq_db"
+                },
+                {
+                  "kind": "name",
+                  "name": "rsrq"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "sinr_db"
+                },
+                {
+                  "kind": "name",
+                  "name": "sinr"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "rx0_rsrp_dbm"
+                },
+                {
+                  "kind": "name",
+                  "name": "rx0"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "rx1_rsrp_dbm"
+                },
+                {
+                  "kind": "name",
+                  "name": "rx1"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "bandwidth_mhz"
+                },
+                {
+                  "kind": "name",
+                  "name": "bandwidth_mhz"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "cells"
+                },
+                {
+                  "kind": "name",
+                  "name": "cells"
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "sa_band_lock"
+                },
+                {
+                  "kind": "invoke",
+                  "function": {
+                    "kind": "member",
+                    "object": {
+                      "kind": "invoke",
+                      "function": {
+                        "kind": "name",
+                        "name": "str"
+                      },
+                      "arguments": [
+                        {
+                          "kind": "boolean",
+                          "operation": "or",
+                          "values": [
+                            {
+                              "kind": "invoke",
+                              "function": {
+                                "kind": "member",
+                                "object": {
+                                  "kind": "name",
+                                  "name": "raw"
+                                },
+                                "name": "get"
+                              },
+                              "arguments": [
+                                {
+                                  "kind": "constant",
+                                  "value": "nr5g_sa_band_lock"
+                                }
+                              ],
+                              "keywords": []
+                            },
+                            {
+                              "kind": "constant",
+                              "value": ""
+                            }
+                          ]
+                        }
+                      ],
+                      "keywords": []
+                    },
+                    "name": "strip"
+                  },
+                  "arguments": [],
+                  "keywords": []
+                }
+              ],
+              [
+                {
+                  "kind": "constant",
+                  "value": "nsa_band_lock"
+                },
+                {
+                  "kind": "invoke",
+                  "function": {
+                    "kind": "member",
+                    "object": {
+                      "kind": "invoke",
+                      "function": {
+                        "kind": "name",
+                        "name": "str"
+                      },
+                      "arguments": [
+                        {
+                          "kind": "boolean",
+                          "operation": "or",
+                          "values": [
+                            {
+                              "kind": "invoke",
+                              "function": {
+                                "kind": "member",
+                                "object": {
+                                  "kind": "name",
+                                  "name": "raw"
+                                },
+                                "name": "get"
+                              },
+                              "arguments": [
+                                {
+                                  "kind": "constant",
+                                  "value": "nr5g_nsa_band_lock"
+                                }
+                              ],
+                              "keywords": []
+                            },
+                            {
+                              "kind": "constant",
+                              "value": ""
+                            }
+                          ]
+                        }
+                      ],
+                      "keywords": []
+                    },
+                    "name": "strip"
+                  },
+                  "arguments": [],
+                  "keywords": []
+                }
+              ]
+            ]
+          }
+        }
+      ],
+      "emits": false
+    },
+    "parse_nr_band": {
+      "body": [
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "text"
+            }
+          ],
+          "value": {
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "lte"
+              },
+              {
+                "kind": "constant",
+                "value": ""
+              }
+            ],
+            "function": {
+              "kind": "member",
+              "name": "replace",
+              "object": {
+                "arguments": [
+                  {
+                    "kind": "constant",
+                    "value": "nr"
+                  },
+                  {
+                    "kind": "constant",
+                    "value": ""
+                  }
+                ],
+                "function": {
+                  "kind": "member",
+                  "name": "replace",
+                  "object": {
+                    "arguments": [
+                      {
+                        "kind": "constant",
+                        "value": "band"
+                      },
+                      {
+                        "kind": "constant",
+                        "value": ""
+                      }
+                    ],
+                    "function": {
+                      "kind": "member",
+                      "name": "replace",
+                      "object": {
+                        "arguments": [],
+                        "function": {
+                          "kind": "member",
+                          "name": "lower",
+                          "object": {
+                            "arguments": [],
+                            "function": {
+                              "kind": "member",
+                              "name": "strip",
+                              "object": {
+                                "arguments": [
+                                  {
+                                    "kind": "boolean",
+                                    "operation": "or",
+                                    "values": [
+                                      {
+                                        "kind": "name",
+                                        "name": "value"
+                                      },
+                                      {
+                                        "kind": "constant",
+                                        "value": ""
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "function": {
+                                  "kind": "name",
+                                  "name": "str"
+                                },
+                                "keywords": [],
+                                "kind": "invoke"
+                              }
+                            },
+                            "keywords": [],
+                            "kind": "invoke"
+                          }
+                        },
+                        "keywords": [],
+                        "kind": "invoke"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        },
+        {
+          "kind": "assign",
+          "targets": [
+            {
+              "kind": "name",
+              "name": "match"
+            }
+          ],
+          "value": {
+            "arguments": [
+              {
+                "kind": "constant",
+                "value": "n?(\\d+)"
+              },
+              {
+                "kind": "name",
+                "name": "text"
+              }
+            ],
+            "function": {
+              "kind": "member",
+              "name": "search",
+              "object": {
+                "kind": "name",
+                "name": "re"
+              }
+            },
+            "keywords": [],
+            "kind": "invoke"
+          }
+        },
+        {
+          "condition": {
+            "kind": "unary",
+            "operation": "not",
+            "value": {
+              "kind": "name",
+              "name": "match"
+            }
+          },
+          "kind": "if",
+          "no": [],
+          "yes": [
+            {
+              "kind": "return",
+              "value": {
+                "kind": "constant",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "body": [
+            {
+              "kind": "return",
+              "value": {
+                "arguments": [
+                  {
+                    "arguments": [
+                      {
+                        "kind": "constant",
+                        "value": 1
+                      }
+                    ],
+                    "function": {
+                      "kind": "member",
+                      "name": "group",
+                      "object": {
+                        "kind": "name",
+                        "name": "match"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                ],
+                "function": {
+                  "kind": "name",
+                  "name": "int"
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            }
+          ],
+          "else": [],
+          "finally": [],
+          "handlers": [
+            {
+              "body": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": 0
+                  }
+                }
+              ],
+              "errors": [
+                "Exception"
+              ],
+              "name": null
+            }
+          ],
+          "kind": "try"
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "parse_nr_band",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "value"
+        ],
+        "varargs": null
+      }
+    },
+    "radio_connected": {
+      "body": [
+        {
+          "body": [
+            {
+              "condition": {
+                "kind": "unary",
+                "operation": "not",
+                "value": {
+                  "arguments": [
+                    {
+                      "kind": "name",
+                      "name": "raw"
+                    },
+                    {
+                      "kind": "name",
+                      "name": "key"
+                    }
+                  ],
+                  "function": {
+                    "kind": "name",
+                    "name": "goform_source_observed"
+                  },
+                  "keywords": [],
+                  "kind": "invoke"
+                }
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "continue"
+                }
+              ]
+            },
+            {
+              "kind": "assign",
+              "targets": [
+                {
+                  "kind": "name",
+                  "name": "state"
+                }
+              ],
+              "value": {
+                "arguments": [],
+                "function": {
+                  "kind": "member",
+                  "name": "lower",
+                  "object": {
+                    "arguments": [],
+                    "function": {
+                      "kind": "member",
+                      "name": "strip",
+                      "object": {
+                        "arguments": [
+                          {
+                            "key": {
+                              "kind": "name",
+                              "name": "key"
+                            },
+                            "kind": "index",
+                            "object": {
+                              "kind": "name",
+                              "name": "raw"
+                            }
+                          }
+                        ],
+                        "function": {
+                          "kind": "name",
+                          "name": "str"
+                        },
+                        "keywords": [],
+                        "kind": "invoke"
+                      }
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                },
+                "keywords": [],
+                "kind": "invoke"
+              }
+            },
+            {
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "state"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "CONNECTED_PPP_STATES"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "boolean",
+                    "operation": "and",
+                    "values": [
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "equal"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "key"
+                          },
+                          {
+                            "kind": "constant",
+                            "value": "wan_connected"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "state"
+                          },
+                          {
+                            "items": [
+                              {
+                                "kind": "constant",
+                                "value": "1"
+                              },
+                              {
+                                "kind": "constant",
+                                "value": "true"
+                              }
+                            ],
+                            "kind": "set"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            {
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "kind": "name",
+                        "name": "state"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "NEGATIVE_STATES"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "boolean",
+                    "operation": "and",
+                    "values": [
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "equal"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "key"
+                          },
+                          {
+                            "kind": "constant",
+                            "value": "wan_connected"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "compare",
+                        "operations": [
+                          "in"
+                        ],
+                        "values": [
+                          {
+                            "kind": "name",
+                            "name": "state"
+                          },
+                          {
+                            "items": [
+                              {
+                                "kind": "constant",
+                                "value": "0"
+                              },
+                              {
+                                "kind": "constant",
+                                "value": "false"
+                              }
+                            ],
+                            "kind": "set"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": false
+                  }
+                }
+              ]
+            }
+          ],
+          "else": [],
+          "items": {
+            "items": [
+              {
+                "kind": "constant",
+                "value": "ppp_status"
+              },
+              {
+                "kind": "constant",
+                "value": "modem_main_state"
+              },
+              {
+                "kind": "constant",
+                "value": "wan_connected"
+              }
+            ],
+            "kind": "tuple"
+          },
+          "kind": "for",
+          "target": {
+            "kind": "name",
+            "name": "key"
+          }
+        },
+        {
+          "body": [
+            {
+              "condition": {
+                "kind": "unary",
+                "operation": "not",
+                "value": {
+                  "arguments": [
+                    {
+                      "kind": "name",
+                      "name": "raw"
+                    },
+                    {
+                      "kind": "name",
+                      "name": "key"
+                    }
+                  ],
+                  "function": {
+                    "kind": "name",
+                    "name": "goform_source_observed"
+                  },
+                  "keywords": [],
+                  "kind": "invoke"
+                }
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "continue"
+                }
+              ]
+            },
+            {
+              "condition": {
+                "kind": "boolean",
+                "operation": "or",
+                "values": [
+                  {
+                    "kind": "compare",
+                    "operations": [
+                      "in"
+                    ],
+                    "values": [
+                      {
+                        "arguments": [],
+                        "function": {
+                          "kind": "member",
+                          "name": "lower",
+                          "object": {
+                            "arguments": [],
+                            "function": {
+                              "kind": "member",
+                              "name": "strip",
+                              "object": {
+                                "arguments": [
+                                  {
+                                    "key": {
+                                      "kind": "name",
+                                      "name": "key"
+                                    },
+                                    "kind": "index",
+                                    "object": {
+                                      "kind": "name",
+                                      "name": "raw"
+                                    }
+                                  }
+                                ],
+                                "function": {
+                                  "kind": "name",
+                                  "name": "str"
+                                },
+                                "keywords": [],
+                                "kind": "invoke"
+                              }
+                            },
+                            "keywords": [],
+                            "kind": "invoke"
+                          }
+                        },
+                        "keywords": [],
+                        "kind": "invoke"
+                      },
+                      {
+                        "kind": "name",
+                        "name": "NEGATIVE_STATES"
+                      }
+                    ]
+                  },
+                  {
+                    "arguments": [
+                      {
+                        "key": {
+                          "kind": "name",
+                          "name": "key"
+                        },
+                        "kind": "index",
+                        "object": {
+                          "kind": "name",
+                          "name": "raw"
+                        }
+                      }
+                    ],
+                    "function": {
+                      "kind": "name",
+                      "name": "is_limited_service"
+                    },
+                    "keywords": [],
+                    "kind": "invoke"
+                  }
+                ]
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": false
+                  }
+                }
+              ]
+            },
+            {
+              "condition": {
+                "arguments": [
+                  {
+                    "key": {
+                      "kind": "name",
+                      "name": "key"
+                    },
+                    "kind": "index",
+                    "object": {
+                      "kind": "name",
+                      "name": "raw"
+                    }
+                  }
+                ],
+                "function": {
+                  "kind": "name",
+                  "name": "normalize_network_type"
+                },
+                "keywords": [],
+                "kind": "invoke"
+              },
+              "kind": "if",
+              "no": [],
+              "yes": [
+                {
+                  "kind": "return",
+                  "value": {
+                    "kind": "constant",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          ],
+          "else": [],
+          "items": {
+            "items": [
+              {
+                "kind": "constant",
+                "value": "network_type"
+              },
+              {
+                "kind": "constant",
+                "value": "current_network_mode"
+              }
+            ],
+            "kind": "tuple"
+          },
+          "kind": "for",
+          "target": {
+            "kind": "name",
+            "name": "key"
+          }
+        },
+        {
+          "kind": "return",
+          "value": {
+            "kind": "constant",
+            "value": null
+          }
+        }
+      ],
+      "emits": false,
+      "kind": "function",
+      "name": "radio_connected",
+      "parameters": {
+        "defaults": {},
+        "keywords": {},
+        "kwargs": null,
+        "positional": [
+          "raw"
+        ],
+        "varargs": null
+      }
+    }
+  },
+  "constants": {
+    "CONNECTED_PPP_STATES": {
+      "items": [
+        {
+          "kind": "constant",
+          "value": "connected"
+        },
+        {
+          "kind": "constant",
+          "value": "connect"
+        },
+        {
+          "kind": "constant",
+          "value": "ppp_connected"
+        },
+        {
+          "kind": "constant",
+          "value": "ipv4_connected"
+        },
+        {
+          "kind": "constant",
+          "value": "ipv6_connected"
+        },
+        {
+          "kind": "constant",
+          "value": "ipv4_ipv6_connected"
+        }
+      ],
+      "kind": "set"
+    },
+    "NEGATIVE_STATES": {
+      "items": [
+        {
+          "kind": "constant",
+          "value": ""
+        },
+        {
+          "kind": "constant",
+          "value": "disconnect"
+        },
+        {
+          "kind": "constant",
+          "value": "disconnected"
+        },
+        {
+          "kind": "constant",
+          "value": "not connected"
+        },
+        {
+          "kind": "constant",
+          "value": "noservice"
+        },
+        {
+          "kind": "constant",
+          "value": "no service"
+        }
+      ],
+      "kind": "set"
+    }
+  },
+  "initializers": []
+}
