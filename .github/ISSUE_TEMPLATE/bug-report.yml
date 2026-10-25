@@ -1,62 +1,40 @@
 name: Bug report
-description: Describe a reproducible problem in the current software without private data.
+description: Help improve 54GUC by describing something that didn't work as expected.
 title: "[Bug]: "
 body:
   - type: markdown
     attributes:
       value: |
-        Use the router-test form for an unsupported model or firmware.
-        For a bug, explain what happened and what you expected. Do not repeat
-        an unsafe router action to reproduce it.
-
-        Keep raw support ZIPs, router backups, passwords, activation/session
-        codes, device/SIM identifiers and full History out of public issues.
-        Review screenshots and short excerpts yourself before attaching them.
-        Report sensitive security problems through SECURITY.md instead.
-  - type: input
-    id: version
-    attributes:
-      label: Actual app version or source commit
-      description: Include Windows version and whether you used a portable app or source. Do not write only "latest".
-    validations:
-      required: true
-  - type: textarea
-    id: router
-    attributes:
-      label: Model, firmware, profile and mode
-      description: Give the exact model/firmware and selected profile. Say Observe only or Live. If this is a simulator, say so. Exclude serial/IMEI/SIM details.
-    validations:
-      required: true
+        Thanks for taking the time to report a problem. Tell us what happened,
+        and add whatever details you have. An incomplete report can still help.
   - type: textarea
     id: observed
     attributes:
       label: What happened?
-      description: Include the visible message and approximate time. Separate a requested router change from its final confirmed or unconfirmed result.
+      description: Describe the problem and, if useful, what you expected instead.
     validations:
       required: true
-  - type: textarea
-    id: expected
+  - type: input
+    id: version
     attributes:
-      label: What did you expect?
-      description: Explain why, including a guide or known working version if relevant. A missing or unsupported field alone may be a profile limit.
-    validations:
-      required: true
+      label: App version and Windows version, if known
+      placeholder: The app's version or a source commit, plus your Windows version
+  - type: input
+    id: router
+    attributes:
+      label: Router, firmware and profile, if relevant
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps or a minimal safe example
-      description: Describe actions already taken, or a sanitized offline input. Do not force an outage, retry an uncertain command or post complete History to reproduce the issue.
-    validations:
-      required: true
+      label: How did you encounter it?
+      description: Steps, a visible message, an edited example, or anything you've already tried.
   - type: textarea
-    id: limits
+    id: extra
     attributes:
-      label: Evidence limits and checks already done
-      description: Say what was removed for privacy, what is still unknown and whether the issue also appears in a replay or simulator. Do not present those as physical-router proof.
-  - type: checkboxes
-    id: privacy
+      label: Anything else that might help?
+      description: A comparison with another version, an idea about the cause, or a possible fix.
+  - type: markdown
     attributes:
-      label: Before submitting
-      options:
-        - label: I reviewed this report and its attachments and removed credentials, codes, private identifiers, location and History.
-          required: true
+      value: |
+        [Practical sharing tips](https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md)
+        · [Private security contact](https://github.com/54GUC2026/54GUC/blob/main/SECURITY.md)

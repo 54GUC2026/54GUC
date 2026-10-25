@@ -1,6 +1,6 @@
-# Protocol references retained from code comments
+# Router protocol research
 
-These public references preserve research provenance removed from ordinary comments during the R25.6 contributor cleanup. They describe native formats and evidence scope; they do not grant a licence, supply control permission, or qualify every model/firmware. Required copyright, licence and attribution notices remain in their original notice files and are not replaced by this list.
+Curious about how a router reports its information? These references are starting points from the project's format research. They can help you compare a native reply, understand a field or explore another firmware. New references and observations are welcome in a [profile proposal](../CONTRIBUTING.md#explore-a-profile).
 
 - https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.212A-2017-PDF-E.pdf
   Original code reference: `arch4/foundation/network_country_reference.py:1`.
@@ -19,6 +19,9 @@ These public references preserve research provenance removed from ordinary comme
 - https://github.com/paulo-correia/ZTE_API_and_Hack
   Original code reference: `arch4/tests/test_zte_goform_wifi.py:9`.
 
-The native XML example is model-level format evidence with firmware unspecified. The manufacturer firmware URL identifies the public server-certificate source; the code retains its exact certificate fingerprint and TLS verification boundary. The numerical MCC table is factual matching data, not evidence of a user's location or spectrum entitlement. Public client projects were consulted for protocol grammar; they are not imported as runtime libraries by these adapters.
 
-Reference list retained without personal names, private machine paths, subscriber identifiers or personal network locations. Original research receipts remain separately retained by the maintainer.
+The XML example describes a model-level format. The manufacturer firmware link was used for the server-certificate research. Other public clients provided useful examples of protocol grammar; they are not runtime dependencies of these adapters. The MCC table supports network-country matching.
+
+For a practical first experiment, see the [profile workshop](ROUTER_PROFILES.md).
+
+<sub>Sharing tips and the licence link are in [project notes](PROJECT_NOTES.md); existing third-party notices remain with their source material.</sub>

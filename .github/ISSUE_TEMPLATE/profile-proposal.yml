@@ -1,71 +1,36 @@
 name: New or improved router profile
-description: Propose a small profile change backed by exact-model evidence.
+description: Share a profile idea, an early experiment, or a working improvement.
 title: "[Profile]: "
 body:
   - type: markdown
     attributes:
       value: |
-        A useful first profile can be monitoring only. Read CONTRIBUTING.md,
-        docs/PROJECT_GOALS.md and docs/TESTING.md in the source tree.
-        Preserve known working profiles and original capture facts. Do not
-        enable a control just because a similar router has one.
-
-        Do not paste raw support ZIPs, credentials, activation/session codes,
-        device/SIM identifiers or History. Use a minimal sanitized example or
-        describe the evidence without attaching it. Agree a safe private sharing
-        method through the contact in SECURITY.md before sending sensitive data.
-  - type: input
-    id: version
-    attributes:
-      label: App/source version and existing profile, if any
-      description: Give the exact version or commit and the profile filename/revision you started from.
-    validations:
-      required: true
-  - type: textarea
-    id: exact-device
-    attributes:
-      label: Exact model and firmware covered
-      description: Include hardware revision and any firmware variant. Exclude unit and SIM identifiers. Do not claim other variants without evidence.
-    validations:
-      required: true
+        New fields, alternative formats and new router profiles are welcome.
+        You can start with an idea or a question; a finished patch isn't needed.
   - type: textarea
     id: change
     attributes:
-      label: What small change are you proposing?
-      description: Name the reading or supported action and explain what would become more useful. Say whether this is monitoring only.
+      label: What would you like to add or improve?
+      description: Explain the idea and how it could help someone using this router.
     validations:
       required: true
+  - type: input
+    id: router
+    attributes:
+      label: Router and firmware, if known
+      placeholder: Model, firmware, and an existing profile you might start from
   - type: textarea
-    id: evidence
+    id: examples
     attributes:
-      label: Evidence and its limits
-      description: Separate physical-router observations, saved-reply replay, simulator results and public documentation. Cite a public source when relevant; a link alone does not prove this firmware's behavior.
-      placeholder: |
-        Evidence type and exact version:
-        Native field/source and a sanitized format example:
-        Meaning, units and how they were checked:
-        What is still unknown:
-    validations:
-      required: true
+      label: What have you found so far?
+      description: A field name, a small edited reply, documentation, a draft profile, or observations from your hardware.
   - type: textarea
-    id: controls
+    id: next-step
     attributes:
-      label: Control evidence, only if control support is proposed
-      description: A sent request or success message is not enough. Describe the exact request, the router's acknowledgement and a later fresh reading confirming the resulting settings on the same device. State Unverified if that proof is absent. No new radio test is required for this issue.
-      value: No control support proposed.
-  - type: textarea
-    id: checks
+      label: What would help you take the next step?
+      description: Questions, test results, open points, or help you'd welcome from other contributors.
+  - type: markdown
     attributes:
-      label: Regression checks and existing behavior
-      description: Describe a case that fails before the change and should pass afterward, plus known working cases to protect. Include relevant missing, malformed, zero, stale, conflicting or wrong-device inputs. State checks not yet run.
-    validations:
-      required: true
-  - type: checkboxes
-    id: boundaries
-    attributes:
-      label: Before submitting
-      options:
-        - label: I have separated tested behavior from assumptions and have not changed proven capture values to make a test pass.
-          required: true
-        - label: I have permission to share the proposed code/evidence and have removed private data. I understand that code contributions follow GPL-3.0-only and any existing third-party terms.
-          required: true
+      value: |
+        [Profile workshop](https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md)
+        · [Practical sharing tips](https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md)

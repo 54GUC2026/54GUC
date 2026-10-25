@@ -1,73 +1,51 @@
 # 54GUC — 5G/4G Ultimate Controller
 
-54GUC monitors supported LTE and 5G routers and provides the controls exposed by their selected model and firmware profiles. It includes live radio and traffic readings, connection history, an advisory engine and a shareable site report.
+Explore your mobile-broadband connection: signal, traffic, connection history and the choices your router offers. 54GUC brings those readings together in a Windows app, with router profiles, an advisory engine and a Site Report you can use to understand your setup.
 
-The biggest contribution we need is **testing the current software on more
-routers and helping develop exact profiles, one step at a time**. You do not
-need to write code to help. Tell us what your exact model and firmware can
-actually report, what remains unknown and what the app gets wrong. Start with
-[how to contribute a router test](CONTRIBUTING.md#help-test-more-routers) and
-[the project goals](docs/PROJECT_GOALS.md).
+**54GUC is open source, and we'd love your help expanding it.** Our biggest opportunity is testing the current software on more 4G/5G routers and building new profiles together. A router on your desk, an unfamiliar reading or a useful idea can be the beginning of a contribution.
 
-The first-party 54GUC source is licensed under **GNU GPL version 3 only (GPL-3.0-only)**. See [LICENSE](LICENSE) and [licensing information](LICENSING.md). This source identifies R25.7. Use its published release record for the matching Windows package, source archive and checks actually completed; a source checkout alone is not a verified Windows package. Existing activation remains unchanged.
+## Start here
 
-## Run a released application
+| I'd like to… | Go to |
+| --- | --- |
+| Run the Windows app | [Download R25.7](https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7) · [First connection](docs/CGF_MUST_READ/BETA_PACKAGE/START_HERE.txt) |
+| Help test a router | [Contributing](CONTRIBUTING.md#help-test-more-routers) |
+| Add or improve a profile | [Profile workshop](docs/ROUTER_PROFILES.md) |
+| Explore ideas and priorities | [Project goals](docs/PROJECT_GOALS.md) |
+| Try the source | [Offline tests](docs/TESTING.md) · [Windows build](docs/BUILDING.md) |
+| See where things stand | [Project status](docs/PROJECT_STATUS.md) |
 
-Download the Windows portable ZIP from [54GUC Releases](https://github.com/54GUC2026/54GUC-Releases/releases), extract it to a writable folder and follow the release instructions. Choose the portable application asset; automatic repository source archives are not the Windows application. Select the exact router model and firmware. Readings and controls depend on that profile and the native reply it supplies.
+## What can I explore?
 
-The customer guides are in `docs/CGF_MUST_READ/BETA_PACKAGE`.
-Activation for supported router controls stays unchanged. Licences are free;
-optional donations are not required. Keep your existing valid modem-bound code.
-The published source includes the existing code-generation logic, so anyone
-with it can generate valid codes; that is an intentionally accepted consequence
-of this free open-source release. See [licensing information](LICENSING.md).
+- Live LTE/5G signal and traffic readings, with the detail each router provides.
+- Connection history and advice about the connection's behavior.
+- Manual and automatic controls available through the selected router profile.
+- A plain-language Site Report and deeper offline diagnostic tools.
+- Editable profiles that connect native router fields to useful app features.
 
-## Understand the source
+The catalogue contains **48 profiles across six protocol families**. Capabilities vary by model and firmware, so there is plenty of room for new readings, better format handling and wider hardware coverage. The [hardware guide](docs/CGF_MUST_READ/BETA_PACKAGE/SUPPORTED_HARDWARE_AND_LIMITATIONS.txt) describes the devices checked so far.
 
-- `arch4/modem/`: existing device-family protocol readers and controls.
-- `modem_profiles/`: selected-model native read/write definitions and capability boundaries.
-- `arch4/modem_live/`: acquisition, freshness and conversion into accepted observations.
-- `arch4/core/` and `arch4/core_contracts/`: accepted state and action contracts.
-- `arch4/foundation/`: lifecycle services, reports and export ownership.
-- `arch4/ngui/`: user-interface projections and pages.
-- `arch4/new_horizon/`: advisory and historical evidence consumers.
-- `arch4/tests/`: regressions, retained-format fixtures and offline simulators.
+## Join in, with or without code
 
-Missing, invalid, stale and unsupported readings are different states. A compatible read does not grant control permission. Cell identity and commands require coherent same-device, SIM, profile and acquisition evidence. Simulator success is software/protocol evidence, not physical firmware qualification.
+Try a router, describe a confusing screen, share a format example, or experiment with a draft profile. Reports about partially working or unsupported hardware are especially useful. You can start with a short issue; a polished patch isn't a prerequisite.
 
-## Prepare a development environment
+Fork the project and take it in your own direction. If your work could help others here, we'd be happy to hear about it.
 
-Use native Windows Python 3.13 and the pinned requirement files. From the source root:
+[Find a way to contribute](CONTRIBUTING.md) or [open an issue](https://github.com/54GUC2026/54GUC/issues/new/choose).
 
-```powershell
-py -3.13 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-```
+## Find your way around the source
 
-Start with the changed owner's offline tests. For example:
+| Folder | What's inside |
+| --- | --- |
+| `modem_profiles/` | Router profiles and their native field mappings |
+| `arch4/modem/` | Device-family protocol readers and controls |
+| `arch4/modem_live/` | Collection, conversion and reading freshness |
+| `arch4/core/`, `arch4/core_contracts/` | Application state and action contracts |
+| `arch4/foundation/` | Lifecycle services, reports and exports |
+| `arch4/ngui/` | The desktop interface |
+| `arch4/new_horizon/` | Advice and connection-history consumers |
+| `arch4/tests/` | Offline checks, examples and simulators |
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest arch4/tests/test_huawei_parsers.py -q
-```
+R25.7 is available as a Windows portable ZIP and a matching source archive. The app is free, activation remains unchanged, and donations are optional. See [project status](docs/PROJECT_STATUS.md) for the release links and test scope.
 
-See [Testing a change](docs/TESTING.md) for the public test scope and [Building on Windows](docs/BUILDING.md) for the existing coordinator and its folder requirements. The reviewed public offline selection is listed separately; the full private development suite also uses operational documents and retained hardware captures.
-
-Router-connected tests and application launches are separate, explicit actions. Never use another router's settings, identifiers or History as a test population. See the contribution guide for evidence and privacy expectations.
-
-## Contribute and report issues
-
-Our main need is careful testing on routers or firmware without enough hardware
-evidence, followed by small, reviewed profile improvements. A working login or
-a signal reading does not prove that a radio control is safe. If your exact
-profile is missing, report that gap; do not choose a similar model just to force
-a connection or enable controls.
-
-See [Contributing](CONTRIBUTING.md) for the router-test, profile-proposal and bug
-report forms, and [Security reports](SECURITY.md) for private security reporting.
-Keep public evidence small and sanitized. Do not post raw support ZIPs,
-passwords, activation codes, SIM/device identifiers, complete History or private
-configuration. A report of missing support is useful even without an attachment.
-
-## Licence and third-party components
-
-The project uses [GPL-3.0-only](LICENSE). Third-party components retain their own copyright and licence terms; preserve their notices and matching-source obligations. [Protocol references](docs/PROTOCOL_REFERENCES.md) document field research. They do not grant a code licence or establish physical firmware qualification.
+<sub>For the licence link and practical sharing tips, see [project notes](docs/PROJECT_NOTES.md).</sub>

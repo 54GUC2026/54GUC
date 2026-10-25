@@ -1,117 +1,55 @@
 54GUC WINDOWS - START HERE
-================================
+==========================
 
 Release: 54GUC_R25.7
 
-Prepared for: 54GUC R25.7
-
-Use the matching published release record for download availability and
-completed checks. Follow the instructions for the actual app you have.
-Existing activation and code formats are unchanged.
-
-54GUC shows what a supported 4G/5G router is doing. It can show signal,
-Internet status, data use and past results. Some supported routers also
-allow manual or automatic changes. Start by watching, not changing.
+Welcome! 54GUC brings your router's signal, traffic, connection history and
+available controls together in one place. Start by exploring the readings;
+you can try more of the app as you become familiar with your setup.
 
 FIRST CONNECTION
 
-1. Extract the complete ZIP into a new folder on your Windows computer.
-   Do not start 54GUC from inside the ZIP.
+1. Download the Windows portable ZIP and extract it into a fresh folder.
 2. Connect your computer to the router by Wi-Fi or Ethernet.
-3. Open 54GUC.exe. Select the router's make and exact model.
-4. Enter the router's local address, user name and login password.
-5. Choose Observe only. Press CONNECT once and wait.
-6. Look for Device: Connected. Mobile network is a separate status.
-   If the router has no mobile service, 54GUC can still stay connected to it.
+3. Open 54GUC.exe and select the router's make, model and firmware profile.
+4. Enter its local address, user name and login password.
+5. Choose Observe only, press CONNECT and wait for the result.
+6. Look for Device: Connected. Mobile network is a separate status, so
+   the app can stay connected to the router while it seeks mobile service.
 
-The app remembers your router, address, user name and SIM/network/APN choices.
-Check them next time. It does not save the router login password, so enter
-that again each time you start the app.
+The app remembers your router and several connection choices. Enter the
+router login password again when starting a new session.
 
-You do not need a license to connect and monitor. Changing router settings
-needs Live mode and a valid license for that modem. A radio change can stop
-Internet service briefly; make changes only when you can reach the router
-locally.
+TRY THE FEATURES
 
-ACTIVATION
+Monitoring is available without activation. For supported controls, use
+Live mode and activate the connected modem: choose LICENSE, paste its
+NONCE-KEY text or complete Nonce/Key block, then Validate & Activate.
+Wait for Licensed. Existing valid codes continue to work.
 
-Activation stays the same in this candidate. Connect the intended modem and
-wait until its serial or IMEI is available. Choose LICENSE, paste the
-NONCE-KEY text or the complete Nonce/Key block made for that modem, then choose
-Validate & Activate. Wait for Licensed before using supported controls.
+Activation is free. The BUY LICENSE button explains how to request a code;
+donations are optional. The existing generator is also in the public source.
 
-Licences are free. BUY LICENSE keeps its existing button name and explains
-how to request one; it does not require a payment. Donations are optional.
-Publishing the source does not require a new code or a special activation
-upgrade. Keep an existing valid code for the same modem, settings and History.
-Do not delete them or reset the router to resolve an activation problem.
-
-The public source retains the existing code generator and checking logic, so
-people with that source can also generate valid codes. This is an accepted
-part of the free open-source release. Activation still does not add controls
-that the exact router profile cannot support.
-
-SIM AND NETWORK
-
-For a normal first connection, leave SIM & Network as it is. 54GUC reads
-the active SIM and the router's current choices. To change an editable
-network or APN setting later, press DISCONNECT, edit the fields, then CONNECT.
-An incomplete or conflicting choice is explained; it does not block login
-to the router or silently change its mobile settings.
-
-MikroTik SIM, network and APN fields are read-only in 54GUC. Use RouterOS
-to change them. A G5TC or another router may have different supported
-controls; the app will show when a requested action is unavailable.
-
-IF SOMETHING GOES WRONG
-
-- Cannot connect to the router: check the Wi-Fi/Ethernet link, router
-  address, exact model, user name and password. Read the message in 54GUC.
-- Device connected but Mobile network disconnected: leave 54GUC open and
-  read its progress. The router may still be trying to get service.
-- A value is blank or says N/A: wait for another reading. Missing is not zero.
-- A router change fails: read the final result before trying again.
-- To stop, use SHUTDOWN and wait for the app to close. Do not force-close
-  or start a second copy while it is stopping.
-
-For support, press SUPPORT BUNDLE. Review the newest ZIP in support_bundles
-and send it privately to project support. Do not send your router password,
-license file or SMS secrets.
+For an ordinary first connection, leave SIM & Network at its current
+settings. To edit an available network or APN choice later, DISCONNECT,
+edit the field and CONNECT again. Available choices depend on the profile.
 
 READ NEXT
 
-USER_GUIDE.txt is the plain-language manual for all six pages.
-The website's Visual Tour may show an older build; compare its labels
-with the version you are using.
-SUPPORTED_HARDWARE_AND_LIMITATIONS.txt lists exact models and firmware.
-RECOVERY_AND_SUPPORT.txt has more recovery steps.
-BETA_RELEASE_NOTES.txt describes this candidate's prepared changes and limits.
+- USER_GUIDE.txt walks through all six pages.
+- SUPPORTED_HARDWARE_AND_LIMITATIONS.txt describes the current profiles.
+- RECOVERY_AND_SUPPORT.txt helps with connection questions and diagnostics.
+- BETA_RELEASE_NOTES.txt describes R25.7.
 
-Check the version shown in your app. A newer guide does not update the
-program you already have.
+An unlisted router, a missing field or a different format can be a useful
+starting point for a new profile. Contributions and experiments are welcome:
+https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md
 
-SOFTWARE LICENCE AND ACTIVATION
+Downloads and matching source:
+https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7
 
-The planned public source uses GNU GPL version 3 only. Its LICENSE and
-LICENSING.md explain your software rights. An activation code is a separate
-check for supported controls in the official app; it is not the source-code
-licence. This guide does not announce that the matching source is published.
+Practical sharing tips and the licence link:
+https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md
 
-THIRD-PARTY NOTICES
-
-The VERSION dialog lists components and their uses. Original licence texts
-and their inventory are in _internal/licenses; see _internal/NOTICE.txt.
-Third-party rights remain in force independently of your 54GUC licence.
-
-USE AND RESPONSIBILITY
-
-54GUC is an independent monitoring and control tool, not a modem, router
-firmware or Internet service. Use only equipment and networks you are
-authorised to manage. Check the hardware maker's instructions and keep a
-backup connection; changes may interrupt service. Software is provided
-"as is" and "as available", without a guarantee of uninterrupted, secure or
-error-free operation. To the fullest extent permitted by applicable law,
-the owner and contributors are not liable for loss or damage arising from
-use, including service interruption, data loss, equipment problems or costs.
-Read current terms at https://54guc2026.54guc2026.workers.dev/legal#terms.
-Third-party licence rights and original notices remain in force.
+The VERSION dialog lists included components. Their notices are in
+_internal/NOTICE.txt and _internal/licenses.
