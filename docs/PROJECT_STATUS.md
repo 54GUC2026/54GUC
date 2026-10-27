@@ -18,7 +18,7 @@ See the [hardware guide](CGF_MUST_READ/BETA_PACKAGE/SUPPORTED_HARDWARE_AND_LIMIT
 
 ## Release checks
 
-For R26.2, the original full native run recorded **17,995 passes, nine failures and18skips**. All nine failures were closed in failed/related groups: combined **18,004distinct passes,18skips andno unresolved failures**. This is not a fresh all-pass full run. The54affected R26.2 release checks and original/copied/extracted Windows package checks passed. Matching source and Windows archives passed integrity, source-correspondence and privacy review. The public offline selection's731passes/one skip remain historical R25.7 evidence, not a newly claimed R26.2 run.
+For R26.2, the original full native run recorded **17,995 passes, nine failures and 18 skips**. All nine failures were closed in failed/related groups: combined **18,004 distinct passes, 18 skips and no unresolved failures**. This is not a fresh all-pass full run. The 54 affected R26.2 release checks and original/copied/extracted Windows package checks passed. Matching source and Windows archives passed integrity, source-correspondence and privacy review. The public offline selection's731 passes/one skip remain historical R25.7 evidence, not a newly claimed R26.2 run.
 
 Hardware coverage grows through real use as well as tests. In this release's simulator work, four cases passed, one completed with standalone-5G/action limitations, and seven planned cases were deferred. Those are useful software checks alongside the physical-router results in the hardware guide.
 
