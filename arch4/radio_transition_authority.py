@@ -163,9 +163,9 @@ def _selection_change_kind(
 ) -> str:
     changed = [kind for field, kind in _PHYSICAL_SELECTION_FIELDS
                if getattr(before, field) != getattr(after, field)]
-    if before.selected_band_set != after.selected_band_set:
+    if before.selected_band_set and after.selected_band_set and before.selected_band_set != after.selected_band_set:
         changed.append("selected_band_pool")
-    if before.configured_band_pool != after.configured_band_pool:
+    if before.configured_band_pool and after.configured_band_pool and before.configured_band_pool != after.configured_band_pool:
         changed.append("configured_band_pool")
     return "+".join(changed)
 
@@ -322,11 +322,15 @@ class RadioTransitionAuthority:
             )
             if radio_target_facts.connected and selection.serving_band_available:
                 self._accepted_radio_outage = False
-            stable_changed = bool(
-                not initial
-                and _stable_selection_key(before) != _stable_selection_key(selection)
-            )
             change_kind = _selection_change_kind(before, selection)
+            stable_changed = bool(not initial and change_kind)
+            # Preserve only qualified comparison settings, within this exact
+            # namespace. Current Matrix/frame availability remains unchanged.
+            comparison_selection = replace(
+                selection,
+                selected_band_set=selection.selected_band_set or before.selected_band_set,
+                configured_band_pool=selection.configured_band_pool or before.configured_band_pool,
+            )
             structural_fresh = bool(not initial and any(
                 getattr(before, field) != getattr(selection, field)
                 for field, _ in _PHYSICAL_SELECTION_FIELDS
@@ -352,7 +356,7 @@ class RadioTransitionAuthority:
                     structural_fresh=False,
                     after=selection,
                 )
-                self._previous_selection = selection
+                self._previous_selection = comparison_selection
                 self._current_frame = frame
                 return frame
 
@@ -448,7 +452,7 @@ class RadioTransitionAuthority:
                 before=before,
                 after=selection,
             )
-            self._previous_selection = selection
+            self._previous_selection = comparison_selection
             self._current_frame = frame
             return frame
 

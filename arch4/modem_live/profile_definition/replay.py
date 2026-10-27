@@ -19,10 +19,10 @@ class _WithheldInputEvaluator(Evaluator):
         return value
 
 
-def decode(data,replies,context=None,*,addresses=None,issues=None,admit_outputs=False,withheld_inputs=None):
+def decode(data,replies,context=None,*,addresses=None,issues=None,admit_outputs=False,withheld_inputs=None,program=None):
     inputs={'profile':data['metadata'],'replies':deepcopy(replies),'context':context or {}}
     evaluator=(_WithheldInputEvaluator if withheld_inputs is not None else Evaluator)(
-        data['functions'],algorithms=data['algorithms'],max_steps=2000000)
+        data['functions'],algorithms=data['algorithms'],max_steps=2000000,program=program)
     prepared={step['output']:step for step in data.get('preprocessing',[])}
     # Derived aliases can only be produced by their declared native input path.
     for name in prepared:inputs['replies'].pop(name,None)

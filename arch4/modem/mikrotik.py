@@ -1428,7 +1428,8 @@ class MikroTikModem(ModemInterface):
             if 'slow.tac' in imported_at:tac_value=int(imported_at['slow.tac']or 0)
             rrc_value = str(sc_extra.get("rrc") or "").strip()
             if not rrc_value:
-                rrc_value = "Connected" if bool(lte_data.get("radio_connected", False)) else "Idle"
+                connection = lte_data.get("radio_connected")
+                rrc_value = "Connected" if connection is True else "Idle" if connection is False else ""
             provider_name = str(getattr(self, "_provider_name_cache", "") or "")
             lte_monitor_age_s = max(
                 0.0,
@@ -1448,7 +1449,14 @@ class MikroTikModem(ModemInterface):
                 lte_data.get("_routeros_ca_observation_status", "unparsed")
                 or "unparsed"
             )
-            radio_connected = bool(lte_data.get("radio_connected", False))
+            connection = lte_data.get("radio_connected")
+            packet_connected = connection if type(connection) is bool else None
+            radio_connected = packet_connected is True
+            connection_detail = (
+                "routeros_lte_connected" if packet_connected is True else
+                "routeros_lte_disconnected" if packet_connected is False else
+                "routeros_lte_connection_unavailable"
+            )
             network_type = (str(lte_data.get("network_type") or "")
                 if "radio.network_type" in (profile_rf or {})
                 else "LTE (4G)" if radio_connected else "")
@@ -1482,17 +1490,14 @@ class MikroTikModem(ModemInterface):
                 network_type=network_type,
                 session_uptime_s=lte_data.get("session_uptime_s", 0.0),
                 traffic_valid=radio_connected,
-                traffic_state_detail=(
-                    "routeros_lte_connected"
-                    if radio_connected
-                    else "routeros_lte_disconnected"
-                ),
+                traffic_state_detail=connection_detail,
                 traffic_invalid_reason=(
-                    "" if radio_connected else "routeros_lte_disconnected"
+                    "" if radio_connected else connection_detail
                 ),
-                packet_session_connected=radio_connected,
+                packet_session_connected=packet_connected,
                 connection_status_code=(
-                    "connected" if radio_connected else "disconnected"
+                    "connected" if packet_connected is True else
+                    "disconnected" if packet_connected is False else ""
                 ),
                 lte_interface_disabled=bool(lte_disabled),
                 rx_bytes_per_sec=rx_bps,
@@ -1627,8 +1632,8 @@ class MikroTikModem(ModemInterface):
                 "ri": ri_published,
                 "ri_valid": ri_valid,
                 "ri_source": ri_source,
-                "radio_connected": bool(getattr(modem, "radio_connected", False)),
-                "radio_state_text": "Connected" if bool(getattr(modem, "radio_connected", False)) else "Disconnected",
+                "radio_connected": packet_connected,
+                "radio_state_text": "Connected" if packet_connected is True else "Disconnected" if packet_connected is False else "Unavailable",
                 "network_type": network_type,
                 "rx_bytes_per_sec": float(rx_bps or 0.0),
                 "tx_bytes_per_sec": float(tx_bps or 0.0),

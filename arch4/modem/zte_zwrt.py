@@ -614,7 +614,8 @@ class ZteZwrtUbusModem(ZteGoformModem):
             raise ReadDiagnosticUnavailable("Connect to the router before running read diagnostics.")
         profile = self._resolve_firmware_profile()
         if profile is None or profile.network_settings != "ng_g5tc_b17_experimental":
-            raise ReadDiagnosticUnavailable("Read diagnostics are not implemented for this router profile.")
+            from arch4.modem.base import ModemInterface
+            return ModemInterface.prepare_read_diagnostics(self)
         self._read_diagnostic_adapter = ZwrtReadDiagnosticAdapter(self)
         return self._read_diagnostic_adapter
 

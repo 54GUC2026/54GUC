@@ -177,6 +177,42 @@ ROUTER_CHECK_FILENAME = 'router_check.txt'
 TERMINAL_READ_STATES = frozenset({'completed', 'cancelled', 'timed_out', 'interrupted', 'limited'})
 
 
+def _monitoring_report_lines(overview):
+    """Explain collected evidence without claiming a control was exercised."""
+    from datetime import datetime
+    lines = ['', 'CURRENT MONITORING INFORMATION',
+             ('Profile: ' + overview['profile_id'] if overview['profile_id'] else
+              'Backend-only connection; no selectable portable profile.'),
+             'These are recorded monitoring states, not additional router reads.']
+    for row in overview['fields']:
+        if row['field'].startswith('capability.action_') and row['field'].endswith('_allowed'):
+            continue  # shown with the corresponding control's evidence state
+        proof = row.get('proof_state')
+        if proof is not None:
+            status = {
+                'supported': 'Declared available', 'estimated': 'Estimated capability',
+                'unsupported': 'Not provided by this profile',
+                'non_useful': 'Not useful for this profile',
+                'unknown': 'Unknown or not currently available',
+            }[proof]
+        elif row['retained']:
+            status = 'Earlier reading retained'
+        else:
+            status = {'available': 'Information available',
+                      'unsupported': 'Not provided by this profile',
+                      'missing': 'Unknown or not currently available',
+                      'invalid': 'Reading could not be validated'}[row['state']]
+        when = ('; acquired ' + datetime.fromtimestamp(row['acquired_at']).astimezone().isoformat(timespec='seconds')
+                if row['acquired_at'] > 0 else '')
+        if 'control_allowed' in row:
+            status += '; ' + {True: 'Control currently available in 54GUC',
+                              False: 'Control currently unavailable in 54GUC',
+                              None: 'Current control availability unknown'}[row['control_allowed']]
+        lines.append(f"- {row['field']}: {status}{when}.")
+    lines.append('No control command was tested. Declared availability is not proof that a command succeeded.')
+    return lines
+
+
 def router_check_text(envelope):
     """Readable projection of Scout results; never performs or admits router reads."""
     import json
@@ -193,11 +229,14 @@ def router_check_text(envelope):
         'interrupted': 'The connection changed before all checks finished.',
         'limited': 'The report reached its size limit. Some details were not saved.',
     }[state]
+    overview = data['coverage_context'].get('monitoring_overview')
+    monitoring_only = data['total'] == 0 and overview is not None
     lines = ['54GUC - Router check',
              'Checked: ' + datetime.fromtimestamp(envelope['observed_at']).astimezone().isoformat(timespec='seconds'),
              '', 'WHAT WAS CHECKED',
-             f"{data['completed']} of {data['total']} planned checks completed.",
-             'Scout checked what the router can report. No router settings were changed.',
+             ('Current monitoring information was reviewed. No additional native probes are implemented for this profile.'
+              if monitoring_only else f"{data['completed']} of {data['total']} planned checks completed."),
+             'No router settings were changed.',
              '', 'WHAT WAS FOUND', meaning]
     outcomes = {
         'success': 'Information received', 'access_denied': 'Router did not allow this check',
@@ -250,6 +289,8 @@ def router_check_text(envelope):
     if any(len(rows)>1 and any(row['outcome']!='success' for row in rows)
            for rows in grouped.values()):
         lines.append('Some alternative requests could not be read. Their replies are retained in the technical details.')
+    if overview is not None:
+        lines.extend(_monitoring_report_lines(overview))
     completeness_checked = bool(data['field_coverage']) and all(
         'coverage_state' in row for row in data['field_coverage'])
     unavailable = sum(1 for r in data['field_coverage'] if r.get('coverage_state') in {'empty','not_returned','not_tested'})

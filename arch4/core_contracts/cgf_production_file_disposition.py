@@ -18,9 +18,9 @@ PRODUCTION_SOURCE_ROOTS: tuple[str, ...] = (
     "arch4/new_horizon",
     "arch4/ngui",
 )
-PRODUCTION_SOURCE_COUNT = 250
+PRODUCTION_SOURCE_COUNT = 251
 PRODUCTION_SOURCE_SET_SHA256 = (
-    '33be7f5eae64cb2a81d89c5f9d2f152015b8fcb4f2e70aa5ebe91ef683e3bc35'
+    '6dab3694fc8e458e15abb718291c26853b276075f54c44b74f6e522ec7c509aa'
 )
 
 

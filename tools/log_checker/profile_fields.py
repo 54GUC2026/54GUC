@@ -200,7 +200,10 @@ def inspect_wire_fields(profile,rows,*,candidate=None):
                     output['status']='Private value withheld'
                 elif address in withheld or isinstance(value,str)and SCRUB_MASK in value:
                     output['status']='Private input withheld'
-                elif address in errors or any(issue.get('address')==address for issue in event.get('issues',[])):
+                elif address in errors or any(issue.get('address')==address or (
+                        issue.get('address')==SCRUB_MASK and
+                        issue.get('pointer')=='/fields/'+address+'/read')
+                        for issue in event.get('issues',[])):
                     output['status']='Conversion failed'
                 else:
                     output['value']=public

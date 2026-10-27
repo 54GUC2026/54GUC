@@ -153,6 +153,8 @@ from .utility_lifecycle import (
     EXTERNAL_UTILITY_KINDS,
     HEAVY_UTILITY_KINDS,
     NGUIUtilityTerminal,
+    UtilityKind,
+    UtilityTerminalState,
     project_utility_lifecycle,
     terminal_from_external,
     terminal_from_heavy,
@@ -3267,6 +3269,8 @@ class NGUIOrchestrator:
             try:
                 result = future.result()
                 if result.state is not ExternalActionState.COMPLETED:
+                    self.ports.publish_utility_terminal(
+                        terminal_from_external(result, kind=UtilityKind.ROUTER_CHECK))
                     raise RuntimeError(result.message)
             except Exception as exc:
                 self.ports.report_error("Could not save or open the router check report: " + str(exc))
@@ -4097,6 +4101,15 @@ class NGUIOrchestrator:
         receipt = claim.event.payload
         if not isinstance(receipt, OperationalServiceReceipt):
             raise TypeError("operational lifecycle typed receipt required")
+        if (receipt.kind is OperationalKind.READ_DIAGNOSTICS
+                and claim.event_kind is RuntimeEventKind.OPERATIONAL_RECEIPT
+                and receipt.disposition in {OperationalDisposition.FAILED, OperationalDisposition.REJECTED}
+                and self._router_check_pending == (self._parent_async_generation, receipt.request_id)):
+            self._router_check_pending = None
+            self.ports.publish_utility_terminal(NGUIUtilityTerminal(
+                kind=UtilityKind.ROUTER_CHECK, state=UtilityTerminalState(receipt.disposition.value),
+                sequence=claim.sequence, completed_at=receipt.occurred_at,
+                result={}, message=receipt.message, request_id=receipt.request_id))
         if (receipt.kind is OperationalKind.INSPECT_NETWORK_SETTINGS
                 and self._network_settings_monitoring
                 and receipt.runtime_namespace == self._network_inspection_namespace

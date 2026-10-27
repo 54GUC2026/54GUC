@@ -91,6 +91,47 @@ class ReadDiagnosticAdapter(Protocol):
     def summarize(self, rows: list) -> list: ...
 
 
+@dataclass
+class MonitoringDiagnosticAdapter:
+    """No extra native plan; the run reports its committed monitoring snapshot."""
+    backend: str
+    observing: bool = True
+    probes: tuple = ()
+
+    def context_current(self):
+        # ModemLive checks the runtime namespace before publishing this report.
+        return True
+
+    def summarize(self, rows):
+        return []
+
+    def read(self, probe):
+        raise ValueError('monitoring_diagnostic_has_no_native_probes')
+
+
+def _monitoring_overview(reader, *, profile_id, native_probe_count):
+    """One report-only projection. Do not copy arbitrary private cell values."""
+    fields = []
+    for line, group in reader['lines'].items():
+        for name, cell in group['cells'].items():
+            if (line, name) == ('slow', 'read_diagnostic'):
+                continue
+            row = dict(field=f'{line}.{name}', state=cell['state'], reason=cell['reason'],
+                acquired_at=cell['acquired_at'], sampled_at=cell['sampled_at'],
+                retained=cell['retention'] is not None, source_lane=cell['source_lane'])
+            if line == 'capability' and name.endswith('_state') and cell.get('value') in {
+                'supported', 'estimated', 'unsupported', 'non_useful', 'unknown'
+            }:
+                row['proof_state'] = cell['value']
+            if line == 'capability' and name.startswith('action_') and name.endswith('_state'):
+                allowed = group['cells'][name[:-6] + '_allowed']
+                row['control_allowed'] = (allowed['value']
+                    if allowed['state'] == 'available' and type(allowed['value']) is bool else None)
+            fields.append(row)
+    return dict(profile_id=profile_id or '', matrix_identity=reader.identity.as_dict(),
+        native_probe_count=native_probe_count, fields=fields)
+
+
 @runtime_checkable
 class DiagnosticMatrixComparisonConsumer(Protocol):
     """Permanent report boundary for adapters with canonical field descriptors."""
@@ -112,6 +153,7 @@ class ReadDiagnosticRun:
     _matrix_comparison_bound: bool = field(default=False, init=False, repr=False)
     _capture_health: dict | None = field(default=None, init=False, repr=False)
     _limited_coverage: list | None = field(default=None, init=False, repr=False)
+    _monitoring: dict | None = field(default=None, init=False, repr=False)
 
     @property
     def terminal(self):
@@ -129,15 +171,22 @@ class ReadDiagnosticRun:
             raise RuntimeError('diagnostic_matrix_comparison_already_bound')
         if type(namespace_matches) is not bool:
             raise TypeError('diagnostic_namespace_match_boolean_required')
-        if not namespace_matches or not isinstance(self.adapter, DiagnosticMatrixComparisonConsumer):
+        if not namespace_matches:
             return False
         if not isinstance(matrix_reader, ValidatedTruthMatrixReader):
             raise TypeError('diagnostic_validated_matrix_reader_required')
         if matrix_reader.identity.namespace != self.namespace:
             raise ValueError('diagnostic_matrix_comparison_namespace_mismatch')
-        self.adapter.bind_matrix_comparison(matrix_reader, profile_id=profile_id)
+        if profile_id is not None and not isinstance(profile_id, str):
+            raise ValueError('diagnostic_monitoring_profile_required')
+        overview = _monitoring_overview(matrix_reader, profile_id=profile_id,
+            native_probe_count=len(self.adapter.probes))
+        native_comparison = isinstance(self.adapter, DiagnosticMatrixComparisonConsumer)
+        if native_comparison:
+            self.adapter.bind_matrix_comparison(matrix_reader, profile_id=profile_id)
+        self._monitoring = overview
         self._matrix_comparison_bound = True
-        return True
+        return native_comparison
 
     def advance(self):
         if self.terminal:
@@ -193,10 +242,13 @@ class ReadDiagnosticRun:
         context = (self.adapter.diagnostic_coverage_context()
                    if isinstance(self.adapter, DiagnosticMatrixComparisonConsumer)
                    else {'owner': 'modem_live.read_diagnostics', 'backend': self.adapter.backend})
+        if self._monitoring is not None:
+            context = {**context, 'monitoring_overview': self._monitoring}
         data, retained = encode_read_diagnostic_data(controls={
             'run_id': self.run_id, 'namespace': namespace, 'state': self.state, 'message': self.message,
             'completed': len(self.rows), 'total': len(self.adapter.probes),
-            'progress_pct': round(100 * len(self.rows) / len(self.adapter.probes)), 'outcomes': counts},
+            'progress_pct': (round(100 * len(self.rows) / len(self.adapter.probes))
+                             if self.adapter.probes else 100 if self.terminal else 0), 'outcomes': counts},
             results=self.rows, field_coverage=coverage,
             coverage_context=context, capture=self._capture_health)
         if not data['capture']['complete']:

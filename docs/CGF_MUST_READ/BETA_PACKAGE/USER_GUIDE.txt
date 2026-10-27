@@ -19,7 +19,7 @@ this guide and the labels in your actual app.
 ## Quick start
 
 1. Extract the complete 54GUC ZIP into a new folder on your Windows computer.
-   A separate folder keeps each release easy to try and compare.
+   Do not run the app from inside the ZIP or mix files from different releases.
 2. Connect the computer to your router by Wi-Fi or Ethernet.
 3. Open `54GUC.exe`. Choose your router's make and exact model.
 4. Enter the router's local address, user name and login password. The router
@@ -103,7 +103,7 @@ If you enter an incomplete or conflicting country, provider or network code,
 54GUC names the field to correct. It can still connect to the router using the
 router's existing mobile settings; it will not send the invalid change.
 Disconnect, correct the named field and Connect again if you want the change.
-The progress message shows when the connection check has finished.
+Do not keep clicking Connect while a check is pending.
 
 A request is **Confirmed** only after the router reports the resulting
 settings. **Not confirmed** means you should read the explanation before
@@ -161,9 +161,9 @@ left. SIM & Network is next to it. Router identity, current readings and
 available controls appear as the router supplies them.
 
 - Check **Model**, **Firmware** and **Serial/IMEI** if you are unsure which
-  router is connected.
-- **Wi-Fi ON/OFF** changes a supported radio. Turning off the Wi-Fi used by
-  your computer disconnects it; Ethernet offers another way to stay connected.
+  router is connected. Keep serial and IMEI private.
+- **Wi-Fi ON/OFF** changes a supported radio. Do not turn off the Wi-Fi that
+  your computer is using unless you have another way back into the router.
   Wait for the router's reported state after a click.
 - **SCAN NETWORK** looks for a reachable router on the local network. It
   does not log in or change the mobile network.
@@ -192,11 +192,21 @@ Monitoring does not need activation. For supported controls, connect the
 intended modem and wait until its serial or IMEI is shown. Choose **LICENSE**,
 paste its **NONCE-KEY** text or the complete **Nonce/Key** generator block, then
 choose **Validate & Activate**. Both parts are needed. Wait for **Licensed**;
-the Licensed status confirms that activation succeeded.
+a copied code is not proof that it has been accepted.
 
-Activation is free and existing valid codes continue to work. The
-**BUY LICENSE** button explains how to request a code; donations are optional.
-The generator is also included in the public source.
+Activation is unchanged in this candidate. Keep an existing valid code for the
+same modem; there is no new signed-code format or required code replacement.
+Keep saved settings and History. A code for another modem does not activate
+this one, and a valid code does not add unsupported router controls.
+
+Licences are free and donations are optional. The existing **BUY LICENSE**
+button explains how to request a code; it does not require payment. The public
+source retains the generator and checking logic, so anyone with it can generate
+valid codes. That is intentional for this free open-source release.
+
+The software licence is separate: the planned public source uses GPL version
+3 only, as explained in its LICENSE and LICENSING.md. Source preparation does
+not announce a public download or a newly qualified Windows build.
 
 ## 5. Graphs page
 
@@ -378,8 +388,7 @@ An action already in progress may finish first.
 Wi-Fi or Ethernet, open the router's local address in a browser, then check
 the selected model, user name and password. Read the exact message in 54GUC.
 A failed login may stop early rather than waiting for repeated attempts.
-If your model is missing or a profile rejects it, the profile workshop is
-a useful starting point for investigating the difference.
+Do not choose a different model just to get past a rejection.
 
 **Device connected, Mobile network disconnected:** leave 54GUC open and
 read its progress. The router may still be working on mobile service. If
@@ -393,18 +402,18 @@ check whether the router supports it. **UNSUP.** is different from a
 temporary unavailable reading.
 
 **An action did not work:** read Manual Action Result and the current router
-state. The router may reject a request or later choose another band. The
-final result helps you decide what experiment to try next.
+state. The router may reject a request or later choose another band. Do not
+repeat a radio command until you know the outcome.
 
 **The app needs to stop:** use **SHUTDOWN** or `54GUC_Control.cmd stop`.
-An action may need time to finish; waiting for shutdown lets it complete
-its saved records before the next session.
+An action may need time to finish. Do not force-close or start a second copy
+while it is still stopping.
 
 If the problem continues, make a **SUPPORT BUNDLE** (or use
 `54GUC_Control.cmd bundle`). Review the newest ZIP in `support_bundles`.
-Contact project support with the app version, router model,
-firmware, time of the problem, what you did and what happened. Practical
-sharing tips are linked at the end of this guide.
+Send it privately to your beta contact with the app version, router model,
+firmware, time of the problem, what you did and what happened. Do not send
+router passwords, license files or SMS secrets.
 
 The first 10 seconds after connection let readings settle. New learning waits
 for that existing settling period; monitoring starts immediately.
@@ -415,10 +424,11 @@ For an upgrade, stop the app cleanly. Extract the ZIP into a new folder
 beside the current one. Keep the shared `_new_horizon_history` folder;
 it holds your saved router results. Connect to the same router and check
 **VERIFY CURRENT HISTORY**. Learning loads after monitoring starts.
-Keeping each router's own results makes comparisons and learning clearer.
+Do not mix results from two different routers.
 
-Existing activation codes and saved settings continue to work for the same
-modem. For an activation question, START_HERE.txt has the short procedure.
+Activation is unchanged. Keep an existing valid code and saved settings for
+the same modem. A failed code check is not a reason to delete settings or
+History, and this candidate does not require a replacement-code migration.
 
 To remove the app, stop it and delete its release folder. Saved login hints,
 plans and settings are under `%LOCALAPPDATA%\54GUC`; delete that folder only
@@ -437,13 +447,6 @@ for an upgrade.
 - **UNSUP.:** this router profile does not support the field or action.
 
 The website's Functional Specification is a separate reference and may
-describe an older build. This guide describes R25.7. Read
+describe an older build. This guide describes the R25.7 candidate. Read
 SUPPORTED_HARDWARE_AND_LIMITATIONS.txt beside this file for the exact firmware
-and test results. The app and source are available from the release page:
-https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7
-
-Explore profiles and contribute:
-https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md
-
-Practical sharing tips and the licence link:
-https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md
+and evidence levels. No new source or application URL is announced here.

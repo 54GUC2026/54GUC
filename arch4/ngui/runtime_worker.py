@@ -351,6 +351,7 @@ class _OperationalRequestDeliveryOwner:
         self._runtime = runtime
         self._publisher = lifecycle_publisher
         self._active: _PendingOperationalDelivery | None = None
+        self._support_history: RuntimeSupportHistoryFlushRequest | None = None
         self._closed = False
 
     @property
@@ -364,6 +365,25 @@ class _OperationalRequestDeliveryOwner:
 
     def cancel(self, reservation: RuntimeLifecycleReservation) -> None:
         self._publisher.cancel(reservation)
+
+    def admit_support_history(self, request: RuntimeSupportHistoryFlushRequest) -> None:
+        if self._closed or self._support_history is not None:
+            try:
+                request.reply.send({"identity": request.generation_identity, "complete": False,
+                                    "error": "support_history_owner_closed" if self._closed else "support_history_busy"})
+            except (OSError, EOFError) as exc:
+                log.info("Support History reply delivery failed (%s): %s", type(exc).__name__, exc)
+            finally:
+                request.reply.close()
+            return
+        self._support_history = request
+
+    def progress_support_history(self, prepare: Callable[[RuntimeSupportHistoryFlushRequest], bool]) -> int:
+        request = self._support_history
+        if request is not None and prepare(request):
+            self._support_history = None
+            return 1
+        return 0
 
     def admit(
         self,
@@ -471,6 +491,10 @@ class _OperationalRequestDeliveryOwner:
 
     def close(self, *, timeout_s: float) -> None:
         self._closed = True
+        request, self._support_history = self._support_history, None
+        if request is not None:
+            # Cancel diagnostics before stopping the sole History owner.
+            self.admit_support_history(request)
         deadline = monotonic() + max(0.0, float(timeout_s))
         while self._active is not None and monotonic() < deadline:
             _completed, _dead_lettered, pending = self.progress()
@@ -2316,7 +2340,7 @@ def _execute_runtime_request(
     )
 
 
-def _prepare_support_history_request(request: RuntimeSupportHistoryFlushRequest, *, advisory_runtime, product_identity) -> None:
+def _prepare_support_history_request(request: RuntimeSupportHistoryFlushRequest, *, advisory_runtime, product_identity) -> bool:
     """Reply to a bounded diagnostic barrier without entering radio authority."""
     reply = {"identity": request.generation_identity, "complete": False, "error": ""}
     try:
@@ -2328,8 +2352,12 @@ def _prepare_support_history_request(request: RuntimeSupportHistoryFlushRequest,
         if advisory_runtime is None:
             raise RuntimeError("support_history_owner_unavailable")
         advisory_runtime.prepare_support_history(history_path=request.history_path,
-            cutoff=request.cutoff, timeout_s=min(3., remaining))
+            cutoff=request.cutoff, timeout_s=min(TYPED_REQUEST_DRAIN_BUDGET_S / 2., remaining))
         reply["complete"] = True
+    except TimeoutError as exc:
+        if str(exc) in {"support_history_admission_timeout", "support_history_flush_timeout"} and monotonic() < request.deadline:
+            return False  # Same request/deadline, next normal Foundation cycle.
+        reply["error"] = type(exc).__name__ + ":" + str(exc)
     except Exception as exc:
         reply["error"] = type(exc).__name__ + ":" + str(exc)
     try:
@@ -2339,6 +2367,7 @@ def _prepare_support_history_request(request: RuntimeSupportHistoryFlushRequest,
         # A closed requesting export needs no retry or radio effect.
     finally:
         request.reply.close()
+    return True
 
 
 def _drain_typed_requests(
@@ -2346,7 +2375,7 @@ def _drain_typed_requests(
     request_queue: Any,
     *,
     delivery_owner: _OperationalRequestDeliveryOwner,
-    support_history_preparer: Callable[[RuntimeSupportHistoryFlushRequest], None] | None = None,
+    support_history_preparer: Callable[[RuntimeSupportHistoryFlushRequest], bool] | None = None,
     max_items: int = TYPED_REQUEST_DRAIN_MAX_ITEMS,
     budget_s: float = TYPED_REQUEST_DRAIN_BUDGET_S,
 ) -> TypedRequestDrainReport:
@@ -2358,6 +2387,8 @@ def _drain_typed_requests(
     dead_lettered = 0
     time_budget_exhausted = False
     queue_empty = False
+    if support_history_preparer is not None:
+        completed += delivery_owner.progress_support_history(support_history_preparer)
     for _ in range(item_limit):
         if consumed > 0 and monotonic() - started >= elapsed_limit_s:
             time_budget_exhausted = True
@@ -2384,7 +2415,8 @@ def _drain_typed_requests(
             if support_history_preparer is None:
                 _prepare_support_history_request(request, advisory_runtime=None, product_identity=None)
             else:
-                support_history_preparer(request)
+                delivery_owner.admit_support_history(request)
+                continue
             completed += 1
             continue
         if not isinstance(request, RuntimeIPCRequest):

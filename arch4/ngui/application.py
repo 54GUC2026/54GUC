@@ -644,6 +644,7 @@ class _UtilityResultBridge(QObject):
                 UtilityKind.VERSION: ("Version Error", "Could not show version information"),
                 UtilityKind.UPDATES: ("Update Check Failed", "Could not check for updates"),
                 UtilityKind.SITE_REPORT: ("Site Report Error", "Report generation failed"),
+                UtilityKind.ROUTER_CHECK: ("Router Check Failed", "Router check could not finish"),
             }[terminal.kind]
             detail = str(terminal.message or "").strip()
             self._messages.show_requested.emit(

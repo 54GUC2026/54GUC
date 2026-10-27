@@ -295,28 +295,17 @@ def _accounting_key(billing_scope_id: str, device_identity_key: str) -> str:
     return "traffic-accounting:" + hashlib.sha256(material).hexdigest()[:32]
 
 
-def read_accounted_traffic(
-    storage_root: str | Path, *, billing_scope_id: str,
+def _project_accounted_state(
+    state: dict[str, Any], *, billing_scope_id: str,
     device_identity_key: str, cycle_start_day: int,
     source_namespace: RuntimeGenerationNamespace, counter_source: str,
     as_of: float, router_quota_limit_bytes: int | None = None,
     router_quota_left_bytes: int | None = None,
 ) -> TrafficCounterObservation | None:
-    """Project an existing exact-scope ledger without updating or quarantining it.
-
-    A report is a reader of accounting, never another counter observer. The
-    returned timestamp belongs to the saved ledger, independently of the radio
-    snapshot. A previous day's record cannot supply today's usage.
-    """
+    """One scope/period admission for the live owner and read-only reports."""
     if not isinstance(source_namespace, RuntimeGenerationNamespace):
         return None
-    path = Path(storage_root) / FOUNDATION_TRAFFIC_ACCOUNTING_FILENAME
     try:
-        with path.open("r", encoding="utf-8") as stream:
-            content = stream.read(8 * 1024 * 1024 + 1)
-        if len(content) > 8 * 1024 * 1024:
-            return None
-        state = _validated_state(json.loads(content))
         key = _accounting_key(billing_scope_id, device_identity_key)
         row = state["scopes"].get(key)
         if not isinstance(row, dict):
@@ -361,6 +350,36 @@ def read_accounted_traffic(
         return None
 
 
+def read_accounted_traffic(
+    storage_root: str | Path, *, billing_scope_id: str,
+    device_identity_key: str, cycle_start_day: int,
+    source_namespace: RuntimeGenerationNamespace, counter_source: str,
+    as_of: float, router_quota_limit_bytes: int | None = None,
+    router_quota_left_bytes: int | None = None,
+) -> TrafficCounterObservation | None:
+    """Read exact-scope saved totals; never update or quarantine the store.
+
+    The returned time belongs to the ledger. An old day cannot supply today's
+    usage; offline reports use the same admission as the existing live owner.
+    """
+    path = Path(storage_root) / FOUNDATION_TRAFFIC_ACCOUNTING_FILENAME
+    try:
+        with path.open("r", encoding="utf-8") as stream:
+            content = stream.read(8 * 1024 * 1024 + 1)
+        if len(content) > 8 * 1024 * 1024:
+            return None
+        state = _validated_state(json.loads(content))
+        return _project_accounted_state(
+            state, billing_scope_id=billing_scope_id,
+            device_identity_key=device_identity_key, cycle_start_day=cycle_start_day,
+            source_namespace=source_namespace, counter_source=counter_source, as_of=as_of,
+            router_quota_limit_bytes=router_quota_limit_bytes,
+            router_quota_left_bytes=router_quota_left_bytes,
+        )
+    except (OSError, ValueError, TypeError, KeyError, OverflowError, RuntimeError):
+        return None
+
+
 class FoundationTrafficAccountingAuthority:
     """The only mutable owner of user-cycle usage derived from raw byte counters."""
 
@@ -400,6 +419,23 @@ class FoundationTrafficAccountingAuthority:
             sort_keys=True,
             trailing_newline=True,
         )
+
+    def read_saved(
+        self, *, billing_scope_id: str, device_identity_key: str,
+        cycle_start_day: int, source_namespace: RuntimeGenerationNamespace,
+        counter_source: str, as_of: float,
+        router_quota_limit_bytes: int | None = None,
+        router_quota_left_bytes: int | None = None,
+    ) -> TrafficCounterObservation | None:
+        """Project the owner's admitted state without another disk read/write."""
+        with self._lock:
+            return _project_accounted_state(
+                self._state, billing_scope_id=billing_scope_id,
+                device_identity_key=device_identity_key, cycle_start_day=cycle_start_day,
+                source_namespace=source_namespace, counter_source=counter_source, as_of=as_of,
+                router_quota_limit_bytes=router_quota_limit_bytes,
+                router_quota_left_bytes=router_quota_left_bytes,
+            )
 
     def observe(
         self,

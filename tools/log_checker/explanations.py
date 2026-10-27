@@ -3,6 +3,21 @@
 # Each detector names its explanation explicitly. Do not guess a diagnosis by
 # matching free text, and do not let changed technical wording remove guidance.
 FINDINGS = {
+    "accepted_fields_unreadable": (
+        "The complete input inventory could not be checked",
+        "The saved accepted-field inventory is missing or failed its owner's validation.",
+        "The checker cannot list every available, missing, invalid or unsupported field from that snapshot.",
+        "Keep the original report and bundle. Older files may lack this inventory; no missing values are guessed."),
+    "field_values_missing": (
+        "Some saved input fields were unavailable",
+        "The app explicitly recorded missing or invalid fields. Their exact names and recorded reasons appear in Saved input availability.",
+        "This is an availability limit, not a count of software bugs. An absent radio cell, an unsupported field and a failed conversion have different meanings.",
+        "Check the named fields and reasons against the symptom you are investigating. No repair is needed merely because an optional value is unavailable."),
+    "quality_receipts_missing": (
+        "Some quality inputs were not retained",
+        "Some observations do not contain the saved inputs used for their quality calculations.",
+        "The checker can show retained quality results but cannot independently trace every input. Older logs may not contain these receipts.",
+        "Keep the original files. Do not replace missing inputs with current readings or infer an incorrect score from missing evidence alone."),
     "device_class_conflict": (
         "The saved router information disagrees",
         "Records for the selected connection describe it as both a 4G-only device and a 5G-capable device.",

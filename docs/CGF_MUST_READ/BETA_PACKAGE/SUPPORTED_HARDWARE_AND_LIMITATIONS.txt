@@ -5,14 +5,21 @@ Release: 54GUC_R25.7
 
 Prepared for: 54GUC R25.7
 
-Use this guide to find a starting point and decide what to explore next.
-The catalogue includes more profiles than this short hardware-results list.
-Reports from new models, firmware versions and partly working routers are
-welcome; profiles can grow as people discover and test more information.
+Use the matching published release record for download availability and
+completed checks. Follow the instructions for the actual app you have.
+Existing activation and code formats are unchanged.
 
-"Manual Control Verified" and "Detected and Monitored" describe physical
-results. "Simulator only" describes application tests with a software model.
-The Site Report's feature overview shows what the selected profile offers.
+Choose the exact model and firmware. A similar-looking router, a different
+firmware version or a provider-branded variant is not automatically covered.
+"Manual Control Verified" and "Detected and Monitored" are physical-router
+evidence levels. "Simulator only" means the application flow was checked
+against a software model; it does not certify a physical router.
+
+This short list records the evidence levels below; it is not the whole
+profile catalogue. An entry in the model selector does not mean every feature
+was tried on physical hardware. The Site Report's What this router supports
+section helps explain the selected profile's available fields and controls.
+It does not turn missing readings into values or certify an untested router.
 
 PHYSICALLY CHECKED PROFILES
 
@@ -49,8 +56,8 @@ PHYSICALLY CHECKED PROFILES
    Available: monitoring and restart. Some radio controls may be offered,
    but RouterOS can reject or reverse a request.
    Limits: SIM, network and APN information is read-only in 54GUC; use
-   RouterOS to change it. Local access or a backup connection is useful
-   when exploring radio changes. SMS control is unavailable.
+   RouterOS to change it. Do not rely on remote radio changes as the only
+   way to recover a remote site. SMS control is unavailable.
 
 6. TP-Link NX520
    Firmware: 1.0.0 3.0.0 v611b.0 Build 250902 Rel.10406n
@@ -81,7 +88,15 @@ PREPARED PROFILES — SIMULATOR EVIDENCE ONLY
    The application flow was checked. A physical unit and this exact
    firmware have not been certified.
 
-UNDERSTANDING THE CURRENT FEATURES
+ACTIVATION DOES NOT ADD ROUTER FEATURES
+
+A valid activation code permits only controls already supported for that
+modem. It cannot add a missing router command or upgrade a simulator result
+into physical proof. Activation is unchanged: use the existing modem-bound
+NONCE-KEY or complete Nonce/Key block described in START_HERE.txt. Publishing
+the source does not require replacing an existing valid code.
+
+LIMITS THAT APPLY ACROSS PROFILES
 
 - Control availability is determined by the exact profile and current
   router response, not just the model name.
@@ -103,10 +118,3 @@ UNDERSTANDING THE CURRENT FEATURES
   unsupported NR section is labelled once rather than repeating each value.
 - Mobile-network and APN changes may briefly interrupt service. Confirm
   the final router state rather than assuming a sent request was accepted.
-
-EXPLORE A PROFILE
-
-https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md
-
-Practical sharing tips and the licence link:
-https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md

@@ -98,7 +98,7 @@ def test_report_explains_fields_that_have_no_rule_instead_of_hiding_them(tmp_pat
 
 
 def test_final_version_and_useful_normal_summary():
-    assert report.VERSION == "2.0"
+    assert report.VERSION == "3.0"
     r = report.blank_report(1_792_700_000)
     assert not any("guarantee" in line.lower() for line in r["limitations"])
 

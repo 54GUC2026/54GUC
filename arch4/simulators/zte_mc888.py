@@ -574,9 +574,9 @@ class ZteMc888Appliance:
         session_uptime = int(traffic["connected_seconds"]) if ppp_connected else 0
         primary = radio["lte_cells"][str(self.serving_band)]
         pci = int(primary["pci"])
-        # The selected MC801A reference uses decimal PCI. MC888's retained
-        # native packets use hexadecimal; do not impose that dialect on siblings.
-        pci_format = "d" if self.scenario["identity"]["model"] == "MC801A" else "x"
+        # MC801A and the declared G5B profile use decimal PCI; MC888's retained
+        # native packets use hexadecimal. Keep these synthetic dialects distinct.
+        pci_format = "d" if self.scenario["identity"]["model"] in {"MC801A", "G5B"} else "x"
         earfcn = int(primary["earfcn"])
         cell_id = int(primary["cell_id"])
         bandwidth = float(primary["bandwidth_mhz"])

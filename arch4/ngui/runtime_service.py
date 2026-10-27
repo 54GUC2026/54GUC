@@ -1072,7 +1072,7 @@ class NGUIRuntimeService:
         with self._lock:
             return self._status
 
-    def prepare_support_history(self, cutoff: float, history_path: Path, *, timeout_s: float = 5.) -> None:
+    def prepare_support_history(self, cutoff: float, history_path: Path, *, timeout_s: float = 60.) -> None:
         """Bound the existing child's History drain; never open another writer."""
         if not math.isfinite(cutoff) or cutoff <= 0 or not math.isfinite(timeout_s) or timeout_s <= 0:
             raise ValueError("support_history_request_bounds_invalid")

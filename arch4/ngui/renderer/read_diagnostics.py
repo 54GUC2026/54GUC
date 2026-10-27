@@ -18,6 +18,9 @@ def report_text(envelope):
     if state in {'queued', 'running'}:
         return f"Checking router... {data['completed']} of {data['total']} checks finished."
     if state == 'completed':
+        if (data['capture']['complete'] and data['total'] == 0
+                and data['coverage_context'].get('monitoring_overview') is not None):
+            return 'Router report ready. Based on current monitoring; no additional native probes.'
         return "Router check complete." if data['outcomes'].get('success', 0) == data['total'] and data['capture']['complete'] else "Check complete. Some information could not be read or saved."
     return {
         'cancelled': 'Check cancelled. Completed results are retained.',
@@ -68,4 +71,4 @@ class ReadDiagnosticPanel(QWidget):
             text = report_text(envelope) if envelope else "Connect to the router to check which information it can return." if not connected else "Check what your router can report. Normal monitoring continues."
             self.report.setText(text)
             self._rendered = key
-        self.report.setVisible(bool(envelope))
+        self.report.setVisible(connected or bool(envelope))

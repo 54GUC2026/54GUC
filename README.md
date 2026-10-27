@@ -10,15 +10,15 @@ Try the existing version, compare your connection over time, or help build a bet
 
 ## Download and get connected
 
-The public release is **R25.7**, supplied as a Windows portable ZIP and matching source archive.
+The public release is **R26.2**, supplied as a Windows portable ZIP and matching source archive.
 
-1. [Download the Windows ZIP](https://github.com/54GUC2026/54GUC-Releases/releases/download/R25.7/54GUC_Windows_portable_R25.7_20261025_013103.zip) and extract it to a writable folder.
+1. [Download the Windows ZIP](https://github.com/54GUC2026/54GUC-Releases/releases/download/R26.2/54GUC_Windows_portable_R26.2_20261027_183326.zip) and extract it to a writable folder.
 2. Connect your PC to the router's network and run **54GUC.exe**. No router firmware installation is needed.
 3. On the Device page, select your model and firmware profile, then sign in to the router.
 4. Use the router identity shown in the app to [generate a free licence](https://54guc2026.54guc2026.workers.dev/#licence), and enter the complete code in the app's LICENSE window.
 5. Open Graphs or Dashboard to explore the connection. You can leave Brain off while you get familiar with the readings.
 
-[Release notes and download checks](https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7) · [First connection guide](docs/CGF_MUST_READ/BETA_PACKAGE/START_HERE.txt)
+[Release notes and download checks](https://github.com/54GUC2026/54GUC-Releases/releases/tag/R26.2) · [First connection guide](docs/CGF_MUST_READ/BETA_PACKAGE/START_HERE.txt)
 
 ## What can I use it for?
 

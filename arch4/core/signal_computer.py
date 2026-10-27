@@ -1022,17 +1022,20 @@ class SignalComputer:
                 getattr(modem, "matrix_ca_metric_supported", False)
             ),
         }
-        bq_info = score_band_quality(
-            **signal_values,
+        bq_inputs = dict(signal_values,
             bw_mhz=float(getattr(modem, "primary_bw_mhz", 0.0) or 0.0),
-            supports_bw=bool(
-                getattr(modem, "matrix_bandwidth_supported", False)
-            ),
-        )
-        cqb_info = score_band_quality(
-            **signal_values,
-            supports_bw=False,
-        )
+            supports_bw=bool(getattr(modem, "matrix_bandwidth_supported", False)))
+        cqb_inputs = dict(signal_values, supports_bw=False)
+        # Keep fresh Matrix evidence distinct from the LTE scorer's
+        # actual defaults/support flags. Consumers cannot reconstruct these
+        # later from a score or from a newer modem generation.
+        inputs = copy.deepcopy(getattr(modem, "quality_radio_inputs", {}))
+        inputs.update(quality_model=model, formula_revision=LTE_QUALITY_MODEL,
+            ca_quality_value=ca_bq_value, ca_quality_reason=_ca_quality_reason,
+            used={"bq": bq_inputs, "cqb": cqb_inputs})
+        cs.quality_radio_inputs = inputs
+        bq_info = score_band_quality(**bq_inputs)
+        cqb_info = score_band_quality(**cqb_inputs)
 
         fresh_bq_sample = bool(
             bool(getattr(modem, "radio_connected", False))
@@ -1146,6 +1149,14 @@ class SignalComputer:
         cs.cqb_coverage = float(cqb_cov)
 
         cs.cq_cqi_source = "structural_bq"
+
+        inputs["window"] = {
+            "bq_sample_accepted": fresh_bq_sample,
+            "cqb_sample_accepted": fresh_cqb_sample,
+            "bq_samples": bq_valid, "cqb_samples": cqb_valid,
+            "bq_mean": bq_cell, "cqb_mean": cqb_structural,
+            "congestion_mean_pct": cong_avg, "congestion_penalty": penalty,
+        }
 
         # Congestion comes from the RTT delta and RSRQ gap path below. Keep the
         # old field names because saved checkpoints and consumers use them.

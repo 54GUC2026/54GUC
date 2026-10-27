@@ -7405,10 +7405,8 @@ class ModemLiveModule:
     def _finish_read_diagnostic(self, run):
         run.adapter.observing = False
         if self._read_diagnostic_demand is run:
-            from arch4.modem.read_diagnostics import DiagnosticMatrixComparisonConsumer
             if (not self._modem_live_shutdown.is_set()
-                    and self._live_register_store.runtime_namespace == run.namespace
-                    and isinstance(run.adapter, DiagnosticMatrixComparisonConsumer)):
+                    and self._live_register_store.runtime_namespace == run.namespace):
                 reader = self.committed_live_generation().matrix_reader()
                 run.bind_matrix_comparison(reader, profile_id=self.input_cfg.modem_profile_id)
             self._publish_read_diagnostic(run)
@@ -7436,7 +7434,11 @@ class ModemLiveModule:
             adapter = self._modem_backend.prepare_read_diagnostics()
             run = ReadDiagnosticRun(request_id, namespace, deadline, adapter)
             self._read_diagnostic_demand = run
-            self._publish_read_diagnostic(run)
+            if not adapter.probes:
+                run.finish('completed', 'Report prepared from current monitoring; no additional native probes.')
+                self._finish_read_diagnostic(run)
+            else:
+                self._publish_read_diagnostic(run)
             return {"message": "Router check requested; normal monitoring continues.", "run_id": run.run_id}
 
     def request_network_settings_inspection(self, *, expires_at: float) -> str:

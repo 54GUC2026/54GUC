@@ -19,12 +19,13 @@ class RuleError(ValueError):
 
 
 class Evaluator:
-    def __init__(self, rules, *, algorithms=None, max_steps=200000):
+    def __init__(self, rules, *, algorithms=None, max_steps=200000, program=None):
         self.rules = rules
         self.max_steps = max_steps
         self.steps = 0
         self.stack = []
         self.algorithms = algorithms
+        self.program = program
         from .bounded_regex import RegexBudget
         self.regex = RegexBudget()
         self._machine = None
@@ -54,7 +55,7 @@ class Evaluator:
             if self.algorithms is None:raise RuleError('algorithm_library_required')
             if self._machine is None:
                 from arch4.modem_live.profile_definition.algorithm import Machine
-                self._machine=Machine(self.algorithms['functions'],self.algorithms['constants'],initializers=self.algorithms.get('initializers'),regex_budget=self.regex)
+                self._machine=Machine(self.algorithms['functions'],self.algorithms['constants'],initializers=self.algorithms.get('initializers'),regex_budget=self.regex,program=self.program)
             arguments=[ev(v) for v in expr.get('args',[])]
             if 'variadic_args' in expr:arguments.extend(ev(expr['variadic_args']))
             keywords={k:ev(v) for k,v in expr.get('kwargs',{}).items()}

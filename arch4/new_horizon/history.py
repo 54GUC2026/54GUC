@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections import OrderedDict, defaultdict, deque
-from contextlib import closing, nullcontext
+from contextlib import closing, contextmanager, nullcontext
 from dataclasses import dataclass
 import gzip
 import hashlib
@@ -15,7 +15,7 @@ from pathlib import Path
 import shutil
 import sqlite3
 from threading import RLock
-from time import strftime, time
+from time import monotonic, strftime, time
 from typing import Any, Callable, Iterable, Mapping
 from uuid import uuid4
 import zlib
@@ -116,11 +116,125 @@ def _encode(payload: Mapping[str, Any]) -> bytes:
     return zlib.compress(raw, level=6)
 
 
-def _decode(payload: bytes) -> dict[str, Any]:
+_PAYLOAD_DELTA = b'NHD1'
+_CHECKPOINT_UNLOADED = object()
+
+
+def _payload_changes(before, after, path=()):
+    """Lossless JSON changes against an immutable base, never a prior event."""
+    sets, removes = [], []
+    if type(before) is dict and type(after) is dict:
+        removes.extend([list((*path, key)) for key in before if key not in after])
+        for key, value in after.items():
+            if key not in before:
+                sets.append([list((*path, key)), value])
+            else:
+                change = _payload_changes(before[key], value, (*path, key))
+                sets.extend(change['set']); removes.extend(change['remove'])
+    elif type(before) is list and type(after) is list and len(before) == len(after):
+        for key, (left, right) in enumerate(zip(before, after)):
+            change = _payload_changes(left, right, (*path, key))
+            sets.extend(change['set']); removes.extend(change['remove'])
+    elif (type(before) is not type(after) or before != after
+          or type(before) is float and before == 0 and math.copysign(1, before) != math.copysign(1, after)):
+        sets.append([list(path), after])
+    return {"set": sets, "remove": removes}
+
+
+def _payload_base(connection, encoded, bases=None):
+    if connection is None or len(encoded) <= 36:
+        raise ValueError('history_payload_base_required')
+    identity = encoded[4:36].hex()
+    row = (bases.get(identity) if bases is not None else
+           connection.execute('SELECT slot,payload FROM history_payload_bases WHERE base_id=?', (identity,)).fetchone())
+    if row is None:
+        raise ValueError('history_payload_base_missing')
+    slot, base = row
+    if hashlib.sha256(slot.encode() + b'\0' + base).hexdigest() != identity:
+        raise ValueError('history_payload_base_corrupt')
+    return base
+
+
+def _snapshot_payload_bases(connection, payloads):
+    """Read dependencies with the selected rows, before releasing the owner lock."""
+    bases = {}
+    for encoded in payloads:
+        if encoded.startswith(_PAYLOAD_DELTA):
+            identity = encoded[4:36].hex()
+            if identity not in bases:
+                bases[identity] = connection.execute(
+                    'SELECT slot,payload FROM history_payload_bases WHERE base_id=?', (identity,)).fetchone()
+    return bases
+
+
+def _apply_payload_changes(base, patch):
+    def parent(path):
+        if type(path) is not list or not path:
+            raise ValueError('history_payload_delta_path_invalid')
+        node = base
+        for key in path[:-1]:
+            if not (type(node) is dict and type(key) is str and key in node
+                    or type(node) is list and type(key) is int and 0 <= key < len(node)):
+                raise ValueError('history_payload_delta_path_invalid')
+            node = node[key]
+        key = path[-1]
+        if not (type(node) is dict and type(key) is str
+                or type(node) is list and type(key) is int and 0 <= key < len(node)):
+            raise ValueError('history_payload_delta_path_invalid')
+        return node, key
+    if type(patch) is not dict or set(patch) != {'set', 'remove'}:
+        raise ValueError('history_payload_delta_invalid')
+    for path in patch['remove']:
+        node, key = parent(path)
+        if type(node) is not dict or key not in node:
+            raise ValueError('history_payload_delta_remove_invalid')
+        del node[key]
+    for path, value in patch['set']:
+        if path == []:
+            base = value
+        else:
+            node, key = parent(path); node[key] = value
+    return base
+
+
+def _decode(payload: bytes, connection=None, bases=None) -> dict[str, Any]:
+    if payload.startswith(_PAYLOAD_DELTA):
+        base = _decode(_payload_base(connection, payload, bases))
+        patch = json.loads(zlib.decompress(payload[36:]).decode('utf-8'))
+        value = _apply_payload_changes(base, patch)
+        if type(value) is not dict:
+            raise ValueError('new_horizon_history_payload_mapping_required')
+        return value
     value = json.loads(zlib.decompress(payload).decode("utf-8"))
     if not isinstance(value, dict):
         raise ValueError("new_horizon_history_payload_mapping_required")
     return value
+
+
+def _encode_brain_payload(connection, *, scope_key, observed_at, payload):
+    original = _encode(payload)
+    if (payload.get('schema') != 'NewHorizonBrainEvaluation.v1'
+            or type(payload.get('source_epoch')) is not str or not payload['source_epoch']
+            or type(payload.get('lifecycle_generation')) is not int or payload['lifecycle_generation'] <= 0):
+        return original
+    slot = json.dumps([scope_key, payload['source_epoch'], payload['lifecycle_generation'],
+                       int(observed_at // 60)], separators=(',', ':'))
+    row = connection.execute('SELECT base_id,payload FROM history_payload_bases WHERE slot=?', (slot,)).fetchone()
+    if row is None:
+        base_id = hashlib.sha256(slot.encode() + b'\0' + original).hexdigest()
+        connection.execute('INSERT INTO history_payload_bases VALUES(?,?,?,?)',
+                           (slot, base_id, original, observed_at))
+        base = payload
+    else:
+        base_id, encoded = row
+        if hashlib.sha256(slot.encode() + b'\0' + encoded).hexdigest() != base_id:
+            raise ValueError('history_payload_base_corrupt')
+        base = _decode(encoded)
+        connection.execute('UPDATE history_payload_bases SET last_observed_at=MAX(last_observed_at,?) WHERE slot=?',
+                           (observed_at, slot))
+    encoded = _PAYLOAD_DELTA + bytes.fromhex(base_id) + _encode(_payload_changes(base, payload))
+    # A changed candidate population can be cheaper as an ordinary old-format row.
+    return encoded if len(encoded) < len(original) else original
 
 
 def _history_record(
@@ -316,6 +430,7 @@ def export_history_records(
         timeout=1.0,
     )
     try:
+        connection.execute('BEGIN')
         if kind == "observation":
             if not scope_key:
                 raise ValueError(
@@ -367,7 +482,7 @@ def export_history_records(
                 scope_key=record_scope,
                 kind=kind,
                 observed_at=observed_at,
-                payload=_decode(encoded),
+                payload=_decode(encoded, connection),
             )
             for event_key, record_scope, observed_at, encoded in reversed(rows)
         )
@@ -382,6 +497,41 @@ SUPPORT_HISTORY_EXPORT_FILENAME = "new_horizon_history.jsonl.gz"
 
 _SUPPORT_MAX_CHUNK_ROWS=512
 _SUPPORT_MAX_CHUNK_BYTES=16*1024*1024
+
+
+def _install_history_catalog(connection):
+    """Prepare constant-size restart counts in the existing writer transaction."""
+    connection.execute('CREATE TABLE IF NOT EXISTS history_counts ('
+        'singleton INTEGER PRIMARY KEY CHECK(singleton=1),logical_count INTEGER NOT NULL,'
+        'evidence_rows INTEGER NOT NULL,checkpoints INTEGER NOT NULL)')
+    if connection.execute('SELECT 1 FROM history_counts WHERE singleton=1').fetchone() is None:
+        # Once for an older store; subsequent opens read only this catalog row.
+        logical, physical = connection.execute('SELECT COALESCE(SUM(logical_count),0),COUNT(*) FROM evidence').fetchone()
+        checkpoints = connection.execute('SELECT COUNT(*) FROM checkpoint').fetchone()[0]
+        connection.execute('INSERT INTO history_counts VALUES(1,?,?,?)', (logical, physical, checkpoints))
+    for table in ('evidence', 'checkpoint'):
+        for action in ('INSERT','DELETE','UPDATE'):
+            if table == 'evidence':
+                update = {'INSERT':'logical_count=logical_count+NEW.logical_count,evidence_rows=evidence_rows+1',
+                    'DELETE':'logical_count=logical_count-OLD.logical_count,evidence_rows=evidence_rows-1',
+                    'UPDATE':'logical_count=logical_count+NEW.logical_count-OLD.logical_count'}[action]
+            else:
+                if action == 'UPDATE':continue
+                update = 'checkpoints=checkpoints'+('+' if action=='INSERT' else '-')+'1'
+            connection.execute(f'CREATE TRIGGER IF NOT EXISTS history_count_{table}_{action.lower()} '
+                f'AFTER {action} ON {table} BEGIN UPDATE history_counts SET {update} WHERE singleton=1; END')
+    connection.execute('CREATE TABLE IF NOT EXISTS history_payload_bases ('
+        'slot TEXT PRIMARY KEY,base_id TEXT UNIQUE NOT NULL,payload BLOB NOT NULL,last_observed_at REAL NOT NULL)')
+    if connection.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='history_observation_keys'").fetchone() is None:
+        connection.execute('CREATE TABLE history_observation_keys(event_key TEXT PRIMARY KEY,observed_at REAL NOT NULL)')
+        connection.execute('CREATE INDEX history_observation_keys_time ON history_observation_keys(observed_at)')
+        # One-time legacy tail preparation. Normal opens never read raw batches.
+        keys=list(connection.execute("SELECT event_key,observed_at FROM evidence WHERE kind='observation' ORDER BY observed_at DESC LIMIT 4096"))
+        for key,scope,encoded in connection.execute("SELECT event_key,scope_key,payload FROM evidence WHERE kind='observation_batch' ORDER BY observed_at DESC LIMIT 64"):
+            keys.extend((row['event_key'],row['observed_at']) for row in _decode_observation_batch(
+                event_key=key,expected_scope_key=scope,payload=_decode(encoded)))
+        connection.executemany('INSERT OR IGNORE INTO history_observation_keys VALUES(?,?)',
+                              sorted(keys,key=lambda row:row[1])[-_OBSERVATION_KEY_LIMIT:])
 
 
 def _support_install(connection: sqlite3.Connection) -> None:
@@ -420,6 +570,7 @@ def _support_source_digest(record: Mapping[str,Any],encoded: bytes) -> str:
 
 
 def _support_read_prepared(connection: sqlite3.Connection,record: Mapping[str,Any],encoded: bytes):
+    if encoded.startswith(_PAYLOAD_DELTA):_payload_base(connection, encoded)
     try:
         row=connection.execute('SELECT source_digest,policy,content,content_digest,redactions '
             'FROM support_prepared_rows WHERE row_key=?',(_support_row_key(record),)).fetchone()
@@ -437,7 +588,7 @@ def _support_read_prepared(connection: sqlite3.Connection,record: Mapping[str,An
 
 
 def _support_write_prepared(connection: sqlite3.Connection,record: Mapping[str,Any],encoded: bytes) -> None:
-    original=dict(record,payload=json.loads(zlib.decompress(encoded)))
+    original=dict(record,payload=_decode(encoded, connection))
     fingerprints=set()
     content,redactions=_prepared_support.prepare_support_record(original,secret_fingerprints=fingerprints)
     source=_support_source_digest(record,encoded);policy=_prepared_support.support_preparation_policy()
@@ -481,6 +632,8 @@ def _support_chunk_digest(rows) -> str:
 
 
 def _support_read_prepared_chunk(connection,rows):
+    for source in rows:
+        if source[4].startswith(_PAYLOAD_DELTA):_payload_base(connection, source[4])
     try:
         row=connection.execute('SELECT source_digest,policy,content,content_digest,redactions '
             'FROM support_prepared_chunks WHERE minute=?',(int(rows[0][3]//60),)).fetchone()
@@ -574,7 +727,7 @@ def _support_collect_secret_verification_context(connection,*,evidence_where,evi
                 record=dict(schema=SUPPORT_HISTORY_EXPORT_SCHEMA,owner=SUPPORT_HISTORY_EXPORT_OWNER,
                     record_type='checkpoint',scope_key=scope,name=name,updated_at=float(stamp))
             if _support_source_digest(record,encoded)!=source:continue  # Fallback exporter already scans changed sources.
-            found=support_known_secret_values(dict(record,payload=json.loads(zlib.decompress(encoded))))
+            found=support_known_secret_values(dict(record,payload=_decode(encoded, connection)))
             hashes={hashlib.sha256(value.encode()).hexdigest() for value in found}
             if not missing.issubset(hashes):raise ValueError('support_prepared_guard_source_mismatch')
             secrets.update(found);seen.update(hashes);decoded+=1
@@ -715,7 +868,7 @@ def capture_support_history_export(
                         body, redactions = cached
                         prepared_stats["reused_rows"] += 1
                     else:
-                        original = dict(row, payload=_decode(encoded)) if encoded is not None else row
+                        original = dict(row, payload=_decode(encoded, connection)) if encoded is not None else row
                         body, redactions = prepared_support.prepare_support_record(original, known_secret_values=secrets)
                         if row["record_type"] != "manifest":
                             prepared_stats["fallback_rows"] += 1
@@ -723,7 +876,7 @@ def capture_support_history_export(
                     output.write(body)
                     return
                 if encoded is not None:
-                    row = dict(row, payload=_decode(encoded))
+                    row = dict(row, payload=_decode(encoded, connection))
                 compressed.write(
                     (
                         json.dumps(
@@ -1006,10 +1159,16 @@ def _hourly_context_payload(value: Any, *, original_at: float) -> Any:
 def _migrate_hourly_context_store(connection: sqlite3.Connection, path: Path) -> None:
     """Atomic, once-per-store conversion before the owner's caches are read."""
     version = connection.execute("PRAGMA user_version").fetchone()[0]
-    if version == 2:
+    if version == 3:
         return
-    if version > 2:
+    if version > 3:
         raise ValueError("new_horizon_history_newer_time_schema")
+    if version == 2:
+        # Prepared catalogs and independent payload deltas need the new reader.
+        # Previous readers reject this revision before attempting restoration.
+        with connection:
+            connection.execute("PRAGMA user_version=3")
+        return
     changes = []
     for key, stamp, encoded in connection.execute(
         "SELECT event_key, observed_at, payload FROM evidence "
@@ -1041,7 +1200,7 @@ def _migrate_hourly_context_store(connection: sqlite3.Connection, path: Path) ->
                 connection.execute("UPDATE checkpoint SET payload=? WHERE scope_key=? AND name=?", (_encode(payload), key, name))
         if changes:
             connection.execute("DELETE FROM checkpoint WHERE name IN ('posteriors_v15','adviser_credit_v7')")
-        connection.execute("PRAGMA user_version=2")
+        connection.execute("PRAGMA user_version=3")
 
 
 def _inspect_or_migrate_learning_context(
@@ -1425,6 +1584,7 @@ class AdvisoryHistory:
         *,
         retention_seconds: int = _RETENTION_SECONDS,
     ) -> None:
+        startup_started = monotonic()
         self.path = Path(path).resolve()
         if type(retention_seconds) is not int or retention_seconds <= 0:
             raise ValueError("new_horizon_history_retention_invalid")
@@ -1453,22 +1613,10 @@ class AdvisoryHistory:
             recent_observation_keys,
             recent_observation_batches,
         ) = startup
-        self._checkpoint_cache = {
-            (str(scope), str(name)): _decode(payload)
-            for scope, name, payload in checkpoint_rows
-        }
-        recent_keys = [str(row[0]) for row in reversed(recent_observation_keys)]
-        for (encoded,) in reversed(recent_observation_batches):
-            batch = _decode(encoded)
-            for run in batch.get("runs", ()):
-                if isinstance(run, Mapping):
-                    recent_keys.extend(
-                        str(run.get(name) or "")
-                        for name in ("first_event_key", "last_event_key")
-                        if str(run.get(name) or "")
-                    )
+        self._checkpoint_cache = {(str(scope), str(name)): _CHECKPOINT_UNLOADED
+                                  for scope, name in checkpoint_rows}
         self._recent_observation_keys: OrderedDict[str, None] = OrderedDict(
-            (key, None) for key in recent_keys[-_OBSERVATION_KEY_LIMIT:]
+            (str(row[0]), None) for row in reversed(recent_observation_keys)
         )
         self._observation_cache: OrderedDict[
             str,
@@ -1502,6 +1650,7 @@ class AdvisoryHistory:
             critical_sink=self._write_critical_batch,
             routine_sink=self._write_observation_batches,
         )
+        self._startup_elapsed_s = monotonic() - startup_started
 
     def _open_database_and_read(
         self,
@@ -1518,39 +1667,22 @@ class AdvisoryHistory:
         try:
             _migrate_hourly_context_store(connection, self.path)
             with connection:
-                integrity = connection.execute("PRAGMA quick_check").fetchone()
-                if integrity != ("ok",):
-                    raise sqlite3.DatabaseError("new_horizon_history_integrity_failed")
-                evidence_count = int(
-                    connection.execute(
-                        "SELECT COALESCE(SUM(logical_count), 0) FROM evidence"
-                    ).fetchone()[0]
-                )
-                durable_row_count = int(
-                    connection.execute("SELECT COUNT(*) FROM evidence").fetchone()[0]
-                )
-                checkpoint_count = int(
-                    connection.execute("SELECT COUNT(*) FROM checkpoint").fetchone()[0]
-                )
+                counts = connection.execute('SELECT logical_count,evidence_rows,checkpoints FROM history_counts WHERE singleton=1').fetchone()
+                if counts is None or any(type(n) is not int or n < 0 for n in counts):
+                    raise ValueError('history_startup_counts_invalid')
+                evidence_count, durable_row_count, checkpoint_count = counts
                 checkpoint_rows = connection.execute(
-                    "SELECT scope_key, name, payload FROM checkpoint"
+                    "SELECT scope_key, name FROM checkpoint"
                 ).fetchall()
-                recent_observation_keys = connection.execute(
-                    "SELECT event_key FROM evidence WHERE kind='observation' "
-                    "ORDER BY observed_at DESC LIMIT 4096"
-                ).fetchall()
-                recent_observation_batches = connection.execute(
-                    "SELECT payload FROM evidence WHERE kind='observation_batch' "
-                    "ORDER BY observed_at DESC LIMIT 64"
-                ).fetchall()
+                recent_keys = connection.execute('SELECT event_key FROM history_observation_keys ORDER BY observed_at DESC LIMIT 4096').fetchall()
             return (
                 connection,
                 evidence_count,
                 durable_row_count,
                 checkpoint_count,
                 checkpoint_rows,
-                recent_observation_keys,
-                recent_observation_batches,
+                recent_keys,
+                [],
             )
         except Exception:
             connection.close()
@@ -1582,8 +1714,11 @@ class AdvisoryHistory:
             check_same_thread=False,
         )
         try:
+            if connection.execute('PRAGMA user_version').fetchone()[0] > 3:
+                raise ValueError('new_horizon_history_newer_time_schema')
             connection.execute("PRAGMA journal_mode=WAL")
             connection.execute("PRAGMA synchronous=NORMAL")
+            connection.execute('PRAGMA recursive_triggers=ON')
             connection.execute(
                 "CREATE TABLE IF NOT EXISTS evidence ("
                 "event_key TEXT PRIMARY KEY, scope_key TEXT NOT NULL, "
@@ -1606,6 +1741,8 @@ class AdvisoryHistory:
             connection.execute(
                 "CREATE INDEX IF NOT EXISTS evidence_time ON evidence(observed_at)"
             )
+            connection.execute('CREATE INDEX IF NOT EXISTS evidence_scope_kind_time ON evidence(scope_key,kind,observed_at)')
+            connection.execute('CREATE INDEX IF NOT EXISTS evidence_kind_time ON evidence(kind,observed_at)')
             connection.execute(
                 "CREATE TABLE IF NOT EXISTS checkpoint ("
                 "scope_key TEXT NOT NULL, name TEXT NOT NULL, "
@@ -1613,6 +1750,7 @@ class AdvisoryHistory:
                 "PRIMARY KEY(scope_key, name))"
             )
 
+            _install_history_catalog(connection)
             _support_install(connection)
             connection.commit()
             return connection
@@ -1620,8 +1758,24 @@ class AdvisoryHistory:
             connection.close()
             raise
 
+    @contextmanager
+    def _disk_transaction(self):
+        """Keep live cached accounting aligned with an atomic SQLite batch."""
+        with self._lock:
+            before = (self._durable_row_count, self._evidence_count,
+                      self._support_prepared_rows, self._support_latest_minute,
+                      set(self._support_open_minutes))
+            try:
+                with self._connection:
+                    yield
+            except BaseException:
+                (self._durable_row_count, self._evidence_count,
+                 self._support_prepared_rows, self._support_latest_minute,
+                 self._support_open_minutes) = before
+                raise
+
     def _write_critical_batch(self, batch: tuple[MemoryLogRecord, ...]) -> None:
-        with self._lock, self._connection:
+        with self._disk_transaction():
             for item in batch:
                 record_type = str(item.payload["record_type"])
                 if record_type == "checkpoint_scope_replacement":
@@ -1700,7 +1854,10 @@ class AdvisoryHistory:
                         str(item.payload["scope_key"]),
                         str(item.payload["kind"]),
                         float(item.observed_at),
-                        _encode(item.payload["payload"]),
+                        (_encode_brain_payload(self._connection,
+                            scope_key=str(item.payload['scope_key']), observed_at=float(item.observed_at),
+                            payload=item.payload['payload'])
+                         if item.payload['kind']=='brain_evaluation_v1' else _encode(item.payload["payload"])),
                         1,
                     ),
                 )
@@ -1715,6 +1872,7 @@ class AdvisoryHistory:
             self._prepare_support_rows(evidence_keys=evidence_keys, checkpoint_keys=checkpoints)
 
     def _prepare_support_rows(self, *, evidence_keys=(), checkpoint_keys=()) -> None:
+        transaction_open = self._connection.in_transaction
         try:
             self._support_prepared_rows += _support_prepare_written_rows(self._connection,
                 evidence_keys=evidence_keys, checkpoint_keys=checkpoint_keys)
@@ -1730,10 +1888,11 @@ class AdvisoryHistory:
                 _support_compact_prepared_minute(self._connection, minute)
                 self._support_open_minutes.discard(minute)
         except Exception:
-            # Optional preparation cannot lose private History or fail its
-            # writer. A later public export revalidates sources and fails closed
-            # if their actual projection is invalid; no raw fallback is exported.
+            # Projection errors remain optional. SQLite FULL/ROLLBACK can abort
+            # the whole transaction; that must reach the writer's retry queue.
             self._support_preparation_failures += 1
+            if transaction_open and not self._connection.in_transaction:
+                raise
 
     def _write_observation_batches(
         self,
@@ -1747,7 +1906,7 @@ class AdvisoryHistory:
             grouped[(scope_key, minute)].append(row)
         cache_updates: list[tuple[str, tuple[dict[str, Any], ...]]] = []
         support_keys: list[str] = []
-        with self._lock, self._connection:
+        with self._disk_transaction():
             for (scope_key, _minute), rows in sorted(grouped.items()):
                 samples = tuple(sorted(rows, key=lambda row: float(row["observed_at"])))
                 compact = _compact_observations(scope_key, samples)
@@ -1787,6 +1946,10 @@ class AdvisoryHistory:
                         ),
                     )
                 )
+                self._connection.executemany('INSERT OR IGNORE INTO history_observation_keys VALUES(?,?)',
+                    ((row['event_key'],row['observed_at']) for row in samples))
+            self._connection.execute('DELETE FROM history_observation_keys WHERE event_key IN '
+                '(SELECT event_key FROM history_observation_keys ORDER BY observed_at DESC LIMIT -1 OFFSET 4096)')
             self._prepare_support_rows(evidence_keys=support_keys)
             cutoff = max(item.observed_at for item in batch) - self.retention_seconds
             expired = self._connection.execute(
@@ -1797,6 +1960,7 @@ class AdvisoryHistory:
                 "DELETE FROM evidence WHERE observed_at < ?",
                 (cutoff,),
             )
+            self._connection.execute('DELETE FROM history_payload_bases WHERE last_observed_at < ?', (cutoff,))
             removed_rows = max(0, cursor.rowcount)
             removed_evidence = sum(int(row[0]) for row in expired)
             self._durable_row_count = max(
@@ -2011,13 +2175,14 @@ class AdvisoryHistory:
         params.append(limit)
         with self._lock:
             disk_rows = self._connection.execute(sql, params).fetchall()
+            bases = _snapshot_payload_bases(self._connection, (row[4] for row in disk_rows))
         rows = [
             _history_record(
                 event_key=row[0],
                 scope_key=row[1],
                 kind=row[2],
                 observed_at=row[3],
-                payload=_decode(row[4]),
+                payload=_decode(row[4], self._connection, bases),
             )
             for row in reversed(disk_rows)
         ]
@@ -2064,13 +2229,14 @@ class AdvisoryHistory:
                 "ORDER BY observed_at DESC LIMIT ?",
                 (kind, float(since), limit),
             ).fetchall()
+            bases = _snapshot_payload_bases(self._connection, (row[3] for row in disk_rows))
         rows = [
             _history_record(
                 event_key=event_key,
                 scope_key=scope_key,
                 kind=kind,
                 observed_at=observed_at,
-                payload=_decode(payload),
+                payload=_decode(payload, self._connection, bases),
             )
             for event_key, scope_key, observed_at, payload in reversed(disk_rows)
         ]
@@ -2146,6 +2312,8 @@ class AdvisoryHistory:
                         -1 if limit_per_kind is None else limit_per_kind + 1,
                     ),
                 ).fetchall()
+            bases = _snapshot_payload_bases(self._connection,
+                (row[3] for group in durable_by_kind.values() for row in group))
         hot = self._log_processor.hot_records(lane=CRITICAL_LANE)
 
         result: dict[str, tuple[dict[str, Any], ...]] = {}
@@ -2156,7 +2324,7 @@ class AdvisoryHistory:
                     scope_key=record_scope,
                     kind=kind,
                     observed_at=observed_at,
-                    payload=_decode(payload),
+                    payload=_decode(payload, self._connection, bases),
                 )
                 for event_key, record_scope, observed_at, payload in reversed(
                     durable_by_kind[kind]
@@ -2204,8 +2372,9 @@ class AdvisoryHistory:
     def confirmed_legacy_scopes(self, *, continuity_key: str) -> tuple[str, ...]:
         self._require_active_scope(continuity_key)
         with self._lock:
-            return tuple(sorted(scope for (scope, name), payload in self._checkpoint_cache.items()
-                if name == "confirmed_device_history_migration_v1" and payload["target_scope"] == continuity_key))
+            return tuple(sorted(scope for (scope, name) in self._checkpoint_cache
+                if name == "confirmed_device_history_migration_v1"
+                and self._checkpoint_payload((scope,name))["target_scope"] == continuity_key))
 
     def read_confirmed_factual_checkpoint(self, *, continuity_key: str, source_scope: str,
                                           name: str) -> dict[str, Any] | None:
@@ -2215,10 +2384,10 @@ class AdvisoryHistory:
             raise ValueError("history_retired_checkpoint_kind_forbidden")
         self._require_active_scope(continuity_key)
         with self._lock:
-            receipt = self._checkpoint_cache.get((source_scope, "confirmed_device_history_migration_v1"))
+            receipt = self._checkpoint_payload((source_scope, "confirmed_device_history_migration_v1"))
             if receipt is None or receipt["target_scope"] != continuity_key:
                 raise ValueError("history_retired_checkpoint_physical_proof_required")
-            payload = self._checkpoint_cache.get((source_scope, name))
+            payload = self._checkpoint_payload((source_scope, name))
             return route_factual_checkpoint(payload, receipt["scope_map"]) if payload else None
 
     def recent_kind(
@@ -2303,6 +2472,7 @@ class AdvisoryHistory:
                 "WHERE event_key=?",
                 (event_key,),
             ).fetchone()
+            decoded = None if row is None else _decode(row[3], self._connection)
         if row is None:
             return None
         return _history_record(
@@ -2310,7 +2480,7 @@ class AdvisoryHistory:
             scope_key=row[0],
             kind=row[1],
             observed_at=row[2],
-            payload=_decode(row[3]),
+            payload=decoded,
         )
 
     def save_checkpoint(
@@ -2395,8 +2565,8 @@ class AdvisoryHistory:
         target_key = (target_scope_key, name)
         tombstone_key = (source_scope_key, tombstone_name)
         with self._lock:
-            source = self._checkpoint_cache.get(source_key)
-            target = self._checkpoint_cache.get(target_key)
+            source = self._checkpoint_payload(source_key)
+            target = self._checkpoint_payload(target_key)
             if source is None:
                 raise ValueError("new_horizon_checkpoint_migration_source_missing")
             if tombstone_key in self._checkpoint_cache:
@@ -2437,8 +2607,23 @@ class AdvisoryHistory:
         if name != "confirmed_device_history_migration_v1":
             self._require_active_scope(scope_key)
         with self._lock:
-            value = self._checkpoint_cache.get((scope_key, name))
+            value = self._checkpoint_payload((scope_key, name))
             return None if value is None else dict(value)
+
+    def _checkpoint_payload(self, key):
+        value = self._checkpoint_cache.get(key)
+        if value is _CHECKPOINT_UNLOADED:
+            row = self._connection.execute('SELECT payload FROM checkpoint WHERE scope_key=? AND name=?', key).fetchone()
+            if row is None:
+                raise ValueError('history_checkpoint_catalog_entry_missing')
+            value = _decode(row[0]); self._checkpoint_cache[key] = value
+        return value
+
+    def verify_integrity(self) -> None:
+        """Explicit full-store diagnostic; never on the startup critical path."""
+        with self._lock:
+            if self._connection.execute('PRAGMA quick_check').fetchone() != ('ok',):
+                raise sqlite3.DatabaseError('new_horizon_history_integrity_failed')
 
     def _require_active_scope(self, scope_key: str) -> None:
         if (scope_key, "confirmed_device_history_migration_v1") in self._checkpoint_cache:
@@ -2475,7 +2660,7 @@ class AdvisoryHistory:
             with self._connection:
                 for key,_ in sources:
                     self._connection.execute("DELETE FROM checkpoint WHERE scope_key=? AND name=?", (key,name))
-                self._connection.execute("INSERT OR REPLACE INTO checkpoint(scope_key,name,updated_at,payload) VALUES(?,?,?,?)",
+                self._connection.execute("INSERT INTO checkpoint(scope_key,name,updated_at,payload) VALUES(?,?,?,?) ON CONFLICT(scope_key,name) DO UPDATE SET updated_at=excluded.updated_at,payload=excluded.payload",
                                          (scope_key,name,time(),_encode(result)))
             for key,_ in sources:
                 self._checkpoint_cache.pop((key,name), None)
@@ -2504,7 +2689,7 @@ class AdvisoryHistory:
 
         self.flush()
         cutoff = float(now) - self.retention_seconds
-        with self._lock, self._connection:
+        with self._disk_transaction():
             expired = self._connection.execute(
                 "SELECT logical_count FROM evidence WHERE observed_at < ?",
                 (cutoff,),
@@ -2513,6 +2698,7 @@ class AdvisoryHistory:
                 "DELETE FROM evidence WHERE observed_at < ?",
                 (cutoff,),
             )
+            self._connection.execute('DELETE FROM history_payload_bases WHERE last_observed_at < ?', (cutoff,))
             removed = max(0, cursor.rowcount)
             self._durable_row_count = max(0, self._durable_row_count - removed)
             removed_evidence = sum(int(row[0]) for row in expired)
@@ -2560,6 +2746,10 @@ class AdvisoryHistory:
         with self._lock:
             return {
                 "owner": "54guc.new_horizon.history",
+                "startup": {"duration_s": self._startup_elapsed_s,
+                    "validation": "targeted_catalog_and_requested_payloads",
+                    "whole_database_integrity_checked": False,
+                    "loaded_checkpoint_payloads": sum(v is not _CHECKPOINT_UNLOADED for v in self._checkpoint_cache.values())},
                 "support_preparation": dict(prepared_rows=self._support_prepared_rows,
                     failures=self._support_preparation_failures),
                 "evidence_count": self._evidence_count,
@@ -2582,8 +2772,8 @@ class AdvisoryHistory:
 
     def checkpoints_named(self, name: str) -> tuple[dict[str, Any], ...]:
         with self._lock:
-            return tuple(dict(scope_key=scope, payload=dict(payload))
-                         for (scope, key), payload in self._checkpoint_cache.items() if key == name)
+            return tuple(dict(scope_key=scope, payload=dict(self._checkpoint_payload((scope,key))))
+                         for (scope, key) in self._checkpoint_cache if key == name)
 
     def migrate_confirmed_device_scope(self, *, source: Mapping[str, Any], target: Mapping[str, Any],
                                        observed_at: float) -> None:
@@ -2607,16 +2797,16 @@ class AdvisoryHistory:
             rows = self._connection.execute(
                 "SELECT event_key,kind,observed_at,payload FROM evidence WHERE scope_key=? AND kind NOT IN ('observation','observation_batch')",
                 (old,)).fetchall()
-            source_hours = self._checkpoint_cache.get((old, "referee_hourly_aq_v1"))
-            factual = tuple(payload for (key,name),payload in self._checkpoint_cache.items()
+            source_hours = self._checkpoint_payload((old, "referee_hourly_aq_v1"))
+            factual = tuple(self._checkpoint_payload((key,name)) for (key,name) in self._checkpoint_cache
                             if key == old and name.startswith("band_evidence_summary_v"))
             if not rows and source_hours is None and not factual:
                 self._identity_migration_checks.add(pair)
                 return
-            records = tuple(dict(event_key=k,scope_key=old,kind=kind,observed_at=ts,payload=_decode(raw))
+            records = tuple(dict(event_key=k,scope_key=old,kind=kind,observed_at=ts,payload=_decode(raw, self._connection))
                             for k,kind,ts,raw in rows)
             plan = plan_device_scope_migration(source=source, target=target, records=records,
-                source_hours=source_hours, target_hours=self._checkpoint_cache.get((new,"referee_hourly_aq_v1")),
+                source_hours=source_hours, target_hours=self._checkpoint_payload((new,"referee_hourly_aq_v1")),
                 factual_checkpoints=factual)
             self._backup_before_identity_migration()
             receipt = dict(schema=MIGRATION_SCHEMA, source_scope=old, target_scope=new,
@@ -2634,10 +2824,10 @@ class AdvisoryHistory:
                 self._connection.execute("DELETE FROM checkpoint WHERE scope_key=? AND name=?",
                     (new, "band_evidence_factual_continuity_to_v12_v1"))
                 for key,name,payload in ((new,"referee_hourly_aq_v1",plan["hours"]), (old,MIGRATION_RECEIPT,receipt)):
-                    self._connection.execute("INSERT OR REPLACE INTO checkpoint(scope_key,name,updated_at,payload) VALUES(?,?,?,?)",
+                    self._connection.execute("INSERT INTO checkpoint(scope_key,name,updated_at,payload) VALUES(?,?,?,?) ON CONFLICT(scope_key,name) DO UPDATE SET updated_at=excluded.updated_at,payload=excluded.payload",
                                              (key,name,observed_at,_encode(payload)))
-            self._checkpoint_cache = {(str(scope), str(name)): _decode(raw) for scope,name,raw in
-                self._connection.execute("SELECT scope_key,name,payload FROM checkpoint")}
+            self._checkpoint_cache = {(str(scope), str(name)): _CHECKPOINT_UNLOADED for scope,name in
+                self._connection.execute("SELECT scope_key,name FROM checkpoint")}
             self._checkpoint_count = len(self._checkpoint_cache)
             self._recent_kind_cache.clear()
             self._warmed_recent_kinds.clear()

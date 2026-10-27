@@ -1,10 +1,10 @@
 # Project status
 
-## R25.7 is available
+## R26.2 is available
 
-The Windows portable app and matching GPL source were released on **25 October 2026**.
+The Windows portable app and matching GPL source were released on **27 October 2026**.
 
-- [Windows app and source downloads](https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7)
+- [Windows app and source downloads](https://github.com/54GUC2026/54GUC-Releases/releases/tag/R26.2)
 - [Public source repository](https://github.com/54GUC2026/54GUC)
 - [Project website](https://54guc2026.54guc2026.workers.dev)
 
@@ -18,7 +18,7 @@ See the [hardware guide](CGF_MUST_READ/BETA_PACKAGE/SUPPORTED_HARDWARE_AND_LIMIT
 
 ## Release checks
 
-For R25.7, the complete native development suite passed **17,891 tests**, with 18 skips and all 105 critical checks passing. The public offline selection passed **731 tests**, with one platform-specific skip. The Windows package and public source were checked separately; the release record identifies the matching archives.
+For R26.2, the original full native run recorded **17,995 passes, nine failures and18skips**. All nine failures were closed in failed/related groups: combined **18,004distinct passes,18skips andno unresolved failures**. This is not a fresh all-pass full run. The54affected R26.2 release checks and original/copied/extracted Windows package checks passed. Matching source and Windows archives passed integrity, source-correspondence and privacy review. The public offline selection's731passes/one skip remain historical R25.7 evidence, not a newly claimed R26.2 run.
 
 Hardware coverage grows through real use as well as tests. In this release's simulator work, four cases passed, one completed with standalone-5G/action limitations, and seven planned cases were deferred. Those are useful software checks alongside the physical-router results in the hardware guide.
 

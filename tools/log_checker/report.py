@@ -40,7 +40,7 @@ from tools.log_checker.explanations import (
     FINDINGS, field_explanation, command_explanation, recovery_explanation,
 )
 
-VERSION = "2.0"
+VERSION = "3.0"
 MAX_JSON = 32 * 1024 * 1024
 MAX_TEXT = 32 * 1024 * 1024
 MAX_ROWS = 65536
@@ -141,6 +141,7 @@ def blank_report(now):
                 device_mode="unclassified", device_modes={},
                 sections={s: [] for s in SECTIONS}, files=[], hourly=[], decisions=[],
                 diagnostics=dict(event_counts={}, command_outcomes={}, recovery_state={}),
+                field_availability={}, quality_inputs={},
                 limitations=[
                     "This report reads saved files and makes no changes to the app, router or History.",
                     "A snapshot describes its saved time. Earlier events use their own retained records.",
@@ -255,6 +256,69 @@ def select_report_mode(report):
         note(report, SECTIONS[4], "4G device review: the existing service grade and historical results retain their original scale. No NR bonus is added by this checker.")
 
 
+def inspect_field_availability(report, name, core, *, support=False):
+    """List the accepted owner's entire denominator, without copying private values."""
+    try:
+        if support:
+            from arch4.support_evidence import read_support_facts
+            _, facts = read_support_facts(core)
+            facts = facts.values()
+        else:
+            accepted = CoreAcceptedCurrentFacts.from_payload(core['accepted_current_facts'])
+            if accepted.matrix_identity != MatrixGenerationIdentity.from_mapping(core['matrix_identity']):
+                raise ValueError('checker_fields_generation_mismatch')
+            facts = accepted.facts
+        rows = [dict(field=f.path, state=f.disposition, reason=f.reason,
+                     retained=f.retention is not None, sampled_at=f.sampled_at,
+                     acquired_at=f.acquired_at) for f in facts]
+    except (KeyError, ValueError, TypeError, AttributeError):
+        finding(report, 'Missing evidence', SECTIONS[1],
+                'The complete accepted-field inventory is absent or invalid; no zero-missing result was invented.',
+                name, code='accepted_fields_unreadable')
+        return
+    counts = dict(Counter(row['state'] for row in rows))
+    report['field_availability'][name] = dict(counts=counts, fields=rows)
+    note(report, SECTIONS[1], name + ': saved accepted-field availability: ' +
+         ', '.join(f'{key} {value}' for key, value in sorted(counts.items())) +
+         '. Availability states are not bug counts. Cell absence and unsupported fields remain distinct in the recorded reasons.')
+    missing = sum(counts.get(state, 0) for state in ('missing', 'invalid'))
+    if missing:
+        finding(report, 'Missing evidence', SECTIONS[1],
+                f'{missing} accepted fields were missing or invalid in this saved snapshot. See Saved input availability for their exact names and reasons.',
+                name, code='field_values_missing')
+
+
+def inspect_quality_inputs(report, observations):
+    """Inventory recorded receipts only; never recalculate BQ, CQ, CQB or AQ."""
+    models, missing = Counter(), Counter()
+    available = lte_used = 0
+    for row in observations:
+        payload = mapping(row.get('payload'))
+        model = payload.get('quality_model')
+        models[model if isinstance(model, str) else 'not recorded'] += 1
+        receipt = mapping(payload.get('quality_radio_inputs'))
+        available += bool(receipt)
+        used = mapping(receipt.get('used'))
+        lte_used += bool(mapping(used.get('bq')) and mapping(used.get('cqb')))
+        required = payload.get('missing_required')
+        if isinstance(required, list):
+            missing.update(path for path in required if isinstance(path, str))
+    absent = len(observations) - available
+    report['quality_inputs'] = dict(observations=len(observations), models=dict(models),
+        receipt_available=available, receipt_not_retained=absent,
+        lte_used_receipts=lte_used, missing_required=dict(missing))
+    if observations:
+        note(report, SECTIONS[1], f'Quality input receipts: {available} retained; {absent} not retained; '
+             f'{lte_used} include the explicit LTE BQ/CQB used inputs. Older records are not filled with invented inputs.')
+    if missing:
+        note(report, SECTIONS[1], 'Recorded missing required inputs: ' +
+             ', '.join(f'{key} ({count} observations)' for key, count in sorted(missing.items())) + '.')
+    if absent:
+        finding(report, 'Missing evidence', SECTIONS[1],
+                f'{absent} observations have no retained quality-input receipt. This does not establish that the app lacked those values at the time.',
+                'History/observation', code='quality_receipts_missing')
+
+
 def inspect_snapshots(report, name, saved, *, support=False):
     health = saved["runtime_health"]
     diag = saved["new_horizon_diagnostic_snapshot"]
@@ -306,6 +370,7 @@ def inspect_snapshots(report, name, saved, *, support=False):
         if stamp(view.get("rejected_count")):
             finding(report, "Warning", SECTIONS[4], f"{view['rejected_count']} retained {key.replace('_', ' ')} records were rejected by their owner.", name, code='history_owner_rejections')
     core = mapping(state.get("core_snapshot"))
+    inspect_field_availability(report, name, core, support=support)
     try:
         device = recorded_device_mode(core, support=support)
     except (KeyError, ValueError, TypeError, AttributeError):
@@ -526,6 +591,7 @@ def read_history(path, continuity, report):
             else:
                 unqualified += 1
     observations.sort(key=lambda row: (row["observed_at"], row["event_key"]))
+    inspect_quality_inputs(report, observations)
     if not observations and not any(scope == continuity for _, scope, _ in catalog):
         finding(report, "Missing evidence", SECTIONS[4],
                 "No recent History records match this router's recorded SIM/network continuity identity.", "History", code='history_context_missing')
@@ -1026,6 +1092,20 @@ def write_report(report, output):
         if lines:
             text.extend(["", section.upper(), *lines])
             parts.append("<h2>" + esc(section) + "</h2><ul>" + "".join("<li>" + esc(line) + "</li>" for line in lines) + "</ul>")
+    if report.get('field_availability'):
+        text.extend(['', 'SAVED INPUT AVAILABILITY',
+                     'Availability states are not bug counts. These are saved snapshots, not a complete availability timeline.'])
+        parts.append('<h2>Saved input availability</h2><p>Availability states are not bug counts. These are saved snapshots, not a complete availability timeline.</p>')
+        for source, view in report['field_availability'].items():
+            text.append(source)
+            parts.append('<h3>' + esc(source) + '</h3><div class="table-wrap"><table><tr><th>Unavailable field</th><th>State</th><th>Recorded reason</th></tr>')
+            for row in view['fields']:
+                if row['state'] == 'available':
+                    continue
+                values = (row['field'], row['state'], row['reason'])
+                text.append(' / '.join(values))
+                parts.append('<tr>' + ''.join('<td>' + esc(v) + '</td>' for v in values) + '</tr>')
+            parts.append('</table></div>')
     if field_rows:
         text.extend(["", "ROUTER FIELDS AND PROFILE RULES", *fields.get("limits", [])])
         parts.append("<details><summary>Router fields and profile rules</summary><ul>" +
@@ -1057,6 +1137,7 @@ def write_report(report, output):
             "".join("<td>" + "<hr>".join(esc(v) for v in row[key] or ["Not recorded"]) + "</td>" for key, _ in labels) + "</tr>")
     parts.append("</table></div>")
     text.extend(["", "READING THIS REPORT", "AQ is the saved service-quality grade; higher values on the same grading scale are better. A forecast is an estimate; it is not a measured result.",
+        "CQ includes bandwidth. CQB excludes bandwidth; Referee averages CQB over its assessment window and grades capacity separately. A CQ percentage and a Referee CQB fraction are different quantities. No quality grades are recalculated by this checker.",
         "LTE is 4G. NR is 5G. An allowed band list permits bands; it does not mean all those bands are connected at once.",
         "PCI identifies a nearby radio cell. The cell ID and channel supply additional context; PCI alone is not a unique tower identity.",
         "Fresh means newly read. Retained means an older reading was deliberately kept; it is not a new measurement.",

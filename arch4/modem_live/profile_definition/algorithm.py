@@ -11,6 +11,15 @@ import re
 import xml.etree.ElementTree as ET
 from .expressions import RuleError
 
+_SAFE_BUILTINS={'str':str,'int':int,'float':float,'bool':bool,'list':list,'tuple':tuple,'set':set,'frozenset':frozenset,'dict':dict,'iter':list,
+    'len':len,'abs':abs,'min':min,'max':max,'sum':sum,'round':round,'sorted':sorted,
+    'any':any,'all':all,'ord':ord,'ValueError':ValueError,'TypeError':TypeError,'Exception':ValueError}
+_SAFE_TYPES={'$builtin:str':str,'$builtin:int':int,'$builtin:float':float,'$builtin:bool':bool,
+    '$builtin:list':list,'$builtin:tuple':tuple,'$builtin:set':set,'$builtin:frozenset':frozenset,'$builtin:dict':dict}
+_SAFE_METHODS={str:frozenset({'strip','lower','upper','replace','split','join','startswith','endswith','isdigit','isdecimal','rsplit','lstrip','rstrip','splitlines','encode'}),
+    dict:frozenset({'get','items','keys','values','update','pop','setdefault'}),list:frozenset({'append','extend','sort','pop'}),set:frozenset({'add','update','intersection','difference'})}
+_HASH_TYPE=type(hashlib.sha256())
+
 class _Return(Exception):
     def __init__(self,value):self.value=value
 class _Break(Exception):pass
@@ -23,8 +32,9 @@ class _Member:
 
 class Machine:
     """One finite data-only replay. JSON never supplies a Python callable."""
-    def __init__(self,definitions,constants=None,max_steps=500000,initializers=None,regex_budget=None):
+    def __init__(self,definitions,constants=None,max_steps=500000,initializers=None,regex_budget=None,program=None):
         from .bounded_regex import RegexBudget
+        self.program=program
         self.regex=regex_budget or RegexBudget()
         self.steps=0;self.max_steps=max_steps;self.depth=0
         self.scope={}
@@ -72,6 +82,7 @@ class Machine:
         return scope.get('$emitted') if function.definition.get('emits') else None
 
     def expression(self,node,scope):
+        if self.program is not None:return self.program.expressions[id(node)](self,scope)
         self.tick()
         if node is None:return None
         kind=node['kind'];ev=lambda n:self.expression(n,scope)
@@ -93,12 +104,7 @@ class Machine:
                 else:result[ev(key)]=ev(value)
             return result
         if kind=='member':
-            owner=ev(node['object']);name=node['name']
-            if name.startswith('__'):raise RuleError('private_algorithm_member')
-            if owner=='$module:re' and name in {'IGNORECASE','I','DOTALL','S','MULTILINE','M'}:return {'IGNORECASE':2,'I':2,'DOTALL':16,'S':16,'MULTILINE':8,'M':8}[name]
-            if isinstance(owner,ET.Element) and name in {'text','tag'}:return getattr(owner,name)
-            if isinstance(owner,(ipaddress.IPv4Address,ipaddress.IPv6Address)) and name in {'is_unspecified','is_loopback'}:return getattr(owner,name)
-            return _Member(owner,name)
+            return self.member(ev(node['object']),node['name'])
         if kind=='slice':return slice(ev(node['start']),ev(node['stop']),ev(node['step']))
         if kind=='index':return ev(node['object'])[ev(node['key'])]
         if kind=='binary':
@@ -139,14 +145,7 @@ class Machine:
             from .limits import join
             return join('',[ev(n)for n in node['parts']])
         if kind=='format_value':
-            value=ev(node['value'])
-            if node['conversion']==114:value=repr(value)
-            if node['conversion']==115:value=str(value)
-            specification=ev(node['format'])or''
-            if not isinstance(specification,str)or len(specification)>128 or any(int(v)>100000 for v in re.findall(r'\d+',specification)):
-                raise RuleError('format_limit')
-            from .limits import value_limit
-            return value_limit(format(value,specification))
+            return self.formatted(ev(node['value']),ev(node['format']),node['conversion'])
         if kind=='comprehension':
             results=[];local=dict(scope)
             def loop(index):
@@ -179,6 +178,8 @@ class Machine:
         return items
 
     def body(self,nodes,scope):
+        if not nodes:return
+        if self.program is not None:return self.program.bodies[id(nodes)](self,scope)
         for node in nodes:
             self.tick();kind=node['kind'];ev=lambda n:self.expression(n,scope)
             if kind=='return':raise _Return(ev(node['value']))
@@ -223,18 +224,29 @@ class Machine:
             elif kind=='continue':raise _Continue()
             elif kind!='pass':raise RuleError('unknown_algorithm_statement:'+kind)
 
+    def member(self,owner,name):
+        if name.startswith('__'):raise RuleError('private_algorithm_member')
+        if owner=='$module:re' and name in {'IGNORECASE','I','DOTALL','S','MULTILINE','M'}:return {'IGNORECASE':2,'I':2,'DOTALL':16,'S':16,'MULTILINE':8,'M':8}[name]
+        if isinstance(owner,ET.Element) and name in {'text','tag'}:return getattr(owner,name)
+        if isinstance(owner,(ipaddress.IPv4Address,ipaddress.IPv6Address)) and name in {'is_unspecified','is_loopback'}:return getattr(owner,name)
+        return _Member(owner,name)
+
+    def formatted(self,value,specification,conversion):
+        if conversion==114:value=repr(value)
+        if conversion==115:value=str(value)
+        specification=specification or''
+        if not isinstance(specification,str)or len(specification)>128 or any(int(v)>100000 for v in re.findall(r'\d+',specification)):
+            raise RuleError('format_limit')
+        from .limits import value_limit
+        return value_limit(format(value,specification))
+
     def builtin(self,name,args,kwargs):
-        safe={'str':str,'int':int,'float':float,'bool':bool,'list':list,'tuple':tuple,'set':set,'frozenset':frozenset,'dict':dict,'iter':list,
-            'len':len,'abs':abs,'min':min,'max':max,'sum':sum,'round':round,'sorted':sorted,
-            'any':any,'all':all,'ord':ord,'ValueError':ValueError,'TypeError':TypeError,'Exception':ValueError}
         if name=='sorted' and isinstance(kwargs.get('key'),_Function):
             return sorted(args[0],key=lambda value:self.call(kwargs['key'],[value],{}),reverse=kwargs.get('reverse',False))
-        if name in safe:return safe[name](*args,**kwargs)
+        if name in _SAFE_BUILTINS:return _SAFE_BUILTINS[name](*args,**kwargs)
         if name=='type':return '$builtin:'+type(args[0]).__name__
         if name=='isinstance':
-            types={'$builtin:str':str,'$builtin:int':int,'$builtin:float':float,'$builtin:bool':bool,
-                '$builtin:list':list,'$builtin:tuple':tuple,'$builtin:set':set,'$builtin:frozenset':frozenset,'$builtin:dict':dict}
-            target=args[1];return isinstance(args[0],tuple(types[v] for v in target) if isinstance(target,tuple) else types[target])
+            target=args[1];return isinstance(args[0],tuple(_SAFE_TYPES[v] for v in target) if isinstance(target,tuple) else _SAFE_TYPES[target])
         if name=='range':return list(self.bounded(range(*args,**kwargs)))
         if name in {'zip','enumerate'}:
             for value in (args if name=='zip'else args[:1]):self.bounded(value)
@@ -254,7 +266,7 @@ class Machine:
         if owner=='$module:ipaddress' and name in {'ip_address','IPv4Address','IPv6Address'}:
             return {'ip_address':ipaddress.ip_address,'IPv4Address':ipaddress.IPv4Address,'IPv6Address':ipaddress.IPv6Address}[name](*args,**kwargs)
         if owner=='$module:hashlib' and name=='sha256':return hashlib.sha256(*args,**kwargs)
-        if isinstance(owner,type(hashlib.sha256())) and name=='hexdigest':return owner.hexdigest()
+        if isinstance(owner,_HASH_TYPE) and name=='hexdigest':return owner.hexdigest()
         if owner=='$module:math' and name in {'isfinite','log10','floor','ceil'}:return {'isfinite':math.isfinite,'log10':math.log10,'floor':math.floor,'ceil':math.ceil}[name](*args,**kwargs)
         if owner=='$module:re' and name in {'match','fullmatch','search','findall','finditer','sub','compile','escape'}:
             return self.regex.call(name,*args,**kwargs)
@@ -264,9 +276,7 @@ class Machine:
         if name in{'append','extend','add','update','setdefault'}and isinstance(owner,(list,set,dict)):
             extra=1 if name in{'append','add','setdefault'}else len(args[0])if args else len(kwargs)
             if len(owner)+extra>10000:raise RuleError('collection_limit')
-        methods={str:{'strip','lower','upper','replace','split','join','startswith','endswith','isdigit','isdecimal','rsplit','lstrip','rstrip','splitlines','encode'},
-            dict:{'get','items','keys','values','update','pop','setdefault'},list:{'append','extend','sort','pop'},set:{'add','update','intersection','difference'}}
-        for cls,allowed in methods.items():
+        for cls,allowed in _SAFE_METHODS.items():
             if isinstance(owner,cls) and name in allowed:
                 result=getattr(owner,name)(*args,**kwargs)
                 return list(result) if name in {'items','keys','values'} else result

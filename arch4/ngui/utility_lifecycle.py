@@ -23,6 +23,7 @@ class UtilityKind(str, Enum):
     VERSION = "open_info"
     UPDATES = "check_updates"
     SITE_REPORT = "create_site_report"
+    ROUTER_CHECK = "read_diagnostics"
 
 
 class UtilityTerminalState(str, Enum):
@@ -58,6 +59,7 @@ UTILITY_LABELS: Mapping[UtilityKind, str] = MappingProxyType(
         UtilityKind.VERSION: "Version",
         UtilityKind.UPDATES: "Update check",
         UtilityKind.SITE_REPORT: "Site report",
+        UtilityKind.ROUTER_CHECK: "Router check",
     }
 )
 

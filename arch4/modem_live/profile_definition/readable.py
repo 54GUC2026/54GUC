@@ -81,6 +81,10 @@ def compile_rule(text,*,pointer='/read'):
         result={'op':operation}
         if node.args:result['args']=[child(v)for v in node.args]
         result.update({key:child(k.value)for key,k in zip(keys,node.keywords)})
+        if operation in {'match','extract','find_all'}:
+            from .bounded_regex import compile_pattern
+            try:compile_pattern(result.get('pattern'))
+            except ValueError:fail('invalid or ambiguous repeated pattern')
         return result
     try:return convert(tree.body)
     except DefinitionError:raise

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from dataclasses import replace
+from functools import partial
 from typing import Any, Mapping
 
 from arch4.core_contracts.accepted_generation_root import (
@@ -337,7 +338,33 @@ def project_operator_data_budget_from_accepted_facts(
         period_accounting_qualified=period_qualified,
         period_accounting_status=accounting_status,
     )
-    if not period_qualified and plan_configured and accounting_read_root is not None and traffic_accounting is None:
+    raw_pair_available = (
+        traffic_available
+        and projected["traffic_device_download_counter_bytes"] is not None
+        and projected["traffic_device_upload_counter_bytes"] is not None
+    )
+    raw_timing = evidence.get("traffic_device_download_counter_bytes")
+    # A cumulative pair, its source and optional period proof must describe
+    # one physical read. Matrix can legitimately retain individual cells;
+    # joining different receipts here would invent traffic.
+    pair_names = ["traffic_device_upload_counter_bytes", "traffic_accounting_source"]
+    for hint in ("traffic_counter_period_started_at", "traffic_counter_interface_started_at"):
+        if projected[hint] is not None:
+            pair_names.append(hint)
+    provenance = ("source_sequence", "sampled_at", "acquisition_attempt_id", "acquisition_namespace")
+    raw_pair_coherent = raw_pair_available and not any(
+        any(getattr(evidence.get(name), field, None) != getattr(raw_timing, field, None)
+            for field in provenance)
+        for name in pair_names
+    )
+    saved_reader = (
+        traffic_accounting.read_saved
+        if traffic_accounting is not None and not raw_pair_coherent
+        else partial(read_accounted_traffic, accounting_read_root)
+        if traffic_accounting is None and accounting_read_root is not None
+        else None
+    )
+    if not period_qualified and plan_configured and saved_reader is not None:
         # Saved accounting has its own exact scope and timestamp. A temporarily
         # missing NEW counter must not hide an already qualified usage record.
         # This branch never advances the mutable counter stream.
@@ -345,8 +372,8 @@ def project_operator_data_budget_from_accepted_facts(
         imei = str(projected["imei"] or "").strip()
         device_key = "serial:" + serial if serial else "imei:" + imei if imei else ""
         if device_key:
-            saved = read_accounted_traffic(
-                accounting_read_root, billing_scope_id=_billing_scope_id(request),
+            saved = saved_reader(
+                billing_scope_id=_billing_scope_id(request),
                 device_identity_key=device_key, cycle_start_day=plan.cycle_start_day,
                 source_namespace=current_facts.matrix_identity.namespace,
                 counter_source=str(projected["traffic_accounting_source"] or ""),
@@ -360,27 +387,12 @@ def project_operator_data_budget_from_accepted_facts(
         not period_qualified
         and plan_configured
         and traffic_accounting is not None
-        and traffic_available
-        and projected["traffic_device_download_counter_bytes"] is not None
-        and projected["traffic_device_upload_counter_bytes"] is not None
+        and raw_pair_available
     ):
-        raw_timing = evidence.get("traffic_device_download_counter_bytes")
         raw_sequence = int(getattr(raw_timing, "source_sequence", 0))
         raw_sampled_at = float(getattr(raw_timing, "sampled_at", 0.0))
         raw_namespace = getattr(raw_timing, "acquisition_namespace", None)
-        # A cumulative pair, its source and optional period proof must describe
-        # one physical read. Matrix can legitimately retain individual cells;
-        # joining different receipts here would invent traffic.
-        pair_names = ["traffic_device_upload_counter_bytes", "traffic_accounting_source"]
-        for hint in ("traffic_counter_period_started_at", "traffic_counter_interface_started_at"):
-            if projected[hint] is not None:
-                pair_names.append(hint)
-        provenance = ("source_sequence", "sampled_at", "acquisition_attempt_id", "acquisition_namespace")
-        if any(
-            any(getattr(evidence.get(name), field, None) != getattr(raw_timing, field, None)
-                for field in provenance)
-            for name in pair_names
-        ):
+        if not raw_pair_coherent:
             return reader.project_data_budget(request, replace(
                 observation, period_accounting_qualified=False,
                 period_accounting_status="counter_receipt_mismatch"))

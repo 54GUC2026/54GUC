@@ -4,9 +4,12 @@ from __future__ import annotations
 
 from collections import OrderedDict
 from concurrent.futures import Future, ThreadPoolExecutor
+from contextlib import contextmanager
+import ctypes
 from dataclasses import dataclass
 from enum import Enum
 import hashlib
+import os
 from threading import RLock
 from time import monotonic, time
 from types import MappingProxyType
@@ -31,6 +34,32 @@ class HeavyWorkKind(str, Enum):
     SITE_REPORT = "site_report"
     SUPPORT_BUNDLE = "support_bundle"
     SCAN = "scan"
+
+
+@contextmanager
+def _background_support_resources(kind: HeavyWorkKind, *, platform: str | None = None):
+    """Lower only this export worker's CPU/I/O/memory scheduling on Windows.
+
+    Large History collection must yield to the GUI and the independent live
+    runtime. Never lower the process, modem worker or GUI thread. Restore the
+    existing executor thread even when collection or final privacy fails.
+    """
+    if kind is not HeavyWorkKind.SUPPORT_BUNDLE or (os.name if platform is None else platform) != "nt":
+        yield
+        return
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.GetCurrentThread.argtypes = ()
+    kernel.GetCurrentThread.restype = ctypes.c_void_p
+    kernel.SetThreadPriority.argtypes = (ctypes.c_void_p, ctypes.c_int)
+    kernel.SetThreadPriority.restype = ctypes.c_int
+    thread = kernel.GetCurrentThread()
+    if not kernel.SetThreadPriority(thread, 0x00010000):  # THREAD_MODE_BACKGROUND_BEGIN
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        yield
+    finally:
+        if not kernel.SetThreadPriority(thread, 0x00020000):  # THREAD_MODE_BACKGROUND_END
+            raise ctypes.WinError(ctypes.get_last_error())
 
 
 class HeavyWorkState(str, Enum):
@@ -613,7 +642,8 @@ class NGUIHeavyWorkProcessor:
             )
 
         try:
-            result = _freeze_mapping(self._handlers[request.kind](request, progress))
+            with _background_support_resources(request.kind):
+                result = _freeze_mapping(self._handlers[request.kind](request, progress))
         except Exception as exc:
             failed_at = monotonic()
             message = f"{type(exc).__name__}: {exc}"

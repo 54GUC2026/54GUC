@@ -349,7 +349,7 @@ def _compile(document):
 
 
 class PortableProfile:
-    __slots__=('profile_id','revision','content_hash','interpretation_hash','path','_document','_plan','_dependencies','_requests','native_private_keys','opaque_native_privacy','__weakref__')
+    __slots__=('profile_id','revision','content_hash','interpretation_hash','path','_document','_plan','_program','_dependencies','_requests','native_private_keys','opaque_native_privacy','__weakref__')
     def __setattr__(self,name,value):
         if hasattr(self,name):raise AttributeError('portable profile snapshot is immutable')
         object.__setattr__(self,name,value)
@@ -380,6 +380,8 @@ class PortableProfile:
         interpretation['parameters']=document.get('parameters',{})
         interpretation['connection']=self.connection
         self.interpretation_hash=_digest(interpretation)
+        from .prepared import PreparedAlgorithms
+        self._program=PreparedAlgorithms(self._plan['algorithms'])
     @property
     def metadata(self):return deepcopy(self._document['profile'])
     @property
@@ -454,13 +456,13 @@ class PortableProfile:
     def state_value(self,name,replies,context=None):
         """Pure proposed state; the existing adapter owns admission/lifetime."""
         if name not in self._plan['state']:raise ProfileError('/state: adapter input is not defined')
-        return Evaluator(self._plan['functions'],algorithms=self._plan['algorithms']).run(
+        return Evaluator(self._plan['functions'],algorithms=self._plan['algorithms'],program=self._program).run(
             self._plan['state'][name],{'profile':self._plan['metadata'],'replies':replies,'context':context or{}})
     def _prepare_write_fields(self,name,payload):
         write=self._plan['writes'].get(name)
         if write is None:raise ProfileError('/writes: selected typed native stage is not defined')
         if set(payload)-set(write['fields']):raise ProfileError('/writes: stage parameter is not defined')
-        evaluator=Evaluator(self._plan['functions'],algorithms=self._plan['algorithms'])
+        evaluator=Evaluator(self._plan['functions'],algorithms=self._plan['algorithms'],program=self._program)
         inputs={'profile':self._plan['metadata'],'replies':{},'context':{'payload':payload}}
         output={}
         for parameter in payload:
@@ -495,7 +497,7 @@ class PortableProfile:
         write=self._plan['writes'].get(name)
         if write is None:return dict(payload)
         if write.get('protocol')!='native_fields':raise ProfileError('/writes/'+name+': native parameter definition required')
-        evaluator=Evaluator(self._plan['functions'],algorithms=self._plan['algorithms'])
+        evaluator=Evaluator(self._plan['functions'],algorithms=self._plan['algorithms'],program=self._program)
         inputs={'profile':self._plan['metadata'],'replies':{},'context':{'payload':payload}}
         output={}
         for key,original in payload.items():
@@ -513,7 +515,7 @@ class PortableProfile:
             output[target]=value
         return output
     def decode(self,replies,context=None,*,addresses=None,issues=None,withheld_inputs=None):
-        return decode(self._plan,replies,context,addresses=addresses,issues=issues,admit_outputs=True,withheld_inputs=withheld_inputs)
+        return decode(self._plan,replies,context,addresses=addresses,issues=issues,admit_outputs=True,withheld_inputs=withheld_inputs,program=self._program)
 
 
 class ProfileRegistry:

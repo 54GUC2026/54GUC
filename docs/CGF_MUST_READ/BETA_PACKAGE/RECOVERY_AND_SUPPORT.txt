@@ -20,8 +20,8 @@ IF 54GUC CANNOT CONNECT TO THE DEVICE
    restore the local connection before retrying 54GUC.
 3. Check the exact model, address, user name and router login password.
    The router password is not remembered between app starts.
-4. Press CONNECT and read the result. If a model or firmware is not covered,
-   the profile workshop can help you investigate a new draft.
+4. Press CONNECT once, then wait for a result. Do not select a different
+   model merely to bypass an error.
 
 IF DEVICE IS CONNECTED BUT MOBILE NETWORK IS NOT
 
@@ -45,24 +45,42 @@ network and the router's own settings.
 
 ACTIVATION
 
-Existing valid activation codes continue to work. START_HERE.txt explains
-the activation procedure. If a code is refused, check that it matches the
-connected modem and that both Nonce and Key were copied completely. The app
-version and displayed message are useful details for a support question.
+Activation stays the same in this candidate. Connect the intended modem and
+wait until its serial or IMEI is available. Choose LICENSE, paste the
+NONCE-KEY text or the complete Nonce/Key block made for that modem, then choose
+Validate & Activate. Wait for Licensed before using supported controls.
+
+Licences are free. BUY LICENSE keeps its existing button name and explains
+how to request one; it does not require a payment. Donations are optional.
+Publishing the source does not require a new code or a special activation
+upgrade. Keep an existing valid code for the same modem, settings and History.
+Do not delete them or reset the router to resolve an activation problem.
+
+The public source retains the existing code generator and checking logic, so
+people with that source can also generate valid codes. This is an accepted
+part of the free open-source release. Activation still does not add controls
+that the exact router profile cannot support.
+
+If a code is refused, check that it was made for the connected modem and that
+both Nonce and Key were copied completely. Wait for the final result. If it
+still fails, send the app version and exact message privately to support.
+Keep the code, licence file and modem identifiers out of a public issue.
+An activation problem does not require changing bands, resetting the router
+or deleting saved settings or History.
 
 IF A BUTTON OR READING IS MISSING
 
 Move the pointer over a disabled control to read why it is unavailable.
 UNSUP. means the exact router profile does not provide it. N/A, Unknown
 or --- means no confirmed reading yet. Wait for another reading, then
-check whether the router supplies that information. A missing reading
-and a measured zero mean different things.
+check whether the router supplies that information. Do not treat missing
+signal, Internet or data-use information as zero.
 
 IF A MANUAL OR BRAIN CHANGE SEEMS WRONG
 
 Read Manual Action Result and Recent Events. Check the router's current
 band, cell or Wi-Fi state. A request may be refused, time out or be
-changed again by the router. Its final result helps you choose the next step.
+changed again by the router. Do not repeat it until you know the outcome.
 Set Brain OFF if you want to watch without new automatic changes; an
 already-started action may finish first.
 
@@ -93,12 +111,13 @@ into their WebUI, then restart 54GUC after finishing your changes.
 IF THE APP NEEDS TO STOP OR RESTART
 
 Use SHUTDOWN and wait until it closes. The 54GUC_Control.cmd stop command
-is another supported way to stop it. Waiting for shutdown lets the app
-finish its saved records before a new session.
+is another supported way to stop it. Avoid force-closing or starting a
+second copy while shutdown is in progress. A command completed in a
+previous run must not be sent again after restart.
 
 Valid history for this router is kept separately from the app folder.
 If history is missing or damaged, basic monitoring can start with new
-learning. Keeping each router's own History makes comparisons clearer. Saved
+learning. Never copy another router's history into this one. Saved
 settings live under %LOCALAPPDATA%\54GUC; keep them if you want your
 router and APN choices on the next start. Use Previous Version Import
 only when the app offers that specific transfer.
@@ -114,8 +133,8 @@ is in support_bundles. If the app cannot open, use the
 
 Review the ZIP before sending it privately to your beta contact. Include
 the app version, exact router model and firmware, time of the problem,
-what you did and the message you saw. Practical sharing tips are linked
-below. Export may take time
+what you did and the message you saw. Do not send router passwords,
+license files or SMS secrets in a public issue. Export may take time
 when this router has many saved readings; progress appears in the app.
 
 LOG CHECKER 2.0
@@ -130,10 +149,4 @@ Privacy-masked input cannot be used to confirm the original private value.
 Read USER_GUIDE.txt beside this file for the six pages. The website's
 manual and pictures may describe an older build. Use the Log Checker supplied
 or recommended for the actual release; an older copy may not understand its
-new saved fields.
-
-Profile workshop:
-https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md
-
-Practical sharing tips and the licence link:
-https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md
+new saved fields. Keep activation codes and the original History private.

@@ -1,54 +1,125 @@
-54GUC WINDOWS - R25.7
-====================
+54GUC WINDOWS — R25.7
+====================================
 
 Release: 54GUC_R25.7
-Released: 25 October 2026
 
-R25.7 is available as a Windows portable app and matching open-source archive:
-https://github.com/54GUC2026/54GUC-Releases/releases/tag/R25.7
+Prepared for: 54GUC R25.7
 
-WHAT'S NEW
+Use the matching published release record for download availability and
+completed checks. Follow the instructions for the actual app you have.
+Existing activation and code formats are unchanged.
 
-- Site Report brings together the connection, saved history and the selected
-  profile's supported features, with clearer explanations of missing readings.
-  Its feature overview is useful even on routers without Check router.
-- Optional CPU, memory or uptime refusals no longer interrupt otherwise
-  usable radio collection on the affected TP-Link profiles.
-- Check router distinguishes regular monitoring from one-time checks more
-  clearly. Missing uplink-channel data no longer creates a false band warning.
-- The offline Checker distinguishes an old saved snapshot from a later
-  confirmed change and explains privacy-masked evidence more clearly.
-- The source and contributor guides are public. Our next priority is wider
-  hardware testing and gradually improving router profiles together.
+This document describes the R25.7 guide set. Release availability and
+completed checks are recorded separately; a guide is not a Windows download.
+Start with START_HERE.txt and USER_GUIDE.txt. Activation, existing valid codes
+and generator behavior stay unchanged.
 
-Existing activation codes, saved settings and History continue to work.
-The app and activation are free; donations are optional.
+CHANGES IN THIS VERSION
 
-4G AND 5G RECOVERY
+- Activation and the existing generator are unchanged. Licences remain free,
+  donations are optional, and existing valid codes do not need replacement.
+  Public source includes the ability to generate codes; this is intentional.
+  Saved settings and History do not need to be reset for source publication.
+- Site Report presents the connection, saved history and what the selected
+  router profile supports, with plain-language explanations for unavailable
+  readings. It can list features even where Check router is unavailable.
+- Optional router resource checks no longer stop otherwise usable radio
+  readings when that optional check is refused.
+- Check router more clearly distinguishes regular readings from one-time
+  checks. Missing uplink-channel data no longer creates a false band warning.
+- Log Checker distinguishes an older saved snapshot from a later confirmed
+  change, instead of calling the older snapshot a failed router change.
+- The matching source is being prepared under GPL version 3 only, with the
+  same private development source retained. This does not announce that a
+  source URL exists. Final privacy, public-input, test, build and release checks
+  remain. The separate signing migration is deferred.
 
-Startup keeps the router's detected mode and band choices. On qualified
-profiles, Manual APPLY NR can enable 5G from 4G-only before applying a band.
-Confirmed poor active 5G that harms service can trigger temporary 4G-only
-recovery, followed by saved-5G retries after 30, 60 and 90 minutes.
+RECOVERY FEATURES CARRIED FORWARD
 
-LTE/Internet recovery comes first. The recovered LTE band pool is retained
-when saved 5G settings return. Recent Events explains the current recovery
-stage, retry time or a setting that needs attention. Manual changes, a changed
-device/SIM or an uncertain result can pause an earlier recovery plan.
+- Startup keeps the router's detected mode and band choices. Selecting
+  4G-only in the router remains your choice; startup does not enable 5G.
+- On a qualified profile, Manual APPLY NR can enable 5G first when the
+  router is in 4G-only mode, then apply your requested NR band. When mode
+  control is unavailable, it uses the existing supported band request.
+- When confirmed poor active 5G is harming service, supported routers can
+  temporarily use 4G-only. The saved 5G settings are retried after 30, 60
+  and 90 minutes. A restart does not bring the retry forward.
+- 4G/Internet recovery always finishes first. 5G retries wait for stable
+  LTE service and existing recovery holds to clear. The recovered LTE band
+  pool is kept when the saved 5G mode returns.
+- If 54GUC cannot change the router's mode, monitoring and ordinary LTE
+  recovery continue. Recent Events explains when a WebUI change is needed.
+- Manual changes, a different device or SIM, and uncertain router results
+  stop or pause an old recovery plan. Settings are not blindly replayed.
+- Recent Events separates normal monitoring, LTE recovery, temporary LTE
+  use, scheduled 5G retries and situations needing your attention.
+- GoForm firmware that reconnects itself after a mode change is recognized
+  from a fresh native reading. No redundant reconnect request is sent.
+- If NR settings no longer match after LTE recovery, retries pause and the
+  saved 5G choice is kept for diagnosis. Review the settings in the WebUI.
+- Selected router profiles retain their own native mode choices, including
+  distinct mixed-mode preferences. Mode control and NR band control are
+  separate capabilities; one does not imply the other.
+- Router reply handling, command confirmation and support-bundle diagnosis
+  have corrections for the affected profiles. Quality, congestion and
+  learning formulas, CA Pool meaning and existing History remain unchanged.
+- Log Checker 2.0 provides plain-language explanations for saved evidence,
+  including missing or privacy-masked fields. It can inspect a support ZIP
+  or a stopped app's own folder. It does not connect to the router.
 
-WHAT TO EXPLORE NEXT
+EXISTING FEATURES
 
-The hardware guide describes current physical and simulator results. Each
-router and firmware offers different fields and controls, and we would love
-to hear from more owners. Monitoring-only profiles, new native formats,
-clearer reports and small usability improvements are all useful work.
+- Selected ON/OFF and page choices use a consistent dark, white-edged style.
+- SMS settings use labels above compact inputs; seconds appear separately.
+  The interval range remains121–3600 seconds.
 
-The existing quality and learning formulas, CA Pool meaning and History
-remain unchanged. Standalone-5G optimization is not part of R25.7.
+- New learning waits for the existing 10-second connection settling period.
+- Editing a data plan keeps confirmed Huawei monthly usage.
+- Contradictory cell identities are withheld until a fresh, consistent read.
+- Support export covers one selected run, up to its latest 24 hours, with
+  private data removed last. Large saved sessions can be read by the checker.
+- Scheduler ME uses the existing QAM calculation; capability labels reflect
+  the qualified exact firmware. No quality formula or CA Pool behavior changed.
 
-USER_GUIDE.txt explains the pages and available actions. The public profile
-workshop is a starting point for your own branch or a contribution:
-https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md
+WHAT IT DOES
 
-Practical sharing tips and the licence link:
-https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md
+54GUC connects to an exact supported router profile and shows its mobile
+connection, signal, traffic, data use and recent results on six pages.
+It can remain connected to the router while mobile service is unavailable.
+Where the exact firmware allows it, licensed Live mode offers manual radio,
+Wi-Fi, SIM, network and APN choices. Brain can suggest or make supported
+automatic changes; Brain OFF keeps monitoring without new automatic changes.
+You can save a support bundle when something goes wrong.
+
+Monitoring is available without a license. Router changes need a valid
+license for that modem and a supported control. A request is not a confirmed
+change until the router's result is checked.
+
+HARDWARE STATUS
+
+Manual controls have physical-router evidence on the listed Huawei B818-263,
+B535-232, B535-333 and NX520 Build250902 firmware. ZTE MF296R and MikroTik Chateau LTE12 have
+physical detection and monitoring evidence, with narrower control limits.
+G5TC, MC888 and NX520v profiles have application-simulator evidence; that
+does not certify their physical firmware or mobile-network behavior. The
+exact firmware and limits are in SUPPORTED_HARDWARE_AND_LIMITATIONS.txt.
+
+MAIN LIMITS
+
+- Availability of each field and control depends on the exact router and
+  firmware. Unsupported controls remain unavailable.
+- 5G NSA readings and automatic recovery depend on the selected profile
+  and fresh router responses. Manual NR band changes require a qualified
+  exact profile. Standalone 5G optimization is not supported; restoring a
+  saved native mode choice does not add that feature.
+- A CA Pool is a set of allowed LTE bands, not proof that all are active.
+- Quality, congestion and forecasts are estimates, not provider guarantees.
+- Saved data use begins with 54GUC's own recorded readings; check the
+  provider for earlier use and billing.
+- MikroTik SIM, network and APN fields are read-only in 54GUC. Change them
+  in RouterOS. G5TC B17 network changes require special caution because
+  physical firmware acceptance is not established.
+
+Start with START_HERE.txt, then read USER_GUIDE.txt for the six pages.
+The support ZIP may contain private router information; review it before
+sending it to your beta contact.

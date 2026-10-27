@@ -797,8 +797,8 @@ class ModemInterface(ABC):
                 status_override={"read_diagnostic": run.envelope()})
 
     def prepare_read_diagnostics(self):
-        from arch4.modem.read_diagnostics import ReadDiagnosticUnavailable
-        raise ReadDiagnosticUnavailable("Read diagnostics are not implemented for this router profile.")
+        from arch4.modem.read_diagnostics import MonitoringDiagnosticAdapter
+        return MonitoringDiagnosticAdapter(getattr(self, '_backend_name', type(self).__name__))
 
     def _iter_network_settings_observation(self):
         raise RuntimeError("network_inspection_unsupported_profile")
