@@ -1,0 +1,5 @@
+# Test/development-only visual inspection dependencies for NGUI.
+# Do not include this file in Windows production packaging.
+Pillow>=11.3,<13
+opencv-python-headless>=4.12,<6
+pytesseract>=0.3.13,<0.4

@@ -1,0 +1,7 @@
+{
+  "schema": "54GUCUpdateChannel.v1",
+  "owner": "54guc.release",
+  "status": "published",
+  "release_api_url": "https://api.github.com/repos/54GUC2026/54GUC-Releases/releases/latest",
+  "message": "Official public 54GUC Windows portable releases."
+}

@@ -1,0 +1,38 @@
+Original 54GUC code and materials
+Copyright (c) 2026 54GUC.
+Original 54GUC source and materials in this R25.6 release are licensed under
+the GNU General Public License, version 3 only (GPL-3.0-only), except material
+with its own licence. See LICENSE for the full terms and LICENSING.md for
+scope and corresponding-source information. Third-party components retain
+their own copyright and licence terms. Nothing here restricts rights granted
+by those licences or applicable law.
+
+54GUC - third-party software notices
+
+The component list and the purpose of each component are in
+open_source_manifest.json and the application's VERSION dialog. These notices
+are separate from the project licence in LICENSE. Each third-party component
+retains its own copyright, licence and warranty terms.
+
+Original pinned distribution notices are in _internal/licenses. inventory.json
+records their component versions, source and SHA-256. GNU LGPLv3 and GPLv3
+texts are included for Qt/PySide/Shiboken. The open-source LGPL option is used;
+the commercial licence reference in upstream metadata does not indicate a
+commercial Qt licence purchase. Qt Virtual Keyboard is not used or distributed.
+
+Qt/PySide/Shiboken are dynamically loaded, unmodified upstream libraries.
+Their licences permit modification, replacement and reverse engineering for
+debugging modifications to those libraries; 54GUC terms do not restrict these
+rights. Use ABI-compatible replacement libraries in _internal/PySide6 and
+_internal/shiboken6; keep a separate copy of the original application first.
+The Qt Windows platform plugin must remain compatible with its Qt libraries.
+
+Matching upstream source:
+https://code.qt.io/cgit/qt/qt5.git/tag/?h=v6.11.1
+https://code.qt.io/cgit/pyside/pyside-setup.git/tag/?h=v6.11.1
+https://www.python.org/downloads/source/
+
+Public release preparation must provide equivalent access to matching LGPL
+source archives and any required installation information alongside the binary.
+Upstream links and included notices alone are not a completed public-release
+licence audit. Contact: 54guc2026@protonmail.com.

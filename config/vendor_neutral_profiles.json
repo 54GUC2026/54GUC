@@ -1,0 +1,538 @@
+{
+  "action_alias_templates": {
+    "a1_huawei_radio_drop_recovery": {
+      "event_aliases": [
+        "hilink_radio_drop_start",
+        "huawei_radio_drop_start"
+      ],
+      "hold_event_aliases": [
+        "hilink_radio_drop_hold_started",
+        "huawei_radio_drop_hold_started"
+      ],
+      "intent_alias": "hilink_radio_drop",
+      "legacy_intent": "big_dip",
+      "legacy_objective_template": "big_dip:{day_key}:b20_fallback",
+      "objective_alias_template": "hilink_radio_drop:{day_key}:b20_fallback",
+      "policy_family": "hilink",
+      "reason_code": "hilink_radio_drop_fallback",
+      "reason_text": "HiLink radio-drop fallback: force B20 after sustained B1/B3 attach failure"
+    },
+    "routeros_cell_lock_retry": {
+      "event_aliases": [
+        "cell_lock_objective_retry_scheduled",
+        "routeros_cell_lock_retry_scheduled"
+      ],
+      "hold_event_aliases": [
+        "mikrotik_cell_lock_cooldown_started",
+        "routeros_cell_lock_cooldown_started"
+      ],
+      "intent_alias": "routeros_cell_lock_retry",
+      "legacy_intent": "cell_lock_retry",
+      "legacy_objective_template": "{objective_id}",
+      "objective_alias_template": "routeros_cell_lock:{objective_id}",
+      "policy_family": "routeros",
+      "reason_code": "routeros_cell_lock_retry",
+      "reason_text": "RouterOS-family cell-lock retry scheduled"
+    },
+    "routeros_explore_retry": {
+      "event_aliases": [
+        "mikrotik_explore_retry_scheduled",
+        "routeros_explore_retry_scheduled"
+      ],
+      "hold_event_aliases": [
+        "mikrotik_explore_cooldown_started",
+        "routeros_explore_cooldown_started"
+      ],
+      "intent_alias": "routeros_explore_retry",
+      "legacy_intent": "mikrotik_explore_retry",
+      "legacy_objective_template": "{objective_id}",
+      "objective_alias_template": "routeros_explore:{objective_id}",
+      "policy_family": "routeros",
+      "reason_code": "routeros_explore_retry_hold",
+      "reason_text": "RouterOS-family explore retry hold"
+    }
+  },
+  "backend_family_aliases": {
+    "b530": "huawei_hilink_like",
+    "b535": "huawei_hilink_like",
+    "b818": "huawei_hilink_like",
+    "fwa510": "zyxel_webui_like",
+    "g5b": "zte_goform_like",
+    "h112": "huawei_hilink_like",
+    "h122": "huawei_hilink_like",
+    "huawei": "huawei_hilink_like",
+    "mc888": "zte_goform_like",
+    "mf296r": "zte_goform_like",
+    "mikrotik": "routeros_at_like",
+    "model": "modem_model_like",
+    "nr5101": "zyxel_webui_like",
+    "openwrt": "openwrt_modemmanager_like",
+    "routeros": "routeros_at_like",
+    "routeros_api": "routeros_at_like",
+    "zte": "zte_goform_like",
+    "zte_goform": "zte_goform_like",
+    "zte_zwrt": "zte_zwrt_ubus_like"
+  },
+  "backend_policy_defaults": {
+    "nx520": {
+      "backend_family": "tplink_dev2_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": true,
+      "modem_backend": "nx520",
+      "name_template": "{provider}-nx520-pool-control",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC_NX520"
+    },
+    "nx520v": {
+      "backend_family": "tplink_dev2_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": true,
+      "modem_backend": "nx520v",
+      "name_template": "{provider}-nx520v-pool-control",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC_NX520V"
+    },
+    "b818": {
+      "backend_family": "huawei_hilink_like",
+      "daytime_auto_band_actions_enabled": false,
+      "family_device_monitor_enabled": true,
+      "full_decision_engine_enabled": true,
+      "modem_backend": "b818",
+      "name_template": "{provider}-b818-conservative",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC_B818"
+    }
+  },
+  "cooldown_aliases": {
+    "keyed": {
+      "cell_lock_retry": [
+        "cell_lock_retry_until",
+        "routeros_cell_lock_retry_until"
+      ],
+      "mikrotik_explore_retry": [
+        "mikrotik_explore_retry_until",
+        "routeros_explore_retry_until"
+      ]
+    },
+    "scalar": {
+      "hilink_rotate": [
+        "hilink_rotate_cooldown_until",
+        "huawei_rotate_cooldown_until"
+      ],
+      "hilink_rotate_success_quiet": [
+        "hilink_rotate_success_quiet_until",
+        "huawei_rotate_success_quiet_until"
+      ],
+      "mikrotik_rotate": [
+        "mikrotik_rotate_cooldown_until",
+        "routeros_rotate_cooldown_until"
+      ],
+      "mikrotik_rotate_success_quiet": [
+        "mikrotik_rotate_success_quiet_until",
+        "routeros_rotate_success_quiet_until"
+      ]
+    }
+  },
+  "event_aliases": {
+    "a1_antithrash_hold_started": [
+      "hilink_antithrash_hold_started",
+      "huawei_antithrash_hold_started",
+      "family_antithrash_hold_started"
+    ],
+    "a1_antithrash_single_retest": [
+      "hilink_antithrash_single_retest",
+      "huawei_antithrash_single_retest",
+      "family_antithrash_single_retest"
+    ],
+    "a1_daytime_limited_probe": [
+      "hilink_daytime_limited_probe",
+      "huawei_daytime_limited_probe",
+      "family_daytime_limited_probe"
+    ],
+    "a1_morning_post_hold_started": [
+      "hilink_morning_post_hold_started",
+      "huawei_morning_post_hold_started",
+      "family_morning_post_hold_started"
+    ],
+    "a1_morning_sequence_start": [
+      "hilink_morning_sequence_start",
+      "huawei_morning_sequence_start",
+      "family_morning_sequence_start"
+    ],
+    "a1_overnight_b20_rescue": [
+      "hilink_overnight_b20_rescue",
+      "huawei_overnight_b20_rescue",
+      "family_overnight_b20_rescue"
+    ],
+    "a1_overnight_explore_probe": [
+      "hilink_overnight_explore_probe",
+      "huawei_overnight_explore_probe",
+      "family_overnight_explore_probe"
+    ],
+    "a1_overnight_explore_start": [
+      "hilink_overnight_explore_start",
+      "huawei_overnight_explore_start",
+      "family_overnight_explore_start"
+    ],
+    "a1_overnight_night_hold": [
+      "hilink_overnight_night_hold",
+      "huawei_overnight_night_hold",
+      "family_overnight_night_hold"
+    ],
+    "cell_lock_objective_retry_scheduled": [
+      "routeros_cell_lock_retry_scheduled",
+      "family_cell_lock_retry_scheduled"
+    ],
+    "manual_radio_guard_armed": [
+      "routeros_manual_radio_guard_armed",
+      "family_manual_radio_guard_armed"
+    ],
+    "mikrotik_cell_lock_cooldown_started": [
+      "routeros_cell_lock_cooldown_started",
+      "family_cell_lock_cooldown_started"
+    ],
+    "mikrotik_explore_cooldown_started": [
+      "routeros_explore_cooldown_started",
+      "family_explore_cooldown_started"
+    ],
+    "mikrotik_explore_retry_scheduled": [
+      "routeros_explore_retry_scheduled",
+      "family_explore_retry_scheduled"
+    ],
+    "restart_objective_retry_scheduled": [
+      "family_restart_objective_retry_scheduled",
+      "routeros_restart_objective_retry_scheduled"
+    ],
+    "restart_objective_succeeded": [
+      "family_restart_objective_succeeded",
+      "routeros_restart_objective_succeeded"
+    ],
+    "runtime_recovery_armed": [
+      "routeros_runtime_recovery_armed",
+      "family_runtime_recovery_armed"
+    ],
+    "runtime_recovery_cleared": [
+      "routeros_runtime_recovery_cleared",
+      "family_runtime_recovery_cleared"
+    ]
+  },
+  "event_text_templates": {
+    "family_cell_lock_cooldown_started": "Family cell-lock cooldown started",
+    "family_cell_lock_retry_scheduled": "Family cell-lock retry scheduled",
+    "family_explore_cooldown_started": "Family explore cooldown started",
+    "family_explore_retry_scheduled": "Family explore retry scheduled",
+    "family_manual_radio_guard_armed": "Family manual radio quiet armed",
+    "family_radio_drop_hold_started": "Family radio-drop hold started",
+    "family_radio_drop_start": "Family radio-drop recovery started",
+    "family_restart_objective_retry_scheduled": "Family restart objective retry scheduled",
+    "family_restart_objective_succeeded": "Family restart objective succeeded",
+    "family_runtime_recovery_armed": "Family runtime recovery armed",
+    "family_runtime_recovery_cleared": "Family runtime recovery cleared",
+    "hilink_radio_drop_hold_started": "HiLink radio-drop hold started",
+    "hilink_radio_drop_start": "HiLink radio-drop recovery started",
+    "huawei_radio_drop_hold_started": "Huawei HiLink-like radio-drop hold started",
+    "huawei_radio_drop_start": "Huawei HiLink-like radio-drop recovery started",
+    "routeros_cell_lock_cooldown_started": "RouterOS-family cell-lock cooldown started",
+    "routeros_cell_lock_retry_scheduled": "RouterOS-family cell-lock retry scheduled",
+    "routeros_explore_cooldown_started": "RouterOS-family explore cooldown started",
+    "routeros_explore_retry_scheduled": "RouterOS-family explore retry scheduled",
+    "routeros_manual_radio_guard_armed": "RouterOS-family manual radio quiet armed",
+    "routeros_restart_objective_retry_scheduled": "RouterOS-family restart objective retry scheduled",
+    "routeros_restart_objective_succeeded": "RouterOS-family restart objective succeeded",
+    "routeros_runtime_recovery_armed": "RouterOS-family runtime recovery armed",
+    "routeros_runtime_recovery_cleared": "RouterOS-family runtime recovery cleared"
+  },
+  "family_labels": {
+    "huawei_hilink_like": "Huawei HiLink-like",
+    "modem_model_like": "Model / emulator family",
+    "openwrt_modemmanager_like": "OpenWrt / ModemManager",
+    "routeros_at_like": "RouterOS / AT-like",
+    "unknown": "Unknown family",
+    "zte_goform_like": "ZTE GoForm family",
+    "zte_webui_like": "ZTE WebUI family",
+    "zte_zwrt_ubus_like": "ZTE OpenWrt-like family",
+    "zyxel_webui_like": "Zyxel WebUI family"
+  },
+  "family_policy_defaults": {
+    "huawei_hilink_like": {
+      "backend_family": "huawei_hilink_like",
+      "daytime_auto_band_actions_enabled": false,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": true,
+      "name_template": "{provider}-Huawei-conservative",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC_HUAWEI"
+    },
+    "modem_model_like": {
+      "backend_family": "modem_model_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "openwrt_modemmanager_like": {
+      "backend_family": "openwrt_modemmanager_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "routeros_at_like": {
+      "backend_family": "routeros_at_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "unknown": {
+      "backend_family": "unknown",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "zte_goform_like": {
+      "backend_family": "zte_goform_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "zte_zwrt_ubus_like": {
+      "backend_family": "zte_zwrt_ubus_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    },
+    "zyxel_webui_like": {
+      "backend_family": "zyxel_webui_like",
+      "daytime_auto_band_actions_enabled": true,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": false,
+      "name_template": "{provider}-{backend}",
+      "night_ca_bonus_only": false,
+      "policy_family": "GENERIC",
+      "policy_key": "GENERIC"
+    }
+  },
+  "family_support_text": {
+    "huawei_hilink_like": "Huawei HiLink-like safe radio control with conservative daytime policy defaults.",
+    "openwrt_modemmanager_like": "OpenWrt / ModemManager platform family: current adapter is monitor-first, while ModemManager can expose unified mode and band control on supported modems.",
+    "routeros_at_like": "RouterOS family with stronger scripted control and expert actuation paths.",
+    "unknown": "Generic fallback family with conservative control assumptions.",
+    "zte_goform_like": "ZTE GoForm family: broad telemetry surface with firmware-dependent LTE/NR control; 5G models are stronger, MF296R-class units stay conservatively gated until live proof exists.",
+    "zte_zwrt_ubus_like": "ZTE OpenWrt-like ubus family: strong router-side telemetry and identity/status reads, with active control intentionally disabled until hardened on live devices."
+  },
+  "operator_contexts": {
+    "rs_default": {
+      "deployed_bands": [
+        1,
+        3,
+        20
+      ],
+      "provider_deployed_bands": {
+        "22005": [
+          1,
+          3,
+          7,
+          8,
+          20,
+          28
+        ]
+      },
+      "provider_nr_deployed_bands": {
+        "22005": [
+          7,
+          28,
+          78
+        ]
+      },
+      "provider_plmn_map": {
+        "22001": "Yettel",
+        "22003": "MTS",
+        "22005": "A1"
+      }
+    }
+  },
+  "provider_action_policy_registry": {
+    "22005|b818": {
+      "daytime_band_filter": "a1_huawei_daytime_band_filter",
+      "morning_sequence": "a1_huawei_morning_sequence",
+      "overnight_recovery": "a1_huawei_overnight_recovery",
+      "radio_drop_recovery": "a1_huawei_radio_drop_recovery"
+    },
+    "22005|huawei_hilink_like": {
+      "daytime_band_filter": "a1_huawei_daytime_band_filter",
+      "morning_sequence": "a1_huawei_morning_sequence",
+      "overnight_recovery": "a1_huawei_overnight_recovery",
+      "radio_drop_recovery": "a1_huawei_radio_drop_recovery"
+    }
+  },
+  "provider_backend_policy_overrides": {
+    "22005|b818": {
+      "backend_family": "huawei_hilink_like",
+      "daytime_auto_band_actions_enabled": true,
+      "enable_night_band_training": true,
+      "family_device_monitor_enabled": true,
+      "full_decision_engine_enabled": true,
+      "modem_backend": "b818",
+      "name_template": "A1-b818-conservative",
+      "night_ca_bonus_only": true,
+      "overnight_recovery_enabled": true,
+      "policy_family": "PROVIDER_SPECIFIC",
+      "policy_key": "A1_B818_FORCED"
+    }
+  },
+  "provider_family_policy_overrides": {
+    "22005|huawei_hilink_like": {
+      "backend_family": "huawei_hilink_like",
+      "daytime_auto_band_actions_enabled": false,
+      "family_device_monitor_enabled": false,
+      "full_decision_engine_enabled": true,
+      "name_template": "A1-Huawei-conservative",
+      "night_ca_bonus_only": false,
+      "overnight_recovery_enabled": true,
+      "policy_family": "PROVIDER_SPECIFIC",
+      "policy_key": "GENERIC_HUAWEI_A1"
+    }
+  },
+  "status_aliases": {
+    "a1_antithrash_freeze_bands": [
+      "hilink_antithrash_freeze_bands",
+      "huawei_antithrash_freeze_bands",
+      "family_antithrash_freeze_bands"
+    ],
+    "a1_antithrash_hold_active": [
+      "hilink_antithrash_hold_active",
+      "huawei_antithrash_hold_active",
+      "family_antithrash_hold_active"
+    ],
+    "a1_hard_night_freeze_active": [
+      "hilink_hard_night_freeze_active",
+      "huawei_hard_night_freeze_active",
+      "family_hard_night_freeze_active"
+    ],
+    "a1_morning_active": [
+      "hilink_morning_active",
+      "huawei_morning_active",
+      "family_morning_active"
+    ],
+    "hilink_rotate_cooldown_active": [
+      "huawei_rotate_cooldown_active"
+    ],
+    "hilink_rotate_quiet_active": [
+      "huawei_rotate_quiet_active"
+    ],
+    "mikrotik_explore_retry_objectives": [
+      "routeros_explore_retry_objectives"
+    ],
+    "mikrotik_rotate_budget_used": [
+      "routeros_rotate_budget_used"
+    ],
+    "mikrotik_rotate_cooldown_active": [
+      "routeros_rotate_cooldown_active"
+    ],
+    "mikrotik_rotate_quiet_active": [
+      "routeros_rotate_quiet_active"
+    ]
+  },
+  "status_text_templates": {
+    "a1_antithrash_hold_active": "HiLink anti-thrash hold active",
+    "a1_morning_active": "HiLink morning recovery sequence active",
+    "family_antithrash_hold_active": "Family anti-thrash hold active",
+    "family_cell_lock_retry_active": "Family cell-lock retry active",
+    "family_explore_retry_objectives": "Family explore retries active",
+    "family_manual_radio_quiet_active": "Family manual radio quiet window active",
+    "family_morning_active": "Family morning recovery sequence active",
+    "family_radio_drop_active": "Family radio-drop recovery active",
+    "family_rotate_quiet_active": "Family rotate quiet window active",
+    "family_runtime_recovery_active": "Family runtime recovery active",
+    "hilink_antithrash_hold_active": "HiLink anti-thrash hold active",
+    "hilink_morning_active": "HiLink morning recovery sequence active",
+    "hilink_radio_drop_active": "HiLink radio-drop recovery active",
+    "huawei_antithrash_hold_active": "Huawei HiLink-like anti-thrash hold active",
+    "huawei_morning_active": "Huawei HiLink-like morning recovery sequence active",
+    "huawei_radio_drop_active": "Huawei HiLink-like radio-drop recovery active",
+    "routeros_cell_lock_retry_active": "RouterOS-family cell-lock retry active",
+    "routeros_explore_retry_objectives": "RouterOS-family explore retries active",
+    "routeros_manual_radio_quiet_active": "RouterOS-family manual radio quiet window active",
+    "routeros_rotate_quiet_active": "RouterOS-family rotate quiet window active",
+    "routeros_runtime_recovery_active": "RouterOS-family runtime recovery active"
+  },
+  "version": "vendor_neutral_pass41",
+  "family_support_tiers": {
+    "huawei_hilink_like": {
+      "monitor": true,
+      "safe_control": true,
+      "advanced_control": true,
+      "expert_control": false,
+      "verification": "full_poll_and_check",
+      "notes": "Band selection, restart. No cell lock. Verified in production on B818/A1."
+    },
+    "routeros_at_like": {
+      "monitor": true,
+      "safe_control": true,
+      "advanced_control": true,
+      "expert_control": true,
+      "verification": "full_poll_and_check",
+      "notes": "Band selection, cell lock, restart. Full AT command access. Verified in production."
+    },
+    "zte_goform_like": {
+      "monitor": true,
+      "safe_control": true,
+      "advanced_control": true,
+      "expert_control": false,
+      "verification": "full_poll_and_check",
+      "notes": "Band selection, cell lock, restart, NR band lock. Firmware-dependent. Verification added but needs live validation."
+    },
+    "zte_zwrt_ubus_like": {
+      "monitor": true,
+      "safe_control": false,
+      "advanced_control": false,
+      "expert_control": false,
+      "verification": "not_verified",
+      "notes": "Monitor only via ubus. No actuation support yet."
+    },
+    "zyxel_webui_like": {
+      "monitor": true,
+      "safe_control": false,
+      "advanced_control": false,
+      "expert_control": false,
+      "verification": "not_verified",
+      "notes": "Monitor only. No actuation path implemented."
+    },
+    "openwrt_modemmanager_like": {
+      "monitor": true,
+      "safe_control": false,
+      "advanced_control": false,
+      "expert_control": false,
+      "verification": "not_verified",
+      "notes": "Remote monitor through authenticated OpenWrt rpcd and modemmanager-rpcd. Physical controls are unavailable until a separate remote control path is proven. Platform family \u2014 underlying modem capability varies."
+    }
+  }
+}

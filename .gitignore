@@ -1,0 +1,106 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Runtime outputs
+arch5_output
+arch5_output/
+arch5_output_sim/
+arch5_memory
+arch5_memory/
+arch5_memory_sim/
+arch4_output
+arch4_output/
+arch4_memory
+arch4_memory/
+arch7_output
+arch7_output/
+arch7_memory
+arch7_memory/
+luc_output
+luc_output/
+luc_output_sim/
+luc_memory
+luc_memory/
+luc_memory_sim/
+
+# Local archives / installers / generated bundles
+*.zip
+installers/*.zip
+DOCS_ALL_*.zip
+ARCH5_v*_FULL_WORKSPACE_*.zip
+artifacts/packages/
+build/
+dist/LTE-Ultimate-Controller/
+dist/*.tar.gz
+dist/*.sha256
+dist/*.exe
+dist/LUC_v*_Windows_native_*/
+tmp/
+docs/AGENT_1/*_2H_BRAIN_GUI_REVIEW.md
+ops/observations/two_hour_watch_*.md
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local secrets/config overrides
+.env
+.env.*
+*.local
+arch4/windows_bundle_embedded.py
+
+# Local historical dumps
+_archive/
+
+# Local runtime supervision/cache state
+.arch5_supervisor/
+.guardian_state/
+.mainline_state/
+.two_hour_watch_state/
+.runbook_state/
+.night_watch_state/
+logs/
+runtime/carbon_link/
+runtime/t480_handoff/
+
+# Local screenshots/debug captures
+dashboard.jpg
+signals.jpg
+MODEM_TAB.jpg
+linux.jpg
+windows.jpg
+luc_config.xml
+guc_config.xml
+guc_memory/
+guc_memory_sim/
+guc_memory_model/
+guc_output/
+guc_output_sim/
+guc_output_model/
+portable_runtime/
+license.dat
+
+# Local runtime/debug artifacts
+.guc_gui_bootstrap.lock
+.guc_gui_*.lock
+.portable_confirmed_handoff_imported.json
+shutdown_receipt.json
+config/modems.local/
+MagicMock/
+TOKEN.txt
+bookmarklet_ca_v25.txt
+LTEHMonitorBil_krpiloncija/
+docs/AGENT_1/
+ops/observations/
+.aider*

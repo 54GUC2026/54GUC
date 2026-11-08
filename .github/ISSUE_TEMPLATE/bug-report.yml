@@ -1,0 +1,40 @@
+name: Bug report
+description: Help improve 54GUC by describing something that didn't work as expected.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Tell us what happened,
+        and add whatever details you have. An incomplete report can still help.
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened?
+      description: Describe the problem and, if useful, what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version and Windows version, if known
+      placeholder: The app's version or a source commit, plus your Windows version
+  - type: input
+    id: router
+    attributes:
+      label: Router, firmware and profile, if relevant
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How did you encounter it?
+      description: Steps, a visible message, an edited example, or anything you've already tried.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else that might help?
+      description: A comparison with another version, an idea about the cause, or a possible fix.
+  - type: markdown
+    attributes:
+      value: |
+        [Practical sharing tips](https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md)
+        · [Private security contact](https://github.com/54GUC2026/54GUC/blob/main/SECURITY.md)

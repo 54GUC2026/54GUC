@@ -1,0 +1,27 @@
+{
+  "version": "arch6_v1_2",
+  "profiles": {
+    "A1-b818-conservative": {
+      "startup_grace_s": 30.0,
+      "a1_night_antithrash_max_band_actions": 4,
+      "a1_night_antithrash_hold_s": 7200.0,
+      "a1_night_antithrash_window_s": 600.0,
+      "a1_night_restrict_start_hour": 1,
+      "a1_night_restrict_end_hour": 6,
+      "health_ping_fail_threshold": 3,
+      "health_ping_recover_threshold": 2,
+      "health_hold_down_s": 180.0
+    },
+    "default:b818": {
+      "hilink_priority_rotate_verify_s": 600.0,
+      "hilink_priority_rotate_fail_cooldown_s": 7200.0
+    },
+    "default:mikrotik": {
+      "health_ping_fail_threshold": 4,
+      "health_ping_recover_threshold": 2
+    },
+    "default": {
+      "telemetry_rollup_enabled": true
+    }
+  }
+}

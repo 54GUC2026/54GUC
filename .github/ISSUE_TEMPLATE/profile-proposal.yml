@@ -1,0 +1,36 @@
+name: New or improved router profile
+description: Share a profile idea, an early experiment, or a working improvement.
+title: "[Profile]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New fields, alternative formats and new router profiles are welcome.
+        You can start with an idea or a question; a finished patch isn't needed.
+  - type: textarea
+    id: change
+    attributes:
+      label: What would you like to add or improve?
+      description: Explain the idea and how it could help someone using this router.
+    validations:
+      required: true
+  - type: input
+    id: router
+    attributes:
+      label: Router and firmware, if known
+      placeholder: Model, firmware, and an existing profile you might start from
+  - type: textarea
+    id: examples
+    attributes:
+      label: What have you found so far?
+      description: A field name, a small edited reply, documentation, a draft profile, or observations from your hardware.
+  - type: textarea
+    id: next-step
+    attributes:
+      label: What would help you take the next step?
+      description: Questions, test results, open points, or help you'd welcome from other contributors.
+  - type: markdown
+    attributes:
+      value: |
+        [Profile workshop](https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md)
+        · [Practical sharing tips](https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md)

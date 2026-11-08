@@ -1,0 +1,37 @@
+name: Router test report
+description: Tell us about your router, what works, or what you'd like to try.
+title: "[Router test]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand 54GUC's hardware coverage! A partly working
+        router, a new firmware or an unlisted model is a useful starting point.
+        Fill in what you know; a short report is welcome.
+  - type: textarea
+    id: router
+    attributes:
+      label: Which router are you exploring?
+      description: Model, hardware revision and firmware version, as far as you know them.
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: App version and profile, if tried
+      placeholder: Version shown in the app, selected profile, or "not tried yet"
+  - type: textarea
+    id: readings
+    attributes:
+      label: What worked, or what would you like to try?
+      description: Readings, missing fields, a different response format, or an idea for this device.
+  - type: textarea
+    id: observations
+    attributes:
+      label: Anything else you'd like to share?
+      description: An edited example, a comparison with the router page, an experiment, or a question.
+  - type: markdown
+    attributes:
+      value: |
+        [Profile workshop](https://github.com/54GUC2026/54GUC/blob/main/docs/ROUTER_PROFILES.md)
+        · [Practical sharing tips](https://github.com/54GUC2026/54GUC/blob/main/docs/PROJECT_NOTES.md)

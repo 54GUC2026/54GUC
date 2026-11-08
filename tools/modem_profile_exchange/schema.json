@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:54guc:profile-migration:1",
+  "title": "54GUC offline profile migration snapshot, version 1",
+  "description": "Field definitions plus static catalogue/parser evidence. Not an executable profile or a claim of native correctness. The CLI also checks hashes, cross-references, full field coverage and privacy.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "definition_version", "field_definitions", "profiles", "parser_evidence", "coverage", "privacy", "runtime_ready", "content_sha256"],
+  "properties": {
+    "schema": {"const": "54GUC.ProfileMigration.v1"},
+    "definition_version": {"const": 1},
+    "runtime_ready": {"const": false},
+    "content_sha256": {"$ref": "#/$defs/hash"},
+    "field_definitions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/field"}},
+    "profiles": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/profile"}},
+    "parser_evidence": {"type": "object", "additionalProperties": {"$ref": "#/$defs/evidence"}},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["profile_count", "field_count", "profile_alias_count", "rule_evidence_count", "approved_portable_rules"],
+      "properties": {
+        "profile_count": {"type": "integer", "minimum": 1},
+        "field_count": {"type": "integer", "minimum": 1},
+        "profile_alias_count": {"type": "integer", "minimum": 1},
+        "rule_evidence_count": {"type": "integer", "minimum": 0},
+        "approved_portable_rules": {"const": 0}
+      }
+    },
+    "privacy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_scope", "observations_included", "source_comments_included", "credentials_included"],
+      "properties": {
+        "input_scope": {"const": "static_catalogue_and_source_only"},
+        "observations_included": {"const": false},
+        "source_comments_included": {"const": false},
+        "credentials_included": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "strings": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "field": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "address", "value_type", "unit", "meaning", "missing", "privacy", "aliases", "normalization_evidence"],
+      "properties": {
+        "id": {"type": "integer", "minimum": 1},
+        "address": {"type": "string", "pattern": "^[a-z_]+\\.[a-z0-9_]+$"},
+        "value_type": {"enum": ["boolean", "integer", "number", "string", "array_integer", "array_object", "object", "integer_or_string", "number_or_string"]},
+        "unit": {"type": ["string", "null"]},
+        "meaning": {"type": "string", "minLength": 1},
+        "missing": {"type": "string", "minLength": 1},
+        "privacy": {"const": "definition_only_no_observed_values"},
+        "aliases": {"$ref": "#/$defs/strings"},
+        "normalization_evidence": {"type": ["string", "null"]}
+      }
+    },
+    "profile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metadata", "access", "fields", "runtime_ready"],
+      "properties": {
+        "metadata": {"type": "object", "description": "Strict static-profile key allowlist is enforced by the exporter; runtime configuration is forbidden."},
+        "access": {"type": "object", "description": "Static lane groups, timing, retry, quiet/readback and recovery contract from the current public owner."},
+        "runtime_ready": {"const": false},
+        "fields": {"type": "array", "items": {"$ref": "#/$defs/slot"}}
+      }
+    },
+    "slot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["field_id", "trust", "parsing", "observed_value"],
+      "properties": {
+        "field_id": {"type": "integer", "minimum": 1},
+        "trust": {"enum": ["confirmed", "expected", "synthetic", "untested", "unsupported", "non_useful", "unclassified"]},
+        "parsing": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/parsing"}]},
+        "observed_value": {"type": "null"}
+      },
+      "if": {"properties": {"trust": {"enum": ["unsupported", "non_useful", "unclassified"]}}},
+      "then": {"properties": {"parsing": {"type": "null"}}},
+      "else": {"properties": {"parsing": {"$ref": "#/$defs/parsing"}}}
+    },
+    "parsing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "definition", "source_candidates", "declared_derivations", "reason"],
+      "properties": {
+        "status": {"const": "needs_semantic_review"},
+        "definition": {"type": "null"},
+        "reason": {"type": "string", "minLength": 1},
+        "source_candidates": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["symbol", "field_names", "binding"],
+            "properties": {
+              "symbol": {"type": "string"}, "field_names": {"$ref": "#/$defs/strings"},
+              "binding": {"const": "static_occurrence_requires_review"}
+            }
+          }
+        },
+        "declared_derivations": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["field_name", "rule_text"],
+            "properties": {"field_name": {"type": "string"}, "rule_text": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symbol", "file", "line", "source", "source_sha256", "dependencies", "external_or_dynamic_calls", "status"],
+      "properties": {
+        "symbol": {"type": "string"}, "file": {"type": "string", "pattern": "^arch4/.*\\.py$"},
+        "line": {"type": "integer", "minimum": 1}, "source": {"type": "string", "minLength": 1},
+        "source_sha256": {"$ref": "#/$defs/hash"}, "dependencies": {"$ref": "#/$defs/strings"},
+        "external_or_dynamic_calls": {"$ref": "#/$defs/strings"},
+        "status": {"const": "frozen_source_evidence_not_portable_definition"}
+      }
+    }
+  }
+}

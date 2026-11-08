@@ -1,0 +1,7 @@
+-c requirements-runtime-pins.txt
+routeros_api
+requests
+PySide6
+pyqtgraph
+cryptography
+regex

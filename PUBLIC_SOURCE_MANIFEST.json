@@ -1,0 +1,5466 @@
+{
+  "schema": "54GUC.SourceSnapshot.v1",
+  "release": "R29.0",
+  "entries": [
+    {
+      "path": ".gitattributes",
+      "bytes": 414,
+      "sha256": "1e7107d554aa5568fe5c8daedfd06bc343dfc96904c67ef9f4f55c435ff4bca2"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
+      "bytes": 1452,
+      "sha256": "b350ca6220b1a021a91a012019cf94dea1cbad8b4c93fa9a72b2d61c66bd661e"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/profile-proposal.yml",
+      "bytes": 1427,
+      "sha256": "a7108a455b7909bb669dc361c0a23339dfebd2a76a5822d53ed5f891889756bd"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/router-test.yml",
+      "bytes": 1475,
+      "sha256": "e54118a031d5ba90d9d76aa95b18bc4bbc37b666194e8a1961cd63efa0b222da"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1611,
+      "sha256": "17ad28a075c659ecc34912b98b2b0fe9f5346b174e8cec2130d1bce19786ac87"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 871,
+      "sha256": "62042619ccf52b165988cdf5b7adc94b602b16777645bcc750ce06b5f1c59169"
+    },
+    {
+      "path": "GUC_License_Gen.spec",
+      "bytes": 688,
+      "sha256": "25fd5ddd1134ea959f8b3f3002abe3f15b3043bad235c7bc370271d1cbcc8e78"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "LICENSING.md",
+      "bytes": 2695,
+      "sha256": "c79a2eb0f476698532128d71c0942b9c23ffd0eb54c46aea9c4067e57f158bea"
+    },
+    {
+      "path": "LUC-Windows-Native.spec",
+      "bytes": 4140,
+      "sha256": "96080922d9c40b7f82453843a7fa69288d0e23213ef0d83b5bf2598c8d796317"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2234,
+      "sha256": "07d919e1ba9bda9f45fbde51e639fcffddc21f6adfd8f17ea87287bb19c77b33"
+    },
+    {
+      "path": "RELEASE_CHANNEL",
+      "bytes": 9,
+      "sha256": "1df5fbaba063e1ce5c19910d1d52d42eb717f1cd012c77f8a52ee270f0a2633e"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 478,
+      "sha256": "110b564584cda04ebd25e910d08e96b0ae5943d85b5400e2e8e9331195d5e8d9"
+    },
+    {
+      "path": "UPDATE_CHANNEL.json",
+      "bytes": 252,
+      "sha256": "cdef870d398c07c41897db07d35a7dd3e2cf99f3ff1adfe4371cb842120690df"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 12,
+      "sha256": "fc8658f407f616f0ab2700148fac5c9e7c098e1e9de832c32bde166333c25eb9"
+    },
+    {
+      "path": "arch4/__init__.py",
+      "bytes": 242,
+      "sha256": "6b76460cc1678cbf2fa17240fbf495ddf0373fa3304f74a15ee0262c96368fc9"
+    },
+    {
+      "path": "arch4/accepted_generation_codec.py",
+      "bytes": 4683,
+      "sha256": "5a71d97ad60ec0f688e0accd77df28a93ce44d90a9ad02d573cfe3c570d9232b"
+    },
+    {
+      "path": "arch4/accepted_generation_delivery_store.py",
+      "bytes": 707,
+      "sha256": "231a967fd445e691aab8e5e3745f3c6f5c27e9eeabe1351f62b342a64c45a2d9"
+    },
+    {
+      "path": "arch4/accepted_modem_generation.py",
+      "bytes": 50773,
+      "sha256": "31db3a1a4c24b1238163e6a8e2467b9b8fd4e32cd3852d635e19f01df545098c"
+    },
+    {
+      "path": "arch4/action_admission.py",
+      "bytes": 41209,
+      "sha256": "f5d6d72beeb0e8711d0bce39715245e0d845d4c847e1e1dbb7e94fa45ab845d2"
+    },
+    {
+      "path": "arch4/action_applicability.py",
+      "bytes": 10922,
+      "sha256": "eb24cbbc596aa99e25a36b152fae29fbbcd3b722590f8ad496298fa6845f4d1b"
+    },
+    {
+      "path": "arch4/action_expected_effects.py",
+      "bytes": 9113,
+      "sha256": "55ac748530843a96f1dd47a76b73585a5f7224c8165aea9b2f636afa3029df89"
+    },
+    {
+      "path": "arch4/action_fingerprint.py",
+      "bytes": 919,
+      "sha256": "8a6c46458eec422e5c5462348fac50ca6bd40b798cb064bf2f1bf77235a58244"
+    },
+    {
+      "path": "arch4/action_grading_policy.py",
+      "bytes": 4249,
+      "sha256": "52c2740e116524659faf15179db8f94b7bf6a72b771dec26fb439c3d277ee4cc"
+    },
+    {
+      "path": "arch4/action_opportunity_set.py",
+      "bytes": 62187,
+      "sha256": "f4bb375a1b069ed07635e91a4b39fbe4f0be434f8d7bf7770ba62ce46eaca9d6"
+    },
+    {
+      "path": "arch4/action_opportunity_source_facts.py",
+      "bytes": 12546,
+      "sha256": "4d4d1e93d686e75f92e50281da3b19e07d10c938b05d44da9d6ef4f7d27f5c9d"
+    },
+    {
+      "path": "arch4/action_opportunity_sources.py",
+      "bytes": 23729,
+      "sha256": "c69ed9692bc404cd662de5cc1fd0529eb98be9b9d57e3f6f5e2abf61e3686f29"
+    },
+    {
+      "path": "arch4/action_origin.py",
+      "bytes": 3839,
+      "sha256": "a9116766f1eb010409e0f790b202057e55048f49fc4969f83004002b79f80f74"
+    },
+    {
+      "path": "arch4/action_outcome_contract.py",
+      "bytes": 6709,
+      "sha256": "ad323059dceab8c54d59f67b42614bf6d7f1c1b2cf33ee6eb0b2c7fe55679869"
+    },
+    {
+      "path": "arch4/action_proof_admission.py",
+      "bytes": 2783,
+      "sha256": "2f0375782a045d2407c3f991e61ce5e4921d34d132d7954e852e9e4ad9e22a4c"
+    },
+    {
+      "path": "arch4/action_selection_boundary.py",
+      "bytes": 20081,
+      "sha256": "8a8303a06d525bcf31f97c5758ac75c2b82b629ee0dd0a8ea054713c32c54670"
+    },
+    {
+      "path": "arch4/action_selection_receipts.py",
+      "bytes": 6735,
+      "sha256": "00c95edc493c41161b85cc859630f0b9ab02c40d816944792b7d502648a0398d"
+    },
+    {
+      "path": "arch4/action_session_scope.py",
+      "bytes": 11954,
+      "sha256": "d533e8848186de0c6fb271abed5eaa1c6b740a7b3941db4ab08661271d634782"
+    },
+    {
+      "path": "arch4/action_shape_legality.py",
+      "bytes": 15029,
+      "sha256": "eb4942e66ba3e1abd936178e19cc8104edb4c883dada0e67b763a7ec0815ed55"
+    },
+    {
+      "path": "arch4/action_transaction.py",
+      "bytes": 22114,
+      "sha256": "49e4e5e63641590bd655e83dc15982d5c96157ca0093e8e8f09d60297619f0f8"
+    },
+    {
+      "path": "arch4/action_transaction_authority.py",
+      "bytes": 61939,
+      "sha256": "26f0529d389004193eb3b295698d83941a2187a3a1edad12e9dd91ce1ec7b40c"
+    },
+    {
+      "path": "arch4/app_info.py",
+      "bytes": 14691,
+      "sha256": "db41c9697af8a1e7dea0d05a29696a04ca37f81dad789fca13c35a1b3f7c5e1a"
+    },
+    {
+      "path": "arch4/application_lease.py",
+      "bytes": 28973,
+      "sha256": "309540744cba6a5e9f04bf6b4925a3d7e584eeed097bb57cb070b0e69e2b36a1"
+    },
+    {
+      "path": "arch4/architecture_assessor/__init__.py",
+      "bytes": 180,
+      "sha256": "d4d9af8cc52e716c4ba03baf93cb7ddcae3abbd646f352d24dd2c41249cceca3"
+    },
+    {
+      "path": "arch4/architecture_assessor/cgf_assessor.py",
+      "bytes": 26139,
+      "sha256": "3cb0c2998f00d3cc5bff59602f9dd283c0f6f120485f2398a11d97276f1e9162"
+    },
+    {
+      "path": "arch4/architecture_contracts/__init__.py",
+      "bytes": 60,
+      "sha256": "4cd48c46b37b438d8c0cc7c70c4eddba8f4a655a0f3bfd66a3dd08ba2e6ec006"
+    },
+    {
+      "path": "arch4/architecture_contracts/application_lifecycle.py",
+      "bytes": 70329,
+      "sha256": "8a01665f1c36713d86a7eaa3264fdc485866d9ff97ec233c68a2f201bc9185e1"
+    },
+    {
+      "path": "arch4/architecture_contracts/g00_denominator_registry.py",
+      "bytes": 23252,
+      "sha256": "6b051997b0cbe83c4e31e406f3a4929ba2636139ab2653f3a5a113e4b1237354"
+    },
+    {
+      "path": "arch4/architecture_contracts/runtime_generation.py",
+      "bytes": 14161,
+      "sha256": "6a30713a803a2ed0dddb97d9be068026473004c085c35e3e059e4c56db1212ec"
+    },
+    {
+      "path": "arch4/architecture_contracts/runtime_termination.py",
+      "bytes": 12339,
+      "sha256": "4417f32139111d15d5d327293f3561f02f47942b98ad984c54d7c0c8250f55b3"
+    },
+    {
+      "path": "arch4/atomic_io.py",
+      "bytes": 6159,
+      "sha256": "639b0c9593add97cdd59dc48976a88cd3083c11386d4ef92e3a5b3c18c19e12f"
+    },
+    {
+      "path": "arch4/b818/__init__.py",
+      "bytes": 29,
+      "sha256": "d0128dff71a999fd0215b77d6722f1b226aa76fc3814f2f17e1758bcc609fd38"
+    },
+    {
+      "path": "arch4/b818/supervisor.py",
+      "bytes": 7277,
+      "sha256": "200649908164d2254fe2d723f3981f4bc1196e10bb6546403a0b2b135b2979d8"
+    },
+    {
+      "path": "arch4/bouncer_receipt_contract.py",
+      "bytes": 1288,
+      "sha256": "0869dac024aa3e38be6dc5e9ba61945c5b3ff6fc331fb8fde81a5349025c48a4"
+    },
+    {
+      "path": "arch4/brain/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/brain/action_proof_register.py",
+      "bytes": 20744,
+      "sha256": "2cfcab97ba6c88596d3685957be96bb26908bc4f0ab6b569c4fe05340138dea6"
+    },
+    {
+      "path": "arch4/brain/action_roi_context_owner.py",
+      "bytes": 6745,
+      "sha256": "3949bb27fe8db76dd6cbf5465c3c56ae69cb100571747622795c8b8bb49670fe"
+    },
+    {
+      "path": "arch4/brain/action_roi_memory.py",
+      "bytes": 21341,
+      "sha256": "901e68783f1578684bf68613c077fc3fd9337c44f40c0666f147d33605718ced"
+    },
+    {
+      "path": "arch4/brain/action_shape_owner.py",
+      "bytes": 7834,
+      "sha256": "fd7674b20e438b1ae13fdebd45e9fb71901388172b7925cc0d7d7012691d6ac4"
+    },
+    {
+      "path": "arch4/brain/aggressiveness.py",
+      "bytes": 6144,
+      "sha256": "38fd12e4ec7888ab9e76e3435bb4f2c202b718b0003e80cea9b5596224b65a9c"
+    },
+    {
+      "path": "arch4/brain/anchor_flip_monitor.py",
+      "bytes": 20125,
+      "sha256": "6457b0be43cc42872e4c7a40f4ff79a4853004a8ffc17152b5d1919ad0b70687"
+    },
+    {
+      "path": "arch4/brain/band_action_learning_guard.py",
+      "bytes": 2238,
+      "sha256": "57e5039fb2c7325f02e9d06e3f4f6581183bba48db14386c28a9f3f91a86e335"
+    },
+    {
+      "path": "arch4/brain/band_classification.py",
+      "bytes": 6415,
+      "sha256": "d2ce56bc4f1254c545c06e379837f71028877efab872219a98014df0973fd344"
+    },
+    {
+      "path": "arch4/brain/band_learning.py",
+      "bytes": 8885,
+      "sha256": "8351c5d2692ec010795904809fe6032ad5be7497a9942eeb85a2eea2817b4ffc"
+    },
+    {
+      "path": "arch4/brain/blocker_authority.py",
+      "bytes": 3505,
+      "sha256": "41bf8b62738243c75ff4c0116e9430b140ea61d661ead5b6dedb83d09ad85a31"
+    },
+    {
+      "path": "arch4/brain/brain_posture.py",
+      "bytes": 19446,
+      "sha256": "1be11c1854f9fcf5292e85125069a45c77c1a8d415ffac74a00e0e2e31b3d8a0"
+    },
+    {
+      "path": "arch4/brain/ca_contract.py",
+      "bytes": 1977,
+      "sha256": "5531440d2f80d4a6248cbc77f61ae603e0726e21bbbbab34462365bea4c51d1e"
+    },
+    {
+      "path": "arch4/brain/ca_flap_monitor.py",
+      "bytes": 8492,
+      "sha256": "9f97023b447f679365ef1e71d3c68c4e286209d86dfd29ec287223b879571395"
+    },
+    {
+      "path": "arch4/brain/calibration.py",
+      "bytes": 28515,
+      "sha256": "22237ef16e8fd4bc41f0e194db12606b90312d8f83ad346d92768f2a4e9549aa"
+    },
+    {
+      "path": "arch4/brain/calibration_active_profile.py",
+      "bytes": 2057,
+      "sha256": "0592c0c5c964a0300aef0ca4fc4a0a1a72d7500154343a7bc826f73e77d987ae"
+    },
+    {
+      "path": "arch4/brain/calibration_authority.py",
+      "bytes": 232503,
+      "sha256": "48ffabfe7d4f2d8b2c579cefbd7a7c92b032831e123a8a162dc7fa3c7174ff2a"
+    },
+    {
+      "path": "arch4/brain/calibration_candidate_lifecycle.py",
+      "bytes": 6198,
+      "sha256": "9dd319992067c81caabecdadacdb7d5b3d0de62b4d62b2b4b286b2d6e3aae9f1"
+    },
+    {
+      "path": "arch4/brain/calibration_clock_lane.py",
+      "bytes": 999,
+      "sha256": "7aca77902aec5d323985ca80aefda3f8dbc750fd6522d13d4edc103147c0c97a"
+    },
+    {
+      "path": "arch4/brain/calibration_collection_attempt.py",
+      "bytes": 1403,
+      "sha256": "0e6ffa7a1fc086a41e250154eefa6a93327aa0ef50b1d6c368905b5d7dcdcf3a"
+    },
+    {
+      "path": "arch4/brain/calibration_context.py",
+      "bytes": 4801,
+      "sha256": "713e778426368aab849c9c28d039cdfff4bd23eb9dee707cb13325f706600b43"
+    },
+    {
+      "path": "arch4/brain/calibration_contract.py",
+      "bytes": 23564,
+      "sha256": "57443a997fcad018dcbf7c65337150a8827e8152611e6002a646e81955d21414"
+    },
+    {
+      "path": "arch4/brain/calibration_decision_log.py",
+      "bytes": 10908,
+      "sha256": "ae8f14a3b7995296c2be1a95b75f5a24e1b99a62167d9afa106d2fa9999f6ab3"
+    },
+    {
+      "path": "arch4/brain/calibration_external_knowledge.py",
+      "bytes": 11794,
+      "sha256": "6fe1e347a357bb80beba0936d3a32f3f15c6663951733e007f41ac081eb3a448"
+    },
+    {
+      "path": "arch4/brain/calibration_fact_confidence.py",
+      "bytes": 14893,
+      "sha256": "36bd3721945b469b23edee5eac1daec4609b701eb1c7f879474f9c3dba0f5545"
+    },
+    {
+      "path": "arch4/brain/calibration_monitoring.py",
+      "bytes": 6744,
+      "sha256": "52574e5162322a57223cbc8e9654ff51b0fe3f3adff67666d1a87626f9eda8a1"
+    },
+    {
+      "path": "arch4/brain/calibration_profile.py",
+      "bytes": 2015,
+      "sha256": "586d0b90dc8adc3dbbfce4fb12ab98c485988e8e2db9086f92aa922628a40d23"
+    },
+    {
+      "path": "arch4/brain/calibration_profile_application.py",
+      "bytes": 5572,
+      "sha256": "7b8a849db89fce369ffe71e01bd7f41b86e859caa4d9347713d70a0c480ad723"
+    },
+    {
+      "path": "arch4/brain/calibration_publication.py",
+      "bytes": 6929,
+      "sha256": "881e06b77a6f1092e5332b69859fcedcb1867c34b3f3f24e374a9ac3a1ca5b6b"
+    },
+    {
+      "path": "arch4/brain/calibration_review.py",
+      "bytes": 31901,
+      "sha256": "7e3060f4cda8d018df4df3b9c58a76d944620324a7990e9065ad5351abd3d336"
+    },
+    {
+      "path": "arch4/brain/calibration_scoring.py",
+      "bytes": 23439,
+      "sha256": "70d1d814587abdb20e15f61ff6835d1a0a7d4cd8dc6d2d24f7f04287bb1d17df"
+    },
+    {
+      "path": "arch4/brain/calibration_session.py",
+      "bytes": 5407,
+      "sha256": "3b760a7854a6c3eade16e03b60dd300fc877ac1eff6d65fc47aba23137f3c7a0"
+    },
+    {
+      "path": "arch4/brain/calibration_workflow.py",
+      "bytes": 472,
+      "sha256": "85409764b1362cf4b57bb04e905497ae1ff0f7ac8834ea0c108adb5e80f55f68"
+    },
+    {
+      "path": "arch4/brain/candidate_action_contract.py",
+      "bytes": 10152,
+      "sha256": "78b8c6f895b6be215a5d525672f89f96d88ec4a47b7b713eff46884700fdf59c"
+    },
+    {
+      "path": "arch4/brain/congestion_signals.py",
+      "bytes": 4129,
+      "sha256": "d20283afe2ce8a2d98745f2b86a2f827767779e961c7a31d1575fe00c1592dc4"
+    },
+    {
+      "path": "arch4/brain/cooldown_registry.py",
+      "bytes": 13827,
+      "sha256": "6fb3140c34d8e274409b4c0d131c7f584d055b28d151629ce86fd206a81a9b8f"
+    },
+    {
+      "path": "arch4/brain/counterfactual_opportunity_audit.py",
+      "bytes": 16597,
+      "sha256": "a816af9baa2f224fb8ff01a6faf07dd3b9183f43a3932185442d5a17430723cd"
+    },
+    {
+      "path": "arch4/brain/crystal_ball.py",
+      "bytes": 71858,
+      "sha256": "36eab380916ab97d241ec3b3892900a70aaab6d9eb4dab1219c817cd390a8a08"
+    },
+    {
+      "path": "arch4/brain/crystal_ball_regrade_owner.py",
+      "bytes": 8835,
+      "sha256": "6d7bc103c28f7e529083d68c184e24603e9018d1509af11e770ab70ddced690c"
+    },
+    {
+      "path": "arch4/brain/decision.py",
+      "bytes": 14673,
+      "sha256": "2bd3c9419b5df9a053f2b6de7fc00d63004903aac8c5d7b9955583e3471a6c25"
+    },
+    {
+      "path": "arch4/brain/decision_action_format.py",
+      "bytes": 3732,
+      "sha256": "f585d3f922930050038abc843e7f3066c0990d606b86a0ddb73c22b382af90a0"
+    },
+    {
+      "path": "arch4/brain/decision_congestion.py",
+      "bytes": 774,
+      "sha256": "12bc602ad8b6afb48220d703a40c7dd348fcb9dd4b46f92a8e225bfd43f39bb8"
+    },
+    {
+      "path": "arch4/brain/decision_degraded.py",
+      "bytes": 768,
+      "sha256": "abe2b9483fbf6b9a3ed01c669c86bbbe4e534edeb21535db621fcbd0677af641"
+    },
+    {
+      "path": "arch4/brain/decision_exploring.py",
+      "bytes": 2194,
+      "sha256": "dac4097db7d601cfd4239c8d6a1269aa5f83807b9c346efa9f5646f673852b7a"
+    },
+    {
+      "path": "arch4/brain/decision_faults.py",
+      "bytes": 15969,
+      "sha256": "5a2bed3a54252364d5699912d4cbd41040d290290b5e8ed752529c9bde1b7636"
+    },
+    {
+      "path": "arch4/brain/decision_input.py",
+      "bytes": 10993,
+      "sha256": "1beedce7ea5ba0bc18f50f83e32f84c4c1efde546f3ea2e0e2d140022ee95fd8"
+    },
+    {
+      "path": "arch4/brain/decision_night_training.py",
+      "bytes": 1275,
+      "sha256": "92c730e8c7cb165cf17fa93be4538606d7afe2c5651a34c7a6f1b7d7516cee51"
+    },
+    {
+      "path": "arch4/brain/decision_pipeline.py",
+      "bytes": 135222,
+      "sha256": "df41aa2220780954e84426caeff05490a5c099f5e7e53fc8d05b302d8577674a"
+    },
+    {
+      "path": "arch4/brain/decision_policy.py",
+      "bytes": 16941,
+      "sha256": "f62c946d5b096adb1fdb782ee5ee4a1af2f9b0accb64eceb4e869f07c70753aa"
+    },
+    {
+      "path": "arch4/brain/decision_quality_owner.py",
+      "bytes": 14625,
+      "sha256": "4db5e59dca0a1b75a903d4365a66da34f0aa44d840d8dce81ae0f6147c6ebd69"
+    },
+    {
+      "path": "arch4/brain/decision_receipt.py",
+      "bytes": 5853,
+      "sha256": "92d7c0ef653a61066b6a0529fb7a3e72c8a9581b1e8bb88d26f6187a6c307a2f"
+    },
+    {
+      "path": "arch4/brain/decision_support.py",
+      "bytes": 60331,
+      "sha256": "0afb5157d993e429386e6e7d8770ba96422fab54db215ebe31e8181085807b27"
+    },
+    {
+      "path": "arch4/brain/decision_working.py",
+      "bytes": 1113,
+      "sha256": "6f684cc2bc4a0469812919648dab21bf464d745123c4f394271a74be0322ae4e"
+    },
+    {
+      "path": "arch4/brain/delivered_load_memory.py",
+      "bytes": 10664,
+      "sha256": "f67bf1e479513ea284199bceef4ba9f6b97729aefaeefc714f6a86292021d8d7"
+    },
+    {
+      "path": "arch4/brain/device_monitors.py",
+      "bytes": 10939,
+      "sha256": "716fb4bb50c4a0a00298e6c7e0a5478c9609558ec5bce7629dd351c6c6f8f8f5"
+    },
+    {
+      "path": "arch4/brain/event_clock_lane.py",
+      "bytes": 5514,
+      "sha256": "7dc59ab682eb424831d08bdea8b3b8a22e7a2d6b83fb71194ddd0da978cddeb5"
+    },
+    {
+      "path": "arch4/brain/event_inbox.py",
+      "bytes": 9536,
+      "sha256": "c8ee2996e8a1f383a9bbc0c0d91cfd3170c949e0c90ee77e2941ebb34961e301"
+    },
+    {
+      "path": "arch4/brain/exploration_pressure.py",
+      "bytes": 14483,
+      "sha256": "30ce1d5396dda392b20231792130d0d91c9af80dda97c48a3f8a45e76c2c464b"
+    },
+    {
+      "path": "arch4/brain/feed_registers.py",
+      "bytes": 31350,
+      "sha256": "68330884ad0d8e8a81d9afe608e178a9200df27a8cae9a32c63b01d8c8152a35"
+    },
+    {
+      "path": "arch4/brain/health_checks.py",
+      "bytes": 13828,
+      "sha256": "2032d2843a1f9a1a93c668506c02867a06f1e026dc400daa80cb3704697c8e69"
+    },
+    {
+      "path": "arch4/brain/historical.py",
+      "bytes": 48741,
+      "sha256": "5f3e2096aa6a0245120591efc27a8099e53c9aa3462f58882816332b27b01907"
+    },
+    {
+      "path": "arch4/brain/incident_rca.py",
+      "bytes": 6843,
+      "sha256": "552dfbe6734deef19cdd02bd5c81fc78127cce8eabf3e77e734a305baf303714"
+    },
+    {
+      "path": "arch4/brain/learning_authority.py",
+      "bytes": 6287,
+      "sha256": "ddc8b71211861bb365bb2a1958029bbe667ab621b76340f916f8d924c504bc7b"
+    },
+    {
+      "path": "arch4/brain/learning_authority_context_builder_owner.py",
+      "bytes": 7782,
+      "sha256": "c2e8672a035073f31ae5bfebf22b60acf58f3231a735e0f2b63e8ff6f16f3512"
+    },
+    {
+      "path": "arch4/brain/learning_authority_context_owner.py",
+      "bytes": 8762,
+      "sha256": "b520d071c5e2af0263070fec7e715c29a3fb5bbd76a3f93800df7382e8d7641d"
+    },
+    {
+      "path": "arch4/brain/learning_authority_event_owner.py",
+      "bytes": 9996,
+      "sha256": "9356c11792a239c959366eaa3b40d4b0d0d8b07750f9a146f387457a7bff14dd"
+    },
+    {
+      "path": "arch4/brain/learning_authority_quality_journal_owner.py",
+      "bytes": 758,
+      "sha256": "ff4808bcd6a9b91796f55de8a3484e021d1207bf565826d431638be8fe021f88"
+    },
+    {
+      "path": "arch4/brain/learning_effect.py",
+      "bytes": 23485,
+      "sha256": "215deb1f6ea8ecc61069d995bdbeedc206a5071d28adaf5ec757da492e98e9db"
+    },
+    {
+      "path": "arch4/brain/learning_effect_action_proof_owner.py",
+      "bytes": 7701,
+      "sha256": "1a23a95f943cd43e6a7ed572076a22e984abba70954c9b6c56706b19dfe5c83d"
+    },
+    {
+      "path": "arch4/brain/learning_effect_feedback_owner.py",
+      "bytes": 2958,
+      "sha256": "9fe12d7fe55c60ee2981aa89c80241ecd4320d96b700246e53e290da8186f1e5"
+    },
+    {
+      "path": "arch4/brain/learning_gate_registers.py",
+      "bytes": 1622,
+      "sha256": "79127daf588153d9dc6712dba8280bf3991b902983ab07583a131cdda65d14a0"
+    },
+    {
+      "path": "arch4/brain/learning_memory_projection.py",
+      "bytes": 7953,
+      "sha256": "ebbad1752b59a9d3105d4f332f1992296b46941ada38b4146b6054fc055c0a33"
+    },
+    {
+      "path": "arch4/brain/learning_quality.py",
+      "bytes": 16789,
+      "sha256": "2f7514459055933e9f5ae938768024b4e7790025a0d074bf68323cae7bace661"
+    },
+    {
+      "path": "arch4/brain/legacy_referee_journal.py",
+      "bytes": 3295,
+      "sha256": "6ee4435cae56ef92c1fea099525fd4fd96629df469cb5c20e140c973a64c8b5b"
+    },
+    {
+      "path": "arch4/brain/memory.py",
+      "bytes": 42527,
+      "sha256": "4d52117e8fb3c84026e80d56b671aa90d45499162ec8f69e68dd8198eeb96994"
+    },
+    {
+      "path": "arch4/brain/memory_action_history_owner.py",
+      "bytes": 14919,
+      "sha256": "b34c10ce965c20a0ae7147f738444f9dd5f516803a1d5872b5333faf07555a6a"
+    },
+    {
+      "path": "arch4/brain/memory_action_learning_store.py",
+      "bytes": 10355,
+      "sha256": "eca26c08e483f949a72e103b583a8b6fb2fa712df9f5c04d3097a414ab545055"
+    },
+    {
+      "path": "arch4/brain/memory_action_store.py",
+      "bytes": 3776,
+      "sha256": "178e2a85c1a86d2e4c5548ce124ac0094e1649b366c270c31114fcd1ae46a548"
+    },
+    {
+      "path": "arch4/brain/memory_band_confidence_owner.py",
+      "bytes": 3511,
+      "sha256": "7174b3f67ed5850132c53e69341e29f8521fcfb909bf2055ff379f6c8375468c"
+    },
+    {
+      "path": "arch4/brain/memory_band_learning_query_store.py",
+      "bytes": 25210,
+      "sha256": "a967402b7545d0e80d8a00f2f65ca7168f604ea38ce44976dee6248847138954"
+    },
+    {
+      "path": "arch4/brain/memory_band_learning_store.py",
+      "bytes": 10932,
+      "sha256": "4ec9a67e591756e0f343beeaa72ebbf0ace80bb4cca663967a1152b0f59b4986"
+    },
+    {
+      "path": "arch4/brain/memory_band_operational_history_owner.py",
+      "bytes": 11234,
+      "sha256": "5ad44a24cb1246a37d3af3c711e9ae6cf166be81efb79918ec01c1a903b3eb99"
+    },
+    {
+      "path": "arch4/brain/memory_baseline_owner.py",
+      "bytes": 4152,
+      "sha256": "e257433ae9b5323b1636ebf69c8f2ee12eae00ba8cae9e62bacc9c87f50ab7eb"
+    },
+    {
+      "path": "arch4/brain/memory_baselines.py",
+      "bytes": 2868,
+      "sha256": "96a5ad71897e47c5b824781a507c0659475648277ab73a60409c142528e216fa"
+    },
+    {
+      "path": "arch4/brain/memory_calibration_context_owner.py",
+      "bytes": 13022,
+      "sha256": "fb20afb5ef3ed400b5ec2127fad32775dc388e2c4c4a25165b8731a5d12805da"
+    },
+    {
+      "path": "arch4/brain/memory_calibration_history_owner.py",
+      "bytes": 1218,
+      "sha256": "467aae27555056f0dc75a042b30ac86f1f6f479f0ec2d364724b21df72faca7c"
+    },
+    {
+      "path": "arch4/brain/memory_calibration_marker_owner.py",
+      "bytes": 1228,
+      "sha256": "83c3bc255ad15c522be6fde858d13f3928c84746edebe35a8c64c7ce7e1b6487"
+    },
+    {
+      "path": "arch4/brain/memory_calibration_sample_owner.py",
+      "bytes": 788,
+      "sha256": "138219c714bc082fe9e02b2f5542f7d8de272eb73b7b5ca699f0a5b75af39992"
+    },
+    {
+      "path": "arch4/brain/memory_calibration_store.py",
+      "bytes": 30654,
+      "sha256": "d0f87490d95e728d0d78bd9e4313158d0bd403d3e8341a0f4b0556348a3df94f"
+    },
+    {
+      "path": "arch4/brain/memory_cell_knowledge_owner.py",
+      "bytes": 9734,
+      "sha256": "cf43a708f79dce158fe1e4abef98ab79a657c895bceb5d58704d0cdbc9c20584"
+    },
+    {
+      "path": "arch4/brain/memory_congestion_profile_owner.py",
+      "bytes": 6531,
+      "sha256": "3bcd961090e7630d8e9883242776152aab81d12429f899e2ba3e3a934b637435"
+    },
+    {
+      "path": "arch4/brain/memory_delivered_load_owner.py",
+      "bytes": 7113,
+      "sha256": "4b0a85ed77f7723c4efdeaca9e008030a28e44f17c0e61fbe2b850f9c37caffd"
+    },
+    {
+      "path": "arch4/brain/memory_evidence_scope_owner.py",
+      "bytes": 10515,
+      "sha256": "f8716d79ba79e8cda6978fdbe49e91d5889b44126ade1eed9b907eb2bbc47596"
+    },
+    {
+      "path": "arch4/brain/memory_io.py",
+      "bytes": 11500,
+      "sha256": "dec30affd4900e385ba83be43c50a0fabea055ee2049d28ab742355dd7bdd707"
+    },
+    {
+      "path": "arch4/brain/memory_learning_gate_journal_owner.py",
+      "bytes": 1295,
+      "sha256": "80a70d274426eb717a218604a0bfe4e8cfaed9133190ba9cd6f74ff5a53ecfda"
+    },
+    {
+      "path": "arch4/brain/memory_namespaces.py",
+      "bytes": 13009,
+      "sha256": "ffbe9a2d2ad9adc347b1b2370d14cc91b7f58dd76048b6d65a0592e3415c3810"
+    },
+    {
+      "path": "arch4/brain/memory_objective_lifecycle_owner.py",
+      "bytes": 8646,
+      "sha256": "7623ebcacf04ff0b80a0d4611c77a6d205078b47a835fa717a62cb8cc8eceb66"
+    },
+    {
+      "path": "arch4/brain/memory_persistence.py",
+      "bytes": 44977,
+      "sha256": "0952694abe08a419b8325e7c7ff55b01c67e3d66692f34d8ff45c0485c91981e"
+    },
+    {
+      "path": "arch4/brain/memory_snapshots.py",
+      "bytes": 4686,
+      "sha256": "58d351ea1bb14572ed7a9a1c817bb2131d4e7344eeb9230e33024bd1bd191fba"
+    },
+    {
+      "path": "arch4/brain/outcome_profile.py",
+      "bytes": 4912,
+      "sha256": "428246a6d4900d375c90fc332196e4317cdfefb3314da3413e59abd13c288516"
+    },
+    {
+      "path": "arch4/brain/prediction_confidence.py",
+      "bytes": 2717,
+      "sha256": "138b7e607135951fdd3ec8c6c652935deda7a98ab130a79c20bca8894fc49667"
+    },
+    {
+      "path": "arch4/brain/proof_feedback_owner.py",
+      "bytes": 12788,
+      "sha256": "7317120c23d2bfebc3da99151d83075b6fd8a7a1ad747f734c6138ad63cda402"
+    },
+    {
+      "path": "arch4/brain/proof_memory_store.py",
+      "bytes": 7961,
+      "sha256": "8ec22cb68add7cd928a084dfb8dd2c1222c68cc31a0cf275c38102efbd11f1ae"
+    },
+    {
+      "path": "arch4/brain/proof_referee_action_lifecycle_projection_owner.py",
+      "bytes": 3810,
+      "sha256": "932ec2218668d0e6c20cad6c9c19e616573d863cc183ba0177ef4194d16eb079"
+    },
+    {
+      "path": "arch4/brain/proof_referee_brain_event_owner.py",
+      "bytes": 7114,
+      "sha256": "2adc5710bbf82bbba06b6d59e905f23a75a1bc8d9223f04821cb52328637461c"
+    },
+    {
+      "path": "arch4/brain/proof_referee_context_owner.py",
+      "bytes": 11268,
+      "sha256": "d76b023800f90cb3b3eb0a13fe1f965f788375c14822ca64a97c94f12b42d21e"
+    },
+    {
+      "path": "arch4/brain/proof_referee_due_close_owner.py",
+      "bytes": 8186,
+      "sha256": "6212ff9377d513c0598ecb6ea119216c656eec26b3a8b9fce34640f9025130cc"
+    },
+    {
+      "path": "arch4/brain/proof_referee_due_owner.py",
+      "bytes": 4922,
+      "sha256": "2aac20009f6e29a0b509bef07b0b884d8170c8fec9d4c6a116ad2dee3ac3c8de"
+    },
+    {
+      "path": "arch4/brain/proof_referee_due_scan_owner.py",
+      "bytes": 3633,
+      "sha256": "0947632b469d548f73d966aa8f0727b5eeb847f810187f0759bc7ae81765022a"
+    },
+    {
+      "path": "arch4/brain/proof_referee_evidence.py",
+      "bytes": 10751,
+      "sha256": "49350441cc89628125ced112c80694c76b6e8f3d0884b14fd5f31849f1897e86"
+    },
+    {
+      "path": "arch4/brain/proof_referee_historical_projection_owner.py",
+      "bytes": 4155,
+      "sha256": "341d88ff85ebfa155cd974da597b9852498aa01ccd601ff07f0fc45c5e4eea7a"
+    },
+    {
+      "path": "arch4/brain/proof_referee_interim_feedback_owner.py",
+      "bytes": 10696,
+      "sha256": "32edff743bd6663963ecfcb0fe85ec491dacc93f738611b934a9fe478932d093"
+    },
+    {
+      "path": "arch4/brain/proof_referee_parent_close_owner.py",
+      "bytes": 3825,
+      "sha256": "83767586ccaeef2aad6f820971a5912b68972f2d956424e5aec7deb72c4915ed"
+    },
+    {
+      "path": "arch4/brain/proof_referee_projection_outbox_owner.py",
+      "bytes": 20919,
+      "sha256": "76810af99e9264b6cfa416f301417b5778b8053ff55bbae81cff2bb6667f5045"
+    },
+    {
+      "path": "arch4/brain/proof_referee_record_builder_owner.py",
+      "bytes": 7903,
+      "sha256": "378f837ef245bb726a30dab91c47a1739eee155d66a83d2405be19c1ae4c82db"
+    },
+    {
+      "path": "arch4/brain/proof_referee_recording_event_owner.py",
+      "bytes": 3446,
+      "sha256": "ced9ef8e9bcc8192640a599e2fc5f9c1e5c12ae7025f017e4de1a247334b2133"
+    },
+    {
+      "path": "arch4/brain/proof_referee_runtime_input.py",
+      "bytes": 7133,
+      "sha256": "142d2457cf6f9ef28617d9cc6369af2b3275592bfb0e20bfe2a6d6b37a15f8db"
+    },
+    {
+      "path": "arch4/brain/proof_referee_secondary_event_owner.py",
+      "bytes": 2284,
+      "sha256": "307211e2869327e8d24a97a9d06fcc1ea3a0e82010801289ff6f026c2af2cb0a"
+    },
+    {
+      "path": "arch4/brain/proof_referee_secondary_learning.py",
+      "bytes": 7474,
+      "sha256": "3da33a2f1634c1a86f33e0c137256e1c433c2def9a95eab7e5fd8e45993d9793"
+    },
+    {
+      "path": "arch4/brain/proof_referee_window_owner.py",
+      "bytes": 6414,
+      "sha256": "fc89e4abf4a557a2a35704f92258dce1c8912a302868d5ac19acb303c7a367c2"
+    },
+    {
+      "path": "arch4/brain/proposal_contract_owner.py",
+      "bytes": 2316,
+      "sha256": "93b70b1878caf0ef723161d06e3e325752c54ed1671c58ec65bc0121e63c1b3f"
+    },
+    {
+      "path": "arch4/brain/referee.py",
+      "bytes": 17000,
+      "sha256": "a2cb06acdda4bd3e8810840eb940f45267b5d91c72b9848075b63562cf284a27"
+    },
+    {
+      "path": "arch4/brain/referee_feedback_quality.py",
+      "bytes": 8306,
+      "sha256": "13a6e4e87dc1f5634a5e18a2a92120182864f9a8ea1e5738a3d18e7c4dd05036"
+    },
+    {
+      "path": "arch4/brain/referee_publication.py",
+      "bytes": 13117,
+      "sha256": "6cfdd3616a7d925ce324aa1e7fce6111eaf510159c803bdb12bb51cf48082707"
+    },
+    {
+      "path": "arch4/brain/reward_ledger.py",
+      "bytes": 30467,
+      "sha256": "b91d7fd98c10d685bb1b3a21fc644586f43503f12c158e681e4fc6bf9fbd02e1"
+    },
+    {
+      "path": "arch4/brain/rf_quality_gate.py",
+      "bytes": 13872,
+      "sha256": "a5fd860d7bf9e7502eacd817aa5643a4b374f3fd05e5cff79c8c37c93645f1c9"
+    },
+    {
+      "path": "arch4/brain/rf_truth.py",
+      "bytes": 5059,
+      "sha256": "96475761d897036899bcb14c1f3ac6ec2b475ff265b684cc3109862d2fc59991"
+    },
+    {
+      "path": "arch4/brain/runtime_incident_tracker.py",
+      "bytes": 66203,
+      "sha256": "72b12c15192866330507a43b03401e7cc48f94b8ee44ff7cadaf1afee18339b2"
+    },
+    {
+      "path": "arch4/brain/secondary_learning_receipt.py",
+      "bytes": 6703,
+      "sha256": "254985db3d1cc593bb00b23a70735a3bc2d8aa90f8e04045c24104b14b6cb68d"
+    },
+    {
+      "path": "arch4/brain/selected_action_command_projection.py",
+      "bytes": 5205,
+      "sha256": "da00cd1ca2ad983e6547ba5905c6ead4cc1f2c56c5f5add86a6a6f567d4e5369"
+    },
+    {
+      "path": "arch4/brain/self_learning_action_family_roi_owner.py",
+      "bytes": 3501,
+      "sha256": "e62f35576ec85fa135a251b9dc4f17a15ada0d193955793c76a302558ed9e363"
+    },
+    {
+      "path": "arch4/brain/smartness_reporting_owner.py",
+      "bytes": 10734,
+      "sha256": "5277ec5e6d1add8b687dcb067998fab61d9b297ca01504a63e0ed0c1be5d4eb4"
+    },
+    {
+      "path": "arch4/brain/states.py",
+      "bytes": 67012,
+      "sha256": "aa510a3febcb13900529bb06f775c041852efea870868d7a1cdde7674e2bdcdc"
+    },
+    {
+      "path": "arch4/brain/tick_contract.py",
+      "bytes": 41981,
+      "sha256": "3a4953ca47a6407dd03c4eb207162d1240b9db71f0170694c6eef09cd950a7a3"
+    },
+    {
+      "path": "arch4/brain/tick_safety.py",
+      "bytes": 10399,
+      "sha256": "d3401ef3ac864ab58248097ba42f4f87ef54561729e7be1aa43639ab0e6c7eb3"
+    },
+    {
+      "path": "arch4/brain/tick_safety_hold_owner.py",
+      "bytes": 1740,
+      "sha256": "69553c9f35a41ebd1ffc987eef21ca3e04ad48e6dd00fc46448d112e382861f7"
+    },
+    {
+      "path": "arch4/brain/traffic_gate.py",
+      "bytes": 8527,
+      "sha256": "589c4176c294ea52c4bc11de01d1c36332bb6e4ceb88f1d3f8428027ecc8e98f"
+    },
+    {
+      "path": "arch4/brain/transaction.py",
+      "bytes": 13107,
+      "sha256": "a5bd2ab3c737070f4e69bdf4aa0802aab1c626cbadaa3143f75e5700ab75c617"
+    },
+    {
+      "path": "arch4/brain/transaction_closure_publication_owner.py",
+      "bytes": 1938,
+      "sha256": "52c3a2709984b6d70d38bf6e4c7c499f30aa82cba86497b4f0635bb784390832"
+    },
+    {
+      "path": "arch4/brain/transaction_register.py",
+      "bytes": 38910,
+      "sha256": "4ee89105b663d0c3b346f3e4d35e2726222d05ac4a790db4e2d34959350fece6"
+    },
+    {
+      "path": "arch4/brain/tsar_action_shaping.py",
+      "bytes": 8628,
+      "sha256": "18ac40819f976c9bcfeeaadd0803cd858b47228f7c3751ea2650dd378c0de41e"
+    },
+    {
+      "path": "arch4/brain/tsar_autopilot.py",
+      "bytes": 16084,
+      "sha256": "7e88eea96b0e02aad45fcf63b446c76789a1932fb2c9cef0708b4dd6f9084f42"
+    },
+    {
+      "path": "arch4/brain/vector_contract.py",
+      "bytes": 22025,
+      "sha256": "2d9c16851c1e6bfe2d4611ee6e3494c291442655021fcb7d19c96adb4eb99a30"
+    },
+    {
+      "path": "arch4/brain_decision_authority.py",
+      "bytes": 9501,
+      "sha256": "39e58470fd19c5d725c2c13f9270251197983fcbff18e3e9982c07c31ffa815b"
+    },
+    {
+      "path": "arch4/calibration_learning_runtime.py",
+      "bytes": 21278,
+      "sha256": "2bdd23c060963740137d6b83c1d9cb7127c6ebd03267bbb2702cc80be2929bae"
+    },
+    {
+      "path": "arch4/canonical_delta_display.py",
+      "bytes": 10036,
+      "sha256": "e0b0369cc706911fd693169286e0805898220ca83b8dffd8570e3db55cbf2bcd"
+    },
+    {
+      "path": "arch4/canonical_identity_display.py",
+      "bytes": 8561,
+      "sha256": "5477e249135598ce2a9fc7adbbe3b9e412be1f9632d69503b7f88e68037a4bfc"
+    },
+    {
+      "path": "arch4/canonical_json.py",
+      "bytes": 1961,
+      "sha256": "df0542ccbfe3dc19e9fae2f32dabc2f5c46bc3fc919ac80cff2fa6ab43209e70"
+    },
+    {
+      "path": "arch4/canonical_scheduler_display.py",
+      "bytes": 9487,
+      "sha256": "937880bae5dc8be8023895e94ffa820601507d0c35003e92f6317b3a797efac0"
+    },
+    {
+      "path": "arch4/cgf_runner.py",
+      "bytes": 12269,
+      "sha256": "2bf4d16bd9a2d65e456c449c97f2bef394cd17f91739c40927f7da470eb126f4"
+    },
+    {
+      "path": "arch4/checkpoint_portable_projection.py",
+      "bytes": 2467,
+      "sha256": "eff726d165d61978a0ea3dd536d9bb89d43f6c31f5ed05b85d3278f0b9e66c58"
+    },
+    {
+      "path": "arch4/coerce.py",
+      "bytes": 8830,
+      "sha256": "c9c97896d074c61bc5ce7966e1264c235a112fbbbddd03124d24ea32f4c6e2cd"
+    },
+    {
+      "path": "arch4/command_transactions.py",
+      "bytes": 124412,
+      "sha256": "f4cd93b818735f361e7f7cc52a53585a0e50c1d23ac52fad2bc9613af57f7223"
+    },
+    {
+      "path": "arch4/config_file_contract.py",
+      "bytes": 87,
+      "sha256": "4d0fef4550a0e5c2de56f017c9dd72ced5214239565581c0348df221ad6ecc14"
+    },
+    {
+      "path": "arch4/config_views.py",
+      "bytes": 51607,
+      "sha256": "0b739a39154557ca30f6d54951bace9c63cd8e91500f735aea0784744ec85616"
+    },
+    {
+      "path": "arch4/connectivity_module.py",
+      "bytes": 162,
+      "sha256": "7b6a8179da81c88b229a0d811f7576547529dd1f659552923dc5a46f4d41da77"
+    },
+    {
+      "path": "arch4/contextual_bandit.py",
+      "bytes": 25454,
+      "sha256": "10e81dfde751d2f3d47626d5d67b48109de2940b5047a585e3cdc4664b92b8ed"
+    },
+    {
+      "path": "arch4/contextual_bandit_state_store.py",
+      "bytes": 6739,
+      "sha256": "0a91a1db503e8a178acbc1e560843b367637423f54493b80c4f8e70243208d3a"
+    },
+    {
+      "path": "arch4/control/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/control/band_resolver.py",
+      "bytes": 6441,
+      "sha256": "f5fb0aea1272def88dd74ceb4b41b2e6d3fbd07c34691e021201e831654e2ab0"
+    },
+    {
+      "path": "arch4/control/manual_queue.py",
+      "bytes": 12430,
+      "sha256": "fae39a1d0fda009f8e9b6df3c566cfc9cb439368549998cfd340db0867d25456"
+    },
+    {
+      "path": "arch4/controller_frames.py",
+      "bytes": 57901,
+      "sha256": "6caae515efa6968da4757acc762d612b61502e733fab27c91e0e60837a8203f5"
+    },
+    {
+      "path": "arch4/controller_posture.py",
+      "bytes": 18352,
+      "sha256": "64c1589e28bad8561a61b5911bfe836e9414d1949b1af369f299528556d4993c"
+    },
+    {
+      "path": "arch4/core/__init__.py",
+      "bytes": 225,
+      "sha256": "3a369cc75a1681df705f4b0d240e28c77b7190bf05090223939b8ad3fb882e99"
+    },
+    {
+      "path": "arch4/core/accepted_generation_commit_store.py",
+      "bytes": 1160,
+      "sha256": "989dfc138c04c5d4116da2564b6476d25e5feb534c4c95e381aa268e26ffcdf6"
+    },
+    {
+      "path": "arch4/core/accepted_generation_root.py",
+      "bytes": 488,
+      "sha256": "bc89acf8541fc351b9730ed3d58a16ac19b2340566fbcc459fa588487b6e9820"
+    },
+    {
+      "path": "arch4/core/accepted_root_outbox.py",
+      "bytes": 33406,
+      "sha256": "c97adf71fd4002ff31a6f06bca0810a9bdd7965a23bbe86a4e128691760d2526"
+    },
+    {
+      "path": "arch4/core/action_guards.py",
+      "bytes": 9725,
+      "sha256": "74eaa3425bb05a94a2317b59b5738c5e7e043b30ef230218349c4014c5a9b001"
+    },
+    {
+      "path": "arch4/core/action_reachability.py",
+      "bytes": 53306,
+      "sha256": "0b35d3af360897c9aea7c3bc59b63029d9236170f04955af79a77eb29ccf2333"
+    },
+    {
+      "path": "arch4/core/action_runtime.py",
+      "bytes": 24802,
+      "sha256": "0060f3fdb71eb83edc37b161d6dc0994c5c2e9de088c82e0b7682d26a79475c7"
+    },
+    {
+      "path": "arch4/core/action_source_state_authority.py",
+      "bytes": 48950,
+      "sha256": "2cb95643c6e934bb11d5ead2a3b6f457186aaf76c27aee40e7b94bcbcfbed858"
+    },
+    {
+      "path": "arch4/core/action_status_service.py",
+      "bytes": 12750,
+      "sha256": "1644cdf5db96dfe1a6529d10a374f03437f3f1515117046423673e0a37c3580e"
+    },
+    {
+      "path": "arch4/core/active_configuration_service.py",
+      "bytes": 11002,
+      "sha256": "cd2af46f3d349d8648a977f7c0f6ce102ac938259e26986efabad4496f43790e"
+    },
+    {
+      "path": "arch4/core/band_action_policy.py",
+      "bytes": 2249,
+      "sha256": "3f1f9af33605535a1af188f66c4c2fc2eb202cd58addc79229f5f5a745466884"
+    },
+    {
+      "path": "arch4/core/band_admission.py",
+      "bytes": 16133,
+      "sha256": "9d33736d68f185968170d8f6655864182bede63d3719f3637658692e0f075858"
+    },
+    {
+      "path": "arch4/core/behavior_disposition.py",
+      "bytes": 24818,
+      "sha256": "4fafb5c57a7af8cae740b4fd66d1ddb095f8b5d9de01f7c07cae2407bdfa1e80"
+    },
+    {
+      "path": "arch4/core/bouncer.py",
+      "bytes": 28612,
+      "sha256": "c706fb420975d49ec7b4c4fade3ea132802c63685fa97f38050913113bae5cad"
+    },
+    {
+      "path": "arch4/core/clock_wake_stream.py",
+      "bytes": 9027,
+      "sha256": "a2e3e95371c12c47cad65e222fb96ec00f538191236d83e54e9886423e5e05c3"
+    },
+    {
+      "path": "arch4/core/command_context.py",
+      "bytes": 1318,
+      "sha256": "95b8a75b6324efbc4ca6aaa90513ea3ed93ad5112b476243b65d0199d01a1f1d"
+    },
+    {
+      "path": "arch4/core/command_execution.py",
+      "bytes": 49494,
+      "sha256": "471f1472bf0e41d3ac3d9febe3ecd4327f38d3e8aca8ef89a4c12b4478bf1ccb"
+    },
+    {
+      "path": "arch4/core/command_gateway.py",
+      "bytes": 34690,
+      "sha256": "9699562423afd8fdcade7cec77a49dccba8a013105d923d2cb19e010088bd0ee"
+    },
+    {
+      "path": "arch4/core/command_lifecycle_service.py",
+      "bytes": 53100,
+      "sha256": "9a3d90e3b39df62db3b31dacf27aedf43c183ef6ba73f2018b1277ffce805b99"
+    },
+    {
+      "path": "arch4/core/command_outcome_stream.py",
+      "bytes": 13606,
+      "sha256": "fac6dca177131f2154568f7b9a704d6947b72df5b48b0ca776debaf9155baff8"
+    },
+    {
+      "path": "arch4/core/command_request_builder.py",
+      "bytes": 7337,
+      "sha256": "f8821eede58838c77f6f40f44c3e2a184b200767fa8a3dc63fdcc6625d473626"
+    },
+    {
+      "path": "arch4/core/command_safety_adapter.py",
+      "bytes": 2520,
+      "sha256": "e5a6862590a700f6faf038355a013c72c84d311b425b6746de34be305ae5b74a"
+    },
+    {
+      "path": "arch4/core/command_status_projection.py",
+      "bytes": 11785,
+      "sha256": "082684d1802f8ac14b5878f2ec44160aea484e9503bf73339345b6d7366a7c7d"
+    },
+    {
+      "path": "arch4/core/composition.py",
+      "bytes": 40111,
+      "sha256": "e85775efe7e345bd3351ce72eb89dae1ba75f01aaa77410239448d05319896c9"
+    },
+    {
+      "path": "arch4/core/config_generation.py",
+      "bytes": 46413,
+      "sha256": "28e20a3564282b5e062c25b7d36d5a516a454ceb489163b88711642df338fa5f"
+    },
+    {
+      "path": "arch4/core/configuration_journal.py",
+      "bytes": 7491,
+      "sha256": "27e1849e5f5f9d8d7496a5a879951763adc3f76c8871cac246ad9839fc1fd32c"
+    },
+    {
+      "path": "arch4/core/correctness_journal.py",
+      "bytes": 2829,
+      "sha256": "6eb34ed13d0b73dbef1f2e7cee91428b58a347b37352c76d4ecce3677dad1658"
+    },
+    {
+      "path": "arch4/core/device_control_service.py",
+      "bytes": 9339,
+      "sha256": "ec63bf025cf150cf9168f11fd3fd3455948353d44b0e2eb2cd1f8319125882a7"
+    },
+    {
+      "path": "arch4/core/diagnostics_service.py",
+      "bytes": 11196,
+      "sha256": "6270e80629597a15aa167cf53f791b7c33a8c1822d140e77dfcae80fdd23d41a"
+    },
+    {
+      "path": "arch4/core/downstream_health_monitor.py",
+      "bytes": 9716,
+      "sha256": "3f31350b6ff298d31062a718e03950d44141dbbaeb189c0649c5b7a38531cc06"
+    },
+    {
+      "path": "arch4/core/emergency_reachability.py",
+      "bytes": 13530,
+      "sha256": "a65c689daa86ae4b6781fdca0b33069dacebba701e1bb7e3f7def9836b6a1909"
+    },
+    {
+      "path": "arch4/core/extension_hooks.py",
+      "bytes": 17977,
+      "sha256": "9406d084d04350371381ad49dd434de02cdf6bb4d3aa978b2d74ace6c5d5dbf2"
+    },
+    {
+      "path": "arch4/core/latency_traffic_qualifier.py",
+      "bytes": 4962,
+      "sha256": "c85bf0faeb8b224572c802b7b2e640c171678617213fe0457e5d6edf060c3410"
+    },
+    {
+      "path": "arch4/core/lever_action_adapter.py",
+      "bytes": 15648,
+      "sha256": "047e8d34b94d3c41c6945393c4d7d2e5f820c75677d9f3b994ac662562876d41"
+    },
+    {
+      "path": "arch4/core/mutation_policy.py",
+      "bytes": 1872,
+      "sha256": "6fd3c691eeb5d05a08d311da7fad9fdc20613e7fe49f34237f68b5ea9fe4e08b"
+    },
+    {
+      "path": "arch4/core/observation_adapter.py",
+      "bytes": 18856,
+      "sha256": "42666e9751d88c962d3dd773ad392e1c5190652580a1cda3731c182dffc67653"
+    },
+    {
+      "path": "arch4/core/operational_guards.py",
+      "bytes": 1645,
+      "sha256": "5da42f7fab5f38f703460a35edb6887e146d30b272d85662d6ea1339296cf5b3"
+    },
+    {
+      "path": "arch4/core/persistence.py",
+      "bytes": 7517,
+      "sha256": "000cb778c945c23de9bce5687f8e43790a15f316fe02b33bf33d8868dfc91cce"
+    },
+    {
+      "path": "arch4/core/physical_command_evidence.py",
+      "bytes": 2410,
+      "sha256": "49294b9d11744bb47ad4b6c1c2cbaba0b0f7bb44869ddefe4d1f142b6ee3b4ba"
+    },
+    {
+      "path": "arch4/core/rsrq_baseline_state.py",
+      "bytes": 6499,
+      "sha256": "311e273ecb004da5505fe9fcfa3fc8bf3c54d0145180eeb187454ff74a75ea43"
+    },
+    {
+      "path": "arch4/core/runtime_clock_dispatcher.py",
+      "bytes": 10827,
+      "sha256": "cf6bb8c83b35b4f31bc66364a5653ac75c1714d9028fcd72b8ac28c06b9381ed"
+    },
+    {
+      "path": "arch4/core/runtime_defaults.py",
+      "bytes": 2612,
+      "sha256": "5eead155281848b75761580612a7d359ac78501a9e13bcfb19b9609f310d7e9c"
+    },
+    {
+      "path": "arch4/core/runtime_snapshot.py",
+      "bytes": 8939,
+      "sha256": "8149c05822162e3098d48641406ea2c2cac0be48be655428363b836bb46715a4"
+    },
+    {
+      "path": "arch4/core/selected_action_register.py",
+      "bytes": 64694,
+      "sha256": "8aaf86dbe3ede30bf134ec62e51f6e2c0fa27b58d636021d787fd964c7523548"
+    },
+    {
+      "path": "arch4/core/selected_action_terminal_router.py",
+      "bytes": 7521,
+      "sha256": "825b3add9d46833b07f452b6a83d52844d7f55f6cdca95b101fa65c07a61dc30"
+    },
+    {
+      "path": "arch4/core/session_transition_service.py",
+      "bytes": 646,
+      "sha256": "fd586bd9d2277865b9e6a0a3c0d2dff1b0d49576b5b23da61d8b59b94dd9220a"
+    },
+    {
+      "path": "arch4/core/signal_computer.py",
+      "bytes": 52151,
+      "sha256": "563cf0ca7fa3ae494227c587014d320ad411c12ba067584b3b0462aaa93937db"
+    },
+    {
+      "path": "arch4/core_contracts/__init__.py",
+      "bytes": 401,
+      "sha256": "475dbdf00fa8b0e4f9ef654d93b16c36845c5cb80b961c2d50bec375fa68b384"
+    },
+    {
+      "path": "arch4/core_contracts/accepted_current_facts.py",
+      "bytes": 13534,
+      "sha256": "45da741217f959e941ae6084296fdfc38f0a7d5f6cd4ba995910f1a8aea46d88"
+    },
+    {
+      "path": "arch4/core_contracts/accepted_generation_commit.py",
+      "bytes": 14911,
+      "sha256": "5ce0760dbb482ea832e932e02d41b438f543d1bd5f31fc3a552e5c2f1e70c0ca"
+    },
+    {
+      "path": "arch4/core_contracts/accepted_generation_root.py",
+      "bytes": 8893,
+      "sha256": "72c41325142cff820b5726ec95f866183aa9b453ebf32e008804da66039e91c9"
+    },
+    {
+      "path": "arch4/core_contracts/accepted_root_outbox.py",
+      "bytes": 16601,
+      "sha256": "09ec7f523f8427ab5579acce3da1defd443521aa2c2846c67459093bbc36d59b"
+    },
+    {
+      "path": "arch4/core_contracts/accepted_runtime_view.py",
+      "bytes": 6482,
+      "sha256": "7e3a0f2455853eded0130cfd50968d2c1c5e02affda68d9fdf1e9f01179494c7"
+    },
+    {
+      "path": "arch4/core_contracts/action_reachability.py",
+      "bytes": 59960,
+      "sha256": "6b5f18788103520fbb73433f68c32bb1088cdb10d323b335d3adadf8a34f01fc"
+    },
+    {
+      "path": "arch4/core_contracts/cgf_contract_matrix.py",
+      "bytes": 11256,
+      "sha256": "7304920c13710f4262f591795b9680a06bd3d1012bbfde66d006aeb8b29583cc"
+    },
+    {
+      "path": "arch4/core_contracts/cgf_core_contract_manifest.py",
+      "bytes": 34147,
+      "sha256": "41d2e871cf63861f86c4961aa66bc792fa2b0e6596973d813ab79efd0b8ad114"
+    },
+    {
+      "path": "arch4/core_contracts/cgf_foundation_contract_manifest.py",
+      "bytes": 43328,
+      "sha256": "851a0676398bdbb173c85d2fc73a3d6cf2fd9ab2827316c3dd230e9e1dfa1c4c"
+    },
+    {
+      "path": "arch4/core_contracts/cgf_modem_live_contract_manifest.py",
+      "bytes": 45701,
+      "sha256": "38eff8da8ddce1a339cbb7a27907666565764ad00039f35812051808fe706e04"
+    },
+    {
+      "path": "arch4/core_contracts/cgf_production_file_disposition.py",
+      "bytes": 4795,
+      "sha256": "a8e0a79f03734c0e8623d3eb52df51be99ffa1d2eaf6dedc802025c2ed869f54"
+    },
+    {
+      "path": "arch4/core_contracts/clients.py",
+      "bytes": 3495,
+      "sha256": "8617c1d7769bf843b7de4c7b18f920bbf2aeff9da81cd2a153b736c0624ed0f7"
+    },
+    {
+      "path": "arch4/core_contracts/clock.py",
+      "bytes": 2159,
+      "sha256": "2ff81feccb9745f8645ad1cc97864302ef80c36da75562c54d31cf838ef73483"
+    },
+    {
+      "path": "arch4/core_contracts/command_physical_status.py",
+      "bytes": 2956,
+      "sha256": "02238813f71edb86d3b9e0ab767e184f965f61fedfa7d55695c5c1d00f496651"
+    },
+    {
+      "path": "arch4/core_contracts/command_safety.py",
+      "bytes": 5255,
+      "sha256": "22483a665e4e3d0ebd4be6ad691ca909cba3d19e29112e4ca587b2b56042f4c7"
+    },
+    {
+      "path": "arch4/core_contracts/command_targets.py",
+      "bytes": 31026,
+      "sha256": "83838c4bcbf9ee0e63ef8eb8c398ac5c006aa7c708e30e2382ae60cce35898de"
+    },
+    {
+      "path": "arch4/core_contracts/commands.py",
+      "bytes": 31361,
+      "sha256": "4a9a531d4be33dfbfdbe15a1c1a2123ce4f99d6bde409c06f5363f69b103edff"
+    },
+    {
+      "path": "arch4/core_contracts/configuration.py",
+      "bytes": 6031,
+      "sha256": "366196c2362cdc6b497c59c4d0bcaabdf83b837e3eff922437f3307f77bdfcbd"
+    },
+    {
+      "path": "arch4/core_contracts/configuration_keys.py",
+      "bytes": 3611,
+      "sha256": "82b5242df11a69056533602c789fdc62f9e5b1e03bfbeba4af3a977bbd9b7bd9"
+    },
+    {
+      "path": "arch4/core_contracts/connected_settlement.py",
+      "bytes": 1798,
+      "sha256": "78a2a0c3a505d948992123bd6751da48dd7825084911dabbf62bda3a3a596e6a"
+    },
+    {
+      "path": "arch4/core_contracts/core_shutdown.py",
+      "bytes": 13000,
+      "sha256": "0df0a9fbe368c774a4d4d022bc18518c60eb32d0e4274eac0358a7741992917d"
+    },
+    {
+      "path": "arch4/core_contracts/current_health.py",
+      "bytes": 24601,
+      "sha256": "26f61ddfc14753617bf39c8ec9efd4948dfd6dbc672249316979a7668a678a56"
+    },
+    {
+      "path": "arch4/core_contracts/current_state.py",
+      "bytes": 1849,
+      "sha256": "a41a621c6f5d038b58589761068a714c6393dd6090e72ee097fe7eabda635435"
+    },
+    {
+      "path": "arch4/core_contracts/emergency_reachability.py",
+      "bytes": 13224,
+      "sha256": "79d8a0b08a54b2faa1ff7db4aa5590185c9a146739fb068e32ad98af8145a74a"
+    },
+    {
+      "path": "arch4/core_contracts/events.py",
+      "bytes": 2168,
+      "sha256": "908a08e55b9df45f9d3b70dbdcfbff904ca533a754b6bea9fdfdc901701b9fb6"
+    },
+    {
+      "path": "arch4/core_contracts/health.py",
+      "bytes": 2497,
+      "sha256": "91f3516d3fa79d2abcbeb474200c5e55bc285a60260f0f84f336429e200c34c9"
+    },
+    {
+      "path": "arch4/core_contracts/hooks.py",
+      "bytes": 9863,
+      "sha256": "6d5b7c334ae62eac735d24f9e9373b89fa19c9161d792040a4f05b88fa94ad7d"
+    },
+    {
+      "path": "arch4/core_contracts/intelligence_boundary.py",
+      "bytes": 30291,
+      "sha256": "6e623f464b04419fb093f8ffd392d5c5f1cb864388ef624225d7cd99922a876d"
+    },
+    {
+      "path": "arch4/core_contracts/intelligence_proposals.py",
+      "bytes": 11962,
+      "sha256": "46b0ee435ac8ca066634ae669c4e860a18c14c530663238e5e8bb0390e6105df"
+    },
+    {
+      "path": "arch4/core_contracts/network_diagnostics.py",
+      "bytes": 2554,
+      "sha256": "f94856120588f29bfa0625720bf2917712c2a810dd4dcfcada491ecc853b463b"
+    },
+    {
+      "path": "arch4/core_contracts/network_settings.py",
+      "bytes": 14316,
+      "sha256": "c7967172d9846320b8d111b45c7e481e68a4c7f8d341015cf25bd669adf3493c"
+    },
+    {
+      "path": "arch4/core_contracts/nr_identity.py",
+      "bytes": 696,
+      "sha256": "316b40c7d9d80bc0afea8ed6c01d1e2e811a8e664775a29228692564b9896085"
+    },
+    {
+      "path": "arch4/core_contracts/observation_identity.py",
+      "bytes": 2673,
+      "sha256": "d8dcee705bef7a365495285776f656602ea3b9ed527f771f8d358cc8401abf88"
+    },
+    {
+      "path": "arch4/core_contracts/observations.py",
+      "bytes": 5145,
+      "sha256": "7d6f87815d77d62c7c0e4b008c36423c6896941365c765f891549d7581b81657"
+    },
+    {
+      "path": "arch4/core_contracts/outcomes.py",
+      "bytes": 1652,
+      "sha256": "234bdcb4ead435c4e43cf0b28c1a1f7b4e98a767ef84cfd8d7e02e75b4997cf0"
+    },
+    {
+      "path": "arch4/core_contracts/payload.py",
+      "bytes": 4502,
+      "sha256": "d05ed56fc773f79f2c994e9c4f3e5e0fd39280e6bbcf691cc8df8f94aac03220"
+    },
+    {
+      "path": "arch4/core_contracts/physical_commands.py",
+      "bytes": 40412,
+      "sha256": "44d98c65bbe84367612e527bcf4ddf91a863e881ea442a2e3d805cfee840b27e"
+    },
+    {
+      "path": "arch4/core_contracts/quality_model.py",
+      "bytes": 753,
+      "sha256": "668381607bf0973ef4d6548fce834c3b0cd403f6b8313a7bc743e5a232fb9734"
+    },
+    {
+      "path": "arch4/core_contracts/runtime.py",
+      "bytes": 3588,
+      "sha256": "5f17ef0328ac08e2ac002f314e37c74995aab71045f3b6ee4a1c06e551d1e5cd"
+    },
+    {
+      "path": "arch4/core_contracts/runtime_snapshot.py",
+      "bytes": 16576,
+      "sha256": "0e62cd21ed59f584c86a60691dc98c0efe0285da10cdf8116604a1ed021cdf4d"
+    },
+    {
+      "path": "arch4/core_contracts/signals.py",
+      "bytes": 3014,
+      "sha256": "01613df865d867fd00d40941a3a4e8d88011045091256bf47a7eb7f1ccf0f3f9"
+    },
+    {
+      "path": "arch4/core_contracts/site_report_history.py",
+      "bytes": 14644,
+      "sha256": "9cc4662c0758fc5ac4d79821561dbc3e5b2fa256dbe90024626fc1099ca4aee8"
+    },
+    {
+      "path": "arch4/core_contracts/traffic_counter_transition.py",
+      "bytes": 1966,
+      "sha256": "957976f8c8e00d59100e02a4d208954432a31987d957529cb0343c1821868fab"
+    },
+    {
+      "path": "arch4/customer_contracts/__init__.py",
+      "bytes": 71,
+      "sha256": "2a0d049d9a0c21a9a9fccb4e690c89a696cf75049afdbd7942ef72fff4e8c8d3"
+    },
+    {
+      "path": "arch4/customer_contracts/apn_profiles.py",
+      "bytes": 3105,
+      "sha256": "4bf6ce2e3233edd5dbe872dc12daa6e5a33dae24c080fb0f50c67aeb70726849"
+    },
+    {
+      "path": "arch4/customer_contracts/handoff_identity.py",
+      "bytes": 1327,
+      "sha256": "d6605e48fe95f4003d04056cafeec1f0a331d5a1d28fd83c78ee5a2d07a897da"
+    },
+    {
+      "path": "arch4/customer_contracts/historical_evidence.py",
+      "bytes": 15101,
+      "sha256": "ede92c868f6e6bd6ccd58e6705c037dcd284d614278c1c5e0c2448ba33749738"
+    },
+    {
+      "path": "arch4/customer_contracts/network_intention.py",
+      "bytes": 2921,
+      "sha256": "22817326db10f79f15ac81a717d559a3220fef5c570605c7a5196b0ee9f3ae4c"
+    },
+    {
+      "path": "arch4/customer_contracts/network_suggestions.py",
+      "bytes": 1087,
+      "sha256": "37427353595584bfec010afe696795e1363b9a66a6fdd7f9574204fc66d12f2f"
+    },
+    {
+      "path": "arch4/customer_contracts/optimization_action.py",
+      "bytes": 18192,
+      "sha256": "8cb9a490c32d6bfad7af4dc21c5bb833de3479695b1170873201fbc81509d574"
+    },
+    {
+      "path": "arch4/customer_contracts/selected_action.py",
+      "bytes": 24550,
+      "sha256": "bfde2bc672cb0f1627a76fc17bd4f3f019587acc1f03133b4fcee1ee5c22370e"
+    },
+    {
+      "path": "arch4/customer_contracts/settings.py",
+      "bytes": 10361,
+      "sha256": "257953f4a2123a3f777e556a35f5a2592b85c2330f1106a6cba0bf3594b508be"
+    },
+    {
+      "path": "arch4/customer_presentation_extension.py",
+      "bytes": 9199,
+      "sha256": "e2c8c1b67f4dc8ecd5a59044005812e1393220a3d660b489614a045f2fd8d987"
+    },
+    {
+      "path": "arch4/effective_policy_snapshot.py",
+      "bytes": 3827,
+      "sha256": "e78ea19893a0ddc4a7d05563ea6e59eae25293b79f4534a135c1bd7f4c5f1884"
+    },
+    {
+      "path": "arch4/event_journal.py",
+      "bytes": 7950,
+      "sha256": "e1d975d87d70e0e1601714590701c768b193b35235876aee254cac2da61a183a"
+    },
+    {
+      "path": "arch4/evidence_scope.py",
+      "bytes": 17437,
+      "sha256": "b8a65ed834e5fd3113b3866f4d99044a954e4db1f93e7bff27273b9877fa61d2"
+    },
+    {
+      "path": "arch4/external_memory_auto_import.py",
+      "bytes": 18738,
+      "sha256": "aef99fffffe0cb7a444ea54229c509d31df3e1b53e41b1b2021d23f728cad2e3"
+    },
+    {
+      "path": "arch4/external_memory_consumer_projection.py",
+      "bytes": 3157,
+      "sha256": "187cd4e824c0389cceaa573be825201dd6d4322b7ba5e2019d3f6001e6b13bc8"
+    },
+    {
+      "path": "arch4/external_memory_evidence_scope.py",
+      "bytes": 3838,
+      "sha256": "e953976503af906dc5a79c48ca23fef38fb5910a59ea95369d18e8c31eb6b0c4"
+    },
+    {
+      "path": "arch4/external_memory_identity_recoder.py",
+      "bytes": 13216,
+      "sha256": "1bca85c0e8e11fcd6b80a50a96271cb2c7456d4ade258e1e5bbe47c54ca68869"
+    },
+    {
+      "path": "arch4/external_memory_learning_projection.py",
+      "bytes": 22292,
+      "sha256": "d87ed7b9ba7c6ada440e0eeda925e4cc19a798ad9a1520a5dc3048e4acfb2737"
+    },
+    {
+      "path": "arch4/external_memory_library.py",
+      "bytes": 35113,
+      "sha256": "f2edbeabbf619a9de54d6826d19cefca62c4a76fd17e18ec2584043c741890a9"
+    },
+    {
+      "path": "arch4/external_memory_promotion.py",
+      "bytes": 30924,
+      "sha256": "97daf7de74a7d039b6b96edd1f3578a4bcb001149442203e4527290dafd4d046"
+    },
+    {
+      "path": "arch4/external_memory_runtime.py",
+      "bytes": 18536,
+      "sha256": "dc1fe80fa1cbaf64a90e491be96286072530c6c065559458bb067928fef015f6"
+    },
+    {
+      "path": "arch4/external_settings_decoder.py",
+      "bytes": 21890,
+      "sha256": "749087347938565a3051db4b31d5f57f353a56b8714d23e14b5b20b480b106a0"
+    },
+    {
+      "path": "arch4/extra_contract.py",
+      "bytes": 24669,
+      "sha256": "4f643080ce36d801defdeee4bce98db1e622225e41de1513051a79b7e6549d5a"
+    },
+    {
+      "path": "arch4/fault_boundary_catalog.py",
+      "bytes": 5173,
+      "sha256": "1e226e2023bec7fc4bd70581e9de60547af7eee83d0a982937da1de352f572a1"
+    },
+    {
+      "path": "arch4/fault_supervisor.py",
+      "bytes": 8333,
+      "sha256": "e9bd15befb757afe7ab56f3d360c72628795dbf1f42a56b40d0d197354e94d8f"
+    },
+    {
+      "path": "arch4/foundation/__init__.py",
+      "bytes": 53,
+      "sha256": "75b435bba96ef8932f5da30f3b4955d377245cb72a2b21540c7b6ab4601030aa"
+    },
+    {
+      "path": "arch4/foundation/active_job_admission.py",
+      "bytes": 7346,
+      "sha256": "e755109d8a330c6e3cba4f500782af4d0073974834b337deec1a879d127416e7"
+    },
+    {
+      "path": "arch4/foundation/antenna_guide.py",
+      "bytes": 35323,
+      "sha256": "b880ed8cf7690c5dfd15fface12ad15c46c18c32de4253956297e0a821618267"
+    },
+    {
+      "path": "arch4/foundation/apn_profiles.py",
+      "bytes": 3332,
+      "sha256": "93e58b6abb45e801efe9f5848ec8e1f002184458f818d44c110eff4b21446de2"
+    },
+    {
+      "path": "arch4/foundation/artifact_io.py",
+      "bytes": 1028,
+      "sha256": "69ab2545aeb92ef931c5780d5b3263817b37b00bf645f0b9e9593463282cb9a4"
+    },
+    {
+      "path": "arch4/foundation/atomic_bounded_journal.py",
+      "bytes": 8964,
+      "sha256": "7de5b3ff34f7e38e1e653077044ff99ec3a0196410dc06193e4a0f3b02d46bb2"
+    },
+    {
+      "path": "arch4/foundation/automation_service.py",
+      "bytes": 10243,
+      "sha256": "6c5c3866293f50fb478b4835900a694118af1ebca423c7c8255c2a6da09371f7"
+    },
+    {
+      "path": "arch4/foundation/band_auto_policy.py",
+      "bytes": 9977,
+      "sha256": "a3029c68363f755f1b3e8d48187915210b7f1eb4f0c8d85e17467d5cf3205b4b"
+    },
+    {
+      "path": "arch4/foundation/billing_plan_adoption.py",
+      "bytes": 3547,
+      "sha256": "30a2af7c0b136cb3ebfb5dd46866e6d2558f39142a5fb90d408b2d4f01d95bbc"
+    },
+    {
+      "path": "arch4/foundation/composition.py",
+      "bytes": 48644,
+      "sha256": "093dbef92bd3353e83470562e67e40a34b72dba4d70055c76c034bd2c8eecc9b"
+    },
+    {
+      "path": "arch4/foundation/connectivity_transition.py",
+      "bytes": 17930,
+      "sha256": "83ea18d0136077a0159691db9b4fd87f3c56181d3ad30a92f96396ae0c6e965e"
+    },
+    {
+      "path": "arch4/foundation/data_budget.py",
+      "bytes": 12130,
+      "sha256": "6547f130683dda353ce88ef54f2b9d1902063671db575c0604dc852ee836b2a3"
+    },
+    {
+      "path": "arch4/foundation/diagnostic_payload.py",
+      "bytes": 1557,
+      "sha256": "2fc4bbfd3c8f1824009b9174437bbcfd58366b7af3f63598597e27bdac87b9fe"
+    },
+    {
+      "path": "arch4/foundation/evidence_snapshot.py",
+      "bytes": 14570,
+      "sha256": "1e8c0d0faadc7983f27be687df8f128ea46fbefddced2f90b496116999a2fabc"
+    },
+    {
+      "path": "arch4/foundation/evidence_validation.py",
+      "bytes": 2008,
+      "sha256": "1234b8a1aaf27cf2cf290c7f30d41bd33ab06549f26701c2cbd0454ff69df0a4"
+    },
+    {
+      "path": "arch4/foundation/external_settings_import.py",
+      "bytes": 4319,
+      "sha256": "06bd768174f238d459fdf764e763c27ba036096a68d254a1024fe6d0124436de"
+    },
+    {
+      "path": "arch4/foundation/incident_receipt.py",
+      "bytes": 7329,
+      "sha256": "b745d1a51da810473348550006066c588c63e70857aa6e3241672ca7640c5d8c"
+    },
+    {
+      "path": "arch4/foundation/live_artifact_reader.py",
+      "bytes": 2862,
+      "sha256": "6bc46eb5bf4743a929a05c481593e5e24a35ca19a11e8956bdf11d4b2d8adeb8"
+    },
+    {
+      "path": "arch4/foundation/modem_diagnostic.py",
+      "bytes": 2796,
+      "sha256": "6c481cf8bd54f65266eaf583384001dd76511d4023b15804920f8a55bb958325"
+    },
+    {
+      "path": "arch4/foundation/modem_watchdog.py",
+      "bytes": 22796,
+      "sha256": "d95fae12b321651c4c1687db22411738e9e0fb583e39a6c742046b85f5a6723b"
+    },
+    {
+      "path": "arch4/foundation/network_country_reference.py",
+      "bytes": 5345,
+      "sha256": "e140215f5478e53c16fe4be46727c6e3fa6f11615a7bcd8ff2dcd4c75ef219cc"
+    },
+    {
+      "path": "arch4/foundation/network_intention.py",
+      "bytes": 3902,
+      "sha256": "19fdd006362614d736cba4be6c511772a7d6db87675ed5d71deca4c40f5d483d"
+    },
+    {
+      "path": "arch4/foundation/network_settings.py",
+      "bytes": 13300,
+      "sha256": "5fd7790e92df87b0779985a6a9ea6a9a89f61885cc97f884699ae3517c51f163"
+    },
+    {
+      "path": "arch4/foundation/ngui_extension.py",
+      "bytes": 30249,
+      "sha256": "dc9bd480d2d545013f495d38678eff11a2575da06ca29753a65f46a296f81fbe"
+    },
+    {
+      "path": "arch4/foundation/observation_settings.py",
+      "bytes": 4383,
+      "sha256": "daab84c53c638e384c62b130206962fbd903ad688f655c5fa5ecb8535a9c19eb"
+    },
+    {
+      "path": "arch4/foundation/operational_root.py",
+      "bytes": 2452,
+      "sha256": "a2d5b5d207ace9071242e5957e11aff6cc1e432b834373c652706a44e74af567"
+    },
+    {
+      "path": "arch4/foundation/operational_service_contracts.py",
+      "bytes": 9101,
+      "sha256": "bdd6cae8cf7dd46770fff39e598fc654551d15de3b6316ee7445f9aae6ba32b5"
+    },
+    {
+      "path": "arch4/foundation/operational_services.py",
+      "bytes": 15662,
+      "sha256": "ba5cbddcd31059885a0d2ba6beb18b3a0029ee02b2513d7058dc18e455e9bd98"
+    },
+    {
+      "path": "arch4/foundation/operator_data_budget_reader.py",
+      "bytes": 18543,
+      "sha256": "69a9403b9dfaab4aca6b14e58817adef67519bd3307bef0df161ef451dfba3b5"
+    },
+    {
+      "path": "arch4/foundation/operator_settings.py",
+      "bytes": 6505,
+      "sha256": "b8540c7f444857ec1299bfdfe484d057f926cedda17c1ec1ab86651fafe814c9"
+    },
+    {
+      "path": "arch4/foundation/read_diagnostic_report.py",
+      "bytes": 18240,
+      "sha256": "cbeabc032994171580ecac839ec2beea29cf1024e7137d7d04e90ecfe2cad5b7"
+    },
+    {
+      "path": "arch4/foundation/runtime_artifacts.py",
+      "bytes": 88362,
+      "sha256": "610904a60560da66eecf1eef55344103ceb87ffb1fa80cf360b9ab84937e8005"
+    },
+    {
+      "path": "arch4/foundation/schedule_service.py",
+      "bytes": 87258,
+      "sha256": "3fe69c48afe26b661e2750f4274d5fe2a04b310a41bcdd1f39388e3f4ef5030d"
+    },
+    {
+      "path": "arch4/foundation/service_admission.py",
+      "bytes": 1436,
+      "sha256": "a46651331f1668eb1ca225fb7dc8117cfe353e78b6eaa8d4999c6845ae4ed1f2"
+    },
+    {
+      "path": "arch4/foundation/service_job_fabric.py",
+      "bytes": 25408,
+      "sha256": "0af6c865f74a0caf864a6619aa243c0aa192ada03352e270d68a47d0eb6c7c7e"
+    },
+    {
+      "path": "arch4/foundation/settings_handoff.py",
+      "bytes": 47411,
+      "sha256": "098456149c9a4d6b8ad5f73011a9674d8c959d943899e1e7086058699c98e82d"
+    },
+    {
+      "path": "arch4/foundation/settings_health.py",
+      "bytes": 2059,
+      "sha256": "eae4d3f48a398d0e997d16ea9928d4091b3e0d1c7e3fa20767a29980c8290e1d"
+    },
+    {
+      "path": "arch4/foundation/site_report.py",
+      "bytes": 55196,
+      "sha256": "94e09117c3b4c16ec92e284206da42837b0fb77f7cce57610f75510a2df023f9"
+    },
+    {
+      "path": "arch4/foundation/site_report_job.py",
+      "bytes": 4581,
+      "sha256": "c09e70ef824a70524782ddd6ea470de103dce0510c9dca6d228c4ff1f74f0e59"
+    },
+    {
+      "path": "arch4/foundation/sms_automation.py",
+      "bytes": 6160,
+      "sha256": "4e7ab937d03d91b24d9e9558ce1d5ce0e28a6a2225fabe90c6681724ec7cc15d"
+    },
+    {
+      "path": "arch4/foundation/support_archive.py",
+      "bytes": 3448,
+      "sha256": "f2d4c15e22dee736ee81bf7b91baba03882c5b12728cda42158d0cebeda606d5"
+    },
+    {
+      "path": "arch4/foundation/support_bundle.py",
+      "bytes": 27523,
+      "sha256": "5616e88619613ab8d604c9a55db61e0bc303dc8c81d7d16230c7b09a078fa8e2"
+    },
+    {
+      "path": "arch4/foundation/traffic_accounting.py",
+      "bytes": 30402,
+      "sha256": "934fc7fd670426bc9146433846af4b72ebea64e600c48a4afdbecf9e79944bba"
+    },
+    {
+      "path": "arch4/hardware_evidence_matrix.py",
+      "bytes": 24448,
+      "sha256": "090a8b09a55c4ec7ca7ee90e6531d37ca11959800b89ba721fe1aac96caa87fe"
+    },
+    {
+      "path": "arch4/historical_artifact_reader.py",
+      "bytes": 31695,
+      "sha256": "22929f3da4733d2f80cea31434a518fddf71993a389bd4fc6410520ecb24fc87"
+    },
+    {
+      "path": "arch4/historical_continuity_materialization.py",
+      "bytes": 8104,
+      "sha256": "cff031ceb510e255b00ce8f1ac53b426b2d597038e1d1fb1acb37dd44171c3e3"
+    },
+    {
+      "path": "arch4/historical_continuity_process.py",
+      "bytes": 16699,
+      "sha256": "b623bd8839d4ce85485350d53f0ded1eb5c52b6b58ce803110a30e128088b35f"
+    },
+    {
+      "path": "arch4/historical_continuity_store.py",
+      "bytes": 16223,
+      "sha256": "59927e325fdaa8ffddce3b78891dfffd3647b79d3c31e5cbcbe47eefe80c4804"
+    },
+    {
+      "path": "arch4/identity_decode_replica_store.py",
+      "bytes": 6027,
+      "sha256": "00574585d8b76c35c850d3eb064d00bfed5871e00ef811c73141dbd582f575f0"
+    },
+    {
+      "path": "arch4/intelligence/__init__.py",
+      "bytes": 256,
+      "sha256": "5cd6b72b626fc4a611c3d59b3f7ebe98d6790087a7455435972739fcd8237386"
+    },
+    {
+      "path": "arch4/intelligence/checkpoint_store.py",
+      "bytes": 13248,
+      "sha256": "e47e9cf99e6898c8dbf7db3d05a6599a4445e257530541bbc9b0f46bd5c7bbad"
+    },
+    {
+      "path": "arch4/intelligence/control_command_adapter.py",
+      "bytes": 1220,
+      "sha256": "0a927f2a288f68d4b20e23804ee4a9b1787e916be0824ed516c8091500f0afff"
+    },
+    {
+      "path": "arch4/intelligence/evidence_adapter.py",
+      "bytes": 4593,
+      "sha256": "f81ef889a829ec59b9bbf0f321a8a83bfd6f960f4eb766a533541bbaf70ca07d"
+    },
+    {
+      "path": "arch4/intelligence/evidence_recorder.py",
+      "bytes": 103040,
+      "sha256": "7691e39658045e6e28c001b273dd111230733df5dcbb8d78080f3c52b7286cdc"
+    },
+    {
+      "path": "arch4/intelligence/external_settings_import.py",
+      "bytes": 3255,
+      "sha256": "6292c08e832f943ea6dd798a99c83449e4005f3d81197452a87025d6af83fe84"
+    },
+    {
+      "path": "arch4/intelligence/historical_chart_reader.py",
+      "bytes": 12131,
+      "sha256": "ca949c50a274a9680f552862623bbea136b95492d6cccea098ea4177d4cecd79"
+    },
+    {
+      "path": "arch4/intelligence/historical_evidence.py",
+      "bytes": 51909,
+      "sha256": "95360f21025fc50490a4b6b32f326f126d9f54972187fa8aa0a25b0b25320436"
+    },
+    {
+      "path": "arch4/intelligence/historical_evidence_supervisor.py",
+      "bytes": 6031,
+      "sha256": "6683da4059ed28f60c01977e73c8f4a2af0e6d52295afe429756051f6f8556fc"
+    },
+    {
+      "path": "arch4/intelligence/historical_site_report.py",
+      "bytes": 82459,
+      "sha256": "855796dee4f453cfae09e71a958cecc1a3ddf4ccf3740aa5d4cf530635679488"
+    },
+    {
+      "path": "arch4/intelligence/persistence.py",
+      "bytes": 10732,
+      "sha256": "5ce745c99ab6b1f688331d3548e583700ccca712dcf0143d81854ad26d1b4c7a"
+    },
+    {
+      "path": "arch4/intelligence/preferences.py",
+      "bytes": 2640,
+      "sha256": "b8bbb2427e5cf06df5b4c3c31645c718fed42cb300dfbc8cdafaba807beb02a8"
+    },
+    {
+      "path": "arch4/intelligence/tests/__init__.py",
+      "bytes": 239,
+      "sha256": "521e4c1df9b93427c079f35d2a8cdd26ca24d0442d1995e3e338d204e92f7d04"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_a1_b818_supporting.py",
+      "bytes": 26288,
+      "sha256": "2de72ba807d036ce8747b4f9283400e0e58fc84a8e85ef3e7eed85cd231a63ee"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_action_opportunity_source_facts.py",
+      "bytes": 4516,
+      "sha256": "2195406636be079310bf97dcbe2a67e4fda501d8a140e30e7184426a44e73fe1"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_anchor_observation_learning_projection.py",
+      "bytes": 3938,
+      "sha256": "5acd7c12160e181058c9af92460156a3988e3aa682639e202c98620d28a8b09f"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_brain.py",
+      "bytes": 186228,
+      "sha256": "87de5c0757bd0d7778d760211b6ff07bb9364738b4bc4516493baadf647dbf3c"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_brain_learning_effect.py",
+      "bytes": 24886,
+      "sha256": "5b8a4b8482e021c7714f790a946b770debd455c07d9af7c495a8870a955781b0"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_brain_transaction.py",
+      "bytes": 24740,
+      "sha256": "693c3d31f61015380302d8cfd7ec993cd9190892d5f974f0293a927a6568676f"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_capacity_probe_register_envelope_architecture.py",
+      "bytes": 4224,
+      "sha256": "4ef412ef128d8642a238348b52622f2295a198c4ae586b9004d099f7bf0a5e3e"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_control_and_b818_monitor.py",
+      "bytes": 15202,
+      "sha256": "e7f89f6ab8797d7b137148b1374d5443f62f55d7e711a2d374464ca59b6e30f6"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_decision_input.py",
+      "bytes": 7285,
+      "sha256": "8666703d5b65e43c529ffba9b4c6e8ce8599b74202ffcfffc670cf5460254625"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_decision_pipeline.py",
+      "bytes": 201515,
+      "sha256": "ac9969e9c05e6ddf8af52ebe10b71d0ccce66c1bafddbd9075a562b08c490ab7"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_decision_policy.py",
+      "bytes": 23060,
+      "sha256": "be0f5ed223e6e7243f5443f5becf6d95d43cf8e0ad4477db2eff2624758c0a49"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_delayed_reward_owner.py",
+      "bytes": 13223,
+      "sha256": "0e39923b0dc147f44880c0e423fd625d40aa0b682ad33eafd373fb5b5dd8c6e8"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_historical_evidence_service.py",
+      "bytes": 40034,
+      "sha256": "a01d98080880760dd5cd36a6708163d916ac2b43909e6c88455d21cd6e492036"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_incident.py",
+      "bytes": 98961,
+      "sha256": "a549eac0b2b4a03fedf095024fdebcbb8ae104be854b1b0c202021a710b0faaa"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_replay_decision_quality.py",
+      "bytes": 11850,
+      "sha256": "958b0d629c89a9f8ac4fcf972265910a7daa3082ceb3ae00257f44f25f5bd71a"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_reward_ledger_persistence.py",
+      "bytes": 33599,
+      "sha256": "f643a6383b4241ee96aef3904db3730e58aa84459797f6fcefa824eaa057234a"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_runtime_decision_projection.py",
+      "bytes": 12763,
+      "sha256": "0fe41e499732cf01d703c2ecbb018f1e15755ab78dadc658419f20e7efa90b7b"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_selected_action_register.py",
+      "bytes": 35092,
+      "sha256": "7651c691aa8375906d6958ebbf4244e9807beba602486183a31d6cf07eddc543"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_selected_action_terminal_router_architecture.py",
+      "bytes": 11714,
+      "sha256": "31e669267ca315eb050a7dbdda389d35c70ddf4ad075db30b16a0669f764f518"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_self_learning.py",
+      "bytes": 58939,
+      "sha256": "baca3fe004e067268dff7a811914f50d164d97b16b58df1ec0972508526beb3b"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_smart_loop_closed_loop.py",
+      "bytes": 136919,
+      "sha256": "e181bd798eef1be1ea1f3a8329524d1948bc69ff00f20b4039ec33be2a275227"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_smart_loop_state_store.py",
+      "bytes": 7665,
+      "sha256": "be243453f4cb8566f5d62cd8ba7f5a7dcd045383e6a2ab090146abab8f73c0f8"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_smart_loop_test_helper_authority.py",
+      "bytes": 1991,
+      "sha256": "2606f3e08f7576f00e10c9b8b765ba6d1c4286acf112247441a36c1af2003125"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_stability_keyframe.py",
+      "bytes": 9615,
+      "sha256": "df5dc806a55a8695a2b206bd8e9ae19d670c0641ec81d0c8244648d6a46d2a8d"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_status_payload_contracts.py",
+      "bytes": 46917,
+      "sha256": "f498e3ac9e44938049c7efbbc50647eac34df33e93ca2c620e5eae0b6b544636"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_synthetic_quality_export.py",
+      "bytes": 2925,
+      "sha256": "1e6cd727259bf0d6b66d30815ea438c3ec8fb8a291c2bef82ae48b13891b7ad9"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_synthetic_scheduler_lane.py",
+      "bytes": 6474,
+      "sha256": "634bd61ccf6fcdff3331f9ac1faef9c4df9890a01534ad325caaee8966683eba"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_systematic_probe.py",
+      "bytes": 16019,
+      "sha256": "7e7716c5b194a896289208df9f1ec4fb760ade4eaf8a47e61641faf4b169c54b"
+    },
+    {
+      "path": "arch4/intelligence/tests/test_vendor_neutral_revision.py",
+      "bytes": 121141,
+      "sha256": "a6ab98759343fda9cd23f315e1b1bebc655a62d1f5b266d8bd4ccf9c577154a4"
+    },
+    {
+      "path": "arch4/intelligence_presentation_contract.py",
+      "bytes": 31858,
+      "sha256": "9800bc9c353626c501398af5816d9e30abc3cfdb8714b117d7e032b1ad2b11d3"
+    },
+    {
+      "path": "arch4/interfaces.py",
+      "bytes": 106079,
+      "sha256": "c99ec6e1f749aa1fcc6151c9dfc3691502a43418bdfc70e7147873beca1e0f38"
+    },
+    {
+      "path": "arch4/learning_gate_contract.py",
+      "bytes": 22510,
+      "sha256": "30c05451af3b16b99169fcbfa24374f8b8b9964cda0de5dea5e26d1c6e48522f"
+    },
+    {
+      "path": "arch4/license_credential_store.py",
+      "bytes": 6546,
+      "sha256": "a9ac652ac303b47eddac365b691f6ccb268d1f9c21aa6cf3199b5d39740eeb5f"
+    },
+    {
+      "path": "arch4/licensing.py",
+      "bytes": 6217,
+      "sha256": "8aa5bcba80ae751553e1e33db782b41f8b30e9e44e3b545bc7efc523391c9f25"
+    },
+    {
+      "path": "arch4/live_seed_contract.py",
+      "bytes": 12270,
+      "sha256": "9b37e1478cbaf68c85f4cf3caba4c212d6d001016dd41eee64ffc61b1cd9e7a7"
+    },
+    {
+      "path": "arch4/log_processor.py",
+      "bytes": 14227,
+      "sha256": "0a6fca4554054ed74811aaab06ea67ba3a83785e4f67dabc25befebac408d6bb"
+    },
+    {
+      "path": "arch4/lte_mcs.py",
+      "bytes": 4186,
+      "sha256": "6d6d3a837e8b26bd198b88526d9ac80dbc28c43405950951b889ecda63af4657"
+    },
+    {
+      "path": "arch4/memory_store/__init__.py",
+      "bytes": 492,
+      "sha256": "857139834320cd24314d8e7f35109579b06a928aefc6bed6edea9040e80bd626"
+    },
+    {
+      "path": "arch4/memory_store/calibration_store.py",
+      "bytes": 4706,
+      "sha256": "c6266e8843e3df6c66caa9abb98208fafb60eee3bb58dc02b8e40def24e6bc53"
+    },
+    {
+      "path": "arch4/memory_store/event_journal.py",
+      "bytes": 9985,
+      "sha256": "ab5892cc2fc0333c9734b698575e39c6992479114625cac24b3e1d09789da1be"
+    },
+    {
+      "path": "arch4/memory_store/historical_store.py",
+      "bytes": 1094,
+      "sha256": "79a5178d966ca1615c74e07fe204995dbb05099c8494acb539c0a44c1fb500e1"
+    },
+    {
+      "path": "arch4/memory_store/snapshot_store.py",
+      "bytes": 3387,
+      "sha256": "4376669dd785b54cc43ccfb606686a15287e74b0fe5c4ca7f219b75d565d0944"
+    },
+    {
+      "path": "arch4/modem/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/modem/backend_acquisition.py",
+      "bytes": 11797,
+      "sha256": "c1d457900fd9355594a869353e423ec488dcdce9b94662c178a136d8f9128c1a"
+    },
+    {
+      "path": "arch4/modem/backend_acquisition_cells.py",
+      "bytes": 6528,
+      "sha256": "c8fcbd54dc6e642698f6115fc6118fb2133952b86c09ef5d81fe39b36d0a22a4"
+    },
+    {
+      "path": "arch4/modem/backend_contracts.py",
+      "bytes": 12814,
+      "sha256": "cdc107aa4887465f8f038f1244a6203335b1d691c3501ed96baf12f28c8f2346"
+    },
+    {
+      "path": "arch4/modem/backend_diagnostic.py",
+      "bytes": 5659,
+      "sha256": "0bc58a8d383abeb955d577985d5312dcd289f19f892e35a44e0a03fbf85ffcbf"
+    },
+    {
+      "path": "arch4/modem/base.py",
+      "bytes": 41736,
+      "sha256": "460e90081dad19b75d5547c8e74eae7271e21c2e948869cc206d6a6c5fc3d999"
+    },
+    {
+      "path": "arch4/modem/catalog.py",
+      "bytes": 115931,
+      "sha256": "f412df9618f936ae073e28b354ba2df11b5f538306914e647ff5ed26fea5baa5"
+    },
+    {
+      "path": "arch4/modem/connectivity.py",
+      "bytes": 53830,
+      "sha256": "8efed984bebe87a6101197812dc7dab2ba02165068aaa4aebbb80f8eb7da2d6a"
+    },
+    {
+      "path": "arch4/modem/device_probe.py",
+      "bytes": 16893,
+      "sha256": "0b2991ca699e92e9de332162f6fd9066b983f4fe125b10e27c141485b626e2d7"
+    },
+    {
+      "path": "arch4/modem/discovery_defaults.py",
+      "bytes": 2568,
+      "sha256": "c8b9eeda6a7f16869e94b3dceae9b3da38116a6b3512ac3dbeaf7fb0c70950c6"
+    },
+    {
+      "path": "arch4/modem/factory.py",
+      "bytes": 11691,
+      "sha256": "97964bf5ab20a0bd3acb91ccb2248233085f0d13e092329553de90b8a045af0a"
+    },
+    {
+      "path": "arch4/modem/huawei_b818.py",
+      "bytes": 256248,
+      "sha256": "15a39963e8b4e812900dccca7234c47b53b4e29784699477b546cf7cf48954a5"
+    },
+    {
+      "path": "arch4/modem/huawei_network_settings.py",
+      "bytes": 13128,
+      "sha256": "8d42b119fd0d0d112be3c3818fb4cba973b211b89da71929d0e3c0333647295a"
+    },
+    {
+      "path": "arch4/modem/huawei_parsers.py",
+      "bytes": 18514,
+      "sha256": "bec99e419e11f62b7d1fdcf61005d224a769bc0f8505f00f84b95b905072c339"
+    },
+    {
+      "path": "arch4/modem/huawei_radio_mode.py",
+      "bytes": 13342,
+      "sha256": "cc5f323115f04d36395a391e6883d6d0041e67071c1101464a687dcd033f22de"
+    },
+    {
+      "path": "arch4/modem/huawei_read_diagnostics.py",
+      "bytes": 7687,
+      "sha256": "7ee9f2bbe239404f420fab7d1f7b5f2abbe79f8a2b36c89e6dfd9fb421b42ec0"
+    },
+    {
+      "path": "arch4/modem/huawei_scram.py",
+      "bytes": 2776,
+      "sha256": "5e69068c947fe68199bae5abc8901860a35a110ae7c52632ef45eb20b75580b0"
+    },
+    {
+      "path": "arch4/modem/identity.py",
+      "bytes": 1147,
+      "sha256": "d5ff393c4c840c33ac77d61571f4b40a783acf875098e141a913947b703ca9d7"
+    },
+    {
+      "path": "arch4/modem/identity_code.py",
+      "bytes": 1266,
+      "sha256": "3c8c039fa62eadfa02a4b5b027d76b4a83e0500ecf79330481dd90a91b7abd35"
+    },
+    {
+      "path": "arch4/modem/input_quarantine.py",
+      "bytes": 3204,
+      "sha256": "78bc1741140408c5647c864ebe89e7d2a5eeb5494f00dfc8a502d7bebd567533"
+    },
+    {
+      "path": "arch4/modem/live_capability_surface.py",
+      "bytes": 17951,
+      "sha256": "aefc390bd9a88d1656a57cc39bb61a23557fc7f5ef6247331d4a0b164758f620"
+    },
+    {
+      "path": "arch4/modem/live_lane_contract.py",
+      "bytes": 41013,
+      "sha256": "9d0f6b73bb6a80a2007159f377e4fbf37bb62252ca49692165895b433f7be20c"
+    },
+    {
+      "path": "arch4/modem/live_support_authority.py",
+      "bytes": 6757,
+      "sha256": "065a508ced7aaf99a89043ff0f0bce6c534390e397e8d17d152a32e06a259ac1"
+    },
+    {
+      "path": "arch4/modem/live_translation.py",
+      "bytes": 37066,
+      "sha256": "20d20a5fe4ed5ab3ba13d7c0cdeb09d7c736af39e092368b9f264d369717dcda"
+    },
+    {
+      "path": "arch4/modem/lock_confirmation.py",
+      "bytes": 4346,
+      "sha256": "fe3abda20f44690bee800475fe8c25016468213dea77858b13ef09ccc6ea50ad"
+    },
+    {
+      "path": "arch4/modem/lte_frequency.py",
+      "bytes": 4175,
+      "sha256": "30cb4e285b43fde8c8d41c487f9d8b14efcd9a8dd7d0a3c5af285efa9517be39"
+    },
+    {
+      "path": "arch4/modem/mikrotik.py",
+      "bytes": 306297,
+      "sha256": "cbd4cc521131b4c6ef1a71d2da1836900ac9af0fa2f8a49d46e528646fe2b582"
+    },
+    {
+      "path": "arch4/modem/mikrotik_network_settings.py",
+      "bytes": 4411,
+      "sha256": "01487e6696ffc9fc7103fd5f2eaf6b39ee890da58ba01a25a3a36ae675335452"
+    },
+    {
+      "path": "arch4/modem/mikrotik_parsers.py",
+      "bytes": 40791,
+      "sha256": "1e756e3e4fee52d836e7a812f1bcbad57bf862f44fd85663565b8a48a98ee3cb"
+    },
+    {
+      "path": "arch4/modem/mikrotik_radio_mode.py",
+      "bytes": 9099,
+      "sha256": "e5e0da9ef91283f5110d5255228226ca9b405c49c0e2a73888ab8dfcf9556ade"
+    },
+    {
+      "path": "arch4/modem/model_backend.py",
+      "bytes": 44378,
+      "sha256": "61ff9273133271c6ad67dfa4a4644ae2b02052b414c8932304ade5888994c851"
+    },
+    {
+      "path": "arch4/modem/network_inspection.py",
+      "bytes": 523,
+      "sha256": "b67ca33b154e4f6c98f39ec17ab1c82424082ce748b91bf9fde0add0897bee9c"
+    },
+    {
+      "path": "arch4/modem/openwrt.py",
+      "bytes": 54238,
+      "sha256": "1777ee73d0a0ed2a7b5b29f2951d5b913ace06da1593860ee65229ea6aed6ef3"
+    },
+    {
+      "path": "arch4/modem/openwrt_rpcd.py",
+      "bytes": 8180,
+      "sha256": "fd9585f51f5bae5f7f68e51e25c9bc203b426859df5c07ca669200674744c3f7"
+    },
+    {
+      "path": "arch4/modem/operator_identity.py",
+      "bytes": 770,
+      "sha256": "9516d3f5290ff6d657cf05c35a0fb660a080f5588d0b404787b37003d1d42701"
+    },
+    {
+      "path": "arch4/modem/read_diagnostic_projection.py",
+      "bytes": 8314,
+      "sha256": "17c6221030c28f047d227b38a563184eef7853ef6af55c71c6754f16c28ee7d8"
+    },
+    {
+      "path": "arch4/modem/read_diagnostics.py",
+      "bytes": 12932,
+      "sha256": "125a3b22b8ed6f2277d11e4230a8304e969a352bfca2b2f3edc6e7f5a74104e4"
+    },
+    {
+      "path": "arch4/modem/read_miss_visibility.py",
+      "bytes": 2847,
+      "sha256": "d3a883c4a39848520ed53bdee176ab1c7207bd919bd5d64ff15f2b132c1d3cda"
+    },
+    {
+      "path": "arch4/modem/recognition.py",
+      "bytes": 10811,
+      "sha256": "509b96bdf2da71795d0951e38e24f1574b3240b086c3ececbe4437739c7d732b"
+    },
+    {
+      "path": "arch4/modem/registry.py",
+      "bytes": 3471,
+      "sha256": "fe1ca64c2ee364a581111361cc393b1689519042d02c3f9e2a8f376ddeb823e1"
+    },
+    {
+      "path": "arch4/modem/routeros_request_adapter.py",
+      "bytes": 8435,
+      "sha256": "edca14eec9eeeff748f8fc1ab3a24691d8119c6054e40a3a0310700b603803f0"
+    },
+    {
+      "path": "arch4/modem/signal_normalization.py",
+      "bytes": 4949,
+      "sha256": "c5d9e990b152118ccd74f02713af6a7affb58df2e39b11ce5c82854dacea0a60"
+    },
+    {
+      "path": "arch4/modem/tplink_dev2.py",
+      "bytes": 87931,
+      "sha256": "1cd1345e5e563bf26bf43d5b5a331da77d8cf565d519fc898f336ed1ac7a7a01"
+    },
+    {
+      "path": "arch4/modem/tplink_dev2_transport.py",
+      "bytes": 8797,
+      "sha256": "633809e4b703512302628497aa08068d5b0930af9a5f0ff6a8b85928bd22ae1c"
+    },
+    {
+      "path": "arch4/modem/tplink_radio_mode.py",
+      "bytes": 3572,
+      "sha256": "49fed082a8b5c345d148feea3684427dd62b0cd54bb4dfbcd97aeb0969edcf51"
+    },
+    {
+      "path": "arch4/modem/tplink_read_diagnostics.py",
+      "bytes": 7105,
+      "sha256": "d96779a2241973d34358fbfd543d54e0025904de9b390de6f7f834bdb243d48d"
+    },
+    {
+      "path": "arch4/modem/utils.py",
+      "bytes": 8791,
+      "sha256": "d3db15356dbe5f8caaa1e6d26e630badcd858df58fd93604d29da5ef5965f979"
+    },
+    {
+      "path": "arch4/modem/xiaomi_mgdb.py",
+      "bytes": 26609,
+      "sha256": "13639ff5c50859dcec5e64ac717538f2ddab2646c29587de892cf7f464b01765"
+    },
+    {
+      "path": "arch4/modem/xiaomi_miwifi.py",
+      "bytes": 51479,
+      "sha256": "b89f75fbe6736a6c866eecca3a64305c21dfb9c3fdffcb98c4bc512371f89194"
+    },
+    {
+      "path": "arch4/modem/xiaomi_miwifi_protocol.py",
+      "bytes": 7361,
+      "sha256": "3b3b0f1b306e965b124e81ed30757e0397ecf77ee31154634e129c691cf96b94"
+    },
+    {
+      "path": "arch4/modem/xiaomi_miwifi_tls.py",
+      "bytes": 3250,
+      "sha256": "d384a726e8b2f7e32dca595aff7b12dcec381aecb5cd64a2814e3f73bb3e13c9"
+    },
+    {
+      "path": "arch4/modem/xiaomi_radio_mode.py",
+      "bytes": 5041,
+      "sha256": "be91b177441ac2d77cd496941495e602093d5f9e9254b3ed4e9d667009c399f5"
+    },
+    {
+      "path": "arch4/modem/xiaomi_read_diagnostics.py",
+      "bytes": 5692,
+      "sha256": "e4ea82bdd9cc18a156ea0fc17a3091249018b320e922696c4d6fa6d6302d2410"
+    },
+    {
+      "path": "arch4/modem/zte_goform.py",
+      "bytes": 181427,
+      "sha256": "bc60d523023afdd70dc15449ef2b5af58f5ae13dac35acdc50bd0dcaf01cbd36"
+    },
+    {
+      "path": "arch4/modem/zte_goform_network_settings.py",
+      "bytes": 19912,
+      "sha256": "828fd4a5bd1f81e637ab6a5a7be0e899b69b2dd9a28a2c81b4f19b3d5ab0cbb3"
+    },
+    {
+      "path": "arch4/modem/zte_goform_payload.py",
+      "bytes": 1963,
+      "sha256": "ee852b7080659567b5dda2d086c16d7e02b943194aed93284b062ab45a9d0e14"
+    },
+    {
+      "path": "arch4/modem/zte_goform_radio_mode.py",
+      "bytes": 13570,
+      "sha256": "d83b4ad36b34d5f54981abc405b4b25906288ee81a6d6488228bd67796aa4f7c"
+    },
+    {
+      "path": "arch4/modem/zte_goform_read_diagnostics.py",
+      "bytes": 9759,
+      "sha256": "d669f526958e7be4eda6aeb65bd7e865ca6d02abf63495f3c4905adb0425fa98"
+    },
+    {
+      "path": "arch4/modem/zte_ng_network_settings.py",
+      "bytes": 18718,
+      "sha256": "519545caab8a3bc8c84d7bca393d8422cb56bc366c3111f824331b8f16dd2fb1"
+    },
+    {
+      "path": "arch4/modem/zte_parsers.py",
+      "bytes": 8000,
+      "sha256": "315ad416703551c965f458a036d7cb33a17a23a623f2282919b83c569ddc0755"
+    },
+    {
+      "path": "arch4/modem/zte_zwrt.py",
+      "bytes": 83495,
+      "sha256": "3fe55cd5bb2487a5fecd527e43cf11baac2528ed91c309dc2172fe6bda4cc9c8"
+    },
+    {
+      "path": "arch4/modem/zte_zwrt_radio_mode.py",
+      "bytes": 14177,
+      "sha256": "9565bc82a55c6599e0db73d74c70d7d811e2873cba4e13144ca41a8ae826b15b"
+    },
+    {
+      "path": "arch4/modem/zte_zwrt_read_diagnostics.py",
+      "bytes": 15438,
+      "sha256": "d8747743c0a06db54e441bb75981cf9a8e612bd6170a5eac36a75defdf9766da"
+    },
+    {
+      "path": "arch4/modem/zte_zwrt_sim.py",
+      "bytes": 2173,
+      "sha256": "62728463c4b929a3f0990c07129e154544c4fccf5cca8dd28ce7a17f08edc540"
+    },
+    {
+      "path": "arch4/modem/zte_zwrt_traffic.py",
+      "bytes": 4566,
+      "sha256": "f16998ea43c023762656eaf841ac8c99c63e4f3268b8a7be4e2cdcadd83d4ac7"
+    },
+    {
+      "path": "arch4/modem/zyxel_webui.py",
+      "bytes": 44404,
+      "sha256": "9a4922d00b7e46f2e68d07f45e244b1228bc3853bc5a648ecd6e99309c11b8ed"
+    },
+    {
+      "path": "arch4/modem_live/__init__.py",
+      "bytes": 948,
+      "sha256": "76471e961697d2befc0c5be8c6af35c300629c82a0c8d5a7f09e554e2296d644"
+    },
+    {
+      "path": "arch4/modem_live/access_contract.py",
+      "bytes": 3157,
+      "sha256": "7a9a9e764809795022511be2a07ad3d7ac9a74dd3c780ffa02b05cbad2ab61bc"
+    },
+    {
+      "path": "arch4/modem_live/access_profile_owner.py",
+      "bytes": 4364,
+      "sha256": "d618a481def2ff4db3a9b1b8bb6e8aca6d0389a1701dc7b1e08f6fc59eb3b74a"
+    },
+    {
+      "path": "arch4/modem_live/access_scheduler.py",
+      "bytes": 14205,
+      "sha256": "cc4ba11dbdbfe105913dc46bfc9da8655a03324f3d98f0ab16334275ab9c930e"
+    },
+    {
+      "path": "arch4/modem_live/acquisition.py",
+      "bytes": 355984,
+      "sha256": "d557b7a2d780bec94fdec7ccc8127bab48ad46b245e98fb4ecb6e5455dc5bebe"
+    },
+    {
+      "path": "arch4/modem_live/acquisition_lane_state.py",
+      "bytes": 1816,
+      "sha256": "517c9b279319f8e1ee774c38c72faf62f680278572453b1dca1c9fe8decae06d"
+    },
+    {
+      "path": "arch4/modem_live/bootstrap.py",
+      "bytes": 2634,
+      "sha256": "e9ed0941fd95aa9e699c589784b5a76b223df6026a7defc7c0c5032e58310e7a"
+    },
+    {
+      "path": "arch4/modem_live/canonical_aliases.py",
+      "bytes": 31485,
+      "sha256": "98dc3ffdb9c863c83a2d2ed3e234d0a1057b72b234d171b8bd7879ee50956643"
+    },
+    {
+      "path": "arch4/modem_live/capability_matrix.py",
+      "bytes": 5021,
+      "sha256": "30591a2fde606768f4e94c205e1bf0923831648a454a568f800c4a96acf49016"
+    },
+    {
+      "path": "arch4/modem_live/capability_report.py",
+      "bytes": 42915,
+      "sha256": "22152b4926e90743a4fc69dd546c3c593ec7e348709f14235db08b60036f2f29"
+    },
+    {
+      "path": "arch4/modem_live/compatibility_identity.py",
+      "bytes": 61732,
+      "sha256": "7f58a5204cee163531a59a5d05033cf27a0f47dfec2df618117a1498551af7d0"
+    },
+    {
+      "path": "arch4/modem_live/connection_profiles.py",
+      "bytes": 16997,
+      "sha256": "b9bd7cb20af5bc363f4c98ba3e66ae207229390609ff491e545cfc67ff303036"
+    },
+    {
+      "path": "arch4/modem_live/device_admission.py",
+      "bytes": 6201,
+      "sha256": "1ef02550ecc2225704346b1e293d21b9314369bcb4aa2b8c41f98e8f557a7336"
+    },
+    {
+      "path": "arch4/modem_live/faults.py",
+      "bytes": 1312,
+      "sha256": "e487408df9cf18c010017ac9f8fa495148eebc9d0e8f41530e62f32be5bde8d6"
+    },
+    {
+      "path": "arch4/modem_live/io_gate.py",
+      "bytes": 8568,
+      "sha256": "169016a5638e740212b673f392dbd9841182a39ceb944a466f3c0a8d9aa33ff9"
+    },
+    {
+      "path": "arch4/modem_live/lane_status.py",
+      "bytes": 3323,
+      "sha256": "6ae9f4d5c215c94a3a834f5ceca4da3a91ba2d13e120c80d04ab64b7d9843cdd"
+    },
+    {
+      "path": "arch4/modem_live/maintenance.py",
+      "bytes": 2864,
+      "sha256": "633906df3d38b1b861cd5373bddacba380910c43f03a265968ab4b972472725e"
+    },
+    {
+      "path": "arch4/modem_live/network_settings_demand.py",
+      "bytes": 803,
+      "sha256": "c108ed895db8b23a0cde0c2467a80157dae7e2c89ca4b246f2d4c7aa9d79e4d4"
+    },
+    {
+      "path": "arch4/modem_live/nsa_snapshot.py",
+      "bytes": 9832,
+      "sha256": "0b8808ed69e6c608684a378c689d839aa6666c86aef40537e01394aaccc32040"
+    },
+    {
+      "path": "arch4/modem_live/physical_command.py",
+      "bytes": 17635,
+      "sha256": "429806c4abc520b8ae2df4350e965a9bf9f6d3f54a204ae9f76d8327a9be49ad"
+    },
+    {
+      "path": "arch4/modem_live/physical_request_authority.py",
+      "bytes": 15607,
+      "sha256": "f587e5c9efa4af5fbafe846690a150ff217ecbe10fa912e89b38c3e70c59d8fd"
+    },
+    {
+      "path": "arch4/modem_live/profile_catalog.py",
+      "bytes": 11675,
+      "sha256": "e7c494fa816062858f8f086e21eb717b40031ec47cef871acdc04fe3a6b37ad6"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/__init__.py",
+      "bytes": 88,
+      "sha256": "2726c5ad1e3ec7795da4475a0f3a9137575d8c678189a0fd0563a0541941b047"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/algorithm.py",
+      "bytes": 18914,
+      "sha256": "5c80c9000b54445113d20a01aaa2e5f67af620fc062d7ce362e92fa892422d04"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/bounded_regex.py",
+      "bytes": 7679,
+      "sha256": "d2e5f97c841e8b71f290576618c04db2a5a2a0c84ed59b09970fb1e4a40fbbdf"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs.py",
+      "bytes": 2353,
+      "sha256": "a05ba3d174c6633053013d5c450614157be108cdd4d9432504bf25b112740cc8"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/huawei-hilink.v1.json",
+      "bytes": 101147,
+      "sha256": "52e414721f20eb4fe6dfd35c21103e1f5e3033a4d019f6d74531cc1af2a0289b"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/routeros.v1.json",
+      "bytes": 246897,
+      "sha256": "d2f97461192581a41e6a04d315e83018a28e414bdca8fccc797b6ee8a66ef6d7"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/tplink-dev2.v1.json",
+      "bytes": 202051,
+      "sha256": "5a86690fee5f95a7f56ad62d227d3c5bfd3bb5063091d99775b0ce4719699fae"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/xiaomi-miwifi.v1.json",
+      "bytes": 391702,
+      "sha256": "8f79d92ddb88806d1723183d27f41e1dc290c15cbb6a581d7f490c17e1fe2bcc"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/zte-goform.v1.json",
+      "bytes": 156034,
+      "sha256": "4096472f652631bdd9ff510629fd194dc8f5fec99aea9b181dd2992da5c55e9e"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/codecs/zte-zwrt.v1.json",
+      "bytes": 738375,
+      "sha256": "5f397b6852763222d23465bb605359e86c15f47951f3746469ea290636d583f4"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/dependencies.py",
+      "bytes": 4700,
+      "sha256": "71261629cf536c7dbd20ef4a7e7484a724e1f0fd57c15589390182ba56e7d2d2"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/expressions.py",
+      "bytes": 10076,
+      "sha256": "65ffa17fde08899577c9868a945b1f3696ad71505e38a5f9d7ec9e2eea925b7c"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/field-definitions.v2.json",
+      "bytes": 72139,
+      "sha256": "414750d43e0c109e7277c9892459acf0f1ae29a6bbd8326f48612144983029e8"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/fields.py",
+      "bytes": 466,
+      "sha256": "086b1a3e6d9538f22e639b3b6d7e919b490c43a8115b4b6ad57664942e622468"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/limits.py",
+      "bytes": 3022,
+      "sha256": "158a3a04531b2a2a2193b9939adf6fc228e2599bfee62a05bd43b6411d92503e"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/metadata-schema.json",
+      "bytes": 5406,
+      "sha256": "812a2ea213984eb7ac03fa342a72b984135ebe09fb5162c9d5cb9a5ec136c0cb"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/native_inputs.py",
+      "bytes": 4427,
+      "sha256": "7a84b3b0155f2b7907d2c2c43c99f2a650e79b631d5316e0900076056a0570c9"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/prepared.py",
+      "bytes": 12885,
+      "sha256": "dbcb3a8f98e627e682f607819ef8f5f7307f1f54f467dead0a350d3ee12682c2"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/privacy.py",
+      "bytes": 2384,
+      "sha256": "279cf8359e52af6d7e9abd4c39ee84c16293ddbc88142b1496b828dbe375cb4e"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/private_sources.py",
+      "bytes": 6246,
+      "sha256": "d28f342f97be7088be28dc436e809aaafeb1b94dd9cf8bf07b29ee02cec41342"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/readable.py",
+      "bytes": 7185,
+      "sha256": "ba1de00557e1d4e693f2679db1dec456c33b43be5e66815bc2e5f7cae1a73352"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/registry.py",
+      "bytes": 40104,
+      "sha256": "952bec1a1ea1d776c21f6ea5a91984e87f8d88550f84194b0afa5f885ded9ed5"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/replay.py",
+      "bytes": 3988,
+      "sha256": "9d2340e6e97f7c0e73ca22425c4ba9fbc731ee3662ef241911ceb672bbd33782"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/results.py",
+      "bytes": 3412,
+      "sha256": "5043ac98b4751f41170f12be3226fa2f0127cf1eeb9263a932814d7a4f7991d3"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/shape.py",
+      "bytes": 3850,
+      "sha256": "798dedbab16b501a95810e59734182a45a56956f3b2ab241a90c43b6d1ae897a"
+    },
+    {
+      "path": "arch4/modem_live/profile_definition/vocabulary.py",
+      "bytes": 5408,
+      "sha256": "cd700a6cca2f90e277d704b37ebc934a326c4d93e7231380917a72ff6beccbf5"
+    },
+    {
+      "path": "arch4/modem_live/profile_diagnostics.py",
+      "bytes": 3102,
+      "sha256": "74a74f138eb5790d1bb2b7c2227350893a3634c6350109eb2edc501eb699fdaa"
+    },
+    {
+      "path": "arch4/modem_live/profile_matrix_contract.py",
+      "bytes": 10413,
+      "sha256": "0d6d51758a3e2484703720d37dce742a50e85d1cd7343c87b93c784055ff5b7b"
+    },
+    {
+      "path": "arch4/modem_live/profile_tuning_contract.py",
+      "bytes": 3451,
+      "sha256": "132852bad4f1af86b743eb586286eb5b54f6566bf0c7c27cac5b056100f4e4ed"
+    },
+    {
+      "path": "arch4/modem_live/profile_validator.py",
+      "bytes": 9716,
+      "sha256": "ba1a339431aadf472e73ef4b2605dcc1c22327ee598be98c53ce824e3c76e936"
+    },
+    {
+      "path": "arch4/modem_live/publication.py",
+      "bytes": 11054,
+      "sha256": "bd2ae739763c35f9c0e452a2cf41e488486e63751bdfc05369c80456aad66990"
+    },
+    {
+      "path": "arch4/modem_live/radio_identity_audit.py",
+      "bytes": 5701,
+      "sha256": "8667f043d4589f56e9a3b6a9176599e5ba6fe19897a034210265d3e5054f03db"
+    },
+    {
+      "path": "arch4/modem_live/radio_mode_configuration.py",
+      "bytes": 3856,
+      "sha256": "fa645c8b54fc08857abb78f99015becb69cc50d9e65283d45681fa3fc2d6c89b"
+    },
+    {
+      "path": "arch4/modem_live/raw_observation.py",
+      "bytes": 10116,
+      "sha256": "7b1a3637856394db6d25a2676b26e2e38fb3c2343f6df55f6506cd57fada73c9"
+    },
+    {
+      "path": "arch4/modem_live/register_status.py",
+      "bytes": 7045,
+      "sha256": "35bd36c9bd26c239befe6f342dd98204d14eddf0214026228b5890d1d7717d9c"
+    },
+    {
+      "path": "arch4/modem_live/register_store.py",
+      "bytes": 57102,
+      "sha256": "3e84df3be814f5b0ace85c8cdae87ff3adbea284970546c529b6ee98b6d90ab2"
+    },
+    {
+      "path": "arch4/modem_live/reviewed_compatibility_registry.py",
+      "bytes": 29794,
+      "sha256": "23c87daa0081cfd8f009fe76ee3dfef7df2d06c08952b4f73f539fea80606c0f"
+    },
+    {
+      "path": "arch4/modem_live/rtt_observation_authority.py",
+      "bytes": 14668,
+      "sha256": "dbeb445eaedf703a4d1c6b01d8bda81f703f168001d9d6151345a055bd299924"
+    },
+    {
+      "path": "arch4/modem_live/rtt_register.py",
+      "bytes": 1824,
+      "sha256": "f1a858f7c2fc2807ceaa4ce983253f9692f3d6f0368bc22911f71180b84a822a"
+    },
+    {
+      "path": "arch4/modem_live/runtime_identity_projection.py",
+      "bytes": 11123,
+      "sha256": "4f1a68eec9ca3b4e358e88e44c00ad081630679e6977ccc674883b42cf0592c5"
+    },
+    {
+      "path": "arch4/modem_live/scout.py",
+      "bytes": 48546,
+      "sha256": "599d25bac08489c1e89d5dca263e9f4f6de93447390f8862c2ddbaa6edd3e3b0"
+    },
+    {
+      "path": "arch4/modem_live/service_confirmation.py",
+      "bytes": 3212,
+      "sha256": "4ea6c6b3d2f948f2e4505378ba9f996644899b3b51f3ed2f1d7f2975b8a4f598"
+    },
+    {
+      "path": "arch4/modem_live/session_band_capability.py",
+      "bytes": 14293,
+      "sha256": "c3b0badd176871d8175e11dabc3bd805e2a810595d36f0977321ac6fa7dd1a2d"
+    },
+    {
+      "path": "arch4/modem_live/sim_identity.py",
+      "bytes": 2303,
+      "sha256": "c7b77eecd971fac88478a5fd016a134f68a34671f32af12406c56d8eae816c34"
+    },
+    {
+      "path": "arch4/modem_live/snapshots.py",
+      "bytes": 1084,
+      "sha256": "d2d30024bcef2d4c437bc0bca7570ecb78def5bada6a95e82bdd3463512fddd7"
+    },
+    {
+      "path": "arch4/modem_live/startup_trace.py",
+      "bytes": 20841,
+      "sha256": "1290ed9a1faadc98b5bc0b6feb2bda5f60652e3da1e4f9ed4a8756b09bf398f5"
+    },
+    {
+      "path": "arch4/modem_live/timing.py",
+      "bytes": 1927,
+      "sha256": "fb42ec162a54b0f7fb61340044f579fd0c798c5f5bc272e2f0137090d7f2f949"
+    },
+    {
+      "path": "arch4/modem_live/translator_registry.py",
+      "bytes": 21046,
+      "sha256": "dc236ef8cf75c9b905c5a833513744a23ac5acbc7b5d30e2784bbf4af66cea24"
+    },
+    {
+      "path": "arch4/modem_live/truth_matrix.py",
+      "bytes": 92582,
+      "sha256": "a88e98167949f57450be50555854411585b06077321ad581e9f42a70e4d3d269"
+    },
+    {
+      "path": "arch4/mutation_authority.py",
+      "bytes": 3729,
+      "sha256": "cba84d0dd0c4d9de0199f1202ab84fce7cb73cd8f56bd551b9f469ecaebc58d7"
+    },
+    {
+      "path": "arch4/new_horizon/__init__.py",
+      "bytes": 262,
+      "sha256": "709471a217706159b197f19f95bb7162006b2c9829ce81b8bf1bed8f9adc3311"
+    },
+    {
+      "path": "arch4/new_horizon/advisory.py",
+      "bytes": 106342,
+      "sha256": "21964fcacb79b9f96305ac1929461b8127b6fd285f135c5a2ef4c8a66b7be47b"
+    },
+    {
+      "path": "arch4/new_horizon/ca_evidence.py",
+      "bytes": 6403,
+      "sha256": "f0f2858ea26f022cfceeaf595e9799a2ba1329cad99266f83360e99757a37fb5"
+    },
+    {
+      "path": "arch4/new_horizon/capacity.py",
+      "bytes": 4817,
+      "sha256": "2bfe5a351d4da47748d8a5afad1e0f899a453cc6d99c0aa907ce3f4e102e96b6"
+    },
+    {
+      "path": "arch4/new_horizon/cell_presence.py",
+      "bytes": 6300,
+      "sha256": "8cf3de741f1c6c1aa9dbaa05c378a3692eced61685a8f6c2ced5a9837b68730e"
+    },
+    {
+      "path": "arch4/new_horizon/continuity.py",
+      "bytes": 13797,
+      "sha256": "256a5224d5fbff36a7f2d40c251181ae91f1d94e4f68bba427ce0042396f880e"
+    },
+    {
+      "path": "arch4/new_horizon/contracts.py",
+      "bytes": 28247,
+      "sha256": "58b8fcedb96ec4dfe13a22f61b4a976433fc8a7b74fbe908533fc4d375c43b15"
+    },
+    {
+      "path": "arch4/new_horizon/decision.py",
+      "bytes": 77159,
+      "sha256": "209229dd5346d695f6382b438b3a9911de296f3304cdbae50b892eb1ecb2e458"
+    },
+    {
+      "path": "arch4/new_horizon/decision_history.py",
+      "bytes": 26562,
+      "sha256": "b61c81f198568f73f57cb009fbc51fc16c50a4081c43976783c9edfc5a031a50"
+    },
+    {
+      "path": "arch4/new_horizon/evidence_weighting.py",
+      "bytes": 2311,
+      "sha256": "32e7616f18f726bded3d20d14b71393bf10c9797886c44d85c594b8a09c4c5d3"
+    },
+    {
+      "path": "arch4/new_horizon/explore.py",
+      "bytes": 25510,
+      "sha256": "2d128b0b3b60a2e1cab811768544b893071cd32f07899e96e041eba6620964e1"
+    },
+    {
+      "path": "arch4/new_horizon/history.py",
+      "bytes": 141588,
+      "sha256": "d0841975f9b132a9f3174c302c6135b712eee619e79c452966dcff0f4fd828a2"
+    },
+    {
+      "path": "arch4/new_horizon/history_identity_migration.py",
+      "bytes": 7469,
+      "sha256": "b08ec529b73c4bef0ce4043cf271d3e4461ef15469b720d372a014b1ea69de99"
+    },
+    {
+      "path": "arch4/new_horizon/history_presentation.py",
+      "bytes": 624,
+      "sha256": "29383dde772d6c4e113fac2403238a0b1ca37934290fee96f60c0d493d3b7f81"
+    },
+    {
+      "path": "arch4/new_horizon/hourly_aq.py",
+      "bytes": 25064,
+      "sha256": "3f14126b09451d4aded2863aa99cffbd16bc2f9d0f0b236db6ca21a6525dbeb2"
+    },
+    {
+      "path": "arch4/new_horizon/intelligence_impact.py",
+      "bytes": 20893,
+      "sha256": "9b4dc967e9fb1d4acfa244138bdd5f0300d17eb2693696ef925ec0f69f6feb65"
+    },
+    {
+      "path": "arch4/new_horizon/learning.py",
+      "bytes": 69636,
+      "sha256": "4254da59009dbf7740ea8e5bc9f00de210bea80e3dc789baa8d370073507f55b"
+    },
+    {
+      "path": "arch4/new_horizon/learning_context.py",
+      "bytes": 4853,
+      "sha256": "a0b94b7d841a9ac21990d26784468fc22602fb8770fa9154f493f5a4002529f6"
+    },
+    {
+      "path": "arch4/new_horizon/nr_service_recovery.py",
+      "bytes": 20508,
+      "sha256": "175571b155928dd85d0494fa13dd0ab19e33a463ba7f8812f191f2573931f4bd"
+    },
+    {
+      "path": "arch4/new_horizon/performance.py",
+      "bytes": 46961,
+      "sha256": "a21f7a47a68c96bd0d801d1c97e7644a6208b7d9a36b04bdde8472f7ecae2b1c"
+    },
+    {
+      "path": "arch4/new_horizon/proof.py",
+      "bytes": 187991,
+      "sha256": "958751ca919e8832dad62440b45804672525995a0fdc31f0599606c6fba11e9d"
+    },
+    {
+      "path": "arch4/new_horizon/reasoning.py",
+      "bytes": 48312,
+      "sha256": "d013b2d36e2fec504fac2f81d97150bf3809c11cdf1fe1176f08fe70b44e8471"
+    },
+    {
+      "path": "arch4/new_horizon/runtime.py",
+      "bytes": 75842,
+      "sha256": "4535776f1040c8ed40081914a13ba278328bdbcca75b383fd542ff21ddb17047"
+    },
+    {
+      "path": "arch4/new_horizon/service_evidence.py",
+      "bytes": 5827,
+      "sha256": "f4944ce8a0ba759ff6540c1cdfdbd738383a1d5d792a5ff31bcfbcbeeb67803b"
+    },
+    {
+      "path": "arch4/new_horizon/service_quality.py",
+      "bytes": 8043,
+      "sha256": "03f233158d86994aeef6dcfeba10ca9ada1fc5a71434dd24d0e37a3067575a15"
+    },
+    {
+      "path": "arch4/new_horizon/simulator.py",
+      "bytes": 9323,
+      "sha256": "c2024f098474076b644480c9646af79cd7941e52d46e59e0a12b5070866fc905"
+    },
+    {
+      "path": "arch4/new_horizon/site_report_projection.py",
+      "bytes": 17841,
+      "sha256": "5741fbd130ae9af376ba2d15bb3e865f42bcfded9b15e89deb62e91264cb14c5"
+    },
+    {
+      "path": "arch4/new_horizon/support_targets.py",
+      "bytes": 3896,
+      "sha256": "aea93c908d357e1d1e98ddf598023d033825d6234014086e0e065780d94667ca"
+    },
+    {
+      "path": "arch4/ngui/__init__.py",
+      "bytes": 355,
+      "sha256": "d47084a1f365c742d6a7a77bb0ae513e70c6604ff37baaf704a6fdce2efc73dd"
+    },
+    {
+      "path": "arch4/ngui/__main__.py",
+      "bytes": 201,
+      "sha256": "bd0f34542f0fd5d47ebf3d7b3bf25f3aa67f02efdb95ed04210aab868b873ab0"
+    },
+    {
+      "path": "arch4/ngui/action_lifecycle.py",
+      "bytes": 3057,
+      "sha256": "3d48f5cc57bde5282c48ff6dca5d211dfc8b645c8938a030a348063be7656afe"
+    },
+    {
+      "path": "arch4/ngui/adapters/__init__.py",
+      "bytes": 116,
+      "sha256": "dd8033c7b806f48c5a9cdb9681a9d0e81e51c58bf86b21e336ab61191e80eca4"
+    },
+    {
+      "path": "arch4/ngui/adapters/commands.py",
+      "bytes": 714,
+      "sha256": "7f86d169d485620c97845340322d74d19941ab3411a416aea95429dc2ae4492f"
+    },
+    {
+      "path": "arch4/ngui/adapters/owner_register.py",
+      "bytes": 4082,
+      "sha256": "1d97d7dee211b01ee4db37599beea1447665aad37fd6347bf275eb8a7c221167"
+    },
+    {
+      "path": "arch4/ngui/application.py",
+      "bytes": 46390,
+      "sha256": "dd25cb6f032f051d14d2d4c94a1a4bfed1e9d893de344ebb8536417f493f5e34"
+    },
+    {
+      "path": "arch4/ngui/architecture_contract_manifest.py",
+      "bytes": 24902,
+      "sha256": "922206a5bed52d18cd1e0459c4232f0d0b3bc5b4e4d96f0c79d9f4d4917cbdfe"
+    },
+    {
+      "path": "arch4/ngui/chart_history_seed.py",
+      "bytes": 11958,
+      "sha256": "3de8c8f2b5f3224010edc1aaae8ec0e692dc6b5641043154aa3d49c36ae9155f"
+    },
+    {
+      "path": "arch4/ngui/chart_model.py",
+      "bytes": 85176,
+      "sha256": "6fae5f989b3fc1e4cbbf519e807bfc928f0e1fd4d0a9662715ac95c1114ead9d"
+    },
+    {
+      "path": "arch4/ngui/control_availability.py",
+      "bytes": 6207,
+      "sha256": "23d276f67e7d0d3dd462e460eca714bb40865c857589e33940dab3672c6b6773"
+    },
+    {
+      "path": "arch4/ngui/control_contracts.py",
+      "bytes": 9414,
+      "sha256": "f1b644a3ebc8b27981b7a60653a5683fcd2410f6ccf1a663b4a2f8749f204a79"
+    },
+    {
+      "path": "arch4/ngui/debug_surface.py",
+      "bytes": 44731,
+      "sha256": "69b5c7fcae94170d521b34de6c703747f3f26e72eaad1d8a61309300a444ab6a"
+    },
+    {
+      "path": "arch4/ngui/demo.py",
+      "bytes": 29238,
+      "sha256": "41efb9054a5b7da5fc40693d75d9158ebb3aff603c622aef79b5d79568ca9577"
+    },
+    {
+      "path": "arch4/ngui/display_text.py",
+      "bytes": 391,
+      "sha256": "b5b65de96e549531057b74343bded4bb0bbabf2c26c7d8990b3005d2b8ff7aaf"
+    },
+    {
+      "path": "arch4/ngui/edit_register.py",
+      "bytes": 39951,
+      "sha256": "567aa6fec782a933a02da7d47b2477d199885f33cbcd4704a2a9e1925e152c81"
+    },
+    {
+      "path": "arch4/ngui/external_actions.py",
+      "bytes": 18371,
+      "sha256": "06eb1033856b998213eedcf727c4cd426023e8efc74b170e3558eb17b8e709ba"
+    },
+    {
+      "path": "arch4/ngui/fault_evidence.py",
+      "bytes": 6456,
+      "sha256": "e067fa8858c91401e6bd2207fe6031df89a1f47194544e89c45e9f63793f7df2"
+    },
+    {
+      "path": "arch4/ngui/fonts/LICENSE-SIL-OFL.txt",
+      "bytes": 4326,
+      "sha256": "b856c99b7a9eb6f9466f7ed54be17be608adab2abba116c28f62e1f9bd84bd02"
+    },
+    {
+      "path": "arch4/ngui/fonts/LiberationMono-Bold.ttf",
+      "bytes": 308068,
+      "sha256": "626655e94dd82f3f42549daf995c921b0915fa8ab1f4b839559e8892ea41d240"
+    },
+    {
+      "path": "arch4/ngui/fonts/LiberationMono-BoldItalic.ttf",
+      "bytes": 284184,
+      "sha256": "15eb161953e3ecc7fc05a3fec8a59e0f4e0a54a4e375736adf8e98d65981f813"
+    },
+    {
+      "path": "arch4/ngui/fonts/LiberationMono-Italic.ttf",
+      "bytes": 281608,
+      "sha256": "a71b2c25c89da05cf0e7c4dbba8d473fdead0b181ae56165217747d2c1f39215"
+    },
+    {
+      "path": "arch4/ngui/fonts/LiberationMono-Regular.ttf",
+      "bytes": 319624,
+      "sha256": "395fa5ab8d40c8eba390ced528744ea75a7f69aabf3e68b6f925ca0e39a27370"
+    },
+    {
+      "path": "arch4/ngui/front_register.py",
+      "bytes": 15838,
+      "sha256": "5bafd7a44db9dda9c438fceaec73d7b1fca44fe85af5a62b01566ad01ed9c006"
+    },
+    {
+      "path": "arch4/ngui/heavy_work.py",
+      "bytes": 28805,
+      "sha256": "dc3c53badddf2eb469a678d28afbe3686c9f70e1e4e4332d4821ee55ab288018"
+    },
+    {
+      "path": "arch4/ngui/input_registers.py",
+      "bytes": 43315,
+      "sha256": "b560e8f86e3f523c048b5cf2060f80a6e0919b58a7bc02df661c31654af4a983"
+    },
+    {
+      "path": "arch4/ngui/intelligence_surface_contract.py",
+      "bytes": 6107,
+      "sha256": "536f53cc004f71b351154ce3a81938814e43625a746ddb105074726eff0e9a50"
+    },
+    {
+      "path": "arch4/ngui/interactions.py",
+      "bytes": 30205,
+      "sha256": "905d1c4b0f3ba4756473776cfbb2ad010423b02b3da4c6ba87e5b7a405f9c82f"
+    },
+    {
+      "path": "arch4/ngui/login_lifecycle.py",
+      "bytes": 1550,
+      "sha256": "83d12f221da5075ca9e5bb340c14995fc37560f3d86e6f3674fab60819371c14"
+    },
+    {
+      "path": "arch4/ngui/manual_action_lifecycle.py",
+      "bytes": 38173,
+      "sha256": "b4e4a9a57153ff0b0c9b6a6f5bb92ad265432bfc5a6e15737469979801964a76"
+    },
+    {
+      "path": "arch4/ngui/manual_actions.py",
+      "bytes": 2744,
+      "sha256": "f655c2c63b82b8f9abb5fafb30d160eaf4aa58a25763bef16547348036ad7169"
+    },
+    {
+      "path": "arch4/ngui/millisecond_text.py",
+      "bytes": 989,
+      "sha256": "afb9e6fa72f495977ad32f3313799b5d5b4a102fdd0b8516cb085928811e1619"
+    },
+    {
+      "path": "arch4/ngui/modem_live_matrix_view.py",
+      "bytes": 6049,
+      "sha256": "5a04bab5d2d88c3188d01ca81fa3fd0bcf86377c46ad509af226e51c798faad7"
+    },
+    {
+      "path": "arch4/ngui/network_preset_store.py",
+      "bytes": 3945,
+      "sha256": "1987e1960de408518d04e612c370e020f740ef3ef92aa7d5b74e39100a04ee13"
+    },
+    {
+      "path": "arch4/ngui/operational_outbox.py",
+      "bytes": 18227,
+      "sha256": "4d7fbbf1bacee2b2b8b111087252f39e93f50404dca548577c1d4253c9347965"
+    },
+    {
+      "path": "arch4/ngui/operator_event_feed.py",
+      "bytes": 7941,
+      "sha256": "1c050613fef1b62640f77d1a4102cf609617fa5d5dcd4921a188cf9ddf453118"
+    },
+    {
+      "path": "arch4/ngui/orchestrator.py",
+      "bytes": 234808,
+      "sha256": "e2adea846e74882a23decd8d7f4687767c2443838570031cd61060c5aee8e6e9"
+    },
+    {
+      "path": "arch4/ngui/page_owners.py",
+      "bytes": 3113,
+      "sha256": "4f12fb6c4a54a86029dcdc1901a59d3a31a7c5b0de9e9880d0199979a6021433"
+    },
+    {
+      "path": "arch4/ngui/presentation/__init__.py",
+      "bytes": 360,
+      "sha256": "3195636b887f496dcc7eab81ef58d65031d43779700fec18cbbd9277a288aca8"
+    },
+    {
+      "path": "arch4/ngui/presentation/authority.py",
+      "bytes": 11449,
+      "sha256": "6b90394d7b7751ab7dcf3152e6b886a3f4abe5f54f9a0a04feca583c3fc9f26e"
+    },
+    {
+      "path": "arch4/ngui/presentation/dashboard_decision.py",
+      "bytes": 693,
+      "sha256": "f61372193bca5d7840a2b393f1154758845e047eceae04a0132b1aabfeb98491"
+    },
+    {
+      "path": "arch4/ngui/presentation/policies.py",
+      "bytes": 12481,
+      "sha256": "53f0c3888f0532c3833317c9baa8a68213a0cac7c1f706a8ef81705b31fb1970"
+    },
+    {
+      "path": "arch4/ngui/presentation/processor.py",
+      "bytes": 43461,
+      "sha256": "6dfc9a293b5f6b9cd9c819002645bd49f11426fa4b4dbc05a218dda239d2e322"
+    },
+    {
+      "path": "arch4/ngui/profile_authority.py",
+      "bytes": 23531,
+      "sha256": "31a274b70fb976e673e869d4626ee13c37e64ec6cfc3916d1a1b74dba0074b7e"
+    },
+    {
+      "path": "arch4/ngui/profile_discovery.py",
+      "bytes": 3077,
+      "sha256": "c2fca1c8885ad83a3e7b88b24a332515cfcdedda4c6e5e0f9155973b9772cadd"
+    },
+    {
+      "path": "arch4/ngui/registry.py",
+      "bytes": 68632,
+      "sha256": "7d2d3df5da88d69c898d6535b92bbe6af13e60e60153f78e13409e17e5e8a91f"
+    },
+    {
+      "path": "arch4/ngui/renderer/__init__.py",
+      "bytes": 103,
+      "sha256": "46bfa985bd6385481823b12a8ac517e79aae51f919ea34d24b0bb9d7ffdee34e"
+    },
+    {
+      "path": "arch4/ngui/renderer/charts.py",
+      "bytes": 31656,
+      "sha256": "9ff6179a614a5573b1489b83d9d84d5d4b7ee9559e5fd291b8dcf723236e08d6"
+    },
+    {
+      "path": "arch4/ngui/renderer/chrome.py",
+      "bytes": 20726,
+      "sha256": "41281f9557ed0bdcd0febe088787b51ab5cec2f53ec37387b76d509e8faa1008"
+    },
+    {
+      "path": "arch4/ngui/renderer/confirm_button.py",
+      "bytes": 7394,
+      "sha256": "e1d1df5ccea8a0dce5b93e5be9b8eb520adca1635b4c75adb1eebb4cf0b7d03e"
+    },
+    {
+      "path": "arch4/ngui/renderer/dashboard_page.py",
+      "bytes": 43267,
+      "sha256": "de8b19137512f467de44186da6975d7c3522a7c51ad2c4c842adaeb719581933"
+    },
+    {
+      "path": "arch4/ngui/renderer/developer_pages.py",
+      "bytes": 75579,
+      "sha256": "bc8895dd141844e6ef2fb9c021bd175b1ef013f574a22004f9eff648ec1dc648"
+    },
+    {
+      "path": "arch4/ngui/renderer/graphs_page.py",
+      "bytes": 7737,
+      "sha256": "092f33deaa28a5df8bf8db80285dc5a329ed216c84ca93a3030356e00574d416"
+    },
+    {
+      "path": "arch4/ngui/renderer/intelligence_page.py",
+      "bytes": 25014,
+      "sha256": "9eedee44265bd8b0cb8fd787bc5dc93e257afe7be864158e3d98fbca81673eab"
+    },
+    {
+      "path": "arch4/ngui/renderer/interactions.py",
+      "bytes": 7586,
+      "sha256": "fc3340375ed54396c732a24cc5093b44f8b778f9bd4097610f9c056c66766590"
+    },
+    {
+      "path": "arch4/ngui/renderer/measurement_layout.py",
+      "bytes": 4988,
+      "sha256": "088eb9f6540264b840d803355bf72862315cf3b0309e06b685314b265b024079"
+    },
+    {
+      "path": "arch4/ngui/renderer/network_feedback.py",
+      "bytes": 11744,
+      "sha256": "cbec1f18eb19395b169420915313930d856dee88ad1d71ec3f1e16eebef9eb2d"
+    },
+    {
+      "path": "arch4/ngui/renderer/network_settings.py",
+      "bytes": 42834,
+      "sha256": "186b45fea875cf6ecebf1bff97c131a8d5e5aa7c1de2b7b49471747be1f52617"
+    },
+    {
+      "path": "arch4/ngui/renderer/operator_controls.py",
+      "bytes": 15093,
+      "sha256": "c4e599993151d96d86bb803fd31e880a3421df25a35a8ab0e55c7a7cce3f2a0d"
+    },
+    {
+      "path": "arch4/ngui/renderer/pages.py",
+      "bytes": 51923,
+      "sha256": "96d78d224c864a2f09fba4ea45e2dd7ecf24018429cd1b001c3005af5685d6e7"
+    },
+    {
+      "path": "arch4/ngui/renderer/read_diagnostics.py",
+      "bytes": 3932,
+      "sha256": "3e3dbce1e49aed81667f43ba6922081208422374c3fc6d8904b233b65e71d95e"
+    },
+    {
+      "path": "arch4/ngui/renderer/referee_page.py",
+      "bytes": 17718,
+      "sha256": "b54ec42d0c0d2d3654afcb7f106754b45943d80dbf8932333b21d22d92ba8301"
+    },
+    {
+      "path": "arch4/ngui/renderer/style.py",
+      "bytes": 12425,
+      "sha256": "2e1e94e12c4f5475eaceb7d859b29739b06120b2be61f25da3fdded021af6900"
+    },
+    {
+      "path": "arch4/ngui/renderer/window.py",
+      "bytes": 15148,
+      "sha256": "14f47779be55c2f3f6a25d6908e67c7607308b6b7bed275908e8ca4ddd28156a"
+    },
+    {
+      "path": "arch4/ngui/runtime_frame_transport.py",
+      "bytes": 14338,
+      "sha256": "c7348cb0a1759cc21f263fa29d4bb3e75dee506650c0d253a736797f893b1869"
+    },
+    {
+      "path": "arch4/ngui/runtime_generation.py",
+      "bytes": 63755,
+      "sha256": "77c13870fafa88bc45f662a8abc308f37e1893936c0fc21515d38e1f0181b3f6"
+    },
+    {
+      "path": "arch4/ngui/runtime_ipc.py",
+      "bytes": 72449,
+      "sha256": "226783949961fa83047a35836b83c4bf20197c6c068fd9a8e3f145b3a1d6a799"
+    },
+    {
+      "path": "arch4/ngui/runtime_lifecycle_transport.py",
+      "bytes": 22366,
+      "sha256": "8b1625447ab544245de7b48907344f2bd246c33dad6dda68a9b9297d73c3656d"
+    },
+    {
+      "path": "arch4/ngui/runtime_projection.py",
+      "bytes": 46541,
+      "sha256": "d4700b3825751517fef65b0db09170211751c9349420c50dad0882098f51f70f"
+    },
+    {
+      "path": "arch4/ngui/runtime_reset_manifest.py",
+      "bytes": 24566,
+      "sha256": "c29daf1ff41d1f3bab31edbc270a97a4c8aac341670b5fc657c79071d34ac127"
+    },
+    {
+      "path": "arch4/ngui/runtime_service.py",
+      "bytes": 128665,
+      "sha256": "8270c9e19e983f3ae74121c8d5d8d7ed519b96454730b73eb8712c6abb08e77b"
+    },
+    {
+      "path": "arch4/ngui/runtime_worker.py",
+      "bytes": 97404,
+      "sha256": "d3058f00536e5dfada625f70175dc4ed61af1c81ec7aaa519a1bfd5927cd1d4e"
+    },
+    {
+      "path": "arch4/ngui/safe_start_advisory.py",
+      "bytes": 13864,
+      "sha256": "ce45fd3d159331a034a6d118dbff017874c6d9bea3523a5f142b77983c8741c8"
+    },
+    {
+      "path": "arch4/ngui/settings_store.py",
+      "bytes": 6374,
+      "sha256": "4b4b9cd407cb3ba609f222ac389eb5227c8ba1df3040678518a51a59edc00277"
+    },
+    {
+      "path": "arch4/ngui/supervision.py",
+      "bytes": 1249,
+      "sha256": "906c0e4579c93d4fdbdb5905f89db3226c803a247a3dfd9bbc0e29e903ce2ec3"
+    },
+    {
+      "path": "arch4/ngui/types.py",
+      "bytes": 5115,
+      "sha256": "1f0a61cbde59120de452a57549783e2d541ca23e006aeec88053a2a5f8e46ed5"
+    },
+    {
+      "path": "arch4/ngui/utility_lifecycle.py",
+      "bytes": 6948,
+      "sha256": "7ed661d1453e24e6661d1bb2dff29843b0f8b011429b385ca507cdd9e400ea5e"
+    },
+    {
+      "path": "arch4/ngui/voice_lifecycle.py",
+      "bytes": 7116,
+      "sha256": "d294b9a0556a66e969b9374826a36436f9d87d10ca0f1289cfc2e758a86a7398"
+    },
+    {
+      "path": "arch4/observation.py",
+      "bytes": 13576,
+      "sha256": "d5b0a8ebe04c744bf7a4c206d151082c03f3f49e844544b673327ff7635c92c7"
+    },
+    {
+      "path": "arch4/open_source_manifest.py",
+      "bytes": 4106,
+      "sha256": "a019ed9a2ab134a75f13fb97420e486f565f17e189c466eb83c5b965e27c9100"
+    },
+    {
+      "path": "arch4/operational_service_contracts.py",
+      "bytes": 38362,
+      "sha256": "efc2f2db6718188c20cbdefcf9ebd69e932b4226be51e0154fda52c6f107ef2a"
+    },
+    {
+      "path": "arch4/operational_service_status.py",
+      "bytes": 1499,
+      "sha256": "43b46a826f92d54026915c08e11d9f8f435128e2f4a8a2dd10cb7eb09aa132e5"
+    },
+    {
+      "path": "arch4/operational_service_status_contract.py",
+      "bytes": 5818,
+      "sha256": "54cec5df4b61a55199f96b045f3e0f120546ac5a85965eb9e445c5900ebae5bd"
+    },
+    {
+      "path": "arch4/operator_profiles.py",
+      "bytes": 32823,
+      "sha256": "728ae9219147ecd0152e5e50f8790858b5f2ea3898cb069ca7d8ea8494fc2637"
+    },
+    {
+      "path": "arch4/operator_projection.py",
+      "bytes": 2057,
+      "sha256": "7598eac2335cd7ccdf10d404eccddb5657b30d970e02e8f8b8054d55bf9547f9"
+    },
+    {
+      "path": "arch4/ops_monitors.py",
+      "bytes": 1374,
+      "sha256": "b728181201a5e4bf5dfbedfa55a29c72fc6559c060c53376cdfdf18049351a08"
+    },
+    {
+      "path": "arch4/payload_budget.py",
+      "bytes": 2393,
+      "sha256": "972ad626c5eb3122032e0580ec306e45d0bcbb25d9b846dfb210674b7a3cdc8e"
+    },
+    {
+      "path": "arch4/policy/__init__.py",
+      "bytes": 277,
+      "sha256": "886ff81195e7ca2d893866e11963efe152930e630b9b98523e4d1fba6cf3322c"
+    },
+    {
+      "path": "arch4/policy/a1_b818_antithrash.py",
+      "bytes": 9358,
+      "sha256": "5acb4cd9a42deb4ae72a1b7485838437655266c685b75741ffe90ffe4e1e27aa"
+    },
+    {
+      "path": "arch4/policy/a1_b818_policy.py",
+      "bytes": 18527,
+      "sha256": "b7bfaa00b0b5e64843acada1ffa5939b334523efab0372c37e5dccdffec9a9dc"
+    },
+    {
+      "path": "arch4/policy/a1_b818_sequences.py",
+      "bytes": 13292,
+      "sha256": "e739d4b1d4ed1a9c3d545d33746e8b6502c5eac8ecba1c81b31210f45ae48520"
+    },
+    {
+      "path": "arch4/policy/a1_b818_windows.py",
+      "bytes": 3532,
+      "sha256": "7ebae78582f13130e1b0e97fd5691e965aa4086abc3aee89a840e1750cded681"
+    },
+    {
+      "path": "arch4/policy/a1_provider_policy.py",
+      "bytes": 915,
+      "sha256": "448497b7d463d01b0dfcd68b8d186c0cfae68a236673f34dd5cb707d075645fe"
+    },
+    {
+      "path": "arch4/policy/a1_provider_sequences.py",
+      "bytes": 726,
+      "sha256": "c73251db52826ea8ed334fd277903ffad1320280895f1a6822aad09545d8a0ca"
+    },
+    {
+      "path": "arch4/policy/config_publication.py",
+      "bytes": 5114,
+      "sha256": "9fd5ea6cac5bd5822011a1eda0d6d1c315dbc2ec16738f1f7cec4c0fee0ab72c"
+    },
+    {
+      "path": "arch4/policy/emergency_backend_policy.py",
+      "bytes": 4394,
+      "sha256": "89b292f3177b5ec6b636036d7347e869cc1a1baa36fc77378f39173004802a72"
+    },
+    {
+      "path": "arch4/policy/family_action_policy.py",
+      "bytes": 3110,
+      "sha256": "23d096a2ef7c76200365d5856b714fa4ab337fdb15f25f8a33ede2e977abf4f4"
+    },
+    {
+      "path": "arch4/policy/family_antithrash_policy.py",
+      "bytes": 1046,
+      "sha256": "a21f6824f31d9898ccabea26d4d5d84aff7c30968132fe6ab00c9f8e2c0c2394"
+    },
+    {
+      "path": "arch4/policy/family_daytime_policy.py",
+      "bytes": 1125,
+      "sha256": "8fb84922f3b6c4560b614022dd2a96fe1f370f179cf91510cf2a345456b54891"
+    },
+    {
+      "path": "arch4/policy/family_engine_runtime_policy.py",
+      "bytes": 4586,
+      "sha256": "b035833d19f964d34ce5c150b4f8041991b07974064e4ef7704ad980aeb09a51"
+    },
+    {
+      "path": "arch4/policy/family_engine_status_policy.py",
+      "bytes": 1489,
+      "sha256": "b10722bb8e5d07b07d34c06f643cf99ed05a2d6c15a199ff251ddd017c6aa317"
+    },
+    {
+      "path": "arch4/policy/family_hilink_policy.py",
+      "bytes": 1343,
+      "sha256": "ba846a08c5d52da96e0e80eb50b4a8a0db1e576b0bd3758c5a01eaa141df77d2"
+    },
+    {
+      "path": "arch4/policy/family_objective_policy.py",
+      "bytes": 2397,
+      "sha256": "062263c19d3d041eb2b35c0088168f17f15bf77e77535b7f9eb78f084827a46d"
+    },
+    {
+      "path": "arch4/policy/family_radio_drop_policy.py",
+      "bytes": 1973,
+      "sha256": "e3493131d8cb43c3e75230bb2ff021aa8941f8249741b1370d6f10e51fe03df2"
+    },
+    {
+      "path": "arch4/policy/family_rotate_policy.py",
+      "bytes": 3865,
+      "sha256": "8640014175c81b98ad0de912c77fbb17f0a1ed087ca09f69e0691fc8e7d445bd"
+    },
+    {
+      "path": "arch4/policy/family_runtime_state.py",
+      "bytes": 3444,
+      "sha256": "919b47ea16247e56154c6aa671ece4b59c141f934881114b4d782e83351d444d"
+    },
+    {
+      "path": "arch4/policy/family_sequence_policy.py",
+      "bytes": 889,
+      "sha256": "df2a8317de3ac518522a695015f4853f64cca0f23366eeea8f3398c0975ff83b"
+    },
+    {
+      "path": "arch4/policy/family_status_policy.py",
+      "bytes": 1109,
+      "sha256": "306070eaca85b6cb3c90865a6c5cfba728230730fc262a0d7e331cee621e1946"
+    },
+    {
+      "path": "arch4/policy/health_action_policy.py",
+      "bytes": 2116,
+      "sha256": "04d20864f9cfb2114c45d0a2592ed78820912c6540ee2d7772c0f04a40747c1e"
+    },
+    {
+      "path": "arch4/policy/hilink_rotate_policy.py",
+      "bytes": 2960,
+      "sha256": "09190f5fb9e04c07c07278e16f9b1a82a3cbc6d59eceeaeb28d1a0b69bf45958"
+    },
+    {
+      "path": "arch4/policy/incident_action_policy.py",
+      "bytes": 2785,
+      "sha256": "b0880d67aad6d9e354dba48ae5dc1e000496d459bf59294b14a90d4a35b3b20e"
+    },
+    {
+      "path": "arch4/policy/incident_learning_policy.py",
+      "bytes": 2162,
+      "sha256": "5944bacc5ccf89a93dcbb34c4e5f856b1ebd06b3cfdbb1342c20f6f6269de917"
+    },
+    {
+      "path": "arch4/policy/incident_recovery_policy.py",
+      "bytes": 4290,
+      "sha256": "86b9ed5295e9ca5ba2909049f933781da0962d4b0576ef852aa80155e776dee4"
+    },
+    {
+      "path": "arch4/policy/mikrotik_objective_policy.py",
+      "bytes": 10439,
+      "sha256": "ff04009d4d6ca41f0028de141dfe6d462d7c4bc3cffa700df98d1fcd6a4ea58d"
+    },
+    {
+      "path": "arch4/policy/mikrotik_rotate_policy.py",
+      "bytes": 5954,
+      "sha256": "9d6d7bdde0dbfc03ce971923b762a60a59a1711290ed1c6a9575386bcef1bcaa"
+    },
+    {
+      "path": "arch4/policy/overlay.py",
+      "bytes": 14320,
+      "sha256": "a206d3ef568bb14e8605f99cf33248746cef66ef25ad55f40e2fc005e980f6dc"
+    },
+    {
+      "path": "arch4/policy/pre_state_policy.py",
+      "bytes": 701,
+      "sha256": "10dad55414e74e3d5855c85755dfe1f0377d9cb96e3db6b2186d82a6e1a6e0bc"
+    },
+    {
+      "path": "arch4/policy/state_dispatch_policy.py",
+      "bytes": 2540,
+      "sha256": "b855f9d2849aaaa0893d4f56e1bd9e9d085f93328425e5b5d51bf35e3a7976f4"
+    },
+    {
+      "path": "arch4/policy/templates.py",
+      "bytes": 2782,
+      "sha256": "3b940ca6acf1cfcecd42fb407710267e1a45ac836ecd052a20a66ff1e518ade4"
+    },
+    {
+      "path": "arch4/portable_diagnostic_dump.py",
+      "bytes": 14747,
+      "sha256": "562b246231bfc41c300a5aec4100edf2b9afc12d7e9f98ecf2299d7ba6b4a30f"
+    },
+    {
+      "path": "arch4/portable_launch_validator.py",
+      "bytes": 19394,
+      "sha256": "347dd3e9c2f1791b93a2b7d3df9a230ca940309b651b66286d998c11695b1821"
+    },
+    {
+      "path": "arch4/portable_launcher_helpers.py",
+      "bytes": 3413,
+      "sha256": "c65440a7dfe7e133591283318b0887d679a9a26d93d566fccb4c283ee4ad52ab"
+    },
+    {
+      "path": "arch4/portable_state_import.py",
+      "bytes": 68483,
+      "sha256": "084e1f08cbab1290849a4cc9b48ce52b142cc56847aea5fa76434caf55a80097"
+    },
+    {
+      "path": "arch4/preflight_diagnostics.py",
+      "bytes": 12778,
+      "sha256": "479b2bf4b1577f47ee808b6ce146463d4e7433d3f8a3665ac1f4c75125ef53d2"
+    },
+    {
+      "path": "arch4/prepared_support.py",
+      "bytes": 4953,
+      "sha256": "07028c19980582f337f0d8305c59962816e807664e25ca1b78486f4f6b517ae3"
+    },
+    {
+      "path": "arch4/privacy_scrub.py",
+      "bytes": 47884,
+      "sha256": "33514f0bd517b2b83351ccff9e6bd82a9cf9f7b5f9e8c6d21af20ef799116f92"
+    },
+    {
+      "path": "arch4/product_hardening.py",
+      "bytes": 8654,
+      "sha256": "4c9da57c2ccc29887a0d2c772edf9472ad89f2f8170e2f6f883e1199c631229f"
+    },
+    {
+      "path": "arch4/product_intelligence.py",
+      "bytes": 79490,
+      "sha256": "099a3a0e39059690351b891e58806924264dd54c00e0958d87b3fe17b9bfd9c9"
+    },
+    {
+      "path": "arch4/product_intelligence_runtime.py",
+      "bytes": 10060,
+      "sha256": "396a90c264c0497919d194a07bed88dd9909abad51105a154b8350ff0996ae02"
+    },
+    {
+      "path": "arch4/product_operational_transaction.py",
+      "bytes": 33585,
+      "sha256": "7d97812e7da811cd5accccb17a67b04c9b4c7b8b6c9bf78316dab2fec3ba2244"
+    },
+    {
+      "path": "arch4/product_supervisor.py",
+      "bytes": 114378,
+      "sha256": "924c7357ff203133fa11071ad96a1ed355503b0b298129aaa93cbe11c1392f34"
+    },
+    {
+      "path": "arch4/protected_credentials.py",
+      "bytes": 3085,
+      "sha256": "8f24e18415af8c2492c6c5ea011eadc876b43b7da1b32cef49000128880750fd"
+    },
+    {
+      "path": "arch4/protected_operator_context.py",
+      "bytes": 14372,
+      "sha256": "934396d7804c9e9f71dbf25f43af000a765518438aaa76869416ac251f452257"
+    },
+    {
+      "path": "arch4/radio_band_projection.py",
+      "bytes": 1842,
+      "sha256": "0736b3e35b2e0713c84ccc009e9068071fdcbace903b4311722f5b2c536e5fbc"
+    },
+    {
+      "path": "arch4/radio_target_contract.py",
+      "bytes": 37727,
+      "sha256": "f22bba58a4e6cd2aa83d11c2d20e9831dc4325eb19ae4aa6006f000cf3b7aa5a"
+    },
+    {
+      "path": "arch4/radio_transition_authority.py",
+      "bytes": 22306,
+      "sha256": "764c5ffa191109547b521ed3517cba970dbb7920d721414dffe13acfd62e7031"
+    },
+    {
+      "path": "arch4/rat_model.py",
+      "bytes": 15483,
+      "sha256": "f0bac6d1f7466dddfe68e587d3f14154c1748b73313aefc563d3977909025966"
+    },
+    {
+      "path": "arch4/readiness_matrix.py",
+      "bytes": 10364,
+      "sha256": "af636e52b5a5da708c4b9b3cf35c288c697a5bc56f7f4ca86f5a2463264bddb3"
+    },
+    {
+      "path": "arch4/replay_decision_quality.py",
+      "bytes": 5620,
+      "sha256": "9be13275d0815fbacc3fcf0b19567eb4b805b08dd2009e84f428cae6d7a27417"
+    },
+    {
+      "path": "arch4/replay_event_adapter.py",
+      "bytes": 5148,
+      "sha256": "f61315ffb398f178ee0b980690df1005a0a8067c6bce8cee307dcc82283439ae"
+    },
+    {
+      "path": "arch4/reporting/__init__.py",
+      "bytes": 50,
+      "sha256": "9cff06f14411d1ca3e633fac8bcc9f41b5c288bf4e89bb8284fdd3e13ca36f27"
+    },
+    {
+      "path": "arch4/rtt_observation.py",
+      "bytes": 13857,
+      "sha256": "1f9e751f79061abb000e9cb46eed24d4188446f0d8176e0d6ce8cd044408d039"
+    },
+    {
+      "path": "arch4/runner.py",
+      "bytes": 16646,
+      "sha256": "60255f8c5f4534389cb11b97367be9f1f73a51a36bd711d63a44ea530e309ec2"
+    },
+    {
+      "path": "arch4/runtime_band_scope.py",
+      "bytes": 3974,
+      "sha256": "0932876c291311f4cc94b1a9202650227f161439ff24d17a10067433cd95cdc3"
+    },
+    {
+      "path": "arch4/runtime_boundary_contracts.py",
+      "bytes": 33354,
+      "sha256": "e20ea4d1a95991d9496f5102b6d4d27bda684bfd625565a5e48ea488d1875598"
+    },
+    {
+      "path": "arch4/runtime_capability.py",
+      "bytes": 23322,
+      "sha256": "35b91c6732ebe02f9412a0b0e6aa5dfaf3fc565ea27584b797c4e69d977325fb"
+    },
+    {
+      "path": "arch4/runtime_clock.py",
+      "bytes": 47266,
+      "sha256": "7158830cf406b3aafb01540d060ddf332e141f9ce792d6293445293620e9ae9e"
+    },
+    {
+      "path": "arch4/runtime_clock_owner.py",
+      "bytes": 3683,
+      "sha256": "f760fbfdb5ef95716bd05678ef2ff8efa081538e64428ebf028dbb4935240751"
+    },
+    {
+      "path": "arch4/runtime_clock_service_thread.py",
+      "bytes": 29186,
+      "sha256": "1ecdd8085e31259fdf95dc6d3cdba7becc60b46b96eab3c12042963271f1e515"
+    },
+    {
+      "path": "arch4/runtime_clock_worker_fabric.py",
+      "bytes": 20487,
+      "sha256": "90b8b2b5863984ec328bdf57200983882d0a6753019a1ee87dfa7448b9b1a201"
+    },
+    {
+      "path": "arch4/runtime_control_faults.py",
+      "bytes": 1432,
+      "sha256": "3317964f285936b236e31073344e8bbdde6128b0bc22e5a96b58d086319ed035"
+    },
+    {
+      "path": "arch4/runtime_decision_projection.py",
+      "bytes": 17329,
+      "sha256": "da7e308de18101a04098b10893e34038490262d896495067c694551e6bb61cf1"
+    },
+    {
+      "path": "arch4/runtime_event_policy.py",
+      "bytes": 294,
+      "sha256": "7025943e2fef6a4f69f07c375e198e0f014417e76cd5211db899aca2ae013820"
+    },
+    {
+      "path": "arch4/runtime_faults.py",
+      "bytes": 2225,
+      "sha256": "0206dc96135298a091dfdd12854fd15cf884176887f313031af9b9fbd1ff3641"
+    },
+    {
+      "path": "arch4/runtime_identity.py",
+      "bytes": 32198,
+      "sha256": "d1d5b6616590218d84d9d4949459e1d771146cd7da3b28165fccaec4a738d24a"
+    },
+    {
+      "path": "arch4/runtime_identity_card.py",
+      "bytes": 2900,
+      "sha256": "69bd34a0be22000765db92aff589f1ee4a61ce3f7c8a51cc5aa3ba18c1683290"
+    },
+    {
+      "path": "arch4/runtime_learning_gate.py",
+      "bytes": 3696,
+      "sha256": "65d1fddd1cabdbecb2fa206386667c9b97764e41dd4d3fd30839018646967a5d"
+    },
+    {
+      "path": "arch4/runtime_modem_sample_publication.py",
+      "bytes": 91064,
+      "sha256": "0099b9ad33a6dfbe6d1a3df35fdaef69c40f9069fbdf7b726e1d0057c3d0ce2f"
+    },
+    {
+      "path": "arch4/runtime_onboarding.py",
+      "bytes": 26469,
+      "sha256": "af2cd99f3ce7cd2ba88c543483ec7f892f1002d90676de70e66d101013fa0f8f"
+    },
+    {
+      "path": "arch4/runtime_operator_contract.py",
+      "bytes": 29080,
+      "sha256": "ae75521177332a2c467724181941a6109fc428b33e977b89881616c545cab353"
+    },
+    {
+      "path": "arch4/runtime_paths.py",
+      "bytes": 9779,
+      "sha256": "ef1dba75442bda9ba9f15f54edd359f6a823873bb56c4899b98a011dc395c852"
+    },
+    {
+      "path": "arch4/runtime_register_contract_names.py",
+      "bytes": 2143,
+      "sha256": "b5e528fe4cf660488e9a519f0af39e72fe2053a2fe8d2a7843f666cebf281b3c"
+    },
+    {
+      "path": "arch4/runtime_registers.py",
+      "bytes": 94929,
+      "sha256": "1a7f09859de9604b77c4a4829e2f369b994594574cec6c4224626689dda0519d"
+    },
+    {
+      "path": "arch4/runtime_service_scheduler.py",
+      "bytes": 7368,
+      "sha256": "ad081786684b424ea1f2b4a666a4c149aeef8f1919821ad79b0a7f79398f0e0b"
+    },
+    {
+      "path": "arch4/runtime_sidecar.py",
+      "bytes": 96844,
+      "sha256": "755a6416f92d7022f06878ea37e6c7981b45d11b47531afc5984edb568b2d4d3"
+    },
+    {
+      "path": "arch4/runtime_sidecar_health.py",
+      "bytes": 3777,
+      "sha256": "7f2bc675c876f02343b334a1b82a2e3230fbeaee827fa129bd0d9866d7bc504b"
+    },
+    {
+      "path": "arch4/runtime_sidecar_identity.py",
+      "bytes": 5568,
+      "sha256": "305ada4322ec3b2b97ed8d802ecabf49d85b6c6c43052b04872b72abed4c6596"
+    },
+    {
+      "path": "arch4/runtime_sidecar_queue.py",
+      "bytes": 27552,
+      "sha256": "07a951edd7170820d4cd13921d957dc60a1d8c4f8e1b28e307d103dc6428733b"
+    },
+    {
+      "path": "arch4/runtime_state_contract.py",
+      "bytes": 12628,
+      "sha256": "02d8646a28b4d76a7d3cf43f95677708e848f65bfcf0d984e2ac268603315e9c"
+    },
+    {
+      "path": "arch4/runtime_state_memory.py",
+      "bytes": 8755,
+      "sha256": "fc15abe8ff0955b91b3a99b1b337cea79d57eb75fe61ac54d70fde4242862efe"
+    },
+    {
+      "path": "arch4/runtime_status_register_publishers.py",
+      "bytes": 2284,
+      "sha256": "33a8b0e2468fa3aee3af1f04dd1695408d905e4eb57cf9e6aa55d01e7334982f"
+    },
+    {
+      "path": "arch4/runtime_support_tier.py",
+      "bytes": 12365,
+      "sha256": "d2c5a4a86b678ebdd04d01e620853bd20f08d62273230d2df003c4c7d007222a"
+    },
+    {
+      "path": "arch4/runtime_validation/__init__.py",
+      "bytes": 540,
+      "sha256": "baab62596b3d43be4d61e302a3690c9e5e92ef50ea6cede15710519294f9cca9"
+    },
+    {
+      "path": "arch4/runtime_validation/active_cgf_runtime_validator.py",
+      "bytes": 31140,
+      "sha256": "44f31283df929f128d10950aa02eca7714e012a12c23d554a6d25a68c9ac63c8"
+    },
+    {
+      "path": "arch4/signal_owner.py",
+      "bytes": 845,
+      "sha256": "905c81c3e1d204c6fb12e81724ea04b92920728f92ecfa5d7099a1ed4670ccd8"
+    },
+    {
+      "path": "arch4/signal_processing/__init__.py",
+      "bytes": 2061,
+      "sha256": "4af491426325658186c5a6c73885de49393c355b4214ce00f0386f277e0cae9e"
+    },
+    {
+      "path": "arch4/signal_processing/band_quality.py",
+      "bytes": 4582,
+      "sha256": "0a5396e3a6aa1918d95e82ac9d1ca96aaa18a3cc4206ec8c359a6c66863ba71d"
+    },
+    {
+      "path": "arch4/signal_processing/ca_telemetry_processor.py",
+      "bytes": 12714,
+      "sha256": "f9eacac0065592a3205f938f89eb2ea24134fad1773c0a2478df32864790c67c"
+    },
+    {
+      "path": "arch4/signal_processing/combined_quality.py",
+      "bytes": 3603,
+      "sha256": "7e43c1de77f7609e991b1ccc6f6caee035bba2a10ea94c9a8ebac31911023ea4"
+    },
+    {
+      "path": "arch4/signal_processing/computed_congestion_signals.py",
+      "bytes": 2114,
+      "sha256": "5379c993e4f110156f22a98e5f72e9e15073c4e3b4d1a84e4415a5d6fc5fe949"
+    },
+    {
+      "path": "arch4/signal_processing/congestion_authority.py",
+      "bytes": 21924,
+      "sha256": "44a90461455f87a20891dcbaa591a6190708f0f86f7a2f90a52ad4287f20f34a"
+    },
+    {
+      "path": "arch4/signal_processing/congestion_combiner.py",
+      "bytes": 46928,
+      "sha256": "a89e8e41b75fd3ca7dc67c414b8bc20e5bd428d24e0c6b374a06bad497504c30"
+    },
+    {
+      "path": "arch4/signal_processing/congestion_module.py",
+      "bytes": 26785,
+      "sha256": "22ac0ca0874a78041c9872307621940d37df24e1e2809b9d008cca73803c5be4"
+    },
+    {
+      "path": "arch4/signal_processing/congestion_signal_math.py",
+      "bytes": 4582,
+      "sha256": "126e20afe47fbae8c3e245abccbe96e4b259d6eb10de65aa17dbb951a9729a35"
+    },
+    {
+      "path": "arch4/signal_processing/congestion_threshold_policy.py",
+      "bytes": 3354,
+      "sha256": "93b50ddba8223122db0fb08d7a82dddf151a4c5bc7d4da8f4ad86bcfcb96ae7a"
+    },
+    {
+      "path": "arch4/signal_processing/context.py",
+      "bytes": 1604,
+      "sha256": "8136d496ade30f6e0bb218f949b2aa0a190616186e6c0d11da8f70f92ea29f38"
+    },
+    {
+      "path": "arch4/signal_processing/delivered_capacity.py",
+      "bytes": 3452,
+      "sha256": "67c0412ecc8585c14038d8aef8b60afc8507cf5e3f61ae86060f8bde4250f0d6"
+    },
+    {
+      "path": "arch4/signal_processing/dl_bottleneck.py",
+      "bytes": 7445,
+      "sha256": "10f1f95c4acfa849932d67a4f2d4aa21119e0a4fe701e8df5c0ff50606826146"
+    },
+    {
+      "path": "arch4/signal_processing/dl_jitter_processor.py",
+      "bytes": 14704,
+      "sha256": "c32ccdaa15ed9768e22c3647f93df14c0ae653071082ea8daa9c5640e02eda8b"
+    },
+    {
+      "path": "arch4/signal_processing/nr_processor.py",
+      "bytes": 9190,
+      "sha256": "e15cf40e6faeda26894be34bbf4f757d3580e365333ad34089139c098759e211"
+    },
+    {
+      "path": "arch4/signal_processing/policy_thresholds.py",
+      "bytes": 1211,
+      "sha256": "bca304648f6edbc6f026b2e875d4d9d724fc3d54b438120589f9c03e87924231"
+    },
+    {
+      "path": "arch4/signal_processing/rsrq_processor.py",
+      "bytes": 23991,
+      "sha256": "fda9ac8233ce42fdf5049bd68e15b42a11df9eddf5cac7832cdb8a9a7e50d6c3"
+    },
+    {
+      "path": "arch4/signal_processing/rtt_processor.py",
+      "bytes": 33916,
+      "sha256": "9676a1e85972c8c8de638d52a75dcd5351dbd540be64d8230a9771da201de6e3"
+    },
+    {
+      "path": "arch4/signal_processing/scheduler_processor.py",
+      "bytes": 6906,
+      "sha256": "8a3b6a009e8c3ddeb489ff968584dd5433bc3b3acf5e61ab72aed568d96c6e69"
+    },
+    {
+      "path": "arch4/signal_traceability.py",
+      "bytes": 51854,
+      "sha256": "c34971816c1ad6ab216313513df712ea86c2c02fcb0eeabc6c0176ca1d3718dd"
+    },
+    {
+      "path": "arch4/signal_tuning_surface.py",
+      "bytes": 1757,
+      "sha256": "64626a052084bca8c122aaea6f75a1a508ff94b77aa9ab212ba0a4a9dd7c4761"
+    },
+    {
+      "path": "arch4/simulators/__init__.py",
+      "bytes": 63,
+      "sha256": "b33e6c1f49381519b3b91ffe833d3db987f8e84573fdee38cdf29ad2cd5947d0"
+    },
+    {
+      "path": "arch4/simulators/openwrt_dual.py",
+      "bytes": 61315,
+      "sha256": "35bfa03b3e8bccd7c8b230fedcf4eebf3dd0d523c8735d7d84d69192855b3611"
+    },
+    {
+      "path": "arch4/simulators/xiaomi_cb0401v2.py",
+      "bytes": 15159,
+      "sha256": "5ef6fd4c344bacb423adf4bbb7a18732a155cd2bf2222bdf588078babfe9ee6b"
+    },
+    {
+      "path": "arch4/simulators/xiaomi_cb0501.py",
+      "bytes": 9394,
+      "sha256": "fcf09cb03538b59cc8f1e43670312b460b1348e4695364cbd656307efd29accd"
+    },
+    {
+      "path": "arch4/simulators/zte_mc888.py",
+      "bytes": 65790,
+      "sha256": "34033591e99a7f3bd20e2eae02a8ee7306b9b1a2a596499bc6f4eae918bb93bf"
+    },
+    {
+      "path": "arch4/smart_core/__init__.py",
+      "bytes": 191,
+      "sha256": "3f8687109e922e30ef8a02355b7105f94b0572f54c879c4bd1c0a649c86dde7b"
+    },
+    {
+      "path": "arch4/smart_loop/__init__.py",
+      "bytes": 725,
+      "sha256": "96c65d7f662004f72a8a1ef7805abe9934dbdf9e439efe3b65cc6e0d9ca51c39"
+    },
+    {
+      "path": "arch4/smart_loop/action_availability.py",
+      "bytes": 25195,
+      "sha256": "e85af2c32364262473b5f8debf74c94a6bd81d3ecaeb0b4c179551fb68892912"
+    },
+    {
+      "path": "arch4/smart_loop/capacity_probe.py",
+      "bytes": 18761,
+      "sha256": "49a5a14402276fbf50ac261c8bf377060643ebf53ad8880b3904e254c261254a"
+    },
+    {
+      "path": "arch4/smart_loop/clock_lane.py",
+      "bytes": 77516,
+      "sha256": "de9b5fd1163255ec1a784bd5c28e9b24f27dbf4e5e7f7496e76298e22cdbbd0f"
+    },
+    {
+      "path": "arch4/smart_loop/closed_loop.py",
+      "bytes": 139627,
+      "sha256": "bde4444f559a1acaed4bc25dac233b8d68b54a53837b1733e89fd8749b58f259"
+    },
+    {
+      "path": "arch4/smart_loop/normal_behavior_opportunities.py",
+      "bytes": 44117,
+      "sha256": "52f581bcdcc8543d199213c268650f52492fff460ba500a09b5ae6833684804a"
+    },
+    {
+      "path": "arch4/smart_loop/normal_behavior_progress.py",
+      "bytes": 18834,
+      "sha256": "dd3645f259b52b494c757c18a845906a74b45553b3864f997a33e995e7d160f6"
+    },
+    {
+      "path": "arch4/smart_loop/opportunity_matrix.py",
+      "bytes": 6930,
+      "sha256": "5a36e77f9519c5f013ef135692282455ae3afe77b4ad0d394529b420ff1c5755"
+    },
+    {
+      "path": "arch4/smart_loop/passive_dl_peak.py",
+      "bytes": 7647,
+      "sha256": "f7dbaaf53c5e7fafd2fff752a7d154e26b5b3075a93c868d7c1e44fe7d6b69d6"
+    },
+    {
+      "path": "arch4/smart_loop/proof_feedback_adapter.py",
+      "bytes": 951,
+      "sha256": "e39cc866f9f9585c2c19855d4f1ac40b0b1e2108f2425da2ff223187244fbd71"
+    },
+    {
+      "path": "arch4/smart_loop/register_adapter.py",
+      "bytes": 8531,
+      "sha256": "429edbacdfc2d0ad6de38939024a9b817b77d1c09262d5aa9ee92dbb8985cc90"
+    },
+    {
+      "path": "arch4/smart_loop/state_store.py",
+      "bytes": 10121,
+      "sha256": "1125137e417fe36b82455d4746a514c6a2cf939494fbfba02122bc235e0c35d7"
+    },
+    {
+      "path": "arch4/smart_loop/strategy_register.py",
+      "bytes": 17294,
+      "sha256": "5318b8ecc393f7a9426371e53e5337cda6c0a03d4b568fa94facabda0e00f506"
+    },
+    {
+      "path": "arch4/smartness_fact_register.py",
+      "bytes": 28703,
+      "sha256": "62baa4d26d878c322178b2ca84860b5149a4f7bc69b263987d15b47fae72bedc"
+    },
+    {
+      "path": "arch4/sms_receiver.py",
+      "bytes": 41488,
+      "sha256": "2c19e6e336bc0e195ee5fcc037d43096e7d6266ef39f8cc9b4e0db14e823ba27"
+    },
+    {
+      "path": "arch4/sqlite_recovery.py",
+      "bytes": 1363,
+      "sha256": "143143574cdbab59f7e407a81b089329598052d990043d6a93a90f8dc523a259"
+    },
+    {
+      "path": "arch4/startup/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/startup/checklist.py",
+      "bytes": 20195,
+      "sha256": "23482a92dae9e9f4ca63ef61372ec194ab3299c92371cfb8a777a8561a193369"
+    },
+    {
+      "path": "arch4/startup_notice.py",
+      "bytes": 4002,
+      "sha256": "abba9f5c2ccdc96091bdaa1553fede29c300a046d749e56eb4563cdc1ecd4a34"
+    },
+    {
+      "path": "arch4/status_payload.py",
+      "bytes": 53342,
+      "sha256": "d331dbec771790186afba745cef930d87325a4fd9fa2ac67bee2af1f03d217b7"
+    },
+    {
+      "path": "arch4/support_bundle_context.py",
+      "bytes": 1036,
+      "sha256": "36f5438013786369c1aaaa6178a02622d616a7529b4430e9c98ea4bbaf226235"
+    },
+    {
+      "path": "arch4/support_bundle_job.py",
+      "bytes": 2464,
+      "sha256": "04c734079c508c6679aad67eb1eea97d44a26aaefb270b0ac3bcfb88c8feb13f"
+    },
+    {
+      "path": "arch4/support_evidence.py",
+      "bytes": 7163,
+      "sha256": "ca6ddf9907a032800cbdc665f42168be48195c936b6348dde25001aa7edbf03c"
+    },
+    {
+      "path": "arch4/synthetic_quality.py",
+      "bytes": 1967,
+      "sha256": "ce72cacc9c198f413f87f7d412a1d41fb49d784a1b9f54aef1fcd409a216dcd2"
+    },
+    {
+      "path": "arch4/telemetry/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/telemetry/decision_context_contract.py",
+      "bytes": 5328,
+      "sha256": "ade4715067f6e75c7c042588660eb31c6c514b64b829c555f15a27833c654c3d"
+    },
+    {
+      "path": "arch4/telemetry/forensic_codec.py",
+      "bytes": 16606,
+      "sha256": "318997dbb18a028c7e32bfe7172b911b03c6f577f6598dcddba0728bc4818071"
+    },
+    {
+      "path": "arch4/telemetry/history_contract.py",
+      "bytes": 34575,
+      "sha256": "217e2913ae567c6fe574a7d9f989684df3d54c5994e095206e76720bcbe02bba"
+    },
+    {
+      "path": "arch4/telemetry/production_contract.py",
+      "bytes": 23825,
+      "sha256": "c24a615cc694dc74f7836134fe9acefa20b45d4e920b73880ff49e0fa2fbe56b"
+    },
+    {
+      "path": "arch4/telemetry/rollup.py",
+      "bytes": 2643,
+      "sha256": "cfe93d95405e1879ac1ef99f19bb226a53239bcfe50ce92871779d1ec46c5fec"
+    },
+    {
+      "path": "arch4/telemetry/trace_matrix.py",
+      "bytes": 9348,
+      "sha256": "b564e601c33e23a9f7a0dc94eb227679e63d7fe4070294f446bfb163b76a2769"
+    },
+    {
+      "path": "arch4/terminal_reward_contract.py",
+      "bytes": 20620,
+      "sha256": "120006da7debea10b5083ec1f633c19483c4878cbe344af229fd28876ede9083"
+    },
+    {
+      "path": "arch4/terminal_reward_observation.py",
+      "bytes": 20467,
+      "sha256": "f6028c2054a9121f28a7ed7a574481780c2b4797783102650dcdc34b3cc55f64"
+    },
+    {
+      "path": "arch4/tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arch4/tests/conftest.py",
+      "bytes": 711,
+      "sha256": "2df7a71cc152811b4e6733981e1ab5e438d20ce563f1d6e9dd2ff94aead57199"
+    },
+    {
+      "path": "arch4/tests/license_signing_test_support.py",
+      "bytes": 138,
+      "sha256": "11d890dc82972194a73567b7a1174d10e7a4d63551d96fec15f134f7977205c6"
+    },
+    {
+      "path": "arch4/tests/physical_request_test_support.py",
+      "bytes": 1459,
+      "sha256": "027bea6bc2a81965c0a4362b8a70b5a02357deb2f04fc37739d4d67f36ec6fc6"
+    },
+    {
+      "path": "arch4/tests/r25/test_portable_profile_bundle_diagnosis.py",
+      "bytes": 17125,
+      "sha256": "93ff6f63ba0985d43c523c1dbe8fe7a9f4beefe42f966cde3d7b94c63b64201c"
+    },
+    {
+      "path": "arch4/tests/routeros_test_support.py",
+      "bytes": 506,
+      "sha256": "fe97d12595f23fd15cb8dc998c07f29e2881500b296c0c1390196a2d3459c096"
+    },
+    {
+      "path": "arch4/tests/test_capability_semantics_contract.py",
+      "bytes": 6811,
+      "sha256": "515dab34ae203cb345d3bf7113ab1036ee9ee80fe992b7fe3608bf9e12992c04"
+    },
+    {
+      "path": "arch4/tests/test_command_transactions.py",
+      "bytes": 42854,
+      "sha256": "3564699b75cbb678b7704544dcf2b05718c89e9b4f2dca302aea30ab0204bcef"
+    },
+    {
+      "path": "arch4/tests/test_conservative_capability_defaults.py",
+      "bytes": 5793,
+      "sha256": "c6d4a0b0b61f2b701757790215653eb3eba91d0a0ac64aac4725702ccdffcd9b"
+    },
+    {
+      "path": "arch4/tests/test_evidence_scope.py",
+      "bytes": 4244,
+      "sha256": "8c0cc8e79bef7353a3060a4ae059447239b69d23c057a233e1b22b2a7bf25938"
+    },
+    {
+      "path": "arch4/tests/test_guide08_artifacts_report_support_license.py",
+      "bytes": 11074,
+      "sha256": "ac16f338bb2e3405b5170d0d6e54a9529f8d2beb79e63e9fd770e240d9bb2d9d"
+    },
+    {
+      "path": "arch4/tests/test_hourly_aq_contract.py",
+      "bytes": 6859,
+      "sha256": "2cf00e58c145f955f4c4b8432177c73363fe3adedb0db9f762d02b3b437df2f9"
+    },
+    {
+      "path": "arch4/tests/test_huawei_parsers.py",
+      "bytes": 1980,
+      "sha256": "efbae45fbfda8e58aeac0ad5538bf9da655f490540803d0160da9d37e2df545e"
+    },
+    {
+      "path": "arch4/tests/test_license_credential_store.py",
+      "bytes": 6047,
+      "sha256": "129f714ff2cc66c260ee53c9b6400e56a95b7fb91494a4fda14c0b6a7548a918"
+    },
+    {
+      "path": "arch4/tests/test_license_nonce_tiers.py",
+      "bytes": 2566,
+      "sha256": "75bfeb0edd5cc491c1b706624814f195d10d7d0d5e2a787884723328a8739647"
+    },
+    {
+      "path": "arch4/tests/test_log_checker_plain_english.py",
+      "bytes": 6240,
+      "sha256": "0188ebb8f992d72277116e03f91991cfd2647f6fb43c1e8cee378c7989518725"
+    },
+    {
+      "path": "arch4/tests/test_log_checker_retained_window.py",
+      "bytes": 4775,
+      "sha256": "af69b11f02008a57234407e53f39f6fbd7ef52b2bc1ae8acba2e04ae1cc98e8c"
+    },
+    {
+      "path": "arch4/tests/test_mikrotik_parsers.py",
+      "bytes": 13059,
+      "sha256": "3dea8892bb71fe295d1234a2433ea3370420f6a3a15eef6cdb2d7a41f18d6811"
+    },
+    {
+      "path": "arch4/tests/test_model_public_defaults.py",
+      "bytes": 5781,
+      "sha256": "d64e7959eeec7c1ff009e74f8b1525ec2345b5282b904fc044b91c17a1cc864a"
+    },
+    {
+      "path": "arch4/tests/test_offline_log_checker.py",
+      "bytes": 45181,
+      "sha256": "f4561739ada5e0476eb003a0cd78023e0446497ab267eb6e705f04ec9fd15fa5"
+    },
+    {
+      "path": "arch4/tests/test_offline_observation_coverage.py",
+      "bytes": 7395,
+      "sha256": "07d4aa31ad84ab31d20aa7253b251b76da48d06b40b78b77e6c2e64ce7179036"
+    },
+    {
+      "path": "arch4/tests/test_r256_checker_failed_dependencies.py",
+      "bytes": 2751,
+      "sha256": "644e5aba411620b43cc57f1c05b19041c581e9fa0af6f876a1dec67423a743a9"
+    },
+    {
+      "path": "arch4/tests/test_runtime_identity.py",
+      "bytes": 27724,
+      "sha256": "00fd046bfd47f3e79c724530af13f23f561e5c70889bafdc3c134a67b818a8d5"
+    },
+    {
+      "path": "arch4/tests/test_zte_parsers.py",
+      "bytes": 2383,
+      "sha256": "c62821c34a1b4b388ac3c60f6be479694241d24aafbbd98068b07d957fc0a7be"
+    },
+    {
+      "path": "arch4/trajectory_contract.py",
+      "bytes": 317,
+      "sha256": "765585e8993baf5ad784e1afd7540054a263678fc058981495b059f10590bc08"
+    },
+    {
+      "path": "arch4/updater.py",
+      "bytes": 7854,
+      "sha256": "b3c95153b4f990d2d8bdf637ff9bbac0b095424e15d0f968d1930935dc487685"
+    },
+    {
+      "path": "arch4/user_config.py",
+      "bytes": 1643,
+      "sha256": "803f7378bf04d5ee34ff7c53ed62fa4effabc2c009ec34887558e0d9ad8ed567"
+    },
+    {
+      "path": "arch4/versioning.py",
+      "bytes": 1719,
+      "sha256": "b85c12fdf66058cfc94a2d62113e2b97d766d8478010594736572c84a35fdeda"
+    },
+    {
+      "path": "arch4/windows_bundle_validation.py",
+      "bytes": 9680,
+      "sha256": "28728b49b2b9499a41b6e3b4f81c9e60f16e4459dd7fa99fd00ef7f468ac255c"
+    },
+    {
+      "path": "arch4/windows_native_bootstrap.py",
+      "bytes": 921,
+      "sha256": "84b424209f73f85a06c6d21c66f1135f5755b3ca577fc910c985fd31b8b9da91"
+    },
+    {
+      "path": "arch4/windows_native_launcher.py",
+      "bytes": 87876,
+      "sha256": "e7d24827ca85553876d7d98a0ba5db72cf5677a014d59ddcd75c8fa09b240e12"
+    },
+    {
+      "path": "arch4/worker_health.py",
+      "bytes": 14538,
+      "sha256": "81cf5e8b2f694c629a89059d4dd3b5d464fbcde6a57be1e62eaa52597687bd66"
+    },
+    {
+      "path": "config/arch6_v1_2_policy_templates.json",
+      "bytes": 759,
+      "sha256": "f6949c3baf73b95ab12b63a5010716a42221a9d3a43fcf8c93018963720706e3"
+    },
+    {
+      "path": "config/ip/dependency_allowlist.txt",
+      "bytes": 86,
+      "sha256": "c04557fea056f8ac3fb5b670e77a3d7d69446f51d3de3b1c84b8400c7c001ee8"
+    },
+    {
+      "path": "config/modems/b535.env",
+      "bytes": 519,
+      "sha256": "acc9088563149b4af83c8aa29d116ad1230a7e46a6f1741328fd2292da70b6a5"
+    },
+    {
+      "path": "config/modems/b818.env",
+      "bytes": 790,
+      "sha256": "8e3a414f94e6ad11036d4538f22146422086d85ee8dbb5f140088cb4ba825d2f"
+    },
+    {
+      "path": "config/modems/g5b.env",
+      "bytes": 313,
+      "sha256": "7459118940ac57ebac1c9c99f7814a3a713df71f37c6353f582607f081fea0b5"
+    },
+    {
+      "path": "config/modems/h173.env",
+      "bytes": 192,
+      "sha256": "c21691c020ab3bc73efe5d2eae46dfcf5c15e4da59cb951cd9f94c867a5a55d1"
+    },
+    {
+      "path": "config/modems/mc888.env",
+      "bytes": 604,
+      "sha256": "7eb24a45d97a116a50bc9f4068291595da639bbae0fdd53a6913e243f4ee9b00"
+    },
+    {
+      "path": "config/modems/mf296r.env",
+      "bytes": 351,
+      "sha256": "0f9e369dec07c83f591172fbb88edc6397eac9853a90f470b8df078f2d6a4e06"
+    },
+    {
+      "path": "config/modems/mikrotik.env",
+      "bytes": 1305,
+      "sha256": "1a9a114689da6ad71de0083916ff2e04dfd576a4d799c975cea06dc3acc1b48a"
+    },
+    {
+      "path": "config/modems/model.env",
+      "bytes": 178,
+      "sha256": "d82f532667ce92aba3262abe80161742c811929245d1dae7cd8c84d9b1bceba7"
+    },
+    {
+      "path": "config/modems/nx520.env",
+      "bytes": 268,
+      "sha256": "289730fee79c709e227459ae2ef5183d4fe075226e863fefba1f41a1cf494529"
+    },
+    {
+      "path": "config/modems/nx520v.env",
+      "bytes": 251,
+      "sha256": "0d2f7423f3808e90112b95449ddb716d11ab772d785b8794dc26ef1a65feadf3"
+    },
+    {
+      "path": "config/modems/openwrt.env",
+      "bytes": 187,
+      "sha256": "618619ec373558914cb612849e242b391e6dffa109c45d2e9afbc17795a9c812"
+    },
+    {
+      "path": "config/modems/zte_zwrt.env",
+      "bytes": 281,
+      "sha256": "6633025ef35202a27024aeae9d0b9176d09d2dd7ca63ad4ca2a35b7f8bbf0d68"
+    },
+    {
+      "path": "config/modems/zyxel_nr5101.env",
+      "bytes": 424,
+      "sha256": "c6755b4caa8faa287d01a2e1ded1472b60d0431aa508bbf4334a512cc5967cd6"
+    },
+    {
+      "path": "config/vendor_neutral_profiles.json",
+      "bytes": 20488,
+      "sha256": "f7b6a5aee578ed89c89a0d29c363627fc2145e1b26e246a7fd5433890c5bcb69"
+    },
+    {
+      "path": "docs/BUILDING.md",
+      "bytes": 3694,
+      "sha256": "32e87413a591a0021bbbab39ff9618e921a5599d94815f9a9220dc99712d0707"
+    },
+    {
+      "path": "docs/FUNCTIONAL_SPEC.md",
+      "bytes": 4061,
+      "sha256": "8f64796c1412abfdaa68a78f14ffdfbd3a833db2596e3451ccea79b5b335fd77"
+    },
+    {
+      "path": "docs/PROTOCOL_REFERENCES.md",
+      "bytes": 1971,
+      "sha256": "4bf1389bf4c16c54747a8f13e86db66695b0c36d2dd4f357e5a0f02a1ce7b59c"
+    },
+    {
+      "path": "docs/PUBLIC_TEST_SCOPE.json",
+      "bytes": 2456,
+      "sha256": "0a4008b2fe96864e495b419d03593341564770337f153a3c7f88d3bda5252723"
+    },
+    {
+      "path": "docs/PUBLIC_TEST_SELECTION.txt",
+      "bytes": 1890,
+      "sha256": "744eebfb1ca8e55b24ccb51851ec2a32fed991fd98d705a7f1398158c765187f"
+    },
+    {
+      "path": "docs/ROUTER_PROFILES.md",
+      "bytes": 4028,
+      "sha256": "b74daa1d4b7a92ee756289327a56253fe04d065adc62df9b85aef9194693dcde"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "bytes": 2095,
+      "sha256": "dcb86e6fd5043285aa00bd4099d427ed92bcb98cffe5c1f441637ef8916a4720"
+    },
+    {
+      "path": "docs/user/BETA_RELEASE_NOTES.txt",
+      "bytes": 889,
+      "sha256": "ba2490bd577efc60998cc129eeb15e0162a9f586bb0aa245ef7c8311210ce846"
+    },
+    {
+      "path": "docs/user/RECOVERY_AND_SUPPORT.txt",
+      "bytes": 7482,
+      "sha256": "d5680f28cbeeba96ecd579e83f356aa342b09595443204a7ba38aaff19afefa6"
+    },
+    {
+      "path": "docs/user/START_HERE.txt",
+      "bytes": 5478,
+      "sha256": "58e3ec8fe1d81bdf246131f1ad8da6bd2e490dcd96035318b2edaa64ec24ee36"
+    },
+    {
+      "path": "docs/user/SUPPORTED_HARDWARE_AND_LIMITATIONS.txt",
+      "bytes": 5578,
+      "sha256": "7a3976f970c67d7d69d026fb1ecf99d6209733f37a27391e13b3096ae9ef68f8"
+    },
+    {
+      "path": "docs/user/USER_GUIDE.txt",
+      "bytes": 24554,
+      "sha256": "4d9075f5b666e27174e0a1e829c559dbfd7b5e851431e99a3aeddc43e3804eda"
+    },
+    {
+      "path": "hooks/hook-pyqtgraph.py",
+      "bytes": 646,
+      "sha256": "09dbc104055d95cc8dd7e3179d58a4a03d9c2fe60b8c2e2320dccf23571faa4d"
+    },
+    {
+      "path": "hooks/rthooks.dat",
+      "bytes": 231,
+      "sha256": "10ade778005814899fcc3fb68a9dda6e5152d275de24e586b6652f8fc6f01bbf"
+    },
+    {
+      "path": "modem_profiles/huawei_b535_232_h191sp64c983.json",
+      "bytes": 142231,
+      "sha256": "3f378bc979612958b89818b8c1bb96746e35ab72f6a9ea3055cf621db059a4bc"
+    },
+    {
+      "path": "modem_profiles/huawei_b535_232_model.json",
+      "bytes": 138819,
+      "sha256": "50c871e7bd5b9e3a6f47d1641d213a718111465eed1c48268f377163915494d3"
+    },
+    {
+      "path": "modem_profiles/huawei_b535_333_h470sp6c9831.json",
+      "bytes": 134050,
+      "sha256": "30ba0da2e90f1e05217146e82b4cb5ffd08baae085811200847f5c08e3dc5d1a"
+    },
+    {
+      "path": "modem_profiles/huawei_b535_hilink_baseline.json",
+      "bytes": 131664,
+      "sha256": "ea86dedf2c5d3fa01656adf6826adb4ac7bf4f3d222ab2e9bc86e901604f2eeb"
+    },
+    {
+      "path": "modem_profiles/huawei_b818_263_h220sp1c11.json",
+      "bytes": 141237,
+      "sha256": "579d8d99872af9daa28ee260e22fccf41d10d17db339b906f9c2831f891b652f"
+    },
+    {
+      "path": "modem_profiles/huawei_h112_cpe_pro.json",
+      "bytes": 145332,
+      "sha256": "342abe29e34ea667aa2ebe09775ead307429459b26642a943345d8ffe8892cd4"
+    },
+    {
+      "path": "modem_profiles/huawei_h112_three_uk_c21.json",
+      "bytes": 145075,
+      "sha256": "a68ef5e86aed6a9486d82f813d536568686c1bd031aed71603fdc09a0d6ee395"
+    },
+    {
+      "path": "modem_profiles/huawei_h122_373_cpe_pro2.json",
+      "bytes": 145280,
+      "sha256": "98ae54b9e5029bd49a3537bbd8bf4afe36a3abb7314a88a34c9a0dffd4ff2abb"
+    },
+    {
+      "path": "modem_profiles/huawei_h122_373_global_c00.json",
+      "bytes": 145299,
+      "sha256": "ede9e2eb41b31ff383af3cc6066837586f181f8e6bc6f6c6994548ab6fd8f480"
+    },
+    {
+      "path": "modem_profiles/huawei_h122_373_three_uk.json",
+      "bytes": 137930,
+      "sha256": "8b3b846cbaea53d51818cc6b9c6792f7df1dcfb2e72fb73fb3f5e68da16e0840"
+    },
+    {
+      "path": "modem_profiles/huawei_h122_373_three_uk_c1217.json",
+      "bytes": 137958,
+      "sha256": "e53e0a00f5b2690fcea528cc3fbba331255b9e6a7dbe3fd3baf377bf5e2c4221"
+    },
+    {
+      "path": "modem_profiles/huawei_h153_381_cpe5s.json",
+      "bytes": 145226,
+      "sha256": "bfa7a7f9f9ca0cfca2a6446d901ebc809edecaaa9d721dff8ba676d65af6bac5"
+    },
+    {
+      "path": "modem_profiles/huawei_h155_381_cpe5.json",
+      "bytes": 145310,
+      "sha256": "d62aec591ec9f054c09f6dddaeaaa8076f0ec83f65972336cadcd5f3705b4ede"
+    },
+    {
+      "path": "modem_profiles/huawei_h173_383_h1230sp1c983.json",
+      "bytes": 143034,
+      "sha256": "c79e6acb9519f0424db4a145e2e628c76064d9f8b81a31c2faa977aec677abdf"
+    },
+    {
+      "path": "modem_profiles/huawei_hilink_b818_baseline.json",
+      "bytes": 137946,
+      "sha256": "5fa7944241f44e33f5f4841f1902fbad4dee02c1296a6749ba6c4336e059e92a"
+    },
+    {
+      "path": "modem_profiles/huawei_hilink_generic_baseline.json",
+      "bytes": 139428,
+      "sha256": "e459d3743e799df6e302106fde18a4b9c616fa5a050788b0896e690b4e2afd0d"
+    },
+    {
+      "path": "modem_profiles/mikrotik_chateau_lte12_eg120k_routeros_v7.json",
+      "bytes": 148551,
+      "sha256": "3cebf46a2ea1ecfb8dd6f8d633cab886e7155cfec766e5228a7f64dae1b85ff0"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_at_baseline.json",
+      "bytes": 147075,
+      "sha256": "9cee0a4a0659429c7ed097043ec4b62ec44da689593df6574abcdcac8d8ab4ea"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_r17_v7211_regression.json",
+      "bytes": 161797,
+      "sha256": "cdeaf724b49cd9f824c03c5346417e438604078f5f6586e317bf3aaac12e2f06"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_v721_rg520f.json",
+      "bytes": 161667,
+      "sha256": "ad22bc1a8d7050cf79555bb25b47f54f6b485ab370dfdd262cfd764fa39c9a56"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_v721_rg650e.json",
+      "bytes": 161672,
+      "sha256": "e579a31ad8366590070920c35e8bd4ca29e71c6af92c911de5f08e73970edde4"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_v7_eg18.json",
+      "bytes": 151719,
+      "sha256": "ec5dd4704ec457862606b182b04edee648f3b65c85cfe1fefa8d39f522e3243f"
+    },
+    {
+      "path": "modem_profiles/mikrotik_routeros_v7_rg502q.json",
+      "bytes": 161686,
+      "sha256": "3c10efdade8452c2c95e4ad991866a8661fdb6f89c09f3e681e3841ee2d66aba"
+    },
+    {
+      "path": "modem_profiles/tplink_nx520_srba1_20250915_dev2.json",
+      "bytes": 135631,
+      "sha256": "05646dd5c450c4252961ace3c6c17042abc2760180232f6779b623a6c0ecdb29"
+    },
+    {
+      "path": "modem_profiles/tplink_nx520_srba1_250902_dev2.json",
+      "bytes": 159413,
+      "sha256": "7ef0fe61efec94217ee1b7ee141a3aaccf8bf265972764fecee585e22e7d838c"
+    },
+    {
+      "path": "modem_profiles/tplink_nx520v_eu1_260408.json",
+      "bytes": 142612,
+      "sha256": "b7b7a5c678700b942e138eee1850736fd3797e8521a84cb11f760a915ee5f8dc"
+    },
+    {
+      "path": "modem_profiles/xiaomi_cb0401v2_3_0_88.json",
+      "bytes": 138664,
+      "sha256": "733c9d35b63e86788561f18a46d15449db0d2b7cb5da2356237112b4b298bca4"
+    },
+    {
+      "path": "modem_profiles/xiaomi_cb0501_stock_3_0.json",
+      "bytes": 156650,
+      "sha256": "2178530108f97264e2f263b3227fa6320d79a71015e45f02fae2d45def56b23e"
+    },
+    {
+      "path": "modem_profiles/zte_g5b_livewireuk_b03.json",
+      "bytes": 145901,
+      "sha256": "d5adab24ca2628788307ecdd013370da463483ba52a8ccb06fe88f31a5a95146"
+    },
+    {
+      "path": "modem_profiles/zte_g5tc_zwrt_model.json",
+      "bytes": 144158,
+      "sha256": "d14e11c2c683b6f884e83574800b271cad559c1195e34d094f5d2140841589e6"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_at_a1_b14.json",
+      "bytes": 150466,
+      "sha256": "775980ce1ee9ce7531ba555b4fd01f853d7d93d67149aa6125fb1b4a471183f1"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_bg_provisional.json",
+      "bytes": 151885,
+      "sha256": "ae263de7cb241c9601da04aad1c45f5725ea7611014a613c9cd30ce0b84c7c82"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_goform.json",
+      "bytes": 151560,
+      "sha256": "8f73746bb5d1ec42c00e546a7eaea6ec424556f7647ec86316c4135450c27823"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_hk_b18.json",
+      "bytes": 150505,
+      "sha256": "13429c93c7ca76977e380b49a64e000a65a8cf7af785273f08a514495f9c2590"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_three_uk_b04.json",
+      "bytes": 150413,
+      "sha256": "65c15951638363aa5ba05029f7e924de113385656d8e94d06d70266f2716beb1"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_three_uk_b12.json",
+      "bytes": 150678,
+      "sha256": "1b21886f382fd74c4f9da0cec05c180c86e984617350632974d5d4713e4dcadc"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_three_uk_b15.json",
+      "bytes": 150711,
+      "sha256": "fbc3517441788e01691c2513be27d7e089b4abc6b36c1f8223f075464c1ef728"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_three_uk_b16.json",
+      "bytes": 150621,
+      "sha256": "4dbcc7671771ed6a1e15ffa7d93a3e85a5cf88a170b3703b090d2fee9f55f447"
+    },
+    {
+      "path": "modem_profiles/zte_mc801a_tmobile_de.json",
+      "bytes": 150590,
+      "sha256": "eb47c1a2503d30ac47f1ab37522e43f10dd49cf04005fb51d2dbcdd006778106"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_at_unlocked.json",
+      "bytes": 147256,
+      "sha256": "47ce5193ae856e11365ad2c3153a6fdb9ab0e07dfffe0fd51a25daa0576ee7c7"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_at_v101_protected.json",
+      "bytes": 147845,
+      "sha256": "ee0fa5fd36f685eea8721bbe3aa388a8309401b93b1d57051903901493999f98"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_goform.json",
+      "bytes": 147978,
+      "sha256": "474c9c63c3b24459898f748ef6281c8e359d3fdbf9e6c727a05a8790aa51450f"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_live_uk.json",
+      "bytes": 145893,
+      "sha256": "d8615094ea70bc7693769a0425c382d735eda1cdac8038992a1cf95189ba0996"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_three_uk.json",
+      "bytes": 145432,
+      "sha256": "b890b22bb2909662dc61df30003ad0309edac281660454aefc73495c2774f9b7"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_three_uk_b02.json",
+      "bytes": 145554,
+      "sha256": "4b28ac792f3ebbf10a81246c56eb8e7cc793bce3661d0bb829a6f49c8ee4169f"
+    },
+    {
+      "path": "modem_profiles/zte_mc888_three_uk_b09.json",
+      "bytes": 145949,
+      "sha256": "b53516235f191fe4d8c79d70eac278f9d91cbb098e0c31b2bda00b30c7da3986"
+    },
+    {
+      "path": "modem_profiles/zte_mf296r_a1srb_b04.json",
+      "bytes": 142112,
+      "sha256": "c076de9f9ab1e7dc8d295a4916dd2853f182b66012bb057207ba20c2845df4eb"
+    },
+    {
+      "path": "modem_profiles/zte_webui_goform_baseline.json",
+      "bytes": 144955,
+      "sha256": "83c508479e97823ee3d09da8a4abd2ee277ad51f51fe4a2801a0660aedc57615"
+    },
+    {
+      "path": "modem_profiles/zte_zwrt_ubus_baseline.json",
+      "bytes": 142007,
+      "sha256": "770b965bf4022ab7b1d56e3dea38f09fc24d1ca3be67e0d86b66a10cf2cff7f1"
+    },
+    {
+      "path": "open_source_manifest.json",
+      "bytes": 6879,
+      "sha256": "98c2e672b7edb669ed5980fb922b3538942946512288d45e1444f507be927a57"
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 625,
+      "sha256": "8827c0f9510879190da4a7388ff63e053ec84dde921e7e68eae2841703fb5ab0"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 67,
+      "sha256": "9ab11ed29eede0877a2e7bd09fa2c4184f1054092c63095349752fc73a08d51b"
+    },
+    {
+      "path": "requirements-ngui-visual.txt",
+      "bytes": 199,
+      "sha256": "adf603f7315d1466f4069551d8ae351bbb5c7139f33837fe3ef2dd2b0e6009d5"
+    },
+    {
+      "path": "requirements-runtime-pins.txt",
+      "bytes": 608,
+      "sha256": "cbd5969e9b64c0f1bc591a889da19b54ca6c2809281e24f8ab2a8f8a8c3c6ba5"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 92,
+      "sha256": "2eaa73615eb3fbf4ee4243eb9822bb1e6e543656ca62f464942e0c3dd9c6b75a"
+    },
+    {
+      "path": "scripts/build_guc_license_gen_windows.ps1",
+      "bytes": 3267,
+      "sha256": "aabaf377a70b7c1538d276a703201283abf5689e9a0069f68c6831ea5c103170"
+    },
+    {
+      "path": "scripts/build_windows_native_bundle.ps1",
+      "bytes": 23626,
+      "sha256": "44d4f20c5d1f7aad4956fbc5f2d67e64336871ab237d8eee14ab65bd43f849a7"
+    },
+    {
+      "path": "scripts/build_windows_portable.ps1",
+      "bytes": 4009,
+      "sha256": "c6ccb3f7c9b4e8a7b2dd1564c977958cfd8607884e905953f3ed5e830960f3bf"
+    },
+    {
+      "path": "scripts/cgf_windows_path_registry.ps1",
+      "bytes": 4881,
+      "sha256": "a5664da9c3e37dea011c276cdcb31d9136d28d77b8afc8e092138d3032ae6cab"
+    },
+    {
+      "path": "scripts/export_windows_build.ps1",
+      "bytes": 6832,
+      "sha256": "225097d6b4e941f005e6b097a58bd3c5fdef999b0336323455f6d58a77f0018e"
+    },
+    {
+      "path": "scripts/package_active_source.sh",
+      "bytes": 511,
+      "sha256": "d72ae1664d0017cc4a8b9ad3cb5fe893c3851455c917fc7cfa2c81bb6b11bc1e"
+    },
+    {
+      "path": "scripts/test_windows_portable.ps1",
+      "bytes": 2523,
+      "sha256": "61e295fc40165a59896c5ff6af00de33b6b48f7ad8f0a7193bfd0629068d9c88"
+    },
+    {
+      "path": "scripts/windows_native_bootstrap.ps1",
+      "bytes": 5801,
+      "sha256": "75732dcfcb5591580237b2c1c04423faf57f2aaaaf24c5e791d36ec419712011"
+    },
+    {
+      "path": "scripts/windows_portable_control.ps1",
+      "bytes": 31647,
+      "sha256": "0723fea7a16db0e92ae60aef742058df9bfe85bc7671c0d753cb6420f8ffa469"
+    },
+    {
+      "path": "third_party/NOTICE.txt",
+      "bytes": 2097,
+      "sha256": "db69d248306a13c5ad747592109366dcfcc3baff9293edc8d82144cd637fe302"
+    },
+    {
+      "path": "third_party/licenses/Liberation-Mono/LICENSE-SIL-OFL.txt",
+      "bytes": 4326,
+      "sha256": "b856c99b7a9eb6f9466f7ed54be17be608adab2abba116c28f62e1f9bd84bd02"
+    },
+    {
+      "path": "third_party/licenses/PyInstaller-6.22.3/licenses/COPYING.txt",
+      "bytes": 32604,
+      "sha256": "0598064c7d2718e38d7914a7d08343b2fa008e3bea9ebba2aa7a6ffa5900dd64"
+    },
+    {
+      "path": "third_party/licenses/PySide6-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+      "bytes": 470,
+      "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3"
+    },
+    {
+      "path": "third_party/licenses/PySide6_Addons-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+      "bytes": 470,
+      "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3"
+    },
+    {
+      "path": "third_party/licenses/PySide6_Essentials-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+      "bytes": 470,
+      "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3"
+    },
+    {
+      "path": "third_party/licenses/Python-3.13.14/LICENSE.txt",
+      "bytes": 33861,
+      "sha256": "62bec384df47b0328307db41455ff6ea2559e5546b394ac69148561b21703120"
+    },
+    {
+      "path": "third_party/licenses/Qt-6.11.1/GPL-2.0-only.txt",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "third_party/licenses/Qt-6.11.1/GPL-3.0-only.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "third_party/licenses/Qt-6.11.1/LGPL-3.0-only.txt",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "third_party/licenses/RouterOS-api-0.21.0/LICENSE",
+      "bytes": 1111,
+      "sha256": "adc2b1567d5f183443db3c98481d7ba0aaaae42e5f51e46f5398fb909635fe75"
+    },
+    {
+      "path": "third_party/licenses/certifi-2026.7.22/licenses/LICENSE",
+      "bytes": 989,
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+    },
+    {
+      "path": "third_party/licenses/cffi-2.1.1/licenses/LICENSE",
+      "bytes": 1123,
+      "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+    },
+    {
+      "path": "third_party/licenses/charset-normalizer-3.4.9/licenses/LICENSE",
+      "bytes": 1092,
+      "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1"
+    },
+    {
+      "path": "third_party/licenses/colorama-0.4.6/licenses/LICENSE.txt",
+      "bytes": 1491,
+      "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+    },
+    {
+      "path": "third_party/licenses/cryptography-50.0.1/licenses/LICENSE",
+      "bytes": 197,
+      "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb"
+    },
+    {
+      "path": "third_party/licenses/cryptography-50.0.1/licenses/LICENSE.APACHE",
+      "bytes": 11360,
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe"
+    },
+    {
+      "path": "third_party/licenses/cryptography-50.0.1/licenses/LICENSE.BSD",
+      "bytes": 1532,
+      "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb"
+    },
+    {
+      "path": "third_party/licenses/idna-3.18/licenses/LICENSE.md",
+      "bytes": 1541,
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+    },
+    {
+      "path": "third_party/licenses/inventory.json",
+      "bytes": 12780,
+      "sha256": "770f15b3adfb42cfd2d93dd9b66cf32cca1173357265397913fa1c778a763f70"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/LICENSE",
+      "bytes": 1616,
+      "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/LICENSE.md",
+      "bytes": 3582,
+      "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/LICENSE.txt",
+      "bytes": 1039,
+      "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/LICENSE.txt",
+      "bytes": 45831,
+      "sha256": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+      "bytes": 1039,
+      "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+      "bytes": 704,
+      "sha256": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/src/highway/LICENSE",
+      "bytes": 21155,
+      "sha256": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+      "bytes": 1441,
+      "sha256": "b0fd592d4ead563148e3977e7b589169d46a5ef2ff133c755a81af880a3fc919"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+      "bytes": 1542,
+      "sha256": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/_core/src/umath/svml/LICENSE",
+      "bytes": 1573,
+      "sha256": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/fft/pocketfft/LICENSE.md",
+      "bytes": 1523,
+      "sha256": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+      "bytes": 2314,
+      "sha256": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/ma/LICENSE",
+      "bytes": 1616,
+      "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/LICENSE.md",
+      "bytes": 3582,
+      "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/distributions/LICENSE.md",
+      "bytes": 2805,
+      "sha256": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/mt19937/LICENSE.md",
+      "bytes": 2986,
+      "sha256": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/pcg64/LICENSE.md",
+      "bytes": 1176,
+      "sha256": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/philox/LICENSE.md",
+      "bytes": 1540,
+      "sha256": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/sfc64/LICENSE.md",
+      "bytes": 1253,
+      "sha256": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59"
+    },
+    {
+      "path": "third_party/licenses/numpy-2.5.1/licenses/numpy/random/src/splitmix64/LICENSE.md",
+      "bytes": 340,
+      "sha256": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763"
+    },
+    {
+      "path": "third_party/licenses/pycparser-3.0/licenses/LICENSE",
+      "bytes": 1543,
+      "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+    },
+    {
+      "path": "third_party/licenses/pyqtgraph-0.14.0/licenses/LICENSE.txt",
+      "bytes": 1160,
+      "sha256": "b4ed24d468da61df9028a52abe9283a592e63f315943a1c86cd96a9ea5b62079"
+    },
+    {
+      "path": "third_party/licenses/regex-2026.9.29/licenses/LICENSE.txt",
+      "bytes": 11792,
+      "sha256": "3d220c06594b826bbabf110312f60f385f99e57e529fa4b9e536f79091f8b4c7"
+    },
+    {
+      "path": "third_party/licenses/requests-2.34.2/licenses/LICENSE",
+      "bytes": 10142,
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+    },
+    {
+      "path": "third_party/licenses/requests-2.34.2/licenses/NOTICE",
+      "bytes": 38,
+      "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+    },
+    {
+      "path": "third_party/licenses/shiboken6-6.11.1/licenses/LicenseRef-Qt-Commercial.txt",
+      "bytes": 470,
+      "sha256": "4f54763ac0fe2abd8f7f8d8fe370a94a08ebf84786aa0b91045bd6628deb08a3"
+    },
+    {
+      "path": "third_party/licenses/urllib3-2.7.0/licenses/LICENSE.txt",
+      "bytes": 1093,
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+    },
+    {
+      "path": "tools/generate_open_source_manifest.py",
+      "bytes": 9225,
+      "sha256": "f4b6d83284d54c4cf253f4044f217c5b2b2203c7ff66c80bd3386442c60c81a3"
+    },
+    {
+      "path": "tools/guc_license_gen.py",
+      "bytes": 13290,
+      "sha256": "8159c343789600fd34cd09f9cfd2c75462dbdaf09d6e96a8befafd8f8b6471b5"
+    },
+    {
+      "path": "tools/guc_license_gen.spec",
+      "bytes": 1177,
+      "sha256": "e65f2a2ff59f1f07365f1a84913001625fcccdac0733e3984c9bc72bc10f0620"
+    },
+    {
+      "path": "tools/log_checker/__init__.py",
+      "bytes": 61,
+      "sha256": "e8295a8bf7b4f9eb43defa61d4df69d7f2c0611c909ab6e30fcae34858ee3ffa"
+    },
+    {
+      "path": "tools/log_checker/app.py",
+      "bytes": 9938,
+      "sha256": "4e8ae69705d5a9543fc210b3bdeb32ae7a66168925426096c6c2ddfb9bf4761d"
+    },
+    {
+      "path": "tools/log_checker/bundle_input.py",
+      "bytes": 2309,
+      "sha256": "36ac1fa7c2e443318af8938abf69b091e859844eb48fba8af45229c340daf283"
+    },
+    {
+      "path": "tools/log_checker/explanations.py",
+      "bytes": 31834,
+      "sha256": "bb817d3918e4474c2c4c1715e56542e0e0422138d80c71d58ba9cf8153c338b0"
+    },
+    {
+      "path": "tools/log_checker/package_validation.py",
+      "bytes": 4779,
+      "sha256": "c31d30cb67bfb992fed141ff93853f9ba0ebde523e4fdb4f70655f476da9369b"
+    },
+    {
+      "path": "tools/log_checker/profile_fields.py",
+      "bytes": 20118,
+      "sha256": "17ec4bae92757d5e09478191b9535d768e2461715b5d104be2f32f1ceb94020a"
+    },
+    {
+      "path": "tools/log_checker/replay_validation.py",
+      "bytes": 2938,
+      "sha256": "90cc9618e637af2dc3c251e1a11ecb80c2f8e1d2925843f017764747692a7631"
+    },
+    {
+      "path": "tools/log_checker/report.py",
+      "bytes": 83675,
+      "sha256": "8badedf5793f7576c091d91410091507bed861f75ff01c87279b0362aaf0a2fd"
+    },
+    {
+      "path": "tools/log_checker/story.py",
+      "bytes": 11537,
+      "sha256": "41df605f0c23512e51a4ecbbece6a7f2a32032a31fc8e748ba8ebb0c9665926d"
+    },
+    {
+      "path": "tools/log_checker/support_history.py",
+      "bytes": 862,
+      "sha256": "25c190db151bd26f47906650154b616c776bcf606cf4321fff802dfff7da79d2"
+    },
+    {
+      "path": "tools/log_checker_entry.py",
+      "bytes": 167,
+      "sha256": "b487d16a8b88ed4f6a8840e796a6d50ca9395eb98736640860925654c8fa788d"
+    },
+    {
+      "path": "tools/modem_profile_exchange/README.md",
+      "bytes": 1031,
+      "sha256": "3910ba22ed4bca9a4c57ab16b976b295c463191aef93907fb0dab823d3ba3279"
+    },
+    {
+      "path": "tools/modem_profile_exchange/acquisition.py",
+      "bytes": 4947,
+      "sha256": "1105b60a60f2f6f409372a2544c369af5040a8963a1f3115ce4fe95486673acc"
+    },
+    {
+      "path": "tools/modem_profile_exchange/algorithm.py",
+      "bytes": 7872,
+      "sha256": "2a2d5abadd7c8cf3ba2afaec2920feee6eb271e2dac15111a143892e73460e0a"
+    },
+    {
+      "path": "tools/modem_profile_exchange/algorithm_export.py",
+      "bytes": 20276,
+      "sha256": "3162f969e28961a9dbb835433a8f379e204fa015aa4943fd533b435f979a9555"
+    },
+    {
+      "path": "tools/modem_profile_exchange/conformance.py",
+      "bytes": 8844,
+      "sha256": "2bee6fa91d59cc6527c038c8a891134f97d32b1f054bc86c7e99c986bc2dec9c"
+    },
+    {
+      "path": "tools/modem_profile_exchange/conformance_inputs.py",
+      "bytes": 22389,
+      "sha256": "2656f640afa22ae04b5c97cd9dd2d5d85e19744730ed0b8c0669b9f9758cc626"
+    },
+    {
+      "path": "tools/modem_profile_exchange/export_portable.py",
+      "bytes": 11065,
+      "sha256": "5ed4a475f0eba46adb13f75738c2f6b25cae37b58836420188f289f2854f69ab"
+    },
+    {
+      "path": "tools/modem_profile_exchange/export_profiles.py",
+      "bytes": 28447,
+      "sha256": "0c960e8676f776b39b0127f709b4645a0ade2ef21ec83cab218f6e33b9abf38f"
+    },
+    {
+      "path": "tools/modem_profile_exchange/expressions.py",
+      "bytes": 169,
+      "sha256": "e3f547cbe3a3a8d60b825e72e6d8fe1e73ca83668ee8b42b043e3cb9777af262"
+    },
+    {
+      "path": "tools/modem_profile_exchange/field_catalogue.py",
+      "bytes": 395,
+      "sha256": "3ed3f102497ef7fa6aa52cc4ad8375561632955b6f866d656fa7eaeaf8a94b49"
+    },
+    {
+      "path": "tools/modem_profile_exchange/field_ids.v1.json",
+      "bytes": 4931,
+      "sha256": "a113413aace644fd647694dede63718493114792510b42162574e3e0fe20e706"
+    },
+    {
+      "path": "tools/modem_profile_exchange/fields.tsv",
+      "bytes": 16214,
+      "sha256": "0a45b84cb1bc291b8fee95fe8aa1abab10a0bffc38c73e7c69f34732d530f415"
+    },
+    {
+      "path": "tools/modem_profile_exchange/huawei_rules.py",
+      "bytes": 9845,
+      "sha256": "a42924d1cc135c19aff892bf4b1e94c28d05081daa04cfbba8b51732c95cb505"
+    },
+    {
+      "path": "tools/modem_profile_exchange/mikrotik_rules.py",
+      "bytes": 11247,
+      "sha256": "97b0d63d23e858543c4c18f0890beecb594608f8d9de36ec646e0119531144c7"
+    },
+    {
+      "path": "tools/modem_profile_exchange/portable.schema.json",
+      "bytes": 4226,
+      "sha256": "bd802bca91a64ba2a0d7e2f69f4534d88352810aa7b0e570bc30f166d9bb6de0"
+    },
+    {
+      "path": "tools/modem_profile_exchange/portable_profiles.py",
+      "bytes": 9664,
+      "sha256": "3d4a3d3d33379fe08fb08b66861139c16e07f345c80a4b2609c1b9a2376dd79d"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_b535_232_h191sp64c983.json",
+      "bytes": 211696,
+      "sha256": "509d5f3f646502037b6261e17525acb5886d8c894ff44da6118be8f5cad71538"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_b535_232_model.json",
+      "bytes": 177159,
+      "sha256": "633b37e126e3586fa0a94b5c62a9f6df0658561374bbd865f82c0a52215426be"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_b535_333_h470sp6c9831.json",
+      "bytes": 183669,
+      "sha256": "b29f7bafa3ce986ccae19253d86ea39569f81205daa907cbdaa43fc57cea90c5"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_b535_hilink_baseline.json",
+      "bytes": 148326,
+      "sha256": "35d10915ededb4483de542c3e481be2c8c3494f861fc90b89a8ca4552cac842c"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_b818_263_h220sp1c11.json",
+      "bytes": 186820,
+      "sha256": "288fdbd3782c78741468797ec6115de6b427b8db58cb302cceca3b2f2df576a2"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h112_cpe_pro.json",
+      "bytes": 154149,
+      "sha256": "706ae0dd135b6cb20ff2f74f8676c2959c8600084aa721d8d369c05107283aef"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h112_three_uk_c21.json",
+      "bytes": 151099,
+      "sha256": "fe9ef056cfbdecdd79c9d40ae06b6c303717b3dd4c8b6576ff13d5fc6eb36f09"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h122_373_cpe_pro2.json",
+      "bytes": 154223,
+      "sha256": "e6e7b85eacb0fdbbf0a094b725bc3960fa10ec0605024e7184e600e35c89b70f"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h122_373_global_c00.json",
+      "bytes": 154240,
+      "sha256": "d7bf2d06a0444b6584ca014a94dd33b23700257757488df2cabcdb6a69de28be"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h122_373_three_uk.json",
+      "bytes": 132434,
+      "sha256": "cc05799b085573beb904a5e4df4f712235b2c668de53b895716def1744a0deaa"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h122_373_three_uk_c1217.json",
+      "bytes": 132457,
+      "sha256": "c70bc2f4e36c971c0dfcea5309b25c3257b1e9ffa849be0222439982be6640db"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h153_381_cpe5s.json",
+      "bytes": 154219,
+      "sha256": "1494ea3c9c04bb4ef8339ac94e6da5103ec9b13ddd699e31916311338c393329"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h155_381_cpe5.json",
+      "bytes": 154241,
+      "sha256": "d9ff5e88078ca84164bc63037effa1023f560d319b516877081ab8d0f95ed4e0"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_h173_383_h1230sp1c983.json",
+      "bytes": 142614,
+      "sha256": "76722aa527c419529d323c14569532c46f96c37a029c96df7ce065cd4da46411"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_hilink_b818_baseline.json",
+      "bytes": 160198,
+      "sha256": "95dfb23c29f12a6b12bf55a0a1f71599158402ddc970266a23646c6fbc1ea11f"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/huawei_hilink_generic_baseline.json",
+      "bytes": 160229,
+      "sha256": "620bfe18726f3b514b7d43544b06f125d91e66a52e617afa3a80f11a09c8d9dd"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_chateau_lte12_eg120k_routeros_v7.json",
+      "bytes": 321932,
+      "sha256": "f533e900dbd13c2eca51f398fe2b9d174350cd42d33e2a0881cfd3b70500caca"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_at_baseline.json",
+      "bytes": 283333,
+      "sha256": "e716e746f9ee0785d17aa13f5ed3fe0ddfc4f4f5dee12f193d1b95f7aca8e38e"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_r17_v7211_regression.json",
+      "bytes": 328227,
+      "sha256": "1b99f13482de37173e495ec102afd3f29c07376811a638b2b0e2adcef683d7b1"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_v721_rg520f.json",
+      "bytes": 328199,
+      "sha256": "6ffd9921d3c47aa5166ff98c8d65bd875b5a95931ee5c0bfda6f052f20bd43ae"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_v721_rg650e.json",
+      "bytes": 328209,
+      "sha256": "765ec9b6967c16ee04cbddc52dc258d2adbfde3f638f2b68195c32ca815b56e3"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_v7_eg18.json",
+      "bytes": 325049,
+      "sha256": "0811b5dd6ae4b29618b5135c02d19510c486d944d4e43875bdcff10b02fa0d09"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/mikrotik_routeros_v7_rg502q.json",
+      "bytes": 328206,
+      "sha256": "af5c1c21fceaeda825ff5fb50750cc1e640ccd84a91fe8cb666a9ea9bc32cd79"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/tplink_nx520_srba1_20250915_dev2.json",
+      "bytes": 169795,
+      "sha256": "1f14bd8c890c1d9fcdc102efb1968217df2e77801d0d653caac8b7e7c0cc473b"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/tplink_nx520_srba1_250902_dev2.json",
+      "bytes": 222437,
+      "sha256": "348cafbaff3e56082bdd10c62ead420fd075b264eebbb22df1d085bb3238aa22"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/tplink_nx520v_eu1_260408.json",
+      "bytes": 169802,
+      "sha256": "7c353cb60d221d0976866f25b0a198492e64277a17fba3107ccd9a3a2486bb20"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/xiaomi_cb0401v2_3_0_88.json",
+      "bytes": 159893,
+      "sha256": "6f033ff71061e7732435fc7956ec23b013c90ad87bbe2e6659f4524ef71f0781"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_g5b_livewireuk_b03.json",
+      "bytes": 172616,
+      "sha256": "9b3a03ef4f992e20bdebf81a51af4fd63fc104a2d8702c5c7c4fb78a222baecd"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_g5tc_zwrt_model.json",
+      "bytes": 271909,
+      "sha256": "135c52771584cf5b0f753be479e10c471158d5de4f725ed3b55b14d3cc3d5e55"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_at_a1_b14.json",
+      "bytes": 171981,
+      "sha256": "e029c4f4c484a7f98de8f9a38a66d5c42cfb9d913363d833c3117360cbf03d29"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_bg_provisional.json",
+      "bytes": 174871,
+      "sha256": "06226251bbefaa2ac3ede86e1796822b3a19224c3321a637cafe16cf644c7f7e"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_goform.json",
+      "bytes": 174847,
+      "sha256": "92f5f96eeabfe9c8205ccc7875ca11737b606ee9aebc2615b36adf585164ff7b"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_hk_b18.json",
+      "bytes": 174472,
+      "sha256": "ea52dd2cd093218eeba8b9a4f1e0f5dd1b34e12f0f055a40c7a8afc348b09f41"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_three_uk_b04.json",
+      "bytes": 174493,
+      "sha256": "0bdcb9fef3af9fa85892dc41e22b4718b655cd3a96e96e8b37c0432fb4da3894"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_three_uk_b12.json",
+      "bytes": 174496,
+      "sha256": "f067f13cd2640df2aa9afa8b77f09aaf97e5cef2e1366b285d3ed57ac02e8c50"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_three_uk_b15.json",
+      "bytes": 174492,
+      "sha256": "906013c8f149995d70a89ab9c5ca7936afe6fe750535eabd6e6690966d7f0164"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_three_uk_b16.json",
+      "bytes": 174493,
+      "sha256": "e31a02d8f89112e4d539812a122e521a5ea82d9bb56674f430d683e96ebab164"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc801a_tmobile_de.json",
+      "bytes": 174483,
+      "sha256": "8c972488a40ac6d337b443c8dc0cdc1d052908958fefea4f8ba8071f413f06b8"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_at_unlocked.json",
+      "bytes": 174491,
+      "sha256": "ebf5a14a151f3f5a6025c9627c05a7d68db14d23778330ee214921f513b29e62"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_at_v101_protected.json",
+      "bytes": 173476,
+      "sha256": "7c5883be139dabf38906ce35d5fb659b6a161b2c573e707b0f7ad734d68f9f7d"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_goform.json",
+      "bytes": 174844,
+      "sha256": "1ac050140e17bd54c6090deabe497c7935d3a2362b2898ea141b47a4b951b95a"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_live_uk.json",
+      "bytes": 171700,
+      "sha256": "29fef34f7c154ea87e07f74453713bacdf5bf9874ec52a23ac79b0e4a95f68b0"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_three_uk.json",
+      "bytes": 169924,
+      "sha256": "47e770cff87f762d96664d067e471796935b141f6614b26133f4ebad5ae2bdfc"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_three_uk_b02.json",
+      "bytes": 169938,
+      "sha256": "eaf950605dbfab2446f8f2017c4b6e765b50166309e7f383a29a5e1fd760a7e1"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mc888_three_uk_b09.json",
+      "bytes": 171716,
+      "sha256": "3e91740b02f9f6a00502241754449bda2f50479b6aeca7df81dc0aefae58ba89"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_mf296r_a1srb_b04.json",
+      "bytes": 146137,
+      "sha256": "92710588641dc53288234a0cc6752688c78b7cd875c057b93448380f9394628a"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_webui_goform_baseline.json",
+      "bytes": 166101,
+      "sha256": "3561491d7efe6f8e92f756bf391c828932104b614c28d2df77588151c1acae7b"
+    },
+    {
+      "path": "tools/modem_profile_exchange/profiles/zte_zwrt_ubus_baseline.json",
+      "bytes": 266372,
+      "sha256": "7f7d42d09db7facf1a98c47c7d6e586c3b3fe0c0287018146e34044d0a30e490"
+    },
+    {
+      "path": "tools/modem_profile_exchange/replay.py",
+      "bytes": 150,
+      "sha256": "6d10af58d06028de6466f53187546db87043838c53a774ae35af9b7a718ac06c"
+    },
+    {
+      "path": "tools/modem_profile_exchange/rule_authoring.py",
+      "bytes": 33409,
+      "sha256": "b18bfa5d5824c7e8ad4950896d606e224ebf78fec8f032243b72759905657aba"
+    },
+    {
+      "path": "tools/modem_profile_exchange/schema.json",
+      "bytes": 6140,
+      "sha256": "87f00cc99e6391a02914fdfdcf9330c7a64b15ee34456d5fbb5d4bf4568fa83f"
+    },
+    {
+      "path": "tools/modem_profile_exchange/shape.py",
+      "bytes": 186,
+      "sha256": "271dc84df7ee4f06d7bc7b575fbb3b3dda6d88512f8fe18a2f32733cd0aad18d"
+    },
+    {
+      "path": "tools/modem_profile_exchange/vocabulary.py",
+      "bytes": 292,
+      "sha256": "349122b967ba95ab5b2767ec7ce741d531c02d0e77e712afb00977b18595961e"
+    },
+    {
+      "path": "tools/test_guc_license_gen.py",
+      "bytes": 43635,
+      "sha256": "b36c42afc2d0ce4f0eacb8b7b665508ba9937c14fc4b8301938aab72e25c36f7"
+    },
+    {
+      "path": "tools/test_guc_license_gen_tiers.py",
+      "bytes": 1140,
+      "sha256": "3d22db089e6e0d5f7a81dd48584b403892cadda2734360c256826a5d19a73f05"
+    },
+    {
+      "path": "tools/test_license_generator_2.py",
+      "bytes": 4349,
+      "sha256": "4a80c0c8e042914975d98d67088b15ab243c1ec876084519a9d870fc44f8bcd9"
+    }
+  ]
+}

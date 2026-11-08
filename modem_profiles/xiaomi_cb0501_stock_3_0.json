@@ -1,0 +1,3281 @@
+{
+  "schema": "54GUC.ModemProfile.v1",
+  "revision": "29.0.1",
+  "selection_priority": 5,
+  "connection": {
+    "scheme": "auto",
+    "port": null
+  },
+  "profile": {
+    "profile_id": "xiaomi_cb0501_stock_3_0",
+    "backend": "xiaomi_cb0401v2",
+    "driver": "xiaomi_cb0401v2",
+    "vendor": "Xiaomi",
+    "family": "xiaomi_miwifi_like",
+    "model_contains": [
+      "CB0501"
+    ],
+    "firmware_contains": [
+      "3.0."
+    ],
+    "display_name": "CB0501 4G CPE AX3000 — MGDB",
+    "capabilities": {
+      "supports_band_selection": true,
+      "supports_band_lock": true,
+      "supports_cell_lock": true,
+      "supports_traffic_presence": true,
+      "supports_traffic_volume": false,
+      "supports_ue_capability": false,
+      "supports_restart": false,
+      "supports_neighbors": false,
+      "supports_sms": false,
+      "supports_ca_details": true,
+      "supports_band_priority": false,
+      "supports_plmn": false,
+      "supports_pband": false,
+      "supports_wifi_control": false,
+      "supports_network_settings": false,
+      "supports_mobile_data": false,
+      "supports_nr_band_lock": false,
+      "supports_radio_mode": false
+    },
+    "supported_fields": [
+      "cell_id",
+      "firmware",
+      "hardware_version",
+      "imei",
+      "imsi",
+      "model",
+      "network_settings",
+      "network_type",
+      "pci",
+      "provider_name",
+      "provider_plmn",
+      "router_system_uptime_s",
+      "rsrp_dbm",
+      "rsrq_db",
+      "rssi_dbm",
+      "rx_bytes_per_sec",
+      "serial",
+      "serving_band",
+      "sinr_db",
+      "software_version",
+      "traffic_rate_source",
+      "traffic_valid",
+      "tx_bytes_per_sec",
+      "wifi_24ghz_enabled",
+      "wifi_5ghz_enabled",
+      "wifi_enabled",
+      "plmn",
+      "radio_connected",
+      "radio_state_text",
+      "ca_active",
+      "earfcn_dl",
+      "earfcn_ul",
+      "selected_band_set",
+      "selected_band_set_signature",
+      "configured_band_pool",
+      "configured_band_pool_signature",
+      "ca_signature",
+      "ca_band_signature",
+      "dl_freq_mhz",
+      "ul_freq_mhz",
+      "enb_id",
+      "carrier_rows",
+      "carrier_count",
+      "ca_component_band_set",
+      "ca_component_count",
+      "dl_bandwidth",
+      "dl_bandwidth_mhz",
+      "tac"
+    ],
+    "unsupported_fields": [
+      "nr5g_active",
+      "nr5g_band_set",
+      "nr_band",
+      "nr_mode",
+      "nsa_active",
+      "sa_active"
+    ],
+    "synthetic_fields": {},
+    "lte_band_capability_status": "declared",
+    "nr_band_capability_status": "unsupported",
+    "device_radio_class": "4g_only",
+    "band_capability_reference": "https://www.globalcertificationforum.org/pub_product/10879.html",
+    "notes": "CB0501 stock MGDB profile. Exact owner replies confirm login, identity, RF/cell channels, traffic, SIM/APN and Wi-Fi inputs. Indexed RF units follow the independently saved manufacturer WebUI. GCF10879 supplies declared model bands, not a fresh live inventory. Explicit operator bands are decided by the router; authentication, current identity, command authority, acknowledgement and matching stored readback remain. Country-qualified serving-operator aliases are explicit profile settings, never a SIM-home or regional default. The optional manufacturer carrier-list route and MGDB band/cell writes remain best-effort related-firmware mappings pending an exact physical CB0501 trial. Missing values stay missing.",
+    "provenance": "inferred",
+    "field_trust": {
+      "firmware": "expected",
+      "hardware_version": "expected",
+      "imei": "expected",
+      "imsi": "expected",
+      "model": "expected",
+      "provider_name": "expected",
+      "provider_plmn": "expected",
+      "serial": "expected",
+      "software_version": "expected",
+      "nr5g_band_set": "unsupported",
+      "network_type": "expected",
+      "nr5g_active": "unsupported",
+      "nr_band": "unsupported",
+      "nr_mode": "unsupported",
+      "nsa_active": "unsupported",
+      "sa_active": "unsupported",
+      "serving_band": "expected",
+      "cell_id": "expected",
+      "pci": "expected",
+      "rsrp_dbm": "expected",
+      "rsrq_db": "expected",
+      "rssi_dbm": "expected",
+      "sinr_db": "expected",
+      "network_settings": "expected",
+      "router_system_uptime_s": "expected",
+      "wifi_24ghz_enabled": "expected",
+      "wifi_5ghz_enabled": "expected",
+      "wifi_enabled": "expected",
+      "rx_bytes_per_sec": "expected",
+      "traffic_rate_source": "expected",
+      "traffic_valid": "expected",
+      "tx_bytes_per_sec": "expected",
+      "plmn": "expected",
+      "radio_connected": "confirmed",
+      "radio_state_text": "confirmed",
+      "ca_active": "confirmed",
+      "earfcn_dl": "expected",
+      "earfcn_ul": "expected",
+      "selected_band_set": "expected",
+      "selected_band_set_signature": "expected",
+      "configured_band_pool": "expected",
+      "configured_band_pool_signature": "expected",
+      "ca_signature": "expected",
+      "ca_band_signature": "expected",
+      "dl_freq_mhz": "expected",
+      "ul_freq_mhz": "expected",
+      "enb_id": "expected",
+      "carrier_rows": "expected",
+      "carrier_count": "expected",
+      "ca_component_band_set": "expected",
+      "ca_component_count": "expected",
+      "dl_bandwidth": "expected",
+      "dl_bandwidth_mhz": "expected",
+      "tac": "expected"
+    },
+    "action_trust": {
+      "antenna_mode": "unsupported",
+      "band_selection": "untested",
+      "band_lock": "untested",
+      "cell_lock": "untested",
+      "wifi_toggle": "unsupported",
+      "network_settings": "unsupported",
+      "mobile_data": "unsupported",
+      "restart": "unsupported",
+      "nr_band_lock": "unsupported",
+      "pband": "unsupported"
+    },
+    "static_config": {},
+    "ue_capability": {},
+    "scheduler_signal_mode": "none",
+    "provider_name_contains": [],
+    "provider_plmn_contains": [],
+    "os_name": "",
+    "os_version_contains": [],
+    "vendor_aliases": [],
+    "target_guard_model": "CB0501",
+    "supported_lte_bands": [
+      1,
+      3,
+      7,
+      8,
+      20,
+      32,
+      38
+    ],
+    "supported_nr_bands": [],
+    "provider_band_pool": [],
+    "network_settings": "xiaomi_stock_cb0501_readonly",
+    "network_settings_writable": false,
+    "apn_profile_creation": false,
+    "network_settings_firmware": [],
+    "apn_write_requires_explicit_password": false,
+    "firmware_exact": "",
+    "hardware_exact": "",
+    "firmware_pattern": "3\\.0\\.[0-9]{1,3}(?:[A-Za-z0-9_.-]{0,64})",
+    "authentication_contract": "CB0501 operator client: goform login HMAC-MD5; post-login get_login_info; no preliminary status requirement",
+    "login_wire_username": "",
+    "nr_cell_id_in_nsa": false,
+    "traffic_rate_mode": "reported",
+    "read_diagnostic_extra_oids": []
+  },
+  "parameters": {
+    "background_read_scheduling": "fast_slot_v1",
+    "native_period_fields": false,
+    "native_protocol": "xiaomi_mgdb",
+    "device_identity_placeholders": [
+      "",
+      "-",
+      "--",
+      "---",
+      "unknown",
+      "none",
+      "null",
+      "n/a",
+      "na",
+      "miss",
+      "missing",
+      "true",
+      "false",
+      "yes",
+      "no",
+      "on",
+      "off"
+    ],
+    "registered_operator_plmn_aliases": {
+      "a1 srb": "22005",
+      "a1 serbia": "22005",
+      "a1 srbija": "22005",
+      "mts srb": "22003",
+      "mts serbia": "22003",
+      "mts srbija": "22003",
+      "yettel srb": "22001",
+      "yettel serbia": "22001",
+      "yettel srbija": "22001"
+    }
+  },
+  "fields": {
+    "capability.dl_256qam": {
+      "aliases": [
+        "dl_256qam"
+      ],
+      "id": 1,
+      "meaning": "Whether the qualified device supports LTE downlink 256-QAM; not current modulation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "capability.traffic_volume": {
+      "aliases": [
+        "traffic_volume"
+      ],
+      "id": 2,
+      "meaning": "Whether volume counters are supported; not a traffic measurement.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "capability.ue_category": {
+      "aliases": [
+        "ue_category"
+      ],
+      "id": 3,
+      "meaning": "Qualified LTE UE category; not a measured link speed.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "capability.ul_64qam": {
+      "aliases": [
+        "ul_64qam"
+      ],
+      "id": 4,
+      "meaning": "Whether LTE uplink 64-QAM is supported; not current modulation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "health.radio_connected": {
+      "aliases": [
+        "radio_connected"
+      ],
+      "id": 5,
+      "meaning": "Radio registration/connection evidence; does not establish working Internet access.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "confirmed",
+      "read": "enum(get(value=split(lower(strip(text(reply('wan','rt_wwan_conn_info')))),separator=','),key=0,default=''),values={'connected':true,'disconnected':false},default=null)",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null,
+      "requires": [
+        "wan"
+      ],
+      "description": "Exact CB0501 owner reply has connected prefix. Describes mobile WAN session, not end-to-end Internet."
+    },
+    "health.radio_state_text": {
+      "aliases": [
+        "radio_state_text"
+      ],
+      "id": 6,
+      "meaning": "Native radio connection state description; not Core Internet status.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "confirmed",
+      "read": "enum(get(value=split(lower(strip(text(reply('wan','rt_wwan_conn_info')))),separator=','),key=0,default=''),values={'connected':'connected','disconnected':'disconnected'},default=null)",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null,
+      "requires": [
+        "wan"
+      ],
+      "description": "Recognized native state only; unknown remains missing."
+    },
+    "identity.firmware": {
+      "aliases": [
+        "firmware"
+      ],
+      "id": 7,
+      "meaning": "Router firmware version used for exact profile qualification.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "algorithm(reply('device'),['device_software_version'],profile('device_identity_placeholders'),name='device_text',kwargs={})",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.hardware_version": {
+      "aliases": [
+        "hardware_version"
+      ],
+      "id": 8,
+      "meaning": "Router hardware revision; not its serial number.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "algorithm(reply('device'),['device_hardware_version'],profile('device_identity_placeholders'),name='device_text',kwargs={})",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.imei": {
+      "aliases": [
+        "imei"
+      ],
+      "id": 9,
+      "meaning": "Modem equipment identifier; preserve digits as text. Sensitive actual values must not be exported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "algorithm(reply('device'),['device_imei'],profile('device_identity_placeholders'),name='device_text',kwargs={})",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.imsi": {
+      "aliases": [
+        "imsi"
+      ],
+      "id": 10,
+      "meaning": "SIM subscription identifier; never use as a physical router identity. Sensitive actual values must not be exported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "choose(condition=all_of(is_type(reply('sim','mnet_sim_imsi'),type='str'),match(strip(reply('sim','mnet_sim_imsi')),pattern='[0-9]{14,16}')),then=strip(reply('sim','mnet_sim_imsi')),otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "sim"
+      ],
+      "description": "SIM identity read; existing authenticated-session SIM cache remains in charge."
+    },
+    "identity.lan_mac": {
+      "aliases": [
+        "lan_mac"
+      ],
+      "id": 11,
+      "meaning": "LAN interface MAC address. Sensitive actual values must not be exported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "identity.model": {
+      "aliases": [
+        "model"
+      ],
+      "id": 12,
+      "meaning": "Qualified native model designation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "upper(strip(reply('device','device_product_name')))",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.provider_name": {
+      "aliases": [
+        "provider_name"
+      ],
+      "id": 13,
+      "meaning": "Reported serving provider name; does not prove a permitted band pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "let(bindings=[['v',reply('signal','mnet_operator_name')]],result=choose(condition=all_of(is_type(variable(name='v'),type='str'),gt(length(strip(variable(name='v'))),0),le(length(variable(name='v')),128)),then=strip(variable(name='v')),otherwise=null))",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Preserve native operator name; no guessing PLMN from name."
+    },
+    "identity.provider_plmn": {
+      "aliases": [
+        "plmn",
+        "provider_plmn"
+      ],
+      "id": 14,
+      "meaning": "Serving PLMN as a five or six digit string; preserve leading zeroes.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "choose(condition=all_of(is_type(reply('network','mnet_reg_plmn'),type='str'),match(strip(reply('network','mnet_reg_plmn')),pattern='[0-9]{5,6}')),then=strip(reply('network','mnet_reg_plmn')),otherwise=choose(condition=any_of(eq(reply('network','mnet_reg_plmn'),null),all_of(is_type(reply('network','mnet_reg_plmn'),type='str'),eq(strip(reply('network','mnet_reg_plmn')),''))),then=get(value=profile('registered_operator_plmn_aliases'),key=use('mgdb_operator_token'),default=null),otherwise=null))",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "network"
+      ],
+      "description": "Prefer the reported registered PLMN. If omitted, an exact country-qualified serving-operator alias may use the declared profile table. A bare A1/MTS/Yettel name, the SIM home network, or malformed code never supplies the serving PLMN."
+    },
+    "identity.router_model": {
+      "aliases": [
+        "router_model"
+      ],
+      "id": 15,
+      "meaning": "Router product model designation; distinct from modem chipset model.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "identity.serial": {
+      "aliases": [
+        "serial"
+      ],
+      "id": 16,
+      "meaning": "Permanent physical router serial; never substitute a SIM identifier. Sensitive actual values must not be exported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "algorithm(reply('device'),['device_sn'],profile('device_identity_placeholders'),name='device_text',kwargs={})",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.software": {
+      "aliases": [
+        "software"
+      ],
+      "id": 17,
+      "meaning": "Native software identifier where distinct from firmware.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "identity.software_version": {
+      "aliases": [
+        "software_version"
+      ],
+      "id": 18,
+      "meaning": "Native software version text; do not interpret as a decimal number.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "algorithm(reply('device'),['device_software_version'],profile('device_identity_placeholders'),name='device_text',kwargs={})",
+      "availability": "defined",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": null
+    },
+    "identity.webui": {
+      "aliases": [
+        "webui"
+      ],
+      "id": 19,
+      "meaning": "Native WebUI version text.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.bridge_mode": {
+      "aliases": [
+        "bridge_mode"
+      ],
+      "id": 20,
+      "meaning": "Profile support for bridge-mode control; not current bridge state.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.config_version": {
+      "aliases": [
+        "config_version"
+      ],
+      "id": 21,
+      "meaning": "Native configuration version metadata.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.nr5g_band_set": {
+      "aliases": [
+        "nr5g_band_set"
+      ],
+      "id": 22,
+      "meaning": "Native NR band-set diagnostic outside the canonical Matrix; GoForm derives it from reported NR cell rows. Not LTE CA Pool or proof of a configured NR restriction.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "NR band number",
+      "value_type": "array_integer",
+      "trust": "unsupported",
+      "read": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "CB0501 is LTE-only.",
+      "availability": "declared_without_native_producer"
+    },
+    "profile.nr5g_rx0_rsrp_dbm": {
+      "aliases": [
+        "nr5g_rx0_rsrp_dbm"
+      ],
+      "id": 23,
+      "meaning": "NR receive-chain zero reference-signal received power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.nr5g_rx1_rsrp_dbm": {
+      "aliases": [
+        "nr5g_rx1_rsrp_dbm"
+      ],
+      "id": 24,
+      "meaning": "NR receive-chain one reference-signal received power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.nr_band_lock": {
+      "aliases": [
+        "nr_band_lock"
+      ],
+      "id": 25,
+      "meaning": "Profile support for NR band restriction; not proof of a successful write.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.temperature_ambient_c": {
+      "aliases": [
+        "temperature_ambient_c"
+      ],
+      "id": 26,
+      "meaning": "Ambient sensor temperature, distinct from CPU and radio sensors.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.temperature_modem_4g_c": {
+      "aliases": [
+        "temperature_modem_4g_c"
+      ],
+      "id": 27,
+      "meaning": "Dedicated LTE modem sensor temperature; do not substitute CPU temperature.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.temperature_pa1_c": {
+      "aliases": [
+        "temperature_pa1_c"
+      ],
+      "id": 28,
+      "meaning": "Power-amplifier sensor one temperature.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.temperature_wifi_c": {
+      "aliases": [
+        "temperature_wifi_c"
+      ],
+      "id": 29,
+      "meaning": "Wi-Fi radio sensor temperature.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.traffic_presence": {
+      "aliases": [
+        "traffic_presence"
+      ],
+      "id": 30,
+      "meaning": "Profile ability to detect packet traffic; not current data rate.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.tx_pprach": {
+      "aliases": [
+        "tx_pprach"
+      ],
+      "id": 31,
+      "meaning": "LTE PRACH transmit-power component when separately reported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.tx_ppusch": {
+      "aliases": [
+        "tx_ppusch"
+      ],
+      "id": 32,
+      "meaning": "LTE PUSCH transmit-power component when separately reported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "profile.tx_psrs": {
+      "aliases": [
+        "tx_psrs"
+      ],
+      "id": 33,
+      "meaning": "LTE SRS transmit-power component when separately reported.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.active_band_set": {
+      "aliases": [
+        "active_band_set"
+      ],
+      "id": 34,
+      "meaning": "Unique LTE bands observed active; does not establish configured CA Pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "array_integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.active_band_set_signature": {
+      "aliases": [
+        "active_band_set_signature"
+      ],
+      "id": 35,
+      "meaning": "Stable signature of observed active LTE band set.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.band_set": {
+      "aliases": [
+        "band_set"
+      ],
+      "id": 36,
+      "meaning": "Legacy published LTE band-set observation; its exact native source must remain profile-qualified.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "array_integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.band_set_signature": {
+      "aliases": [
+        "band_set_signature"
+      ],
+      "id": 37,
+      "meaning": "Stable signature of the corresponding legacy band-set observation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.ca_active": {
+      "aliases": [
+        "ca_active"
+      ],
+      "id": 38,
+      "meaning": "Independent observed carrier-aggregation activity; configured pool size cannot establish it.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "confirmed",
+      "read": "algorithm(reply('wan','mnet_ca_act_status'),name='mgdb_boolean',kwargs={})",
+      "availability": "defined",
+      "description": "Exact CB0501 owner capture returns yes; this does not invent a carrier list or pool.",
+      "gap_reason": null,
+      "requires": [
+        "wan"
+      ]
+    },
+    "radio.ca_band_signature": {
+      "aliases": [
+        "ca_band_signature"
+      ],
+      "id": 39,
+      "meaning": "Signature of configured provider/device-limited LTE CA Pool, not active carriers.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "attempt(default=null,value=use('band_signature',bands=use('mgdb_pool')))",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.ca_component_band_set": {
+      "aliases": [
+        "ca_component_band_set"
+      ],
+      "id": 40,
+      "meaning": "Unique bands represented by observed component carriers.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "array_integer",
+      "trust": "expected",
+      "read": "choose(condition=ne(use('mgdb_carriers'),null),then=sorted_unique(map(items=use('mgdb_carriers'),expression=get(value=variable(name='item'),key='band',default=null))),otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "carriers"
+      ],
+      "description": "Reported component bands, preserving the distinction from hardware support and configured CA Pool."
+    },
+    "radio.ca_component_band_signature": {
+      "aliases": [
+        "ca_component_band_signature"
+      ],
+      "id": 41,
+      "meaning": "Signature of unique bands represented by observed component carriers.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.ca_component_count": {
+      "aliases": [
+        "ca_component_count"
+      ],
+      "id": 42,
+      "meaning": "Count of actual observed component carriers, including repeated bands.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "carrier",
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "choose(condition=all_of(ne(use('mgdb_carriers'),null),eq(length(use('mgdb_carriers')),length(reply('carriers','mnet_ca_list')))),then=length(use('mgdb_carriers')),otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "carriers"
+      ],
+      "description": "Complete reported component count, not inferred from a CA-active boolean."
+    },
+    "radio.ca_composition_signature": {
+      "aliases": [
+        "ca_composition_signature"
+      ],
+      "id": 43,
+      "meaning": "Signature of actual component carrier identities; same-band carriers remain distinct.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.ca_signature": {
+      "aliases": [
+        "ca_signature"
+      ],
+      "id": 44,
+      "meaning": "Signature of configured provider/device-limited LTE CA Pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "attempt(default=null,value=use('band_signature',bands=use('mgdb_pool')))",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.ca_source": {
+      "aliases": [
+        "ca_source"
+      ],
+      "id": 45,
+      "meaning": "Provenance of the observed CA state or composition; not a measurement.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.ca_state_text": {
+      "aliases": [
+        "ca_state_text"
+      ],
+      "id": 46,
+      "meaning": "Native CA state description, separate from configured band pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.carrier_count": {
+      "aliases": [
+        "carrier_count"
+      ],
+      "id": 47,
+      "meaning": "Count of unique configured CA Pool bands; NOT count of active component carriers.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "band",
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "choose(condition=ne(use('mgdb_pool'),null),then=length(use('mgdb_pool')),otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "network"
+      ],
+      "description": "Number of unique configured CA Pool bands. This is not the number of active component carriers; reported carrier-list count uses ca_component_count."
+    },
+    "radio.carrier_rows": {
+      "aliases": [
+        "carrier_rows"
+      ],
+      "id": 48,
+      "meaning": "Observed PCell/SCell records with separate band/cell/PCI/channel identities; no missing identity may be invented.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "structure": {
+        "array": "native component carrier objects",
+        "identity": "keep separate same-band component rows; do not invent absent members",
+        "members": {
+          "band": "integer LTE band",
+          "dl_mhz": "finite MHz or null",
+          "earfcn": "integer DL EARFCN when reported",
+          "pcell": "boolean",
+          "pci": "integer PCI when reported"
+        }
+      },
+      "unit": null,
+      "value_type": "array_object",
+      "trust": "expected",
+      "read": "use('mgdb_carriers')",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "carriers"
+      ],
+      "description": "Reported LTE band/width list from the optional manufacturer route. Missing channels, PCI or radio states remain missing; not the selected CA Pool."
+    },
+    "radio.configured_band_pool": {
+      "aliases": [
+        "configured_band_pool"
+      ],
+      "id": 49,
+      "meaning": "Provider-permitted bands intersect device capability and qualified native selection; never replace with all hardware bands or active carriers.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "array_integer",
+      "trust": "expected",
+      "read": "use('mgdb_pool')",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.configured_band_pool_age_s": {
+      "aliases": [
+        "configured_band_pool_age_s"
+      ],
+      "id": 50,
+      "meaning": "Elapsed age of the configured-pool observation; not router uptime.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.configured_band_pool_last_sample_ts": {
+      "aliases": [
+        "configured_band_pool_last_sample_ts"
+      ],
+      "id": 51,
+      "meaning": "Timestamp of the actual pool observation; retained values retain their original timestamp.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "unix_s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.configured_band_pool_signature": {
+      "aliases": [
+        "configured_band_pool_signature"
+      ],
+      "id": 52,
+      "meaning": "Stable signature of the configured provider/device-limited LTE pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "attempt(default=null,value=use('band_signature',bands=use('mgdb_pool')))",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.configured_band_pool_source": {
+      "aliases": [
+        "configured_band_pool_source"
+      ],
+      "id": 53,
+      "meaning": "Evidence source for configured LTE pool, including an explicitly approved profile assumption where applicable.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.configured_band_pool_status": {
+      "aliases": [
+        "configured_band_pool_status"
+      ],
+      "id": 54,
+      "meaning": "Availability/provenance state of configured LTE pool; unknown must not imply an unrestricted pool.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.configured_ca_pool_display": {
+      "aliases": [
+        "configured_ca_pool_display"
+      ],
+      "id": 55,
+      "meaning": "Display representation of the canonical configured LTE pool; not another pool owner.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.lte_num_rbs": {
+      "aliases": [
+        "lte_num_rbs"
+      ],
+      "id": 56,
+      "meaning": "Reported LTE scheduled resource-block quantity with the native time scope; not bandwidth or traffic rate.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "RB",
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.network_type": {
+      "aliases": [
+        "network_type"
+      ],
+      "id": 57,
+      "meaning": "Native radio access technology, preserving LTE/NSA/SA/no-service distinction; not Internet reachability.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "choose(condition=contains(['LTE','4G','LTE-A','LTE ADVANCED','LTE (4G)','4G LTE','FDD LTE','TDD LTE','LTE+','4G+'],upper(strip(text(reply('signal','mnet_sysmode'))))),then='LTE',otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Native RAT; no claim of Internet connectivity."
+    },
+    "radio.nr5g_active": {
+      "aliases": [
+        "nr5g_active"
+      ],
+      "id": 58,
+      "meaning": "Observed NR activity; NR capability alone is insufficient.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unsupported",
+      "read": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "CB0501 is LTE-only.",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_arfcn": {
+      "aliases": [
+        "nr5g_arfcn",
+        "nr_arfcn"
+      ],
+      "id": 59,
+      "meaning": "Observed NR carrier channel; never infer a missing channel from band or LTE identity.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "NR-ARFCN",
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_band": {
+      "aliases": [
+        "nr5g_band",
+        "nr_band"
+      ],
+      "id": 60,
+      "meaning": "Observed serving NR band; separate from configured NR selection.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "NR band number",
+      "value_type": "integer",
+      "trust": "unsupported",
+      "read": null,
+      "gap_reason": "CB0501 is LTE-only.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_cell_id": {
+      "aliases": [
+        "nr5g_cell_id",
+        "nr_cell_id"
+      ],
+      "id": 61,
+      "meaning": "Observed NR cell identity; never substitute LTE cell ID.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_cqi": {
+      "aliases": [
+        "nr_cqi"
+      ],
+      "id": 62,
+      "meaning": "Reported or explicitly profile-derived NR channel-quality indicator; preserve provenance.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_mcs_dl": {
+      "aliases": [
+        "nr_mcs_dl"
+      ],
+      "id": 63,
+      "meaning": "NR downlink modulation/coding index; meaning depends on the qualified native table.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_mcs_ul": {
+      "aliases": [
+        "nr_mcs_ul"
+      ],
+      "id": 64,
+      "meaning": "NR uplink modulation/coding index; meaning depends on the qualified native table.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_mode": {
+      "aliases": [
+        "nr5g_mode",
+        "nr_mode"
+      ],
+      "id": 65,
+      "meaning": "NR operating mode (NSA/SA/absent) as supported by native evidence.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unsupported",
+      "read": null,
+      "gap_reason": "CB0501 is LTE-only.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_num_rbs": {
+      "aliases": [
+        "nr_num_rbs"
+      ],
+      "id": 66,
+      "meaning": "Reported NR scheduled resource-block quantity with native time scope; not nominal channel bandwidth.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "RB",
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_pci": {
+      "aliases": [
+        "nr5g_pci",
+        "nr_pci"
+      ],
+      "id": 67,
+      "meaning": "Observed NR physical cell identity; separate from LTE PCI.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_qam_dl": {
+      "aliases": [
+        "nr_qam_dl"
+      ],
+      "id": 68,
+      "meaning": "NR downlink modulation label derived from a qualified native report/table.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_qam_ul": {
+      "aliases": [
+        "nr_qam_ul"
+      ],
+      "id": 69,
+      "meaning": "NR uplink modulation label derived from a qualified native report/table.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_ri": {
+      "aliases": [
+        "nr_ri"
+      ],
+      "id": 70,
+      "meaning": "NR rank indicator when supplied; absence does not mean rank zero or one.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "layer",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_rsrp_dbm": {
+      "aliases": [
+        "nr5g_rsrp_dbm",
+        "nr_rsrp_dbm"
+      ],
+      "id": 71,
+      "meaning": "NR reference-signal received power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_rsrq_db": {
+      "aliases": [
+        "nr5g_rsrq_db",
+        "nr_rsrq_db"
+      ],
+      "id": 72,
+      "meaning": "NR reference-signal received quality; preserve the qualified native scale conversion.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dB",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_sinr_db": {
+      "aliases": [
+        "nr5g_sinr_db",
+        "nr_sinr_db"
+      ],
+      "id": 73,
+      "meaning": "NR signal-to-interference-plus-noise ratio.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dB",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.nr_state_text": {
+      "aliases": [
+        "nr_state_text"
+      ],
+      "id": 74,
+      "meaning": "Native NR state description; separate from Internet reachability.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nr_tx_power_dbm": {
+      "aliases": [
+        "nr_tx_power_dbm"
+      ],
+      "id": 75,
+      "meaning": "Reported NR transmit power; do not substitute LTE power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.nsa_active": {
+      "aliases": [
+        "nsa_active"
+      ],
+      "id": 76,
+      "meaning": "Observed non-standalone NR activity with LTE anchor.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unsupported",
+      "read": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "CB0501 is LTE-only.",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.sa_active": {
+      "aliases": [
+        "sa_active"
+      ],
+      "id": 77,
+      "meaning": "Observed standalone NR activity; not a declaration that application control supports SA.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unsupported",
+      "read": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "CB0501 is LTE-only.",
+      "availability": "declared_without_native_producer"
+    },
+    "radio.selected_band_set": {
+      "aliases": [
+        "selected_band_set"
+      ],
+      "id": 78,
+      "meaning": "Published effective LTE selection, with native-mask versus provider-limited scope declared by this profile rule; never active carriers or complete hardware capability.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "array_integer",
+      "trust": "expected",
+      "read": "use('mgdb_selected')",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "selection_scope": "native_selection",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.selected_band_set_signature": {
+      "aliases": [
+        "selected_band_set_signature"
+      ],
+      "id": 79,
+      "meaning": "Canonical band signature of the published effective LTE selection; retain the profile-declared selection scope.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "attempt(default=null,value=use('band_signature',bands=use('mgdb_selected')))",
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "selection_scope": "native_selection",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "radio.serving_band": {
+      "aliases": [
+        "serving_band"
+      ],
+      "id": 80,
+      "meaning": "Observed LTE serving/anchor band; not requested PBAND preference.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "LTE band number",
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "algorithm(reply('signal','mnet_wnw_band'),name='mgdb_band',kwargs={})",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Existing tolerant B3/b3/3 parser, serving band only; never configured CA Pool."
+    },
+    "radio.serving_band_signature": {
+      "aliases": [
+        "serving_band_signature"
+      ],
+      "id": 81,
+      "meaning": "Signature of actual LTE serving/anchor band.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.tx_power": {
+      "aliases": [
+        "tx_power"
+      ],
+      "id": 82,
+      "meaning": "LTE transmit power or labelled channel components. Preserve native component labels; never invent an aggregate.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "structure": {
+        "null_member": "unavailable component",
+        "object": "native channel label to finite dBm number"
+      },
+      "unit": null,
+      "value_type": "number_or_string_or_object",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.cell_id": {
+      "aliases": [
+        "cell_id"
+      ],
+      "id": 83,
+      "meaning": "LTE E-UTRAN cell identity; distinct from eNodeB ID and PCI.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "attempt(default=null,value=let(bindings=[['v',strip(text(reply('signal','mnet_wnw_cellid')))]],result=choose(condition=match(variable(name='v'),pattern='(?:0[xX][0-9A-Fa-f]{1,7}|[0-9]{1,9})'),then=use('bounded_number',value=choose(condition=match(variable(name='v'),pattern='0[xX][0-9A-Fa-f]{1,7}'),then=integer(variable(name='v'),base=16),otherwise=integer(variable(name='v'),base=10)),low=1,high=268435455,integer=true),otherwise=null)))",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Expected mnet_wnw_cellid. Explicit decimal or 0x-prefixed hex only; no unmarked-hex guessing."
+    },
+    "rf.cqi": {
+      "aliases": [
+        "cqi"
+      ],
+      "id": 84,
+      "meaning": "LTE channel-quality indicator; native versus estimated provenance must be preserved.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.cqi0": {
+      "aliases": [
+        "cqi0"
+      ],
+      "id": 85,
+      "meaning": "LTE downlink codeword/stream zero CQI.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.cqi1": {
+      "aliases": [
+        "cqi1"
+      ],
+      "id": 86,
+      "meaning": "LTE downlink codeword/stream one CQI; unsupported is not zero.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.earfcn_dl": {
+      "aliases": [
+        "earfcn_dl"
+      ],
+      "id": 87,
+      "meaning": "LTE downlink channel number, not frequency in MHz.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "EARFCN",
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('signal','mnet_wnw_dlch'),low=0,high=262143,integer=true)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Serving LTE channel from the same MGDB RF reply; not MHz. Required for coherent cell identity publication."
+    },
+    "rf.earfcn_ul": {
+      "aliases": [
+        "earfcn_ul"
+      ],
+      "id": 88,
+      "meaning": "LTE uplink channel number, not frequency in MHz.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "EARFCN",
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('signal','mnet_wnw_ulch'),low=0,high=262143,integer=true)",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "signal"
+      ],
+      "description": "Serving LTE channel from the same MGDB RF reply; not MHz. Required for coherent cell identity publication."
+    },
+    "rf.enb_id": {
+      "aliases": [
+        "enb_id"
+      ],
+      "id": 89,
+      "meaning": "LTE eNodeB identity reported or derived by the qualified LTE cell-ID rule.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "attempt(default=null,value=let(bindings=[['c',use('bounded_number',value=reply('signal','mnet_wnw_cellid'),low=256,high=268435455,integer=true)]],result=choose(condition=ne(variable(name='c'),null),then=variable(name='c')//256,otherwise=null)))",
+      "availability": "defined",
+      "gap_reason": null,
+      "description": "Macro LTE base-station identity derived from the already reported numeric ECI by the existing eight-bit cell-component convention; not PCI.",
+      "requires": [
+        "signal"
+      ]
+    },
+    "rf.mcs_dl0": {
+      "aliases": [
+        "mcs_dl0"
+      ],
+      "id": 90,
+      "meaning": "LTE downlink codeword zero modulation/coding index.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.mcs_dl1": {
+      "aliases": [
+        "mcs_dl1"
+      ],
+      "id": 91,
+      "meaning": "LTE downlink codeword one modulation/coding index; absent stream is not zero.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.mcs_ul": {
+      "aliases": [
+        "mcs_ul"
+      ],
+      "id": 92,
+      "meaning": "LTE uplink modulation/coding index.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.pci": {
+      "aliases": [
+        "pci"
+      ],
+      "id": 93,
+      "meaning": "LTE physical cell identity; not NR PCI or global cell ID.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('signal','mnet_wnw_pci'),low=0,high=503,integer=true)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Serving PCI, not ECI/cell ID."
+    },
+    "rf.qam_dl0": {
+      "aliases": [
+        "qam_dl0"
+      ],
+      "id": 94,
+      "meaning": "LTE downlink codeword zero modulation label.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.qam_dl1": {
+      "aliases": [
+        "qam_dl1"
+      ],
+      "id": 95,
+      "meaning": "LTE downlink codeword one modulation label; unavailable stream remains unavailable.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.qam_ul": {
+      "aliases": [
+        "qam_ul"
+      ],
+      "id": 96,
+      "meaning": "LTE uplink modulation label.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.ri": {
+      "aliases": [
+        "ri"
+      ],
+      "id": 97,
+      "meaning": "LTE rank indicator, native or explicitly derived; missing rank must not become zero or one.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "layer",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "rf.rsrp_dbm": {
+      "aliases": [
+        "rsrp_dbm"
+      ],
+      "id": 98,
+      "meaning": "LTE reference-signal received power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('mgdb_lte_index',value=reply('signal','mnet_rsrp'),offset=141,scale=1,low=-150,high=-30)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Expected LTE index conversion from firmware rfparamters.js; zero/missing/invalid stays missing, never zero dB. CB0501 unit confirmation pending."
+    },
+    "rf.rsrq_db": {
+      "aliases": [
+        "rsrq_db"
+      ],
+      "id": 99,
+      "meaning": "LTE reference-signal received quality; native scaling is profile-specific.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dB",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('mgdb_lte_index',value=reply('signal','mnet_rsrq'),offset=40,scale=2,low=-40,high=0)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Expected LTE index conversion from firmware rfparamters.js; zero/missing/invalid stays missing, never zero dB. CB0501 unit confirmation pending."
+    },
+    "rf.rssi_dbm": {
+      "aliases": [
+        "rssi_dbm"
+      ],
+      "id": 100,
+      "meaning": "LTE received signal strength, not reference-signal power.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dBm",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('mgdb_lte_index',value=reply('signal','mnet_rssi'),offset=111,scale=1,low=-140,high=-10)",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Expected LTE index conversion from firmware rfparamters.js; zero/missing/invalid stays missing, never zero dB. CB0501 unit confirmation pending."
+    },
+    "rf.sinr_db": {
+      "aliases": [
+        "sinr_db"
+      ],
+      "id": 101,
+      "meaning": "LTE signal-to-interference-plus-noise ratio.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "dB",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "attempt(default=null,value=let(bindings=[['v',upper(strip(text(reply('signal','mnet_sinr'))))]],result=choose(condition=match(variable(name='v'),pattern='[+-]?(?:[0-9]+(?:[.][0-9]*)?|[.][0-9]+)(?: *DB)?'),then=let(bindings=[['n',use('bounded_number',value=strip(replace(variable(name='v'),old='DB',new='')),low=-30,high=50,integer=false)]],result=choose(condition=ne(variable(name='n'),0),then=variable(name='n'),otherwise=null)),otherwise=null)))",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "signal"
+      ],
+      "description": "Manufacturer rfparamters.js displays mnet_sinr directly in dB, independently of encoded mnet_snr. CB0501 owner WebUI screenshot confirms a distinct SINR display; exact new native JSON is not retained. Native zero means unavailable in this interface. Equivalent numeric or dB-labelled values accepted; no SNR substitution."
+    },
+    "slow.antenna": {
+      "aliases": [
+        "antenna"
+      ],
+      "id": 102,
+      "meaning": "Qualified reported antenna mode/status; not an antenna-position quality score.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.dl_bandwidth_mhz": {
+      "aliases": [
+        "dl_bandwidth",
+        "dl_bandwidth_mhz"
+      ],
+      "id": 103,
+      "meaning": "LTE downlink channel bandwidth, not throughput or resource-block activity.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "attempt(default=null,value=let(bindings=[['r',filter(items=use('mgdb_carriers'),expression=eq(get(value=variable(name='item'),key='band',default=null),context('serving_band')))]],result=choose(condition=eq(length(variable(name='r')),1),then=get(value=variable(name='r')[0],key='dl_bandwidth_mhz',default=null),otherwise=null)))",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "carriers"
+      ],
+      "description": "Primary downlink bandwidth only when exactly one reported LTE component matches the current serving band. Duplicate same-band carriers remain ambiguous; UL bandwidth is not inferred."
+    },
+    "slow.dl_freq_mhz": {
+      "aliases": [
+        "dl_freq_mhz"
+      ],
+      "id": 104,
+      "meaning": "LTE downlink carrier frequency.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('mgdb_lte_frequency',uplink=false)",
+      "availability": "defined",
+      "gap_reason": null,
+      "description": "Calculated LTE downlink frequency from the reported serving band and EARFCN using the existing 3GPP table; not a new native read.",
+      "requires": [
+        "signal"
+      ]
+    },
+    "slow.mobile_data_enabled": {
+      "aliases": [
+        "mobile_data_enabled"
+      ],
+      "id": 105,
+      "meaning": "Qualified mobile-data service state; native enable flag alone may be insufficient. Distinct from verified Internet reachability.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.network_settings": {
+      "aliases": [
+        "network_settings"
+      ],
+      "id": 106,
+      "meaning": "Validated selected subscription/APN/roaming observation; actual APNs, credentials and subscription identifiers must not enter a shared profile.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "structure": {
+        "apn_members": {
+          "apn": "string",
+          "authentication": "none/pap/chap/auto or null",
+          "editable": "boolean",
+          "ip_protocol": "ipv4/ipv6/ipv4v6 or null",
+          "name": "string",
+          "profile_id": "string",
+          "username": "string"
+        },
+        "members": {
+          "apn": "object or null",
+          "roaming_enabled": "boolean or null",
+          "selection": "auto/manual or null",
+          "subscription_key": "opaque subscription-scoped hash; never a physical router identity",
+          "target_plmn": "five/six digits or empty"
+        },
+        "privacy": "definitions contain no actual subscription/APN/credential values",
+        "schema": "NetworkSettingsObservation.v1"
+      },
+      "unit": null,
+      "value_type": "object",
+      "trust": "expected",
+      "read": "algorithm(object(members={'apn':object(members={'curid':reply('apn','dialup_profile_default'),'profileList':filter(items=list(items=[use('mgdb_apn_row',value=reply('apn','dialup_profile_1'),id=1,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_1')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_2'),id=2,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_2')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_3'),id=3,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_3')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_4'),id=4,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_4')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_5'),id=5,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_5')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_6'),id=6,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_6')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_7'),id=7,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_7')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_8'),id=8,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_8')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_9'),id=9,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_9')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_10'),id=10,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_10')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_11'),id=11,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_11')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_12'),id=12,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_12')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_13'),id=13,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_13')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_14'),id=14,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_14')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_15'),id=15,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_15')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_16'),id=16,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_16')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_17'),id=17,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_17')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_18'),id=18,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_18')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_19'),id=19,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_19')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_20'),id=20,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_20')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_21'),id=21,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_21')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_22'),id=22,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_22')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_23'),id=23,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_23')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_24'),id=24,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_24')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_25'),id=25,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_25')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_26'),id=26,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_26')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_27'),id=27,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_27')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_28'),id=28,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_28')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_29'),id=29,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_29')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_30'),id=30,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_30')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_31'),id=31,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_31')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_32'),id=32,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_32')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_33'),id=33,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_33')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_34'),id=34,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_34')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_35'),id=35,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_35')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_36'),id=36,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_36')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_37'),id=37,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_37')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_38'),id=38,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_38')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_39'),id=39,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_39')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_40'),id=40,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_40')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_41'),id=41,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_41')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_42'),id=42,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_42')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_43'),id=43,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_43')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_44'),id=44,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_44')),separator=','),key=3,default=null))),use('mgdb_apn_row',value=reply('apn','dialup_profile_45'),id=45,password=attempt(default=null,value=get(value=split(text(reply('apn','dialup_profile_45')),separator=','),key=3,default=null)))]),expression=ne(variable(name='item'),null))}),'connection':object(members={'roamingswitch':reply('connection','dialup_roamswitch')})}),context('session_subscription'),name='mgdb_network_observation',kwargs={})",
+      "availability": "defined",
+      "gap_reason": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "requires": [
+        "apn"
+      ],
+      "description": "Expected firmware CSV profile rows converted into the existing read-only NetworkSettingsObservation. Password column is never published. No APN writes enabled."
+    },
+    "slow.nr_bandwidth_mhz": {
+      "aliases": [
+        "nr_bandwidth_mhz"
+      ],
+      "id": 107,
+      "meaning": "NR downlink channel bandwidth.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "availability": "declared_without_native_producer"
+    },
+    "slow.nr_cells": {
+      "aliases": [
+        "nr5g_cells",
+        "nr_cells"
+      ],
+      "id": 108,
+      "meaning": "Native NR cell observations; partial identities remain partial and never borrow LTE PCI/channel.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "structure": {
+        "array": "native NR component objects",
+        "identity": "partial identities stay partial; no LTE borrowing",
+        "members": {
+          "arfcn": "integer NR channel or null",
+          "band": "integer NR band or null",
+          "bandwidth_mhz": "finite MHz or null",
+          "cell_id": "integer NR NCI or null",
+          "pci": "integer NR PCI or null",
+          "role": "reported PCell/SCell role when known",
+          "rsrp_dbm": "finite dBm or null",
+          "rsrq_db": "finite dB or null",
+          "sinr_db": "finite dB or null"
+        }
+      },
+      "unit": null,
+      "value_type": "array_object",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.nr_dl_freq_mhz": {
+      "aliases": [
+        "nr_dl_freq_mhz"
+      ],
+      "id": 109,
+      "meaning": "NR downlink carrier frequency.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.nr_ul_bandwidth_mhz": {
+      "aliases": [
+        "nr_ul_bandwidth_mhz"
+      ],
+      "id": 110,
+      "meaning": "NR uplink channel bandwidth.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.nr_ul_freq_mhz": {
+      "aliases": [
+        "nr_ul_freq_mhz"
+      ],
+      "id": 111,
+      "meaning": "NR uplink carrier frequency.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.router_cpu_load_pct": {
+      "aliases": [
+        "router_cpu_load_pct"
+      ],
+      "id": 112,
+      "meaning": "Router CPU utilization; not host PC utilization.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "percent",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.router_memory_used_pct": {
+      "aliases": [
+        "router_memory_used_pct"
+      ],
+      "id": 113,
+      "meaning": "Router used-memory percentage; not host memory or free-memory percentage.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "percent",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.router_system_uptime_s": {
+      "aliases": [
+        "router_system_uptime_s"
+      ],
+      "id": 114,
+      "meaning": "Router system uptime; not mobile packet-session uptime.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('wan','device_uptime'),low=0,high=315576000,integer=true)",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "slow.rrc": {
+      "aliases": [
+        "rrc"
+      ],
+      "id": 115,
+      "meaning": "Reported or explicitly profile-derived radio resource-control state.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.tac": {
+      "aliases": [
+        "tac"
+      ],
+      "id": 116,
+      "meaning": "Tracking area code; preserve qualified native radix/representation and do not substitute cell identity.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "integer_or_string",
+      "trust": "expected",
+      "read": "attempt(default=null,value=let(bindings=[['v',reply('signal','mnet_wnw_tac')]],result=use('bounded_number',value=choose(condition=match(strip(text(variable(name='v'))),pattern='0[xX][0-9A-Fa-f]{1,4}'),then=integer(strip(text(variable(name='v'))),base=16),otherwise=variable(name='v')),low=0,high=65535,integer=true)))",
+      "availability": "defined",
+      "gap_reason": null,
+      "requires": [
+        "signal"
+      ],
+      "description": "Related manufacturer rfparamters.js reads and displays mnet_wnw_tac; owner7Nov WebUI shows768. Explicit LTE decimal or0x-prefixed hexadecimal tracking-area code, independently received even when other optional fields are absent."
+    },
+    "slow.temperature_cpu_c": {
+      "aliases": [
+        "temperature_cpu_c"
+      ],
+      "id": 117,
+      "meaning": "Router CPU sensor temperature; not LTE/NR modem temperature.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.temperature_modem_5g_c": {
+      "aliases": [
+        "temperature_modem_5g_c"
+      ],
+      "id": 118,
+      "meaning": "Dedicated NR modem sensor temperature; unsupported when no distinct sensor is provided.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "degC",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.trans_mode": {
+      "aliases": [
+        "trans_mode"
+      ],
+      "id": 119,
+      "meaning": "Qualified native LTE transmission-mode designation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.ul_bandwidth_mhz": {
+      "aliases": [
+        "ul_bandwidth",
+        "ul_bandwidth_mhz"
+      ],
+      "id": 120,
+      "meaning": "LTE uplink channel bandwidth.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.ul_freq_mhz": {
+      "aliases": [
+        "ul_freq_mhz"
+      ],
+      "id": 121,
+      "meaning": "LTE uplink carrier frequency.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "MHz",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('mgdb_lte_frequency',uplink=true)",
+      "availability": "defined",
+      "gap_reason": null,
+      "description": "Calculated LTE uplink frequency only when the separately reported uplink EARFCN agrees with the serving band/channel pair; not bandwidth or a new native read.",
+      "requires": [
+        "signal"
+      ]
+    },
+    "slow.wan_ip": {
+      "aliases": [
+        "wan_ip"
+      ],
+      "id": 122,
+      "meaning": "Assigned WAN IP observation; does not by itself establish Internet access. Actual addresses must not enter a shared profile.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "normalization": "Absent native IP is unavailable; an empty ModemInput default is not a reported address.",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.wifi_24ghz_enabled": {
+      "aliases": [
+        "wifi_24ghz_enabled"
+      ],
+      "id": 123,
+      "meaning": "Native 2.4-GHz Wi-Fi enable state; not client traffic or Internet access.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "expected",
+      "read": "algorithm(reply('wifi','wifi_state_0'),name='mgdb_boolean',kwargs={})",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "slow.wifi_5ghz_enabled": {
+      "aliases": [
+        "wifi_5ghz_enabled"
+      ],
+      "id": 124,
+      "meaning": "Native 5-GHz Wi-Fi enable state; not 5G cellular service.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "expected",
+      "read": "algorithm(reply('wifi','wifi_state_1'),name='mgdb_boolean',kwargs={})",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "slow.wifi_6ghz_enabled": {
+      "aliases": [
+        "wifi_6ghz_enabled"
+      ],
+      "id": 125,
+      "meaning": "Native 6-GHz Wi-Fi enable state; unsupported is distinct from OFF.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "slow.wifi_enabled": {
+      "aliases": [
+        "wifi_enabled"
+      ],
+      "id": 126,
+      "meaning": "Aggregate Wi-Fi state: any confirmed enabled radio proves ON; OFF needs complete relevant-radio evidence.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "expected",
+      "read": "let(bindings=[['a',algorithm(reply('wifi','wifi_state_0'),name='mgdb_boolean',kwargs={})],['b',algorithm(reply('wifi','wifi_state_1'),name='mgdb_boolean',kwargs={})]],result=choose(condition=any_of(eq(variable(name='a'),true),eq(variable(name='b'),true)),then=true,otherwise=choose(condition=all_of(eq(variable(name='a'),false),eq(variable(name='b'),false)),then=false,otherwise=null)))",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "traffic.connection_status_code": {
+      "aliases": [
+        "connection_status_code"
+      ],
+      "id": 127,
+      "meaning": "Native packet-connection status code retained as text with an explicit profile mapping.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.packet_session_connected": {
+      "aliases": [
+        "packet_session_connected"
+      ],
+      "id": 128,
+      "meaning": "Native mobile packet-session connection evidence; not proof of Internet reachability.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.rx_bytes_per_sec": {
+      "aliases": [
+        "rx_bytes_per_sec"
+      ],
+      "id": 129,
+      "meaning": "Cellular downlink receive rate toward the user; not bits/s or Mbps.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte/s",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('traffic','statistics_rx_bytes_rate'),low=0,high=1000000000000.0,integer=false)",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "traffic.session_uptime_s": {
+      "aliases": [
+        "session_uptime_s"
+      ],
+      "id": 130,
+      "meaning": "Packet-session duration with explicit source; not whole-router uptime.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.session_uptime_source": {
+      "aliases": [
+        "session_uptime_source"
+      ],
+      "id": 131,
+      "meaning": "Native/derived provenance and availability of packet-session duration.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_accounting_source": {
+      "aliases": [
+        "traffic_accounting_source"
+      ],
+      "id": 132,
+      "meaning": "Origin and scope of the volume-accounting counters.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_accounting_status": {
+      "aliases": [
+        "traffic_accounting_status"
+      ],
+      "id": 133,
+      "meaning": "Availability/validity state of volume accounting.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_counter_interface_started_at": {
+      "aliases": [
+        "traffic_counter_interface_started_at"
+      ],
+      "id": 134,
+      "meaning": "Interface-counter epoch; used to distinguish reset from positive traffic delta.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "unix_s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_counter_period_started_at": {
+      "aliases": [
+        "traffic_counter_period_started_at"
+      ],
+      "id": 135,
+      "meaning": "Accounting-period counter epoch; not sample time.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "unix_s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_day_used_bytes": {
+      "aliases": [
+        "traffic_day_used_bytes"
+      ],
+      "id": 136,
+      "meaning": "Qualified current-day combined usage in bytes.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_device_download_counter_bytes": {
+      "aliases": [
+        "traffic_device_download_counter_bytes"
+      ],
+      "id": 137,
+      "meaning": "Cumulative native device downlink counter within its declared epoch.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_device_upload_counter_bytes": {
+      "aliases": [
+        "traffic_device_upload_counter_bytes"
+      ],
+      "id": 138,
+      "meaning": "Cumulative native device uplink counter within its declared epoch.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_invalid_reason": {
+      "aliases": [
+        "traffic_invalid_reason"
+      ],
+      "id": 139,
+      "meaning": "Reason a traffic measurement was rejected or unavailable; never a replacement measurement.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_month_download_bytes": {
+      "aliases": [
+        "monthly_rx_bytes",
+        "traffic_month_download_bytes"
+      ],
+      "id": 140,
+      "meaning": "Downlink usage in the native monthly/accounting period.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_month_upload_bytes": {
+      "aliases": [
+        "monthly_tx_bytes",
+        "traffic_month_upload_bytes"
+      ],
+      "id": 141,
+      "meaning": "Uplink usage in the native monthly/accounting period.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_quota_start_day": {
+      "aliases": [
+        "traffic_quota_start_day"
+      ],
+      "id": 142,
+      "meaning": "Configured quota/accounting-cycle start day, not current calendar day.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "day of month",
+      "value_type": "integer",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_rate_source": {
+      "aliases": [
+        "traffic_rate_source"
+      ],
+      "id": 143,
+      "meaning": "Native-rate or counter-delta provenance including the qualified interface.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "expected",
+      "read": "choose(condition=all_of(ne(use('bounded_number',value=reply('traffic','statistics_rx_bytes_rate'),low=0,high=1000000000000.0,integer=false),null),ne(use('bounded_number',value=reply('traffic','statistics_tx_bytes_rate'),low=0,high=1000000000000.0,integer=false),null)),then='mgdb_reported_bytes_per_second',otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "traffic.traffic_session_download_bytes": {
+      "aliases": [
+        "traffic_session_download_bytes"
+      ],
+      "id": 144,
+      "meaning": "Downlink byte total for the current packet session.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_session_duration_s": {
+      "aliases": [
+        "traffic_session_duration_s"
+      ],
+      "id": 145,
+      "meaning": "Duration of the traffic-accounting session.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_session_upload_bytes": {
+      "aliases": [
+        "traffic_session_upload_bytes"
+      ],
+      "id": 146,
+      "meaning": "Uplink byte total for the current packet session.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_state_detail": {
+      "aliases": [
+        "traffic_state_detail"
+      ],
+      "id": 147,
+      "meaning": "Qualified traffic state/availability description.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_total_download_bytes": {
+      "aliases": [
+        "traffic_total_download_bytes"
+      ],
+      "id": 148,
+      "meaning": "Native cumulative downlink byte total with its actual reset/accounting scope.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_total_upload_bytes": {
+      "aliases": [
+        "traffic_total_upload_bytes"
+      ],
+      "id": 149,
+      "meaning": "Native cumulative uplink byte total with its actual reset/accounting scope.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_valid": {
+      "aliases": [
+        "traffic_valid"
+      ],
+      "id": 150,
+      "meaning": "Whether the traffic observation meets its acquisition contract; zero valid traffic remains zero.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "boolean",
+      "trust": "expected",
+      "read": "choose(condition=all_of(ne(use('bounded_number',value=reply('traffic','statistics_rx_bytes_rate'),low=0,high=1000000000000.0,integer=false),null),ne(use('bounded_number',value=reply('traffic','statistics_tx_bytes_rate'),low=0,high=1000000000000.0,integer=false),null)),then=true,otherwise=null)",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "traffic.traffic_volume_age_s": {
+      "aliases": [
+        "traffic_volume_age_s"
+      ],
+      "id": 151,
+      "meaning": "Age of the last actual volume observation.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_volume_last_sample_ts": {
+      "aliases": [
+        "traffic_volume_last_sample_ts"
+      ],
+      "id": 152,
+      "meaning": "Time of last actual volume acquisition; retained values keep their timestamp.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "unix_s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_volume_next_sample_ts": {
+      "aliases": [
+        "traffic_volume_next_sample_ts"
+      ],
+      "id": 153,
+      "meaning": "Scheduled next volume read; not evidence that it occurred.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "unix_s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.traffic_volume_poll_interval_s": {
+      "aliases": [
+        "traffic_volume_poll_interval_s"
+      ],
+      "id": 154,
+      "meaning": "Selected volume-acquisition interval, distinct from fast radio polling.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "s",
+      "value_type": "number",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "traffic.tx_bytes_per_sec": {
+      "aliases": [
+        "tx_bytes_per_sec"
+      ],
+      "id": 155,
+      "meaning": "Cellular uplink transmit rate away from the user; not bits/s or Mbps.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": "byte/s",
+      "value_type": "number",
+      "trust": "expected",
+      "read": "use('bounded_number',value=reply('traffic','statistics_tx_bytes_rate'),low=0,high=1000000000000.0,integer=false)",
+      "availability": "defined",
+      "gap_reason": null
+    },
+    "identity.vendor": {
+      "id": 156,
+      "value_type": "string",
+      "unit": "text",
+      "meaning": "Native device manufacturer used with the existing identity guard.",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "capability.supported_lte_bands": {
+      "id": 157,
+      "value_type": "array_integer",
+      "unit": "band numbers",
+      "meaning": "Complete device-supported LTE bands; never CA Pool or active carriers.",
+      "trust": "expected",
+      "read": "use('mgdb_supported')",
+      "availability": "declared_without_native_producer",
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim.",
+      "requires": [
+        "network"
+      ],
+      "description": "Actual MGDB supported/configured LTE list; provider-limited pool remains distinct from serving carriers."
+    },
+    "capability.supported_nr_bands": {
+      "id": 158,
+      "value_type": "array_integer",
+      "unit": "band numbers",
+      "meaning": "Complete device-supported NR bands; never the selected NR subset.",
+      "trust": "unsupported",
+      "read": null,
+      "result_plane": "decoded_native_or_qualified_metadata_before_Matrix_admission",
+      "gap_reason": "CB0501 is LTE-only.",
+      "availability": "declared_without_native_producer"
+    },
+    "identity.profile_definition": {
+      "id": 159,
+      "value_type": "object",
+      "unit": null,
+      "meaning": "Application-owned provenance of the admitted portable profile snapshot, not a native device identity or editable computed hash.",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "owner": "ModemLive admitted startup profile registry",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    },
+    "radio.mimo": {
+      "aliases": [
+        "mimo"
+      ],
+      "id": 160,
+      "meaning": "Native LTE MIMO indicator, distinct from RI. Preserve the reported indicator; do not infer active streams or antenna configuration from a numeric code.",
+      "missing": "No value. Preserve missing/invalid/unsupported separately; never invent zero, false, an identity or an older fresh timestamp.",
+      "privacy": "definition_only_no_observed_values",
+      "unit": null,
+      "value_type": "string",
+      "trust": "unclassified",
+      "read": null,
+      "availability": "declared_without_native_producer",
+      "gap_reason": "No sufficiently evidenced stock CB0501 native mapping; not a hardware-unsupported claim."
+    }
+  },
+  "requests": [
+    {
+      "reply": "device",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Exact CB0501 MGDB baseline; other detailed action reads independently optional related-stock candidates.",
+      "keys": [
+        "device_product_name",
+        "device_software_version",
+        "device_hardware_version",
+        "device_sn",
+        "device_imei"
+      ]
+    },
+    {
+      "reply": "traffic",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Exact CB0501 MGDB baseline; other detailed action reads independently optional related-stock candidates.",
+      "keys": [
+        "statistics_rx_bytes_rate",
+        "statistics_tx_bytes_rate"
+      ]
+    },
+    {
+      "reply": "wifi",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Exact CB0501 MGDB baseline; other detailed action reads independently optional related-stock candidates.",
+      "keys": [
+        "wifi_state_0",
+        "wifi_state_1"
+      ]
+    },
+    {
+      "reply": "wan",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Exact CB0501 MGDB baseline; other detailed action reads independently optional related-stock candidates.",
+      "keys": [
+        "device_uptime",
+        "mnet_sim_status",
+        "rt_wwan_conn_info",
+        "mnet_ca_act_status"
+      ]
+    },
+    {
+      "reply": "signal",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Same-family published firmware WebUI evidence; exact CB0501 result not captured. Read-only research draft.",
+      "keys": [
+        "mnet_sysmode",
+        "mnet_operator_name",
+        "mnet_rsrp",
+        "mnet_rsrq",
+        "mnet_rssi",
+        "mnet_sinr",
+        "mnet_snr",
+        "mnet_wnw_pci",
+        "mnet_wnw_band",
+        "mnet_wnw_cellid",
+        "mnet_wnw_dlch",
+        "mnet_wnw_ulch",
+        "mnet_wnw_tac"
+      ]
+    },
+    {
+      "reply": "network",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Same-family published firmware WebUI evidence; exact CB0501 result not captured. Read-only research draft.",
+      "keys": [
+        "mnet_reg_plmn",
+        "mnet_sysmode",
+        "mnet_operator_name",
+        "mnet_band_lock_list",
+        "mnet_band_lock_type",
+        "mnet_band_lock_info",
+        "mnet_cell_lock_info"
+      ]
+    },
+    {
+      "reply": "apn",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Same-family published firmware WebUI evidence; exact CB0501 result not captured. Read-only research draft.",
+      "keys": [
+        "dialup_profile_default",
+        "dialup_profile_1",
+        "dialup_profile_2",
+        "dialup_profile_3",
+        "dialup_profile_4",
+        "dialup_profile_5",
+        "dialup_profile_6",
+        "dialup_profile_7",
+        "dialup_profile_8",
+        "dialup_profile_9",
+        "dialup_profile_10",
+        "dialup_profile_11",
+        "dialup_profile_12",
+        "dialup_profile_13",
+        "dialup_profile_14",
+        "dialup_profile_15",
+        "dialup_profile_16",
+        "dialup_profile_17",
+        "dialup_profile_18",
+        "dialup_profile_19",
+        "dialup_profile_20",
+        "dialup_profile_21",
+        "dialup_profile_22",
+        "dialup_profile_23",
+        "dialup_profile_24",
+        "dialup_profile_25",
+        "dialup_profile_26",
+        "dialup_profile_27",
+        "dialup_profile_28",
+        "dialup_profile_29",
+        "dialup_profile_30",
+        "dialup_profile_31",
+        "dialup_profile_32",
+        "dialup_profile_33",
+        "dialup_profile_34",
+        "dialup_profile_35",
+        "dialup_profile_36",
+        "dialup_profile_37",
+        "dialup_profile_38",
+        "dialup_profile_39",
+        "dialup_profile_40",
+        "dialup_profile_41",
+        "dialup_profile_42",
+        "dialup_profile_43",
+        "dialup_profile_44",
+        "dialup_profile_45"
+      ]
+    },
+    {
+      "reply": "connection",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Same-family published firmware WebUI evidence; exact CB0501 result not captured. Read-only research draft.",
+      "keys": [
+        "dialup_roamswitch"
+      ]
+    },
+    {
+      "reply": "sim",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/get_mgdb_params",
+      "boundary": "Same-family published firmware WebUI evidence; exact CB0501 result not captured. Read-only research draft.",
+      "keys": [
+        "mnet_sim_imsi",
+        "mnet_sim_status"
+      ]
+    },
+    {
+      "reply": "carriers",
+      "protocol": "xiaomi_mgdb_json",
+      "method": "POST",
+      "path": "/action/mnet_get_ca_list",
+      "boundary": "Optional read-only route from publicly distributed manufacturer WebUI. Exact CB0501 support unverified; refusal must not affect other reads."
+    }
+  ],
+  "access": {
+    "access_type": "xiaomi_stock_mgdb_single_lane",
+    "backend": "xiaomi_cb0401v2",
+    "backend_family": "xiaomi_miwifi_like",
+    "boot_static_refresh_policy": "identity_or_operator_refresh_only",
+    "control_min_inter_request_gap_s": 0.5,
+    "dev2_state_read_gap_s": null,
+    "direct_modem_writes_allowed": true,
+    "discovery_mode": "known_profile",
+    "effective_match_required": true,
+    "event_write_min_quiet_s": 3.0,
+    "fast_live_interval_s": 2.0,
+    "fast_live_stale_s": 6.0,
+    "fast_read_slo_s": 2.0,
+    "fast_sample_slo_warmup_samples": 15,
+    "fast_signal_connect_timeout_s": 2.0,
+    "fast_signal_read_timeout_s": 8.0,
+    "fast_traffic_cache_s": 0.75,
+    "fast_traffic_connect_timeout_s": 0.12,
+    "fast_traffic_max_timeout_s": 0.35,
+    "fast_traffic_min_timeout_s": 0.12,
+    "http_connection_mode": "close",
+    "lane_groups": {
+      "boot_static": [
+        "device_identity",
+        "firmware",
+        "supported_bands"
+      ],
+      "event_write": [
+        "band_selection",
+        "band_lock",
+        "cell_lock"
+      ],
+      "export": [
+        "sidecars",
+        "support_bundle",
+        "history"
+      ],
+      "fast_live": [
+        "radio_status",
+        "rf_quality",
+        "nr_status"
+      ],
+      "slow_live": [
+        "network_mode"
+      ]
+    },
+    "maintenance_connect_timeout_s": 2.0,
+    "maintenance_read_timeout_s": 8.0,
+    "min_inter_request_gap_s": 0.5,
+    "post_write_readback_deadline_s": 30.0,
+    "post_write_readback_delay_s": 3.0,
+    "proactive_session_refresh_enabled": false,
+    "proactive_session_refresh_interval_s": 180.0,
+    "proactive_session_refresh_min_gap_s": 60.0,
+    "profile_id": "xiaomi_cb0501_stock_3_0_access_v1",
+    "read_retry_limit": 1,
+    "readback_required": true,
+    "recovery_timing": {
+      "rescue_window_s": 120.0,
+      "restart_verification_s": 180.0
+    },
+    "routeros_state_read_gap_s": null,
+    "session_connect_attempt_limit": 1,
+    "session_connect_retry_gap_s": 0.0,
+    "session_refresh_method": "none",
+    "slow_live_interval_s": 30.0,
+    "startup_min_inter_request_gap_s": 0.5,
+    "write_retry_limit": 1,
+    "maintenance_start_io_budget_s": 10.0
+  },
+  "context": {
+    "clock_contract": "sampled_at is epoch seconds; monotonic_at is monotonic seconds; previous clocks retain the same domain",
+    "context_owner": "existing ModemLive acquisition state and Foundation provider policy; never an alternate controller",
+    "context_paths": [
+      "session_subscription"
+    ],
+    "freshness_contract": "native parser defaults and retained values are not fresh facts; existing acquisition receipts and Matrix admission retain authority",
+    "previous_state_contract": "only the previous accepted observation from this same physical identity/session; preserve native source key and time",
+    "write_contract": "capability/action metadata retained; native typed write stages and authorization are not implemented by this offline reader"
+  },
+  "helpers": {
+    "bounded_number": {
+      "parameters": [
+        "value",
+        "low",
+        "high",
+        "integer"
+      ],
+      "formula": "attempt(default=null, value=let(bindings=[['n', choose(condition=is_type(variable(name='value'), type='bool'), otherwise=number(variable(name='value')), then=null)]], result=choose(condition=all_of(ne(variable(name='n'), null), finite(variable(name='n')), any_of(eq(variable(name='low'), null), ge(variable(name='n'), variable(name='low'))), any_of(eq(variable(name='high'), null), le(variable(name='n'), variable(name='high'))), any_of(negate(variable(name='integer')), integral(variable(name='n')))), otherwise=null, then=choose(condition=variable(name='integer'), otherwise=variable(name='n'), then=integer(variable(name='n'))))))"
+    },
+    "mgdb_lte_index": {
+      "parameters": [
+        "value",
+        "offset",
+        "scale",
+        "low",
+        "high"
+      ],
+      "formula": "attempt(default=null,value=let(bindings=[['n',use('bounded_number',value=variable(name='value'),low=1,high=1000,integer=true)]],result=choose(condition=ne(variable(name='n'),null),then=use('bounded_number',value=(variable(name='n')-variable(name='offset'))/variable(name='scale'),low=variable(name='low'),high=variable(name='high'),integer=false),otherwise=null)))"
+    },
+    "mgdb_apn_unescape": {
+      "parameters": [
+        "value"
+      ],
+      "formula": "replace(replace(variable(name='value'),old='&#39;',new=','),old='&amp;',new='&')"
+    },
+    "mgdb_apn_row": {
+      "parameters": [
+        "value",
+        "id",
+        "password"
+      ],
+      "formula": "attempt(default=null,value=choose(condition=all_of(is_type(variable(name='value'),type='str'),gt(length(variable(name='value')),0),le(length(variable(name='value')),16384)),then=let(bindings=[['v',split(variable(name='value'),separator=',')]],result=choose(condition=ge(length(variable(name='v')),7),then=object(members={'password':variable(name='password'),'index':variable(name='id'),'name':use('mgdb_apn_unescape',value=get(value=variable(name='v'),key=0,default='')),'apn':use('mgdb_apn_unescape',value=get(value=variable(name='v'),key=1,default='')),'username':use('mgdb_apn_unescape',value=get(value=variable(name='v'),key=2,default='')),'authmode':enum(get(value=variable(name='v'),key=4,default=''),values={'none':'none','pap':'pap','chap':'chap','pap_chap':'auto','pap/chap':'auto','auto':'auto','0':'none','1':'pap','2':'chap','3':'auto'},default=null),'iptype':get(value=variable(name='v'),key=5,default='')}),otherwise=null)),otherwise=null))"
+    },
+    "band_signature": {
+      "parameters": [
+        "bands"
+      ],
+      "formula": "join(map(items=sorted_unique(variable(name='bands')),expression=('B'+text(variable(name='item')))),separator='+')"
+    },
+    "mgdb_lte_segment": {
+      "parameters": [
+        "value"
+      ],
+      "formula": "let(bindings=[['rows',filter(items=split(lower(strip(text(any_of(variable(name='value'),'')))),separator=';'),expression=match(strip(variable(name='item')),pattern='lte[ \\t]*:.*'))]],result=choose(condition=eq(length(variable(name='rows')),1),then=strip(get(value=split(variable(name='rows')[0],separator=':'),key=1,default='')),otherwise=null))"
+    },
+    "mgdb_lte_bands": {
+      "parameters": [
+        "value"
+      ],
+      "formula": "let(bindings=[['s',use('mgdb_lte_segment',value=variable(name='value'))]],result=choose(condition=ne(variable(name='s'),null),then=let(bindings=[['v',map(items=split(variable(name='s'),separator=','),expression=algorithm(strip(variable(name='item')),name='mgdb_band',kwargs={}))]],result=choose(condition=contains(variable(name='v'),null),then=null,otherwise=sorted_unique(variable(name='v')))),otherwise=null))"
+    },
+    "mgdb_supported": {
+      "parameters": [],
+      "formula": "use('mgdb_lte_bands',value=reply('network','mnet_band_lock_list'))"
+    },
+    "mgdb_lock_mode": {
+      "parameters": [],
+      "formula": "enum(lower(strip(get(value=split(text(any_of(reply('network','mnet_band_lock_type'),'')),separator=','),key=0,default=''))),values={'lock':'lock','unlock':'unlock','normal':'normal'},default=null)"
+    },
+    "mgdb_selected": {
+      "parameters": [],
+      "formula": "choose(condition=eq(use('mgdb_lock_mode'),'unlock'),then=use('mgdb_effective_supported'),otherwise=choose(condition=eq(use('mgdb_lock_mode'),'lock'),then=use('mgdb_lte_bands',value=reply('network','mnet_band_lock_info')),otherwise=null))"
+    },
+    "mgdb_pool": {
+      "parameters": [],
+      "formula": "attempt(default=null,value=choose(condition=all_of(is_type(context('provider_plmn'),type='str'),match(context('provider_plmn'),pattern='[0-9]{5,6}')),then=intersection(context('provider_bands'),use('mgdb_effective_supported'),use('mgdb_selected')),otherwise=null))"
+    },
+    "mgdb_cell_rows": {
+      "parameters": [],
+      "formula": "map(items=filter(items=split(lower(strip(text(any_of(reply('network','mnet_cell_lock_info'),'')))),separator=';'),expression=match(strip(variable(name='item')),pattern='(?:lte|3)[ \\t]*,.*')),expression=map(items=split(variable(name='item'),separator=','),expression=strip(variable(name='item'))))"
+    },
+    "mgdb_cell_config": {
+      "parameters": [],
+      "formula": "attempt(default=null,value=let(bindings=[['rows',use('mgdb_cell_rows')]],result=choose(condition=eq(length(variable(name='rows')),1),then=let(bindings=[['r',variable(name='rows')[0]],['enabled',enum(get(value=variable(name='r'),key=1,default=''),values={'0':false,'off':false,'disabled':false,'unlock':false,'1':true,'on':true,'enabled':true,'lock':true},default=null)],['channel',use('bounded_number',value=get(value=variable(name='r'),key=3,default=null),low=0,high=262143,integer=true)],['pci',use('bounded_number',value=get(value=variable(name='r'),key=4,default=null),low=0,high=503,integer=true)]],result=choose(condition=eq(variable(name='enabled'),false),then=object(members={'enabled':false,'earfcn':null,'pci':null}),otherwise=choose(condition=all_of(eq(variable(name='enabled'),true),ne(variable(name='channel'),null),ne(variable(name='pci'),null)),then=object(members={'enabled':true,'earfcn':variable(name='channel'),'pci':variable(name='pci')}),otherwise=null))),otherwise=null)))"
+    },
+    "mgdb_lte_frequency": {
+      "parameters": [
+        "uplink"
+      ],
+      "formula": "attempt(default=null,value=let(bindings=[['c',use('bounded_number',value=reply('signal','mnet_wnw_dlch'),low=0,high=262143,integer=true)],['b',algorithm(reply('signal','mnet_wnw_band'),name='mgdb_band',kwargs={})],['u',use('bounded_number',value=reply('signal','mnet_wnw_ulch'),low=0,high=262143,integer=true)]],result=choose(condition=all_of(ne(variable(name='c'),null),ne(variable(name='b'),null),eq(algorithm(variable(name='c'),name='lte_band_from_dl_earfcn',kwargs={}),variable(name='b'))),then=let(bindings=[['f',algorithm(variable(name='c'),name='lte_frequency_mhz_from_dl_earfcn',kwargs={})]],result=choose(condition=variable(name='uplink'),then=choose(condition=all_of(ne(variable(name='u'),null),eq(variable(name='u'),variable(name='c')+choose(condition=lt(variable(name='b'),32),then=18000,otherwise=0)),gt(get(value=variable(name='f'),key=1,default=0),0)),then=get(value=variable(name='f'),key=1,default=null),otherwise=null),otherwise=get(value=variable(name='f'),key=0,default=null))),otherwise=null)))"
+    },
+    "mgdb_operator_token": {
+      "parameters": [],
+      "formula": "join(split(replace(replace(lower(strip(text(any_of(reply('network','mnet_operator_name'),'')))),old='-',new=' '),old='_',new=' '),separator=null),separator=' ')"
+    },
+    "mgdb_effective_supported": {
+      "parameters": [],
+      "formula": "choose(condition=ne(use('mgdb_supported'),null),then=use('mgdb_supported'),otherwise=choose(condition=any_of(eq(reply('network','mnet_band_lock_list'),null),eq(reply('network','mnet_band_lock_list'),'')),then=profile('supported_lte_bands'),otherwise=null))"
+    },
+    "mgdb_carriers": {
+      "parameters": [],
+      "formula": "algorithm(reply('carriers'),name='mgdb_carrier_rows',kwargs={})"
+    }
+  },
+  "preprocessing": {},
+  "writes": {
+    "mgdb:band_lock": {
+      "protocol": "native_fields",
+      "operation": "mgdb:band_lock",
+      "fields": {
+        "mnet_band_lock_type": {
+          "key": "mnet_band_lock_type",
+          "value": "context('payload','mnet_band_lock_type')"
+        },
+        "mnet_band_lock_info": {
+          "key": "mnet_band_lock_info",
+          "value": "context('payload','mnet_band_lock_info')"
+        }
+      }
+    },
+    "mgdb:cell_lock": {
+      "protocol": "native_fields",
+      "operation": "mgdb:cell_lock",
+      "fields": {
+        "mnet_cell_lock_rat": {
+          "key": "mnet_cell_lock_rat",
+          "value": "context('payload','mnet_cell_lock_rat')"
+        },
+        "mnet_cell_lock_arfcn": {
+          "key": "mnet_cell_lock_arfcn",
+          "value": "context('payload','mnet_cell_lock_arfcn')"
+        },
+        "mnet_cell_lock_pci": {
+          "key": "mnet_cell_lock_pci",
+          "value": "context('payload','mnet_cell_lock_pci')"
+        },
+        "mnet_cell_lock_type": {
+          "key": "mnet_cell_lock_type",
+          "value": "context('payload','mnet_cell_lock_type')"
+        }
+      }
+    }
+  },
+  "provenance": {
+    "baseline_driver_sha256": "2f9c0520de87ec3b5d704193dcdbb884186a5cf4fc561af01adfc49699709bcc",
+    "conversion": "Exact operator CB0501 MGDB login/identity with independently optional detailed stock-family read candidates; supersedes provisional LuCI clone.",
+    "format_boundary": "Editable field definitions and parameters; fixed data-format decoder implementation belongs to ModemLive.",
+    "parent_profile": "xiaomi_cb0401v2_3_0_88",
+    "exact_model_sources": [
+      "https://play.google.com/store/apps/details?id=at.tmobile.android.routerhilfe",
+      "https://www.magenta.at/content/dam/magenta_at/pdfs/consumer/faq/Magenta_Internet_Flex_Box_AX3000_Kurzanleitung.pdf"
+    ],
+    "shared_family_sources": [
+      "https://github.com/adamkatsu/ionline-dashboard/tree/86b3c000407cbf9aa7dad56821c01e8d064446ab",
+      "https://github.com/fct-sk/flybox-ha"
+    ]
+  },
+  "privacy": {
+    "observations_included": false,
+    "credentials_included": false
+  },
+  "qualification": {
+    "status": "evidence_backed_best_effort_NOT_physical_qualification",
+    "wire_evidence": "Exact model operator APK declarations and bytecode references; optional detailed read schemas from other-model stock clients. No CB0501 numeric wire capture.",
+    "controls": "Evidence-backed best-effort MGDB band/cell commands; two independent public implementations, not physical CB0501 qualification."
+  },
+  "state": {
+    "supported_lte_bands": "use('mgdb_supported')",
+    "selected_lte_bands": "use('mgdb_selected')",
+    "cell_lock_configuration": "use('mgdb_cell_config')",
+    "mgdb_auto_released": "eq(use('mgdb_lock_mode'),'unlock')",
+    "provider_plmn_source": "choose(condition=all_of(is_type(reply('network','mnet_reg_plmn'),type='str'),match(strip(reply('network','mnet_reg_plmn')),pattern='[0-9]{5,6}')),then='native',otherwise=choose(condition=all_of(any_of(eq(reply('network','mnet_reg_plmn'),null),all_of(is_type(reply('network','mnet_reg_plmn'),type='str'),eq(strip(reply('network','mnet_reg_plmn')),''))),ne(get(value=profile('registered_operator_plmn_aliases'),key=use('mgdb_operator_token'),default=null),null)),then='profile_operator_alias',otherwise=null))"
+  },
+  "decoder": "xiaomi-miwifi.v1"
+}

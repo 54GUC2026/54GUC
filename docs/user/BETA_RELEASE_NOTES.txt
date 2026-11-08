@@ -1,0 +1,11 @@
+# 54GUC R29.0
+
+### R29.0 functionality
+
+- UPDATES opens the official Windows portable download in your browser. It does not install, unpack or restart the application.
+- Xiaomi CB0501 displays the native SINR measurement and adds TAC, channel-derived frequencies and eNB identity. Supported field spelling and value-format variations are accepted; optional carrier reads fail independently.
+- Cell-lock confirmation rejects a matching serving cell when the router explicitly reports that cell lock is OFF.
+- G5TC preserves reported cell-lock settings during NO_SERVICE while withholding unavailable signal measurements.
+- MF296R support-bundle generation no longer mistakes a public serial-format description for a private device identifier.
+
+CB0501 stock software 3.0.16 does not support band selection, band lock or cell lock. Available readings and controls vary by model and firmware.
